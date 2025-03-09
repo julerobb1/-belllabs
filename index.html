@@ -246,34 +246,6 @@
             width: 100%;
         }
     </style>
-    <script>
-        let slideIndex = 1;
-        showSlides(slideIndex);
-
-        function plusSlides(n) {
-            showSlides(slideIndex += n);
-        }
-
-        function currentSlide(n) {
-            showSlides(slideIndex = n);
-        }
-
-        function showSlides(n) {
-            let i;
-            let slides = document.getElementsByClassName("mySlides");
-            let dots = document.getElementsByClassName("dot");
-            if (n > slides.length) {slideIndex = 1}
-            if (n < 1) {slideIndex = slides.length}
-            for (i = 0; i < slides.length; i++) {
-                slides[i].style.display = "none";
-            }
-            for (i = 0; i < dots.length; i++) {
-                dots[i].className = dots[i].className.replace(" active", "");
-            }
-            slides[slideIndex-1].style.display = "block";
-            dots[slideIndex-1].className += " active";
-        }
-    </script>
 </head>
 <body>
     <header>
@@ -304,13 +276,13 @@
 
             <div class="mySlides fade">
                 <div class="numbertext">1 / 2</div>
-                <img src="img/map1.jpg" style="width:100%" alt="AT&T Long Lines Network Map">
+                <img src="images/map1.jpg" style="width:100%" alt="AT&T Long Lines Network Map">
                 <div class="text">The sprawling AT&T Long Lines Network</div>
             </div>
 
             <div class="mySlides fade">
                 <div class="numbertext">2 / 2</div>
-                <img src="img/map2.jpg" style="width:100%" alt="Another view of the AT&T Long Lines Network">
+                <img src="images/map2.jpg" style="width:100%" alt="Another view of the AT&T Long Lines Network">
                 <div class="text">Another look at the Long Lines Network</div>
             </div>
 
@@ -360,5 +332,33 @@
     <footer>
         <p>&copy; 2025 AT&T Long Lines & Bell Labs Community. <small>Site by juler#5461. All rights reserved.</small></p>
     </footer>
+    <script>
+        let slideIndex = 1;
+        showSlides(slideIndex);
+
+        function plusSlides(n) {
+            showSlides(slideIndex += n);
+        }
+
+        function currentSlide(n) {
+            showSlides(slideIndex = n);
+        }
+
+        function showSlides(n) {
+            let i;
+            let slides = document.getElementsByClassName("mySlides");
+            let dots = document.getElementsByClassName("dot");
+            if (n > slides.length) {slideIndex = 1}
+            if (n < 1) {slideIndex = slides.length}
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            for (i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.replace(" active", "");
+            }
+            slides[slideIndex-1].style.display = "block";
+            dots[slideIndex-1].className += " active";
+        }
+    </script>
 </body>
 </html>
