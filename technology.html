@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AT&T Long Lines & Bell Labs - Technology</title>
+    <link rel="icon" href="images/favicon.ico">
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+            color: #333;
+            line-height: 1.7;
+        }
+
+        header {
+            background-color: #003366;
+            color: white;
+            text-align: center;
+            padding: 2em 0;
+            margin-bottom: 20px;
+        }
+
+        nav {
+            background-color: #007acc;
+            color: white;
+            padding: 0.7em 0;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 0.7em 1.5em;
+            display: inline-block;
+            transition: background-color 0.3s ease;
+        }
+
+        nav a:hover {
+            background-color: #0056b3;
+        }
+
+        main {
+            padding: 30px;
+            max-width: 900px;
+            margin: 20px auto;
+            background-color: white;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+
+        .section {
+            margin-bottom: 40px;
+        }
+
+        .section h2 {
+            color: #003366;
+            border-bottom: 3px solid #007acc;
+            padding-bottom: 0.7em;
+            margin-bottom: 0.8em;
+        }
+
+        footer {
+            text-align: center;
+            padding: 2em 0;
+            background-color: #003366;
+            color: white;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+
+        /* Dropdown Button Styling */
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: rgba(0, 122, 204, 0.9); /* Transparent version of nav color */
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+            border-radius: 5px;
+            opacity: 0;
+            transform: translateY(-10px);
+            transition: opacity 0.3s ease, transform 0.3s ease;
+        }
+
+        .dropdown-content a {
+            color: white;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+
+        .dropdown-content a:hover {
+            background-color: rgba(0, 86, 179, 0.7); /* Darker transparent hover */
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>AT&T Long Lines & Bell Labs</h1>
+        <p>A Closer Look at the Technology</p>
+    </header>
+
+    <nav>
+        <a href="index.html">Home</a> |
+        <div class="dropdown">
+            <a href="#">Tech & Inventions</a>
+            <div class="dropdown-content">
+                <a href="technology.html">Tech Overview</a>
+                <a href="transistor.html">The Transistor</a>
+                <a href="optical-maser.html">Lasers</a>
+                <a href="ccd.html">Digital Imaging (CCDs)</a>
+                <a href="photovoltaic-cell.html">Solar Power</a>
+                <a href="unix.html">UNIX</a>
+            </div>
+        </div> |
+        <a href="gallery.html">Cool Pictures</a> |
+        <a href="#discord">Join the Community</a>
+    </nav>
+
+    <main>
+        <section id="long-lines-tech" class="section">
+            <h2>The Backbone: Long Lines Technology</h2>
+            <p>Now, the AT&T Long Lines network... that was a real marvel of engineering. It relied on some seriously cool tech to send those signals across vast distances. Key among them? Microwave radio relay systems. Can you imagine, focused beams of radio waves carrying tons of calls and data!</p>
+            <p>And of course, these systems needed those tall towers, with their specialized antennas and electronic equipment to transmit and receive everything. They also used clever digital signal processing to make sure everything came through crystal clear.</p>
+        </section>
+
+        <section id="bell-labs-innovations" class="section">
+            <h2>Bell Labs: The Innovation Factory</h2>
+            <p>Bell Labs wasn't just a lab; it was an amazing place with so many groundbreaking things that changed the world. Let's take a peek at some of their biggest hits:</p>
+            <ul>
+                <li><b>The Transistor:</b> Replaced those old vacuum tubes, making electronics smaller and way more efficient. <a href="transistor.html">More on the Transistor</a></li>
+                <li><b>The UNIX Operating System:</b> A super influential OS that's still felt today. <a href="unix.html">More on UNIX</a></li>
+                <li><b>The Optical Maser:</b> The precursor to the laser, it was a groundbreaking way to generate and amplify light. <a href="optical-maser.html">More on Optical Masers</a></li>
+                <li><b>The Charge-Coupled Device (CCD):</b> This is what makes digital cameras and imaging possible! <a href="ccd.html">More on CCDs</a></li>
+                <li><b>Photovoltaic Cells:</b> And of course, they invented the first working solar cell. <a href="photovoltaic-cell.html">More on Solar Cells</a></li>
+            </ul>
+        </section>
+
+        <section id="modern-advancements" class="section">
+            <h2>The Legacy Today</h2>
+            <p>The impact of Long Lines and Bell Labs is still huge, even today. Fiber optic cables, which send data as light, are now the standard. And wireless tech keeps expanding, connecting even the most remote places. It all builds on that foundation.</p>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 AT&T Long Lines & Bell Labs Community. <small>Site by juler#5461. All rights reserved.</small></p>
+    </footer>
+</body>
+</html>
