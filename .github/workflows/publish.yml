@@ -20,4 +20,4 @@ jobs:
           accountId: 1b44092368a82ebafc4a45aeed84149f
           projectName: belllabs
           directory: /
-          gitHubToken: ${{ secrets.GITHUB_TOKEN }}
+          gitHubToken: ${{ secrets.GHUB_TOKEN }}
