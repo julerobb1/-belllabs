@@ -33,11 +33,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const img = document.createElement('img');
             img.src = image.src;
             img.alt = image.alt;
-            img.style.width = '45%';
-            img.style.marginBottom = '15px';
-            img.style.borderRadius = '8px';
-            img.style.boxShadow = '0 0 10px rgba(0, 0, 0, 0.1)';
-            img.style.transition = 'opacity 1s ease-in-out'; // Fade effect
+            img.classList.add('gallery-image'); // Add a class for styling and transitions
             img.setAttribute('draggable', false); // Prevent dragging
             img.setAttribute('oncontextmenu', 'return false;'); // Disable right-click menu
             return img;
@@ -49,17 +45,7 @@ document.addEventListener('DOMContentLoaded', () => {
             imageGallery.appendChild(imgElement);
         });
 
-        // Function to fade out an image
-        function fadeOut(element) {
-            element.style.opacity = 0;
-        }
-
-        // Function to fade in an image
-        function fadeIn(element) {
-            element.style.opacity = 1;
-        }
-
-        // Rotate images every 5 seconds
+        // Rotate images every 10 seconds (increased interval)
         setInterval(() => {
             // Select a random image to fade out
             const images = imageGallery.getElementsByTagName('img');
@@ -67,7 +53,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 const randomIndex = Math.floor(Math.random() * images.length);
                 const imageToFadeOut = images[randomIndex];
 
-                fadeOut(imageToFadeOut);
+                imageToFadeOut.classList.add('fade-out'); // Add fade-out class
 
                 // After fade out, replace with a new image and fade in
                 setTimeout(() => {
@@ -76,17 +62,47 @@ document.addEventListener('DOMContentLoaded', () => {
                     // Select a new random image (that is not already displayed)
                     let newImage;
                     do {
-                        newImage = images[Math.floor(Math.random() * images.length)];
+                        newImage = selectedImages[Math.floor(Math.random() * selectedImages.length)]; // Corrected line
                     } while (Array.from(images).includes(newImage));
 
                     if (newImage) {
                         const imgElement = createImageElement(newImage);
+                        imgElement.classList.add('fade-in'); // Add fade-in class
                         imageGallery.appendChild(imgElement);
-                        fadeIn(imgElement);
                     }
                 }, 1000); // Wait for the fade out
             }
-        }, 5000);
+        }, 10000);
+        /*
+        // Rotate images every 10 seconds (increased interval)
+        setInterval(() => {
+            // Select a random image to fade out
+            const images = imageGallery.getElementsByTagName('img');
+            if (images.length > 0) {
+                const randomIndex = Math.floor(Math.random() * images.length);
+                const imageToFadeOut = images[randomIndex];
+
+                // fadeOut(imageToFadeOut);
+
+                // After fade out, replace with a new image and fade in
+                setTimeout(() => {
+                    // imageGallery.removeChild(imageToFadeOut);
+
+                    // Select a new random image (that is not already displayed)
+                    let newImage;
+                    do {
+                        newImage = images[Math.floor(Math.random() * images.length)];
+                    } while (Array.from(images).includes(newImage));
+
+                    // if (newImage) {
+                    //     const imgElement = createImageElement(newImage);
+                    //     imageGallery.appendChild(imgElement);
+                    //     fadeIn(imgElement);
+                    // }
+                }, 1000); // Wait for the fade out
+            }
+        }, 10000);
+        */
     }
 
     loadDynamicGallery();

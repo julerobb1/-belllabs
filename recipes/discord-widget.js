@@ -1,5 +1,4 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // Discord Widget
     function loadDiscordWidget() {
         const discordWidget = document.getElementById('discord-widget');
         const discordServerId = '807000904397094913';
