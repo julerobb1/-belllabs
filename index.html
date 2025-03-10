@@ -330,8 +330,14 @@
         </section>
     </main>
     <footer>
-        <p>&copy; 2025 AT&T Long Lines & Bell Labs Community. <small>Site by juler#5461. All rights reserved.</small></p>
+        <p>&copy; <div id="year"></div> AT&T Long Lines & Bell Labs Community. <small>Site by juler#5461. All rights reserved.</small></p>
     </footer>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const currentYear = new Date().getFullYear();
+            document.querySelector('#year').textContent = currentYear;
+        });
+    </script>
     <script>
         let slideIndex = 1;
         showSlides(slideIndex);

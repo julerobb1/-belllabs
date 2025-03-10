@@ -61,7 +61,13 @@
     </main>
 
     <footer>
-        <p>&copy; 2023 AT&T Long Lines & Bell Labs Community. <small>Site by juler#5461. All rights reserved.</small></p>
+        <p>&copy; <div id="year"></div> AT&T Long Lines & Bell Labs Community. <small>Site by juler#5461. All rights reserved.</small></p>
     </footer>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const currentYear = new Date().getFullYear();
+            document.querySelector('#year').textContent = currentYear;
+        });
+      </script>
 </body>
 </html>
