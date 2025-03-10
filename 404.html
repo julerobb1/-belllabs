@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>404 - Page Not Found</title>
-    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="img/favicon.ico" type="image/x-icon">
     <style>
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -55,13 +55,19 @@
     </header>
 
     <main>
-        <img src="images/bell-labs-logo.png" alt="Bell Labs Logo">
+        <img src="img/bell-labs-logo.png" alt="Bell Labs Logo">
         <p>We're sorry, but the page you requested could not be found. It may have been moved, renamed, or does not exist.</p>
         <p>Perhaps you were looking for something groundbreaking? While this page isn't it, feel free to explore our <a href="index.html">homepage</a> for more innovations.</p>
     </main>
 
     <footer>
-        <p>&copy; 2023 AT&T Long Lines & Bell Labs Community. <small>Site by juler#5461. All rights reserved.</small></p>
+        <p>&copy; <span id="year"></span> AT&T Long Lines & Bell Labs Community. <small>Site by juler#5461. All rights reserved.</small></p>
     </footer>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const currentYear = new Date().getFullYear();
+            document.querySelector('#year').textContent = currentYear;
+        });
+      </script>
 </body>
 </html>
