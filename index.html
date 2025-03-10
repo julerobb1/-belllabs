@@ -6,26 +6,38 @@
     <title>AT&T Long Lines & Bell Labs - Innovations in Communication</title>
     <link rel="icon" href="img/favicon.ico" type="image/x-icon">
     <style>
+        /* CSS Variables for Theme */
+        :root {
+            --bg-color: #f9f9f9;
+            --text-color: #333;
+            --header-bg-color: #003366;
+            --nav-bg-color: #007acc;
+            --nav-hover-color: #0056b3;
+            --main-bg-color: white;
+            --box-shadow-color: rgba(0, 0, 0, 0.1);
+        }
+
         /* General Styles */
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f9f9f9;
-            color: #333;
+            background-color: var(--bg-color);
+            color: var(--text-color);
             line-height: 1.7;
+            transition: background-color 0.3s ease, color 0.3s ease;
         }
 
         /* Header and Navigation */
         header {
-            background-color: #003366;
+            background-color: var(--header-bg-color);
             color: white;
             text-align: center;
             padding: 2em 0;
         }
 
         nav {
-            background-color: #007acc;
+            background-color: var(--nav-bg-color);
             color: white;
             padding: 0.7em 0;
             text-align: center;
@@ -41,7 +53,7 @@
         }
 
         nav a:hover {
-            background-color: #0056b3;
+            background-color: var(--nav-hover-color);
         }
 
         /* Dropdown Button Styling */
@@ -85,9 +97,10 @@
             padding: 30px;
             max-width: 900px;
             margin: 20px auto;
-            background-color: white;
-            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            background-color: var(--main-bg-color);
+            box-shadow: 0 0 20px var(--box-shadow-color);
             border-radius: 8px;
+            transition: background-color 0.3s ease, box-shadow 0.3s ease;
         }
 
         .hero-image {
@@ -244,9 +257,34 @@
             bottom: 0;
             width: 100%;
         }
+
+        /* Dark Theme Styles */
+        body.dark-theme {
+            --bg-color: #121212;
+            --text-color: #eee;
+            --header-bg-color: #333;
+            --nav-bg-color: #444;
+            --nav-hover-color: #555;
+            --main-bg-color: #222;
+            --box-shadow-color: rgba(255, 255, 255, 0.1);
+        }
+        /* Theme Toggle Button */
+        .theme-toggle {
+            background-color: #555;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            cursor: pointer;
+            border-radius: 5px;
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 1000;
+        }
     </style>
 </head>
 <body>
+    <button class="theme-toggle" id="theme-toggle">Toggle Dark Theme</button>
     <header>
         <h1>AT&T Long Lines & Bell Labs</h1>
         <p>Pioneering Innovations in Telecommunications</p>
@@ -367,64 +405,107 @@
     </script>
     <script>
         document.addEventListener('DOMContentLoaded', () => {
+            // Theme Toggle
+            const themeToggle = document.getElementById('theme-toggle');
+            themeToggle.addEventListener('click', () => {
+                document.body.classList.toggle('dark-theme');
+            });
             // Dynamic Gallery Script
             function loadDynamicGallery() {
                 const imageGallery = document.getElementById('dynamic-gallery');
                 const images = [
-                    { src: 'img/gallery/image1.jpg', alt: 'Image 1', added: new Date(2023, 0, 1) },
-                    { src: 'img/gallery/image2.jpg', alt: 'Image 2', added: new Date(2023, 0, 2) },
-                    { src: 'img/gallery/image3.jpg', alt: 'Image 3', added: new Date(2023, 0, 3) },
-                    { src: 'img/gallery/image4.jpg', alt: 'Image 4', added: new Date(2023, 0, 4) },
-                    { src: 'img/gallery/image5.jpg', alt: 'Image 5', added: new Date(2023, 0, 5) },
-                    { src: 'img/gallery/image6.jpg', alt: 'Image 6', added: new Date(2023, 0, 6) },
-                    { src: 'img/gallery/image7.jpg', alt: 'Image 7', added: new Date(2023, 0, 7) },
-                    { src: 'img/gallery/image8.jpg', alt: 'Image 8', added: new Date(2023, 0, 8) },
-                    { src: 'img/gallery/image9.jpg', alt: 'Image 9', added: new Date(2023, 0, 9) },
-                    { src: 'img/gallery/image10.jpg', alt: 'Image 10', added: new Date(2023, 0, 10) },
-                    { src: 'img/gallery/image11.jpg', alt: 'Image 11', added: new Date(2023, 0, 11) },
-                    { src: 'img/gallery/image12.jpg', alt: 'Image 12', added: new Date(2023, 0, 12) },
-                    { src: 'img/ll1.jpg', alt: 'AT&T Long Lines Facility', added: new Date(2023, 0, 1) },
-                    { src: 'img/transistor.jpg', alt: 'Transistor at Bell Labs', added: new Date(2023, 0, 2) },
-                    { src: 'img/bell-labs-interior.jpg', alt: 'Bell Labs Interior', added: new Date(2023, 0, 3) },
-                    { src: 'img/bell-labs-view.jpg', alt: 'Another Bell Labs View', added: new Date(2023, 0, 4) },
-                    { src: 'img/long-lines-facility.jpg', alt: 'Long Lines Facility', added: new Date(2023, 0, 5) },
-                    { src: 'img/long-lines-horn1.jpg', alt: 'Long Lines Horn', added: new Date(2023, 0, 6) }
+                    { src: 'img/gallery/20250304_145429.jpg', alt: 'AT&T Long Lines Horn', added: new Date(2025, 0, 1) },
+                    { src: 'img/gallery/20250304_145346.jpg', alt: 'Horn on its side', added: new Date(2025, 0, 2) },
+                    { src: 'img/gallery/20250309_172527.jpg', alt: 'Tower', added: new Date(2025, 0, 3) },
+                    { src: 'img/gallery/dhtspll1_far.jpg', alt: 'Another Tower from afar', added: new Date(2025, 0, 4) },
+                    { src: 'img/gallery/dhtspll_out.jpg', alt: 'An outbuilding at a tower site', added: new Date(2025, 0, 5) },
+                    { src: 'img/gallery/dhtspll_vents1.jpg', alt: 'large vents on the side of a building', added: new Date(2025, 0, 6) },l_vents1.jpg', alt: 'large vents on the side of a building', added: new Date(2025, 0, 6) },
+                    { src: 'img/gallery/dhtspll_Reflector_HI.jpg', alt: 'Hi-res image of KS reflector antenna', added: new Date(2025, 0, 7) },   { src: 'img/gallery/dhtspll_Reflector_HI.jpg', alt: 'Hi-res image of KS reflector antenna', added: new Date(2025, 0, 7) },
+                    { src: 'img/gallery/dhtspll2.jpg', alt: 'Other image of tower next to a building', added: new Date(2025, 0, 8) },                    { src: 'img/gallery/dhtspll2.jpg', alt: 'Other image of tower next to a building', added: new Date(2025, 0, 8) },
+                    { src: 'img/gallery/dhtspll3.jpg', alt: 'Another tower', added: new Date(2025, 0, 9) },3.jpg', alt: 'Another tower', added: new Date(2025, 0, 9) },
+                    { src: 'img/gallery/dhtspll_base.jpg', alt: 'Tower base', added: new Date(2025, 0, 10) },tspll_base.jpg', alt: 'Tower base', added: new Date(2025, 0, 10) },
+                    { src: 'img/ll1.jpg', alt: 'AT&T Long Lines Facility', added: new Date(2025, 0, 11) }, 'AT&T Long Lines Facility', added: new Date(2025, 0, 11) },
+                    { src: 'img/transistor.jpg', alt: 'Transistor at Bell Labs', added: new Date(2025, 0, 12) },   { src: 'img/transistor.jpg', alt: 'Transistor at Bell Labs', added: new Date(2025, 0, 12) },
+                    { src: 'img/long-lines-facility.jpg', alt: 'Long Lines Facility', added: new Date(2025, 0, 13) }                    { src: 'img/long-lines-facility.jpg', alt: 'Long Lines Facility', added: new Date(2025, 0, 13) }
                 ];
 
                 // Exclude map images and favicon
-                const excludedImages = ['img/map1.jpg', 'img/map2.jpg', 'img/favicon.ico'];
-                const filteredImages = images.filter(image => !excludedImages.includes(image.src));
+                const excludedImages = ['img/map1.jpg', 'img/map2.jpg', 'img/favicon.ico'];/favicon.ico'];
+                const filteredImages = images.filter(image => !excludedImages.includes(image.src));s.filter(image => !excludedImages.includes(image.src));
 
                 // Sort images by added date (most recent first)
-                filteredImages.sort((a, b) => b.added - a.added);
+                filteredImages.sort((a, b) => b.added - a.added);                filteredImages.sort((a, b) => b.added - a.added);
 
-                // Select the first 4 images
+                // Select the first 4 images                // Select the first 4 images
                 const selectedImages = filteredImages.slice(0, 4);
 
                 // Function to create an image element
-                function createImageElement(image) {
+                function createImageElement(image) {                function createImageElement(image) {
                     const img = document.createElement('img');
                     img.src = image.src;
-                    img.alt = image.alt;
+                    img.alt = image.alt;age.alt;
                     img.style.width = '45%';
                     img.style.marginBottom = '15px';
-                    img.style.borderRadius = '8px';
-                    img.style.boxShadow = '0 0 10px rgba(0, 0, 0, 0.1)';
-                    img.style.transition = 'opacity 1s ease-in-out'; // Fade effect
-                    img.setAttribute('draggable', false); // Prevent dragging
-                    img.setAttribute('oncontextmenu', 'return false;'); // Disable right-click menu
-                    return img;
+                    img.style.borderRadius = '8px';                    img.style.borderRadius = '8px';
+                    img.style.boxShadow = '0 0 10px rgba(0, 0, 0, 0.1)';0 0 10px rgba(0, 0, 0, 0.1)';
+                    img.style.transition = 'opacity 1s ease-in-out'; // Fade effectect
+                    img.setAttribute('draggable', false); // Prevent draggingdragging
+                    img.setAttribute('oncontextmenu', 'return false;'); // Disable right-click menu', 'return false;'); // Disable right-click menu
+                    return img;g;
                 }
 
-                // Initial load of images
-                selectedImages.forEach(image => {
-                    const imgElement = createImageElement(image);
-                    imageGallery.appendChild(imgElement);
-                });
+                // Initial load of imagesl load of images
+                selectedImages.forEach(image => {   selectedImages.forEach(image => {
+                    const imgElement = createImageElement(image);                    const imgElement = createImageElement(image);
+                    imageGallery.appendChild(imgElement);appendChild(imgElement);
+                });     });
 
-                // Function to fade out an image
-                function fadeOut(element) {
-                    element.style.opacity = 0;
+                // Function to fade out an image         // Function to fade out an image
+                function fadeOut(element) {         function fadeOut(element) {
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</html></body>    </script>        });            loadDynamicGallery();            }                }, 5000);                    }                        }, 1000); // Wait for the fade out                            }                                fadeIn(imgElement);                                imageGallery.appendChild(imgElement);                                const imgElement = createImageElement(newImage);                            if (newImage) {                            } while (Array.from(images).includes(newImage));                                newImage = images[Math.floor(Math.random() * images.length)];                            do {                            let newImage;                            // Select a new random image (that is not already displayed)                            imageGallery.removeChild(imageToFadeOut);                        setTimeout(() => {                        // After fade out, replace with a new image and fade in                        fadeOut(imageToFadeOut);                        const imageToFadeOut = images[randomIndex];                        const randomIndex = Math.floor(Math.random() * images.length);                    if (images.length > 0) {                    const images = imageGallery.getElementsByTagName('img');                    // Select a random image to fade out                setInterval(() => {                // Rotate images every 5 seconds                }                    element.style.opacity = 1;                function fadeIn(element) {                // Function to fade in an image                }                    element.style.opacity = 0;                    element.style.opacity = 0;
                 }
 
                 // Function to fade in an image
