@@ -1,0 +1,12 @@
+img/ - Contains images for the website.
+recipes/app.js - Contains general application logic, such as the year update in the footer.
+recipes/operation_phoenix.js - Contains the theme toggle, dynamic gallery, and Discord widget functionality.
+index.html - The main page of the website.
+404.html - The 404 error page.
+technology.html - Page about the technologies used in AT&T Long Lines and Bell Labs innovations.
+transistor.html - Page dedicated to the transistor invention.
+optical-maser.html - Page dedicated to the optical maser (laser) invention.
+ccd.html - Page dedicated to the charge-coupled device (CCD) invention.
+photovoltaic-cell.html - Page dedicated to the photovoltaic cell (solar power) invention.
+unix.html - Page dedicated to the UNIX operating system.
+gallery.html - The full image gallery page.
