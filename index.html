@@ -5,6 +5,36 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AT&T Long Lines & Bell Labs - Innovations in Communication</title>
     <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+    
+    <script>
+        let slideIndex = 1;
+        showSlides(slideIndex);
+
+        function plusSlides(n) {
+            showSlides(slideIndex += n);
+        }
+
+        function currentSlide(n) {
+            showSlides(slideIndex = n);
+        }
+
+        function showSlides(n) {
+            let i;
+            let slides = document.getElementsByClassName("mySlides");
+            let dots = document.getElementsByClassName("dot");
+            if (n > slides.length) { slideIndex = 1 }
+            if (n < 1) { slideIndex = slides.length }
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            for (i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.replace(" active", "");
+            }
+            slides[slideIndex - 1].style.display = "block";
+            dots[slideIndex - 1].className += " active";
+        }
+    </script>
+
     <style>
         /* General Styles */
         body {
@@ -299,66 +329,45 @@
         <section id="history" class="section">
             <h2>History of AT&T Long Lines</h2>
             <p>The AT&T Long Lines was a network of communications lines, initially consisting of telephone lines, that were owned and operated by AT&T. It played a pivotal role in long-distance communication in the United States throughout the 20th century.</p>
-            <p>This network not only facilitated telephone calls but also supported television broadcasting, data transmission, and various other forms of communication. Its development marked a significant engineering milestone, involving the construction of numerous repeater stations and the application of cutting-edge technologies.</p>
-            <a href="404.html">Learn More about Bell Lab's History Here</a>
-        </section>
+            <p>This network not only facilitated telephone calls but also supported television broadcasting, data transmission, and various other forms of communication. Its development marked a significant engineering milestone, involving the construction of numerous repeater stations and the application of cutting-edge technologies.</p>  <img src="images/ll1.jpg" style="width:100%" alt="AT&T Long Lines Facility">
+            <a href="404.html">Learn More about Bell Lab's History Here</a>    <div class="text">AT&T Long Lines Facility</div>
+        </section>            </div>
 
         <section id="technology" class="section">
             <h2>Technology Behind Long Lines</h2>
             <p>The Long Lines network utilized a range of technologies, including microwave radio relay systems and coaxial cables, enabling the transmission of signals over vast distances with minimal signal degradation.</p>
-            <p>Essential components included repeater stations, which amplified signals to maintain their strength, and switching centers, which directed calls to their intended destinations. The network continually evolved, integrating new technologies like fiber optics to enhance capacity and improve overall performance.</p>
+            <p>Essential components included repeater stations, which amplified signals to maintain their strength, and switching centers, which directed calls to their intended destinations. The network continually evolved, integrating new technologies like fiber optics to enhance capacity and improve overall performance.</p>        </div>
             <a href="404.html">Learn More about the fascinating tech here</a> 
         </section>
 
+            <span class="dot" onclick="currentSlide(1)"></span>
+            <span class="dot" onclick="currentSlide(2)"></span>
+            <span class="dot" onclick="currentSlide(3)"></span>l Labs, formerly known as Bell Telephone Laboratories, was the research and development arm of AT&T. It is renowned for its groundbreaking contributions to science and technology.</p>
+        </div>            <p>Bell Labs researchers and engineers invented the transistor, the laser, the photovoltaic cell, the charge-coupled device (CCD), information theory, the Unix operating system, and the C programming language, among other things. Eight Nobel Prizes have been awarded for work completed at Bell Laboratories.</p>
+
+        <section id="history" class="section">
+            <h2>History of AT&T Long Lines</h2>
+            <p>The AT&T Long Lines was a network of communications lines, initially consisting of telephone lines, that were owned and operated by AT&T. It played a pivotal role in long-distance communication in the United States throughout the 20th century.</p>
+            <p>This network not only facilitated telephone calls but also supported television broadcasting, data transmission, and various other forms of communication. Its development marked a significant engineering milestone, involving the construction of numerous repeater stations and the application of cutting-edge technologies.</p>
+            <a href="404.html">Learn More about Bell Lab's History Here</a>mg src="images/transistor.jpg" alt="Transistor at Bell Labs">
+        </section>            </div>
+ facilities, Bell Labs, and related equipment. <a href="gallery.html">View Full Gallery</a></p>
+        <section id="technology" class="section">
+            <h2>Technology Behind Long Lines</h2>
+            <p>The Long Lines network utilized a range of technologies, including microwave radio relay systems and coaxial cables, enabling the transmission of signals over vast distances with minimal signal degradation.</p>
+            <p>Essential components included repeater stations, which amplified signals to maintain their strength, and switching centers, which directed calls to their intended destinations. The network continually evolved, integrating new technologies like fiber optics to enhance capacity and improve overall performance.</p>nect with fellow enthusiasts of AT&T Long Lines and Bell Labs on our Discord server!</p>
+            <a href="404.html">Learn More about the fascinating tech here</a> hF6Q" style="background-color: #7289da; color: white; padding: 12px 24px; text-decoration: none; border-radius: 6px; display: inline-block;" target="_blank">Join the Discord Server</a>
+        </section>
+
         <section id="bell-labs" class="section">
-            <h2>Bell Labs: The Innovation Hub</h2>
-            <p>Bell Labs, formerly known as Bell Telephone Laboratories, was the research and development arm of AT&T. It is renowned for its groundbreaking contributions to science and technology.</p>
+            <h2>Bell Labs: The Innovation Hub</h2>ler#5461. All rights reserved.</small></p>
+            <p>Bell Labs, formerly known as Bell Telephone Laboratories, was the research and development arm of AT&T. It is renowned for its groundbreaking contributions to science and technology.</p>y>
             <p>Bell Labs researchers and engineers invented the transistor, the laser, the photovoltaic cell, the charge-coupled device (CCD), information theory, the Unix operating system, and the C programming language, among other things. Eight Nobel Prizes have been awarded for work completed at Bell Laboratories.</p>
-        </section>
-        <section id="gallery" class="section">
-            <h2>Gallery</h2>
-            <div class="image-gallery">
-                <img src="images/ll1.jpg" alt="AT&T Long Lines Facility">
-                <img src="images/transistor.jpg" alt="Transistor at Bell Labs">
-            </div>
-            <p>Explore images of AT&T Long Lines facilities, Bell Labs, and related equipment. <a href="gallery.html">View Full Gallery</a></p>
-        </section>
-        <section id="discord" class="section">
-            <h2>Join Our Discord Server</h2>
-            <p>Connect with fellow enthusiasts of AT&T Long Lines and Bell Labs on our Discord server!</p>
+        </section>        <section id="gallery" class="section">            <h2>Gallery</h2>            <div class="image-gallery">                <img src="images/ll1.jpg" alt="AT&T Long Lines Facility">                <img src="images/transistor.jpg" alt="Transistor at Bell Labs">            </div>            <p>Explore images of AT&T Long Lines facilities, Bell Labs, and related equipment. <a href="gallery.html">View Full Gallery</a></p>        </section>        <section id="discord" class="section">            <h2>Join Our Discord Server</h2>            <p>Connect with fellow enthusiasts of AT&T Long Lines and Bell Labs on our Discord server!</p>
             <a href="https://discord.gg/k7kzGPhF6Q" style="background-color: #7289da; color: white; padding: 12px 24px; text-decoration: none; border-radius: 6px; display: inline-block;" target="_blank">Join the Discord Server</a>
         </section>
     </main>
     <footer>
         <p>&copy; 2025 AT&T Long Lines & Bell Labs Community. <small>Site by juler#5461. All rights reserved.</small></p>
-    </footer>
-    <script>
-        let slideIndex = 1;
-        showSlides(slideIndex);
-
-        function plusSlides(n) {
-            showSlides(slideIndex += n);
-        }
-
-        function currentSlide(n) {
-            showSlides(slideIndex = n);
-        }
-
-        function showSlides(n) {
-            let i;
-            let slides = document.getElementsByClassName("mySlides");
-            let dots = document.getElementsByClassName("dot");
-            if (n > slides.length) {slideIndex = 1}
-            if (n < 1) {slideIndex = slides.length}
-            for (i = 0; i < slides.length; i++) {
-                slides[i].style.display = "none";
-            }
-            for (i = 0; i < dots.length; i++) {
-                dots[i].className = dots[i].className.replace(" active", "");
-            }
-            slides[slideIndex-1].style.display = "block";
-            dots[slideIndex-1].className += " active";
-        }
-    </script>
-</body>
+    </footer></body>
 </html>
