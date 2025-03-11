@@ -308,12 +308,56 @@
             height: 100%;
         }
     </style>
+    <style>
+        /* Hide on phones */
+        @media (max-width: 767px) {
+            #discord-widget {
+                display: none;
+            }
+        }
+
+        /* Tablet styles (adjust max-width as needed) */
+        @media (min-width: 768px) and (max-width: 1024px) {
+            #discord-widget {
+                width: 250px;
+                height: 350px;
+                bottom: 10px;
+                left: 10px;
+            }
+
+            #discord-widget.collapsed {
+                height: 30px;
+            }
+
+            #discord-widget.collapsed iframe {
+                display: none;
+            }
+
+            #discord-widget .collapse-button {
+                position: absolute;
+                top: 5px;
+                right: 5px;
+                background-color: rgba(0, 0, 0, 0.5);
+                color: white;
+                border: none;
+                padding: 3px 5px;
+                cursor: pointer;
+                border-radius: 3px;
+            }
+        }
+
+        /* Desktop responsiveness */
+        @media (min-width: 1025px) and (max-width: 1200px) {
+            #discord-widget {
+                /* Adjust position/size to avoid map overlap */
+                bottom: 10px;
+                left: 10px;
+            }
+        }
+    </style>
 </head>
 <body>
     <button class="theme-toggle" id="theme-toggle">Toggle Dark Theme</button>
-    <div id="discord-widget">
-        <!-- Discord widget will be loaded here -->
-    </div>
     <header>
         <h1>AT&T Long Lines & Bell Labs</h1>
         <p>Pioneering Innovations in Telecommunications</p>
@@ -366,21 +410,22 @@
             <h2>History of AT&T Long Lines</h2>
             <p>The AT&T Long Lines was a network of communications lines, initially consisting of telephone lines, that were owned and operated by AT&T. It played a pivotal role in long-distance communication in the United States throughout the 20th century.</p>
             <p>This network not only facilitated telephone calls but also supported television broadcasting, data transmission, and various other forms of communication. Its development marked a significant engineering milestone, involving the construction of numerous repeater stations and the application of cutting-edge technologies.</p>
-            <a href="404.html" rel="noreferrer">Learn More about Bell Lab's History Here</a>
+            <a href="history-att-longlines.html" rel="noreferrer">Learn More about Bell Lab's History Here</a>
         </section>
 
         <section id="technology" class="section">
             <h2>Technology Behind Long Lines</h2>
             <p>The Long Lines network utilized a range of technologies, including microwave radio relay systems and coaxial cables, enabling the transmission of signals over vast distances with minimal signal degradation.</p>
             <p>Essential components included repeater stations, which amplified signals to maintain their strength, and switching centers, which directed calls to their intended destinations. The network continually evolved, integrating new technologies like fiber optics to enhance capacity and improve overall performance.</p>
-            <a href="404.html" rel="noreferrer">Learn More about the fascinating tech here</a> 
+            <a href="404.html" rel="noreferrer">Learn More about the fascinating tech here</a>
         </section>
 
         <section id="bell-labs" class="section">
             <h2>Bell Labs: The Innovation Hub</h2>
             <p>Bell Labs, formerly known as Bell Telephone Laboratories, was the research and development arm of AT&T. It is renowned for its groundbreaking contributions to science and technology.</p>
-            <p>Bell Labs researchers and engineers invented the transistor, the laser, the photovoltaic cell, the charge-coupled device (CCD), information theory, the Unix operating system, and the C programming language, among other things. Eight Nobel Prizes have been awarded for work completed at Bell Laboratories.</p>
+            <p>Bell Labs researchers and engineers invented the transistor, the laser, the photovoltaic cell, the charge-coupled device (CCD), information theory, the Unix operating system, and the C programming language, among other things. Eight Nobel Prizes have been awarded for work completed at Bell Laboratories.</p> Learn more about the innovations at Bell Labs <a href="404.html" rel="noreferrer"></a>here</a>.>here</a>.
         </section>
+
         <section id="gallery" class="section">
             <h2>Gallery</h2>
             <div class="image-gallery" id="dynamic-gallery">
@@ -389,8 +434,8 @@
             <p>Explore images of AT&T Long Lines facilities, Bell Labs, and related equipment. <a href="gallery.html" rel="noreferrer">View Full Gallery</a></p>
             <!-- Submit photos you would like in the gallery to the discord server for a chance to have them featured! -->
         </section>
-        <!--
-        <section id="contact" class="section">
+
+        <!-- <section id="contact" class="section">
             <h2>Contact Us</h2>
             <p>Have questions or feedback? Reach out to us!</p>
             <form action="#" method="post">
@@ -401,18 +446,37 @@
                 <label for="message">Message:</label><br>
                 <textarea id="message" name="message" rows="4" cols="50"></textarea><br><br>
                 <input type="submit" value="Submit">
-            </form>
+            </form> -->
         </section>
-        -->
     </main>
+
     <footer>
-        <p>&copy; <span id="year"></span> AT&T Long Lines & Bell Labs Community. <small>Site by juler#5461. All rights reserved.</small></p>
         <p><small>We frequently review our code to ensure we remain a privacy-first, tracker-free site.</small></p>
-        <!-- <p><a href="#contact">Contact Us</a></p> -->
+        <p>&copy; <span id="year"></span> AT&T Long Lines & Bell Labs Community. <small>Site by juler#5461. All rights reserved.</small></p>
     </footer>
-    <script src="recipes/app.js"></script>
-    <script src="recipes/theme-toggle.js"></script>
-    <script src="recipes/dynamic-gallery.js"></script>
-    <script src="recipes/discord-widget.js"></script>
+
+    <div id="discord-widget">
+        <!-- Discord widget will be loaded here -->
+    </div>
+
+    <script src="recipes/app.js" defer></script>
+    <script src="recipes/theme-toggle.js" defer></script>
+    <script src="recipes/dynamic-gallery.js" defer></script>
+    <script src="recipes/discord-widget.js" defer></script>
+    <script>
+        // Tablet collapse functionality
+        if (window.matchMedia("(min-width: 768px) and (max-width: 1024px)").matches) {
+            const discordWidget = document.getElementById('discord-widget');
+            const collapseButton = document.createElement('button');
+            collapseButton.classList.add('collapse-button');
+            collapseButton.textContent = '-';
+            discordWidget.appendChild(collapseButton);
+
+            collapseButton.addEventListener('click', () => {
+                discordWidget.classList.toggle('collapsed');
+                collapseButton.textContent = discordWidget.classList.contains('collapsed') ? '+' : '-';
+            });
+        }
+    </script>
 </body>
 </html>

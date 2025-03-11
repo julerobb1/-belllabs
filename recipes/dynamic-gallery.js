@@ -45,6 +45,27 @@ document.addEventListener('DOMContentLoaded', () => {
             imageGallery.appendChild(imgElement);
         });
 
+        let imageIndex = 0;
+        let randomIndices = [];
+
+        function shuffleArray(array) {
+            for (let i = array.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [array[i], array[j]] = [array[j], array[i]];
+            }
+        }
+
+        function getRandomImage(currentImages) {
+            if (randomIndices.length === 0) {
+                randomIndices = Array.from({ length: selectedImages.length }, (_, i) => i);
+                shuffleArray(randomIndices);
+                imageIndex = 0;
+            }
+            let index = randomIndices[imageIndex % randomIndices.length];
+            imageIndex++;
+            return selectedImages[index];
+        }
+
         // Rotate images every 10 seconds (increased interval)
         setInterval(() => {
             // Select a random image to fade out
@@ -62,8 +83,8 @@ document.addEventListener('DOMContentLoaded', () => {
                     // Select a new random image (that is not already displayed)
                     let newImage;
                     do {
-                        newImage = selectedImages[Math.floor(Math.random() * selectedImages.length)]; // Corrected line
-                    } while (Array.from(images).includes(newImage));
+                        newImage = getRandomImage(selectedImages);
+                    } while (Array.from(images).find(img => img.src === newImage.src));
 
                     if (newImage) {
                         const imgElement = createImageElement(newImage);
@@ -73,36 +94,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 }, 1000); // Wait for the fade out
             }
         }, 10000);
-        /*
-        // Rotate images every 10 seconds (increased interval)
-        setInterval(() => {
-            // Select a random image to fade out
-            const images = imageGallery.getElementsByTagName('img');
-            if (images.length > 0) {
-                const randomIndex = Math.floor(Math.random() * images.length);
-                const imageToFadeOut = images[randomIndex];
-
-                // fadeOut(imageToFadeOut);
-
-                // After fade out, replace with a new image and fade in
-                setTimeout(() => {
-                    // imageGallery.removeChild(imageToFadeOut);
-
-                    // Select a new random image (that is not already displayed)
-                    let newImage;
-                    do {
-                        newImage = images[Math.floor(Math.random() * images.length)];
-                    } while (Array.from(images).includes(newImage));
-
-                    // if (newImage) {
-                    //     const imgElement = createImageElement(newImage);
-                    //     imageGallery.appendChild(imgElement);
-                    //     fadeIn(imgElement);
-                    // }
-                }, 1000); // Wait for the fade out
-            }
-        }, 10000);
-        */
     }
 
     loadDynamicGallery();
