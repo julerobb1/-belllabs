@@ -151,28 +151,28 @@
         }
 
         /* Slideshow container */
-        .slideshow-container {px) {
-            main {dth: 1000px;
-                padding: 20px;;
-            }argin: auto;
-            .hero-image {
-                height: 300px;
-            }de the images by default */
-            .image-gallery img {
-                width: 100%;
-            }
-        }
-        /* Next & previous buttons */
-        /* Footer */ {
-        footer {or: pointer;
-            background-color: #003366;
-            color: white;
-            text-align: center;
-            padding: 2em 0;px;
+        .slideshow-container {
+            max-width: 1000px;
             position: relative;
-            bottom: 0;te;
-            width: 100%; bold;
-        }   font-size: 18px;
+            margin: auto;
+        }
+
+        /* Hide the images by default */
+        .mySlides {
+            display: none;
+        }
+
+        /* Next & previous buttons */
+        .prev, .next {
+            cursor: pointer;
+            position: absolute;
+            top: 50%;
+            width: auto;
+            margin-top: -22px;
+            padding: 16px;
+            color: white;
+            font-weight: bold;
+            font-size: 18px;
             transition: 0.6s ease;
             border-radius: 0 3px 3px 0;
             user-select: none;
@@ -243,7 +243,8 @@
             to {opacity: 1}
         }
 
-        @media (max-width: 767px) {
+        /* Responsive Design */
+        @media (max-width: 768px) {
             main {
                 padding: 20px;
             }
@@ -303,8 +304,8 @@
         }
 
         #discord-widget iframe {
-            width: 100%;iv class="text">The sprawling AT&T Long Lines Network</div>
-            height: 100%;            </div>
+            width: 100%;
+            height: 100%;
         }
     </style>
     <style>
@@ -312,198 +313,168 @@
         @media (max-width: 767px) {
             #discord-widget {
                 display: none;
-            }-1)">&#10094;</a>
-        }">&#10095;</a>
+            }
+        }
 
         /* Tablet styles (adjust max-width as needed) */
         @media (min-width: 768px) and (max-width: 1024px) {
-            #discord-widget {        <div style="text-align:center">
-                width: 250px;Slide(1)"></span>
-                height: 350px;" onclick="currentSlide(2)"></span>
+            #discord-widget {
+                width: 250px;
+                height: 350px;
                 bottom: 10px;
                 left: 10px;
-            }d="history" class="section">
+            }
 
-            #discord-widget.collapsed {re owned and operated by AT&T. It played a pivotal role in long-distance communication in the United States throughout the 20th century.</p>
-                height: 30px;s network not only facilitated telephone calls but also supported television broadcasting, data transmission, and various other forms of communication. Its development marked a significant engineering milestone, involving the construction of numerous repeater stations and the application of cutting-edge technologies.</p>
-            }            <a href="history-att-longlines.html" rel="noreferrer">Learn More about Bell Lab's History Here</a>
+            #discord-widget.collapsed {
+                height: 30px;
+            }
 
             #discord-widget.collapsed iframe {
                 display: none;
-            }s</h2>
-nge of technologies, including microwave radio relay systems and coaxial cables, enabling the transmission of signals over vast distances with minimal signal degradation.</p>
-            #discord-widget .collapse-button {hich amplified signals to maintain their strength, and switching centers, which directed calls to their intended destinations. The network continually evolved, integrating new technologies like fiber optics to enhance capacity and improve overall performance.</p>
-                position: absolute;">Learn More about the fascinating tech here</a>
+            }
+
+            #discord-widget .collapse-button {
+                position: absolute;
                 top: 5px;
                 right: 5px;
                 background-color: rgba(0, 0, 0, 0.5);
                 color: white;
-                border: none;s, formerly known as Bell Telephone Laboratories, was the research and development arm of AT&T. It is renowned for its groundbreaking contributions to science and technology.</p>
-                padding: 3px 5px;l Labs researchers and engineers invented the transistor, the laser, the photovoltaic cell, the charge-coupled device (CCD), information theory, the Unix operating system, and the C programming language, among other things. Eight Nobel Prizes have been awarded for work completed at Bell Laboratories.</p> Learn more about the innovations at Bell Labs <a href="history-bell-labs.html" rel="noreferrer">here</a>.
-                cursor: pointer;ection>
+                border: none;
+                padding: 3px 5px;
+                cursor: pointer;
                 border-radius: 3px;
-            }tion id="gallery" class="section">
+            }
         }
 
-        /* Desktop responsiveness */   <!-- Images will be dynamically added here -->
-        @media (min-width: 1025px) and (max-width: 1200px) {            </div>
-            #discord-widget { of AT&T Long Lines facilities, Bell Labs, and related equipment. <a href="gallery.html" rel="noreferrer">View Full Gallery</a></p>
-                /* Adjust position/size to avoid map overlap */e gallery to the discord server for a chance to have them featured! -->
-                bottom: 10px;section>
+        /* Desktop responsiveness */
+        @media (min-width: 1025px) and (max-width: 1200px) {
+            #discord-widget {
+                /* Adjust position/size to avoid map overlap */
+                bottom: 10px;
                 left: 10px;
-            } <section id="contact" class="section">
+            }
         }
-each out to us!</p>
+
         .image-gallery img {
             width: 45%;
-            margin-bottom: 15px;><br>
-            border-radius: 8px;bel><br>
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);mail"><br><br>
-            transition: transform 0.3s ease, opacity 1s ease;                <label for="message">Message:</label><br>
-            opacity: 1;4" cols="50"></textarea><br><br>
+            margin-bottom: 15px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, opacity 1s ease;
+            opacity: 1;
         }
     </style>
-</head>on>
-<body>n>
+</head>
+<body>
     <button class="theme-toggle" id="theme-toggle">Toggle Dark Theme</button>
     <header>
-        <h1>AT&T Long Lines & Bell Labs</h1> remain a privacy-first, tracker-free site.</small></p>
-        <p>Pioneering Innovations in Telecommunications</p> & Bell Labs Community. <small>Site by juler#5461. All rights reserved.</small></p>
+        <h1>AT&T Long Lines & Bell Labs</h1>
+        <p>Pioneering Innovations in Telecommunications</p>
     </header>
-ript>
+
     <nav>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-</html></body>    <script src="recipes/app.js" defer></script>    <script src="recipes/theme-toggle.js" defer></script>    <script src="recipes/dynamic-gallery.js" defer></script>    <script src="recipes/discord-widget.js" defer></script>    </script>        }            });                collapseButton.textContent = discordWidget.classList.contains('collapsed') ? '+' : '-';                discordWidget.classList.toggle('collapsed');            collapseButton.addEventListener('click', () => {            discordWidget.appendChild(collapseButton);            collapseButton.textContent = '-';            collapseButton.classList.add('collapse-button');            const collapseButton = document.createElement('button');            const discordWidget = document.getElementById('discord-widget');            // Tablet collapse functionality        if (window.matchMedia("(min-width: 768px) and (max-width: 1024px)").matches) {    <script>    </div>        <!-- Discord widget will be loaded here -->    <div id="discord-widget">    </footer>        <p>&copy; <span id="year"></span> AT&T Long Lines & Bell Labs Community. <small>Site by juler#5461. All rights reserved.</small></p>        <p><small>We frequently review our code to ensure we remain a privacy-first, tracker-free site.</small></p>    <footer>    </main>        </section>            </form> -->                <input type="submit" value="Submit">                <textarea id="message" name="message" rows="4" cols="50"></textarea><br><br>                <label for="message">Message:</label><br>                <input type="email" id="email" name="email"><br><br>                <label for="email">Email:</label><br>                <input type="text" id="name" name="name"><br><br>                <label for="name">Name:</label><br>            <form action="#" method="post">            <p>Have questions or feedback? Reach out to us!</p>            <h2>Contact Us</h2>        <!-- <section id="contact" class="section">        </section>            <!-- Submit photos you would like in the gallery to the discord server for a chance to have them featured! -->            <p>Explore images of AT&T Long Lines facilities, Bell Labs, and related equipment. <a href="gallery.html" rel="noreferrer">View Full Gallery</a></p>            </div>                <!-- Images will be dynamically added here -->            <div class="image-gallery" id="dynamic-gallery">            <h2>Gallery</h2>        <section id="gallery" class="section">        </section>            <p>Bell Labs researchers and engineers invented the transistor, the laser, the photovoltaic cell, the charge-coupled device (CCD), information theory, the Unix operating system, and the C programming language, among other things. Eight Nobel Prizes have been awarded for work completed at Bell Laboratories.</p> Learn more about the innovations at Bell Labs <a href="history-bell-labs.html" rel="noreferrer">here</a>.            <p>Bell Labs, formerly known as Bell Telephone Laboratories, was the research and development arm of AT&T. It is renowned for its groundbreaking contributions to science and technology.</p>            <h2>Bell Labs: The Innovation Hub</h2>        <section id="bell-labs" class="section">        </section>            <a href="technology.html" rel="noreferrer">Learn More about the fascinating tech here</a>            <p>Essential components included repeater stations, which amplified signals to maintain their strength, and switching centers, which directed calls to their intended destinations. The network continually evolved, integrating new technologies like fiber optics to enhance capacity and improve overall performance.</p>            <p>The Long Lines network utilized a range of technologies, including microwave radio relay systems and coaxial cables, enabling the transmission of signals over vast distances with minimal signal degradation.</p>            <h2>Technology Behind Long Lines</h2>        <section id="technology" class="section">        </section>            <a href="history-att-longlines.html" rel="noreferrer">Learn More about Bell Lab's History Here</a>            <p>This network not only facilitated telephone calls but also supported television broadcasting, data transmission, and various other forms of communication. Its development marked a significant engineering milestone, involving the construction of numerous repeater stations and the application of cutting-edge technologies.</p>            <p>The AT&T Long Lines was a network of communications lines, initially consisting of telephone lines, that were owned and operated by AT&T. It played a pivotal role in long-distance communication in the United States throughout the 20th century.</p>            <h2>History of AT&T Long Lines</h2>        <section id="history" class="section">    <main>    </nav>        <a href="#discord">Discord Server</a>        <a href="gallery.html">Gallery</a> |        <a href="#bell-labs">Bell Labs</a> |        </div> |            </div>                <a href="unix.html">UNIX</a>                <a href="photovoltaic-cell.html">Solar Power</a>                <a href="ccd.html">Digital Imaging (CCDs)</a>                <a href="optical-maser.html">Lasers</a>                <a href="transistor.html">The Transistor</a>                <a href="technology.html">Tech Overview</a>            <div class="dropdown-content">            <a href="#">Technology</a>        <div class="dropdown">        <a href="#history">History</a> |
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-</html></body>    </script>        }          }            dots[slideIndex-1].className += " active";          if (dots[slideIndex-1]) {          }            slides[slideIndex-1].style.display = "block";          if (slides[slideIndex-1]) {          }              dots[i].className = dots[i].className.replace(" active", "");          for (i = 0; i < dots.length; i++) {          }              slides[i].style.display = "none";          for (i = 0; i < slides.length; i++) {          if (n < 1) {slideIndex = slides.length}          if (n > slides.length) {slideIndex = 1}          let dots = document.getElementsByClassName("dot");          let slides = document.getElementsByClassName("mySlides");          let i;        function showSlides(n) {        }          showSlides(slideIndex = n);        function currentSlide(n) {        // Thumbnail image controls        }          showSlides(slideIndex += n);        function plusSlides(n) {        // Next/previous controls        showSlides(slideIndex);        <!-- Discord widget will be loaded here -->
+        <a href="#history">History</a> |
+        <div class="dropdown">
+            <a href="#">Technology</a>
+            <div class="dropdown-content">
+                <a href="technology.html">Tech Overview</a>
+                <a href="transistor.html">The Transistor</a>
+                <a href="optical-maser.html">Lasers</a>
+                <a href="ccd.html">Digital Imaging (CCDs)</a>
+                <a href="photovoltaic-cell.html">Solar Power</a>
+                <a href="unix.html">UNIX</a>
+            </div>
+        </div> |
+        <a href="#bell-labs">Bell Labs</a> |
+        <a href="gallery.html">Gallery</a> |
+        <a href="#discord">Discord Server</a>
+    </nav>
+
+    <main>
+        <div class="slideshow-container">
+
+            <div class="mySlides fade">
+                <div class="numbertext">1 / 2</div>
+                <img src="img/map1.jpg" style="width:100%" alt="AT&T Long Lines Network Map">
+                <div class="text">The sprawling AT&T Long Lines Network</div>
+            </div>
+
+            <div class="mySlides fade">
+                <div class="numbertext">2 / 2</div>
+                <img src="img/map2.jpg" style="width:100%" alt="Another view of the AT&T Long Lines Network">
+                <div class="text">Another look at the Long Lines Network</div>
+            </div>
+
+            <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+            <a class="next" onclick="plusSlides(1)">&#10095;</a>
+        </div>
+        <br>
+
+        <div style="text-align:center">
+            <span class="dot" onclick="currentSlide(1)"></span>
+            <span class="dot" onclick="currentSlide(2)"></span>
+        </div>
+
+        <section id="history" class="section">
+            <h2>History of AT&T Long Lines</h2>
+            <p>The AT&T Long Lines was a network of communications lines, initially consisting of telephone lines, that were owned and operated by AT&T. It played a pivotal role in long-distance communication in the United States throughout the 20th century.</p>
+            <p>This network not only facilitated telephone calls but also supported television broadcasting, data transmission, and various other forms of communication. Its development marked a significant engineering milestone, involving the construction of numerous repeater stations and the application of cutting-edge technologies.</p>
+            <a href="history-att-longlines.html" rel="noreferrer">Learn More about Bell Lab's History Here</a>
+        </section>
+
+        <section id="technology" class="section">
+            <h2>Technology Behind Long Lines</h2>
+            <p>The Long Lines network utilized a range of technologies, including microwave radio relay systems and coaxial cables, enabling the transmission of signals over vast distances with minimal signal degradation.</p>
+            <p>Essential components included repeater stations, which amplified signals to maintain their strength, and switching centers, which directed calls to their intended destinations. The network continually evolved, integrating new technologies like fiber optics to enhance capacity and improve overall performance.</p>
+            <a href="technology.html" rel="noreferrer">Learn More about the fascinating tech here</a>
+        </section>
+
+        <section id="bell-labs" class="section">
+            <h2>Bell Labs: The Innovation Hub</h2>
+            <p>Bell Labs, formerly known as Bell Telephone Laboratories, was the research and development arm of AT&T. It is renowned for its groundbreaking contributions to science and technology.</p>
+            <p>Bell Labs researchers and engineers invented the transistor, the laser, the photovoltaic cell, the charge-coupled device (CCD), information theory, the Unix operating system, and the C programming language, among other things. Eight Nobel Prizes have been awarded for work completed at Bell Laboratories.</p> Learn more about the innovations at Bell Labs <a href="history-bell-labs.html" rel="noreferrer">here</a>.
+        </section>
+
+        <section id="gallery" class="section">
+            <h2>Gallery</h2>
+            <div class="image-gallery" id="dynamic-gallery">
+                <!-- Images will be dynamically added here -->
+            </div>
+            <p>Explore images of AT&T Long Lines facilities, Bell Labs, and related equipment. <a href="gallery.html" rel="noreferrer">View Full Gallery</a></p>
+            <!-- Submit photos you would like in the gallery to the discord server for a chance to have them featured! -->
+        </section>
+
+        <!-- <section id="contact" class="section">
+            <h2>Contact Us</h2>
+            <p>Have questions or feedback? Reach out to us!</p>
+            <form action="#" method="post">
+                <label for="name">Name:</label><br>
+                <input type="text" id="name" name="name"><br><br>
+                <label for="email">Email:</label><br>
+                <input type="email" id="email" name="email"><br><br>
+                <label for="message">Message:</label><br>
+                <textarea id="message" name="message" rows="4" cols="50"></textarea><br><br>
+                <input type="submit" value="Submit">
+            </form> -->
+        </section>
+    </main>
+
+    <footer>
+        <p><small>We frequently review our code to ensure we remain a privacy-first, tracker-free site.</small></p>
+        <p>&copy; <span id="year"></span> AT&T Long Lines & Bell Labs Community. <small>Site by juler#5461. All rights reserved.</small></p>
+    </footer>
+
+    <div id="discord-widget">
+        <!-- Discord widget will be loaded here -->
     </div>
 
+    <script src="recipes/app.js" defer></script>
+    <script src="recipes/theme-toggle.js" defer></script>
+    <script src="recipes/dynamic-gallery.js" defer></script>
+    <script src="recipes/discord-widget.js" defer></script>
     <script>
+        // Tablet collapse functionality
         if (window.matchMedia("(min-width: 768px) and (max-width: 1024px)").matches) {
-            // Tablet collapse functionality
             const discordWidget = document.getElementById('discord-widget');
             const collapseButton = document.createElement('button');
             collapseButton.classList.add('collapse-button');
@@ -516,9 +487,5 @@ ript>
             });
         }
     </script>
-    <script src="recipes/discord-widget.js" defer></script>
-    <script src="recipes/dynamic-gallery.js" defer></script>
-    <script src="recipes/theme-toggle.js" defer></script>
-    <script src="recipes/app.js" defer></script>
 </body>
 </html>
