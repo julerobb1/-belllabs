@@ -14,13 +14,17 @@
             color: #333;
             line-height: 1.7;
             text-align: center;
+            /* Ensure the content is positioned correctly */
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            /* Background image properties */
             background-image: url('img/gallery/20250304_145346.jpg');
             background-size: cover;
             background-blend-mode: lighten;
-            height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
+            background-attachment: fixed; /* Optional: Keeps the background fixed during scrolling */
         }
 
         header {
