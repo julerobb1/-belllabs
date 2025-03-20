@@ -42,10 +42,11 @@
             padding: 0.7em 0;
             text-align: center;
             margin-bottom: 20px; /* Add margin to the bottom of the nav */
+            z-index: 1000; /* Ensure nav is above other content */
         }
 
         nav a {
-            color: white;
+            color: var(--link-color);
             text-decoration: none;
             padding: 0.7em 1.5em;
             display: inline-block;
@@ -53,7 +54,7 @@
         }
 
         nav a:hover {
-            background-color: var(--nav-hover-color);
+            background-color: var(--link-hover-color);
         }
 
         /* Dropdown Button Styling */
@@ -276,6 +277,8 @@
             --nav-hover-color: #555;
             --main-bg-color: #222;
             --box-shadow-color: rgba(255, 255, 255, 0.1);
+            --link-color: #1e90ff; /* Adjust link color for better visibility */
+            --link-hover-color: #63b8ff; /* Adjust link hover color for better visibility */
         }
         /* Theme Toggle Button */
         .theme-toggle {
