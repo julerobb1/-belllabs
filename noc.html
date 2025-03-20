@@ -8,13 +8,13 @@
     <style>
         /* CSS Variables for Theme */
         :root {
-            --bg-color: #f9f9f9;
-            --text-color: #333;
-            --header-bg-color: #003366;
-            --nav-bg-color: #007acc;
-            --nav-hover-color: #0056b3;
-            --main-bg-color: white;
-            --box-shadow-color: rgba(0, 0, 0, 0.1);
+            --bg-color: #f0f0f0; /* Updated to match sitewide theme */
+            --text-color: #222; /* Updated to match sitewide theme */
+            --header-bg-color: #004080; /* Updated to match sitewide theme */
+            --nav-bg-color: #0059b3; /* Updated to match sitewide theme */
+            --nav-hover-color: #003d80; /* Updated to match sitewide theme */
+            --main-bg-color: #ffffff; /* Updated to match sitewide theme */
+            --box-shadow-color: rgba(0, 0, 0, 0.15); /* Updated to match sitewide theme */
         }
 
         /* General Styles */
@@ -110,15 +110,11 @@
         <p>The Heart of AT&T's Network Management</p>
     </header>
     <main>
-        <section>
-            <h2>Overview</h2>
-            <p>The AT&T Network Operations Center (NOC) is the central hub for monitoring and managing AT&T's vast telecommunications network. It plays a crucial role in ensuring the reliability and performance of the network, handling everything from routine maintenance to emergency response.</p>
-            <p>Watch the video below to learn more about the operations at the AT&T NOC:</p>
-            <video width="560" height="315" controls>
-                <source src="/img/vid/noc.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-            </video>
-            <p>If the video is not playing, <a href="https://youtu.be/cigc3hvMyWw" target="_blank">click here to watch it on YouTube</a>.</p>
+        <section id="noc-video" class="section">
+            <h2>AT&T Network Operations Center</h2>
+            <p>The AT&T Network Operations Center (NOC) is a critical hub for managing and monitoring the vast AT&T network infrastructure.</p>
+            <p>Watch this video to learn more about the NOC: 
+            <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/cigc3hvMyWw" title="A Tour of AT&T's Network Operations Center" frameborder="0" allowfullscreen></iframe>   
         </section>
     </main>
     <footer>
