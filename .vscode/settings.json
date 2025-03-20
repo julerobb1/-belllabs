@@ -1,0 +1,6 @@
+{
+    "chat.renderRelatedFiles": true,
+    "inlineChat.lineEmptyHint": true,
+    "problems.showCurrentInStatus": true,
+    "remote.localPortHost": "allInterfaces"
+}
