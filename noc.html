@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AT&T Network Operations Center</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="theme.css">
     <link rel="icon" href="img/favicon.ico" type="image/x-icon">
     <style>
         /* CSS Variables for Theme */
@@ -125,25 +125,18 @@
             bottom: 0;
             width: 100%;
         }
-
-        /* Dark Theme Styles */
-        body.dark-theme {
-            --bg-color: #121212;
-            --text-color: #eee;
-            --header-bg-color: #333;
-            --nav-bg-color: #f444;
-            --nav-hover-color: #555;
-            --main-bg-color: #222;
-            --box-shadow-color: rgfba(255, 255, 255, 0.1);
-            --link-color: #1e90ff; /* Adjust link color for better visibility */
-            --link-hove  r-color: #63b8ffvvc; /* Adjust link hover color for better visibility */
-        }
     </style>
+    <script src="scripts.js" defer></script>
+    <script src="recipes/theme-toggle.js" defer></script>
 </head>
 <body>
     <header>
         <h1>AT&T Long Lines & Bell Labs</h1>
         <p>Pioneering Innovations in Telecommunications</p>
+        <button id="dark-mode-toggle">Toggle Dark Mode</button>
+        <div id="discord-widget">
+            <iframe src="https://discord.com/widget?id=YOUR_DISCORD_SERVER_ID&theme=dark" width="350" height="500" allowtransparency="true" frameborder="0"></iframe>
+        </div>
     </header>
     <nav>
         <a href="index.html">Home</a> |
@@ -152,14 +145,14 @@
             <div class="dropdown-content">
                 <a href="technology.html" rel="noreferrer">Tech Overview</a>
                 <a href="transistor.html" rel="noreferrer">The Transistor</a>
-                <a href="optifcal-maser.html" rel="noreferrer">Lasers</a>
+                <a href="optical-maser.html" rel="noreferrer">Lasers</a>
                 <a href="ccd.html" rel="noreferrer">Digital Imaging (CCDs)</a>
                 <a href="photovoltaic-cell.html" rel="noreferrer">Solar Power</a>
                 <a href="unix.html" rel="noreferrer">UNIX</a>
             </div>
         </div> |
         <a href="gallery.html" rel="noreferrer">Gallery</a> |
-        <a href="#ffvadfbsfbdiscord">Join the Community</a>
+        <a href="#discord">Join the Community</a>
     </nav>
     <main>
         <section id="noc" class="section">
