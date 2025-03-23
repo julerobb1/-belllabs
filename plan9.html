@@ -3,40 +3,81 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Plan 9 Operating System</title>
-    <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="plan9-part1.css">
-    <link rel="stylesheet" href="plan9-part2.css">
+    <title>Plan 9 from Bell Labs</title>
+    <link rel="icon" href="img/favicon.ico" type="image/x-icon">
+    <style>
+        /* Basic CSS for styling */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f4f4f4;
+            color: #333;
+            line-height: 1.6;
+        }
+        header {
+            background-color: #003366;
+            color: white;
+            padding: 1em 0;
+            text-align: center;
+        }
+        main {
+            max-width: 800px;
+            margin: 20px auto;
+            background-color: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1, h2 {
+            color: #003366;
+        }
+        a {
+            color: #007acc;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        footer {
+            background-color: #003366;
+            color: white;
+            text-align: center;
+            padding: 1em 0;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+    </style>
 </head>
 <body>
     <header>
-        <h1>Plan 9 Operating System</h1>
-        <p>The Future of Distributed Computing</p>
+        <h1>Plan 9 from Bell Labs</h1>
     </header>
     <main>
-        <section>
-            <h2>Introduction</h2>
-            <p>Plan 9 from Bell Labs is a distributed operating system, designed as the successor to Unix by the same group of people who created Unix. It aims to provide a more coherent and integrated environment for distributed computing.</p>
-        </section>
-        <section>
-            <h2>Features</h2>
-            <ul>
-                <li>Unified Resource Access</li>
-                <li>Advanced File System</li>
-                <li>Distributed Computing Capabilities</li>
-                <li>Improved Security and Performance</li>
-            </ul>
-        </section>
-        <section>
-            <h2>Learn More</h2>
-            <p>To learn more about Plan 9, visit the official <a href="https://9p.io/plan9/" target="_blank">Plan 9 website</a>.</p>
-        </section>
+        <h2>Introduction</h2>
+        <p>Plan 9 from Bell Labs is a distributed operating system, developed as the successor to Unix by Bell Labs. It was designed to make a network of computers appear as a single system.</p>
+
+        <h2>Key Features</h2>
+        <p>Plan 9 introduced several innovative features, including:</p>
+        <ul>
+            <li>Unified namespace: All resources, including files, devices, and network connections, are represented as part of a single hierarchical file system.</li>
+            <li>9P protocol: A network protocol used for communication between components of the system, allowing for transparent access to remote resources.</li>
+            <li>Graphical user interface: The Rio windowing system provides a simple and efficient graphical interface.</li>
+            <li>Advanced file system: The Fossil and Venti file systems offer features like snapshots and archival storage.</li>
+        </ul>
+
+        <h2>Legacy</h2>
+        <p>Although Plan 9 did not achieve widespread adoption, its concepts and technologies have influenced many modern operating systems and software projects. It remains an important part of the history of operating systems and continues to be used and studied by enthusiasts and researchers.</p>
     </main>
-    <footer>
-        <p>&copy; <span id="year"></span> AT&T Long Lines & Bell Labs Community. All rights reserved.</p>
+    <footer style="background-color: #003366; color: white;">
+        <p>&copy; <span id="year"></span> AT&T Long Lines & Bell Labs Community. <small>Site by juler#5461. All rights reserved.</small></p>
     </footer>
     <script>
-        document.getElementById('year').textContent = new Date().getFullYear();
+        document.addEventListener('DOMContentLoaded', () => {
+            const currentYear = new Date().getFullYear();
+            document.querySelector('#year').textContent = currentYear;
+        });
     </script>
 </body>
 </html>

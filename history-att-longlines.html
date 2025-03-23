@@ -21,6 +21,17 @@
             padding: 1em 0;
             text-align: center;
         }
+        nav {
+            margin: 10px 0;
+        }
+        nav a {
+            margin: 0 15px;
+            color: white;
+            text-decoration: none;
+        }
+        nav a:hover {
+            text-decoration: underline;
+        }
         main {
             max-width: 800px;
             margin: 20px auto;
@@ -39,23 +50,49 @@
         a:hover {
             text-decoration: underline;
         }
+        .dark-mode {
+            background-color: #121212;
+            color: #e0e0e0;
+        }
+        .dark-mode header {
+            background-color: #1f1f1f;
+        }
+        .dark-mode nav a {
+            color: #e0e0e0;
+        }
+        .dark-mode main {
+            background-color: #1f1f1f;
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+        }
     </style>
+    <script>
+        function toggleDarkMode() {
+            document.body.classList.toggle('dark-mode');
+        }
+    </script>
 </head>
 <body>
     <header>
         <h1>History of AT&T Long Lines</h1>
+        <nav>
+            <a href="#beginnings">Beginnings</a>
+            <a href="#development">Development</a>
+            <a href="#impact">Impact</a>
+            <a href="#decline">Decline</a>
+        </nav>
+        <button onclick="toggleDarkMode()">Toggle Dark Mode</button>
     </header>
     <main>
-        <h2>The Beginnings</h2>
+        <h2 id="beginnings">The Beginnings</h2>
         <p>The AT&T Long Lines emerged as a crucial component of the American telecommunications landscape, facilitating long-distance communication across the nation.</p>
 
-        <h2>Development and Expansion</h2>
+        <h2 id="development">Development and Expansion</h2>
         <p>The Long Lines network expanded rapidly throughout the 20th century, utilizing advanced technologies such as microwave radio relay systems and coaxial cables.</p>
 
-        <h2>Impact on Communication</h2>
+        <h2 id="impact">Impact on Communication</h2>
         <p>The Long Lines played a vital role in connecting communities, supporting business operations, and enabling the widespread adoption of television broadcasting.</p>
 
-        <h2>Decline and Legacy</h2>
+        <h2 id="decline">Decline and Legacy</h2>
         <p>As technology evolved, the Long Lines network gradually declined in importance. However, its legacy as a pioneering achievement in telecommunications engineering remains significant.</p>
     </main>
 </body>

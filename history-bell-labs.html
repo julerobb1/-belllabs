@@ -39,6 +39,15 @@
         a:hover {
             text-decoration: underline;
         }
+        footer {
+            background-color: #003366;
+            color: white;
+            text-align: center;
+            padding: 1em 0;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
     </style>
 </head>
 <body>
@@ -65,6 +74,28 @@
 
         <h2>Decline and Restructuring</h2>
         <p>In the late 20th century, Bell Labs underwent significant restructuring as a result of changes in the telecommunications industry. Despite these challenges, it continues to be a leading research institution.</p>
+
+        <h2>Interesting Facts</h2>
+        <p>Here are some fascinating facts about Bell Labs:</p>
+        <ul>
+            <li>Bell Labs researchers have been awarded 9 Nobel Prizes.</li>
+            <li>The first transatlantic telephone cable was developed by Bell Labs in 1956.</li>
+            <li>Bell Labs played a crucial role in the development of the first communications satellite, Telstar, in 1962.</li>
+            <li>The discovery of cosmic microwave background radiation, which provided evidence for the Big Bang theory, was made by Bell Labs scientists.</li>
+            <li>Bell Labs has been granted over 30,000 patents.</li>
+            <li>Bell Labs developed the first digital signal processor (DSP) chip in 1967.</li>
+            <li>The first practical photovoltaic (solar) cell was invented at Bell Labs in 1954.</li>
+            <li>Bell Labs researchers created the first fiber-optic communication system in the 1970s.</li>
+        </ul>
     </main>
+    <footer style="background-color: #003366; color: white;">
+        <p>&copy; <span id="year"></span> AT&T Long Lines & Bell Labs Community. <small>Site by juler#5461. All rights reserved.</small></p>
+    </footer>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const currentYear = new Date().getFullYear();
+            document.querySelector('#year').textContent = currentYear;
+        });
+    </script>
 </body>
 </html>
