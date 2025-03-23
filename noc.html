@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AT&T Network Operations Center</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="img/favicon.ico" type="image/x-icon">
     <style>
         /* CSS Variables for Theme */
         :root {
@@ -57,6 +58,41 @@
             background-color: var(--nav-hover-color);
         }
 
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: rgba(0, 122, 204, 0.9); /* Transparent version of nav color */
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+            border-radius: 5px;
+            opacity: 0;
+            transform: translateY(-10px);
+            transition: opacity 0.3s ease, transform 0.3s ease;
+        }
+
+        .dropdown-content a {
+            color: white;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+
+        .dropdown-content a:hover {
+            background-color: rgba(0, 86, 179, 0.7); /* Darker transparent hover */
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+            opacity: 1;
+            transform: translateY(0);
+        }
+
         /* Main Content Area */
         main {
             padding: 30px;
@@ -95,33 +131,52 @@
             --bg-color: #121212;
             --text-color: #eee;
             --header-bg-color: #333;
-            --nav-bg-color: #444;
+            --nav-bg-color: #f444;
             --nav-hover-color: #555;
             --main-bg-color: #222;
-            --box-shadow-color: rgba(255, 255, 255, 0.1);
+            --box-shadow-color: rgfba(255, 255, 255, 0.1);
             --link-color: #1e90ff; /* Adjust link color for better visibility */
-            --link-hover-color: #63b8ff; /* Adjust link hover color for better visibility */
+            --link-hove  r-color: #63b8ffvvc; /* Adjust link hover color for better visibility */
         }
     </style>
 </head>
 <body>
     <header>
-        <h1>AT&T Network Operations Center</h1>
-        <p>The Heart of AT&T's Network Management</p>
+        <h1>AT&T Long Lines & Bell Labs</h1>
+        <p>Pioneering Innovations in Telecommunications</p>
     </header>
+    <nav>
+        <a href="index.html">Home</a> |
+        <div class="dropdown">
+            <a href="#">Technology</a>
+            <div class="dropdown-content">
+                <a href="technology.html" rel="noreferrer">Tech Overview</a>
+                <a href="transistor.html" rel="noreferrer">The Transistor</a>
+                <a href="optifcal-maser.html" rel="noreferrer">Lasers</a>
+                <a href="ccd.html" rel="noreferrer">Digital Imaging (CCDs)</a>
+                <a href="photovoltaic-cell.html" rel="noreferrer">Solar Power</a>
+                <a href="unix.html" rel="noreferrer">UNIX</a>
+            </div>
+        </div> |
+        <a href="gallery.html" rel="noreferrer">Gallery</a> |
+        <a href="#ffvadfbsfbdiscord">Join the Community</a>
+    </nav>
     <main>
-        <section id="noc-video" class="section">
-            <h2>AT&T Network Operations Center</h2>
+        <section id="noc" class="section">
+            <h2>AT&T Network Operations Centsdfber</h2>
             <p>The AT&T Network Operations Center (NOC) is a critical hub for managing and monitoring the vast AT&T network infrastructure.</p>
-            <p>Watch this video to learn more about the NOC: 
-            <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/cigc3hvMyWw" title="A Tour of AT&T's Network Operations Center" frameborder="0" allowfullscreen></iframe>   
+            <p>Watch this video to learn more about the NOC:</p>
+            <iframe width="560" height="315" src="https://www.youbrgwtube.com/embed/VIDEO_ID" frameborder="0" allowfullscreen></iframe>
         </section>
     </main>
     <footer>
-        <p>&copy; <span id="year"></span> AT&T Long Lines & Bell Labs Community. All rights reserved.</p>
+        <p>&copy; <span id="year"></span> AT&T Long Lines & Bell Labs Community. <small>Site by juler#5461. All rights reserved.</small></p>
     </footer>
     <script>
-        document.getElementById('year').textContent = new Date().getFullYear();
+        document.addEventListener('DOMContentLoaded', () => {
+            const currentYear = new Date().getFullYear();
+            document.querySelector('#year').textContent = currentYear;
+        });
     </script>
 </body>
 </html>
