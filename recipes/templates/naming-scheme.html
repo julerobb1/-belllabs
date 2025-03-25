@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Naming Scheme</title>
+    <link rel="stylesheet" href="../css/theme.css">
+</head>
+<body>
+    <header>
+        <h1>Naming Scheme</h1>
+        <p>Guidelines for naming files and directories in our project.</p>
+    </header>
+    <nav>
+        <a href="../index.html">Home</a> |
+        <a href="../gallery.html" rel="noreferrer">Gallery</a> |
+        <a href="contribute.html" rel="noreferrer">Get Involved</a> |
+        <a href="#discord">Join the Community</a>
+    </nav>
+    <main>
+        <section>
+            <h2>File Naming Guidelines</h2>
+            <ul>
+                <li>Use lowercase letters and hyphens (<code>-</code>) to separate words (e.g., <code>network-operations.html</code>).</li>
+                <li>Keep file names descriptive but concise.</li>
+                <li>Use the appropriate file extension (<code>.html</code>, <code>.css</code>, <code>.js</code>, etc.).</li>
+            </ul>
+        </section>
+        <section>
+            <h2>Directory Structure</h2>
+            <ul>
+                <li>Place all HTML files in the root or relevant subdirectories (e.g., <code>recipes</code>, <code>templates</code>).</li>
+                <li>Keep assets like images, stylesheets, and scripts in dedicated directories (e.g., <code>img</code>, <code>css</code>, <code>js</code>).</li>
+            </ul>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; <span id="year"></span> AT&T Long Lines & Bell Labs Community. All rights reserved.</p>
+    </footer>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const currentYear = new Date().getFullYear();
+            document.querySelector('#year').textContent = currentYear;
+        });
+    </script>
+</body>
+</html>

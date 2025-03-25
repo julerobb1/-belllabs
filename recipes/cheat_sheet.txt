@@ -1,8 +1,10 @@
 img/ - Contains images for the website.
-recipes/app.js - Contains general application logic, such as the year update in the footer.
-recipes/theme-toggle.js - Handles the theme toggle functionality.
-recipes/dynamic-gallery.js - Handles the dynamic image gallery functionality.
-recipes/discord-widget.js - Handles the Discord widget functionality.
+recipes/js/app.js - Contains general application logic, such as the year update in the footer.
+recipes/js/theme-toggle.js - Handles the theme toggle functionality.
+recipes/js/dynamic-gallery.js - Handles the dynamic image gallery functionality.
+recipes/js/discord-widget.js - Handles the Discord widget functionality.
+recipes/css/styles.css - Main styles for the website.
+recipes/css/theme.css - Theme styles for the website.
 index.html - The main page of the website.
 404.html - The 404 error page.
 technology.html - Page about the technologies used in AT&T Long Lines and Bell Labs innovations.

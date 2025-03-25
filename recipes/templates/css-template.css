@@ -1,0 +1,22 @@
+/* CSS Template */
+:root {
+    --bg-color: #f0f0f0;
+    --text-color: #222;
+    --header-bg-color: #004080;
+    --nav-bg-color: #0059b3;
+    --nav-hover-color: #003d80;
+    --main-bg-color: #ffffff;
+    --box-shadow-color: rgba(0, 0, 0, 0.15);
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    line-height: 1.7;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Additional styles can be added here */

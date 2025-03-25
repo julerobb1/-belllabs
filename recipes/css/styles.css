@@ -1,0 +1,303 @@
+/* CSS Variables for Theme */
+:root {
+    --bg-color: #f9f9f9;
+    --text-color: #333;
+    --header-bg-color: #003366;
+    --nav-bg-color: #007acc;
+    --nav-hover-color: #0056b3;
+    --main-bg-color: white;
+    --box-shadow-color: rgba(0, 0, 0, 0.1);
+}
+
+/* General Styles */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    line-height: 1.7;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Header and Navigation */
+header {
+    background-color: var(--header-bg-color);
+    color: white;
+    text-align: center;
+    padding: 2em 0;
+}
+
+nav {
+    background-color: var(--nav-bg-color);
+    color: white;
+    padding: 0.7em 0;
+    text-align: center;
+    margin-bottom: 20px; /* Add margin to the bottom of the nav */
+    z-index: 1000; /* Ensure nav is above other content */
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    padding: 0.7em 1.5em;
+    display: inline-block;
+    transition: background-color 0.3s ease;
+}
+
+nav a:hover {
+    background-color: var(--nav-hover-color);
+}
+
+/* Dropdown Button Styling */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: rgba(0, 122, 204, 0.9); /* Transparent version of nav color */
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    border-radius: 5px;
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.dropdown-content a {
+    color: white;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {
+    background-color: rgba(0, 86, 179, 0.7); /* Darker transparent hover */
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Main Content Area */
+main {
+    padding: 30px;
+    max-width: 900px;
+    margin: 20px auto;
+    background-color: var(--main-bg-color);
+    box-shadow: 0 0 20px var(--box-shadow-color);
+    border-radius: 8px;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hero-image {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    margin-bottom: 30px;
+    border-radius: 8px;
+}
+
+.section {
+    margin-bottom: 40px;
+}
+
+.section h2 {
+    color: #003366;
+    border-bottom: 3px solid #007acc;
+    padding-bottom: 0.7em;
+    margin-bottom: 0.8em;
+}
+
+.image-gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin-top: 20px;
+}
+
+.image-gallery img {
+    width: 45%;
+    margin-bottom: 15px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, opacity 1s ease;
+    opacity: 1;
+}
+
+.image-gallery img:hover {
+    transform: scale(1.05);
+}
+
+.image-gallery img.fade-out {
+    opacity: 0;
+}
+
+.image-gallery img.fade-in {
+    opacity: 1;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    main {
+        padding: 20px;
+    }
+    .hero-image {
+        height: 300px;
+    }
+    .image-gallery img {
+        width: 100%;
+    }
+}
+
+/* Footer */
+footer {
+    background-color: var(--header-bg-color);
+    color: white;
+    text-align: center;
+    padding: 2em 0;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+/* Theme Toggle Button */
+.theme-toggle {
+    background-color: #555;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    border-radius: 5px;
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 1000;
+}
+
+/* Discord Widget Styling */
+#discord-widget {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    width: 300px;
+    height: 400px;
+    z-index: 999; /* Ensure it's above other content */
+    border-radius: 5px;
+    overflow: hidden;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+}
+
+#discord-widget iframe {
+    width: 100%;
+    height: 100%;
+}
+
+/* Hide on phones */
+@media (max-width: 767px) {
+    #discord-widget {
+        display: none;
+    }
+}
+
+/* Tablet styles (adjust max-width as needed) */
+@media (min-width: 768px) and (max-width: 1024px) {
+    #discord-widget {
+        width: 250px;
+        height: 350px;
+        bottom: 10px;
+        left: 10px;
+    }
+
+    #discord-widget.collapsed {
+        height: 30px;
+    }
+
+    #discord-widget.collapsed iframe {
+        display: none;
+    }
+
+    #discord-widget .collapse-button {
+        position: absolute;
+        top: 5px;
+        right: 5px;
+        background-color: rgba(0, 0, 0, 0.5);
+        color: white;
+        border: none;
+        padding: 3px 5px;
+        cursor: pointer;
+        border-radius: 3px;
+    }
+}
+
+/* Desktop responsiveness */
+@media (min-width: 1025px) and (max-width: 1200px) {
+    #discord-widget {
+        /* Adjust position/size to avoid map overlap */
+        bottom: 10px;
+        left: 10px;
+    }
+}
+
+/* Collapsible Discord Widget */
+#discord-widget {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    width: 300px;
+    height: 400px;
+    z-index: 999;
+    border-radius: 5px;
+    overflow: hidden;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    transition: height 0.3s ease;
+}
+
+#discord-widget.collapsed {
+    height: 30px;
+}
+
+#discord-widget.collapsed iframe {
+    display: none;
+}
+
+#discord-widget #collapse-button {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 3px;
+    z-index: 1000;
+}
+
+.image-gallery img {
+    width: 45%;
+    margin-bottom: 15px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, opacity 1s ease;
+    opacity: 1;
+}
+
+.slideshow-navigation {
+    text-align: center;
+}
+
+.collapsible.collapsed iframe {
+    display: none;
+}
+
+.collapsible.collapsed button {
+    display: block;
+    margin: auto;
+}

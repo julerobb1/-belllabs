@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contribute to Our Site</title>
+    <link rel="stylesheet" href="templates/css-template.css">
+</head>
+<body>
+    <header>
+        <h1>Contribute to Our Site</h1>
+        <p>Help us grow and improve the AT&T Long Lines & Bell Labs community!</p>
+    </header>
+    <nav>
+        <a href="404.html">Home</a> |
+        <a href="amps.html" rel="noreferrer">Gallery</a> |
+        <a href="contribute.html" rel="noreferrer">Get Involved</a> |
+        <a href="#discord">Join the Community</a>
+    </nav>
+    <main>
+        <section>
+            <h2>How to Contribute</h2>
+            <p>We welcome contributions from everyone! Follow the steps below to get started:</p>
+            <ol>
+                <li>Clone our repository from GitHub.</li>
+                <li>Use the templates provided in the <code>templates</code> directory for creating new pages.</li>
+                <li>Follow the naming scheme outlined in the <a href="templates/naming-scheme.html">Naming Scheme</a>.</li>
+                <li>Submit a pull request with your changes.</li>
+            </ol>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; <span id="year"></span> AT&T Long Lines & Bell Labs Community. All rights reserved.</p>
+    </footer>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const currentYear = new Date().getFullYear();
+            document.querySelector('#year').textContent = currentYear;
+        });
+    </script>
+</body>
+</html>
