@@ -11,6 +11,22 @@ body.dark-theme {
     --link-hover-color: #63b8ff; /* Adjust link hover color for better visibility */
 }
 
+body.dark-mode {
+    color: #e0e0e0; /* Light gray for better readability */
+}
+
+a {
+    color: #80bfff; /* Softer blue for links */
+}
+
+a:visited {
+    color: #b380ff; /* Softer purple for visited links */
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: #ffffff; /* Bright white for headings */
+}
+
 /* Theme Toggle Button */
 .theme-toggle {
     background-color: #555;
