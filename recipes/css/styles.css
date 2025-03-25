@@ -288,3 +288,16 @@ footer {
     transition: transform 0.3s ease, opacity 1s ease;
     opacity: 1;
 }
+
+.slideshow-navigation {
+    text-align: center;
+}
+
+.collapsible.collapsed iframe {
+    display: none;
+}
+
+.collapsible.collapsed button {
+    display: block;
+    margin: auto;
+}

@@ -14,8 +14,7 @@
     <header>
         <h1>AT&T Long Lines & Bell Labs</h1>
         <p>Pioneering Innovations in Telecommunications</p>
-        <button id="dark-mode-toggle">Toggle Dark Mode</button>
-        <div id="discord-widget" class="collapsible">
+        <div id="discord-widget-container" class="collapsible">
             <button id="collapse-button">Collapse</button>
             <iframe src="https://discord.com/widget?id=YOUR_DISCORD_SERVER_ID&theme=dark" width="350" height="500" allowtransparency="true" frameborder="0"></iframe>
         </div>
@@ -40,6 +39,7 @@
         <a href="bob-lucky.html">Bob Lucky</a> |
         <a href="noc.html">AT&T Network Operations Center</a> |
         <a href="#discord">Discord Server</a>
+        <button id="dark-mode-toggle">Toggle Dark Mode</button>
     </nav>
 
     <main>
@@ -62,7 +62,7 @@
         </div>
         <br>
 
-        <div style="text-align:center">
+        <div class="slideshow-navigation">
             <span class="dot" onclick="currentSlide(1)"></span>
             <span class="dot" onclick="currentSlide(2)"></span>
         </div>
@@ -116,10 +116,6 @@
         <p>&copy; <span id="year"></span> AT&T Long Lines & Bell Labs Community. <small>Site by juler#5461. All rights reserved.</small></p>
     </footer>
 
-    <div id="discord-widget">
-        <!-- Discord widget will be loaded here -->
-    </div>
-
     <script src="recipes/js/app.js" defer></script>
     <script src="recipes/js/dynamic-gallery.js" defer></script>
     <script src="recipes/js/discord-widget.js" defer></script>
@@ -134,11 +130,11 @@
         });
 
         // Collapsible Discord widget functionality
-        const discordWidget = document.getElementById('discord-widget');
+        const discordWidgetContainer = document.getElementById('discord-widget-container');
         const collapseButton = document.getElementById('collapse-button');
         collapseButton.addEventListener('click', () => {
-            discordWidget.classList.toggle('collapsed');
-            collapseButton.textContent = discordWidget.classList.contains('collapsed') ? 'Expand' : 'Collapse';
+            discordWidgetContainer.classList.toggle('collapsed');
+            collapseButton.textContent = discordWidgetContainer.classList.contains('collapsed') ? 'Expand' : 'Collapse';
         });
     </script>
 </body>
