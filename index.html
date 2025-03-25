@@ -7,34 +7,22 @@
     <link rel="icon" href="img/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="recipes/css/styles.css"> <!-- Main styles -->
     <link rel="stylesheet" href="recipes/css/theme.css"> <!-- Theme styles -->
-    <!-- <script src="scripts.js" defer></script> -->
-    <script src="recipes/js/theme-toggle.js" defer></script>
+    <script src="scripts.js" defer></script>
+    <script src="recipes/js/discord-widget.js" defer></script>
 </head>
 <body>
     <header>
         <h1>AT&T Long Lines & Bell Labs</h1>
         <p>Pioneering Innovations in Telecommunications</p>
         <div id="discord-widget-container" class="collapsible">
-            <button id="collapse-button">Collapse</button>
+            <button id="collapse-button">+</button>
             <iframe src="https://discord.com/widget?id=YOUR_DISCORD_SERVER_ID&theme=dark" width="350" height="500" allowtransparency="true" frameborder="0"></iframe>
         </div>
     </header>
 
     <nav>
         <a href="index.html">Home</a> |
-        <div class="dropdown">
-            <a href="#">Technology</a>
-            <div class="dropdown-content">
-                <a href="technology.html">Tech Overview</a>
-                <a href="transistor.html">The Transistor</a>
-                <a href="optical-maser.html">Lasers</a>
-                <a href="ccd.html">Digital Imaging (CCDs)</a>
-                <a href="photovoltaic-cell.html">Solar Power</a>
-                <a href="unix.html">UNIX</a>
-                <a href="blit.html">Blit</a> <!-- Added Blit -->
-                <a href="amps.html">AMPS</a> <!-- Added AMPS -->
-            </div>
-        </div> |
+        <a href="technology.html">Technology</a> |
         <a href="gallery.html">Gallery</a> |
         <a href="bob-lucky.html">Bob Lucky</a> |
         <a href="noc.html">AT&T Network Operations Center</a> |
@@ -93,21 +81,6 @@
                 <!-- Images will be dynamically added here -->
             </div>
             <p>Explore images of AT&T Long Lines facilities, Bell Labs, and related equipment. <a href="gallery.html" rel="noreferrer">View Full Gallery</a></p>
-            <!-- Submit photos you would like in the gallery to the discord server for a chance to have them featured! -->
-        </section>
-
-        <!-- <section id="contact" class="section">
-            <h2>Contact Us</h2>
-            <p>Have questions or feedback? Reach out to us!</p>
-            <form action="#" method="post">
-                <label for="name">Name:</label><br>
-                <input type="text" id="name" name="name"><br><br>
-                <label for="email">Email:</label><br>
-                <input type="email" id="email" name="email"><br><br>
-                <label for="message">Message:</label><br>
-                <textarea id="message" name="message" rows="4" cols="50"></textarea><br><br>
-                <input type="submit" value="Submit">
-            </form> -->
         </section>
     </main>
 
@@ -117,8 +90,6 @@
     </footer>
 
     <script src="recipes/js/app.js" defer></script>
-    <script src="recipes/js/dynamic-gallery.js" defer></script>
-    <script src="recipes/js/discord-widget.js" defer></script>
     <script>
         // Update the year dynamically
         document.getElementById('year').textContent = new Date().getFullYear();
@@ -134,7 +105,7 @@
         const collapseButton = document.getElementById('collapse-button');
         collapseButton.addEventListener('click', () => {
             discordWidgetContainer.classList.toggle('collapsed');
-            collapseButton.textContent = discordWidgetContainer.classList.contains('collapsed') ? 'Expand' : 'Collapse';
+            collapseButton.textContent = discordWidgetContainer.classList.contains('collapsed') ? '+' : '-';
         });
     </script>
 </body>
