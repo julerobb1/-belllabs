@@ -28,6 +28,7 @@ header {
     padding: 2em 0;
 }
 
+/* Navigation Bar Styles */
 nav {
     background-color: var(--nav-bg-color);
     color: white;
@@ -258,4 +259,54 @@ footer {
     position: relative;
     bottom: 0;
     width: 100%;
+}
+
+/* Dark Mode Styles */
+body.dark-mode {
+    --bg-color: #121212;
+    --text-color: #e0e0e0;
+    --header-bg-color: #1f1f1f;
+    --nav-bg-color: #333;
+    --nav-hover-color: #555;
+    --main-bg-color: #1e1e1e;
+    --box-shadow-color: rgba(255, 255, 255, 0.1);
+}
+
+body.dark-mode header,
+body.dark-mode nav,
+body.dark-mode footer {
+    background-color: var(--header-bg-color);
+    color: var(--text-color);
+}
+
+body.dark-mode nav a {
+    color: var(--text-color);
+}
+
+body.dark-mode nav a:hover {
+    background-color: var(--nav-hover-color);
+}
+
+body.dark-mode main {
+    background-color: var(--main-bg-color);
+    box-shadow: 0 0 20px var(--box-shadow-color);
+}
+
+body.dark-mode .section h2 {
+    color: var(--text-color);
+    border-bottom: 3px solid var(--nav-bg-color);
+}
+
+body.dark-mode .text,
+body.dark-mode .numbertext {
+    color: var(--text-color);
+}
+
+body.dark-mode .dot {
+    background-color: #717171;
+}
+
+body.dark-mode .active, 
+body.dark-mode .dot:hover {
+    background-color: #bbb;
 }
