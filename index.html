@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="recipes/css/theme.css"> <!-- Theme styles -->
     <script src="scripts.js" defer></script>
     <script src="recipes/js/discord-widget.js" defer></script>
+    <script src="recipes/js/theme-toggle.js" defer></script>
 </head>
 <body>
     <header>
@@ -16,7 +17,7 @@
         <p>Pioneering Innovations in Telecommunications</p>
         <div id="discord-widget-container" class="collapsible">
             <button id="collapse-button">+</button>
-            <iframe src="https://discord.com/widget?id=YOUR_DISCORD_SERVER_ID&theme=dark" width="350" height="500" allowtransparency="true" frameborder="0"></iframe>
+            <iframe src="https://discord.com/widget?id=807000904397094913&theme=dark" width="350" height="500" allowtransparency="true" frameborder="0"></iframe>
         </div>
     </header>
 
@@ -93,8 +94,10 @@
                 for (i = 0; i < dots.length; i++) {
                     dots[i].className = dots[i].className.replace(" active", "");
                 }
-                slides[slideIndex - 1].style.display = "block";
-                dots[slideIndex - 1].className += " active";
+                if (slides[slideIndex - 1]) {
+                    slides[slideIndex - 1].style.display = "block";
+                    dots[slideIndex - 1].className += " active";
+                }
             }
         </script>
 
@@ -140,7 +143,6 @@
         <p>&copy; <span id="year"></span> AT&T Long Lines & Bell Labs Community. <small>Site by juler#5461. All rights reserved.</small></p>
     </footer>
 
-    <script src="recipes/js/app.js" defer></script>
     <script>
         // Update the year dynamically
         document.getElementById('year').textContent = new Date().getFullYear();
