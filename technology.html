@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AT&T Long Lines & Bell Labs - Technology</title>
-    <link rel="icon" href="img/favicon.ico">
+    <link rel="icon" href="img/favicon.ico" referrerpolicy="no-referrer">
     <style>
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -108,29 +108,53 @@
             opacity: 1;
             transform: translateY(0);
         }
+
+        .dark-mode {
+            background-color: #121212;
+            color: #e0e0e0;
+        }
+
+        .dark-mode header {
+            background-color: #1f1f1f;
+        }
+
+        .dark-mode nav a {
+            color: #e0e0e0;
+        }
+
+        .dark-mode main {
+            background-color: #1f1f1f;
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+        }
     </style>
+    <script>
+        function toggleDarkMode() {
+            document.body.classList.toggle('dark-mode');
+        }
+    </script>
 </head>
 <body>
     <header>
         <h1>AT&T Long Lines & Bell Labs</h1>
         <p>A Closer Look at the Technology</p>
+        <button onclick="toggleDarkMode()">Toggle Dark Mode</button>
     </header>
 
     <nav>
-        <a href="index.html">Home</a> |
+        <a href="index.html" referrerpolicy="no-referrer">Home</a> |
         <div class="dropdown">
-            <a href="#">Tech & Inventions</a>
+            <a href="#" referrerpolicy="no-referrer">Tech & Inventions</a>
             <div class="dropdown-content">
-                <a href="technology.html">Tech Overview</a>
-                <a href="transistor.html">The Transistor</a>
-                <a href="optical-maser.html">Lasers</a>
-                <a href="ccd.html">Digital Imaging (CCDs)</a>
-                <a href="photovoltaic-cell.html">Solar Power</a>
-                <a href="unix.html">UNIX</a>
+                <a href="technology.html" referrerpolicy="no-referrer">Tech Overview</a>
+                <a href="transistor.html" rel="noreferrer" referrerpolicy="no-referrer">The Transistor</a>
+                <a href="optical-maser.html" rel="noreferrer" referrerpolicy="no-referrer">Lasers</a>
+                <a href="ccd.html" rel="noreferrer" referrerpolicy="no-referrer">Digital Imaging (CCDs)</a>
+                <a href="photovoltaic-cell.html" rel="noreferrer" referrerpolicy="no-referrer">Solar Power</a>
+                <a href="unix.html" rel="noreferrer" referrerpolicy="no-referrer">UNIX</a>
             </div>
         </div> |
-        <a href="gallery.html">Cool Pictures</a> |
-        <a href="#discord">Join the Community</a>
+        <a href="gallery.html" referrerpolicy="no-referrer">Cool Pictures</a> |
+        <a href="#discord" referrerpolicy="no-referrer">Join the Community</a>
     </nav>
 
     <main>
@@ -159,6 +183,7 @@
     </main>
 
     <footer>
+        <p><small>We frequently review our code to ensure we remain a privacy-first, tracker-free site.</small></p>
         <p>&copy; <span id="year"></span> AT&T Long Lines & Bell Labs Community. <small>Site by juler#5461. All rights reserved.</small></p>
     </footer>
     <script>

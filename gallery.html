@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AT&T Long Lines & Bell Labs - Full Gallery</title>
-    <link rel="icon" href="img/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="img/favicon.ico" type="image/x-icon" referrerpolicy="no-referrer">
     <style>
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -86,16 +86,40 @@
                 width: 100%;
             }
         }
+
+        .dark-mode {
+            background-color: #121212;
+            color: #e0e0e0;
+        }
+
+        .dark-mode header {
+            background-color: #1f1f1f;
+        }
+
+        .dark-mode nav a {
+            color: #e0e0e0;
+        }
+
+        .dark-mode main {
+            background-color: #1f1f1f;
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+        }
     </style>
+    <script>
+        function toggleDarkMode() {
+            document.body.classList.toggle('dark-mode');
+        }
+    </script>
 </head>
 <body>
     <header>
         <h1>AT&T Long Lines & Bell Labs - Full Gallery</h1>
+        <button onclick="toggleDarkMode()">Toggle Dark Mode</button>
     </header>
 
     <nav>
-        <a href="index.html" rel="noreferrer">Home</a> |
-        <a href="gallery.html" rel="noreferrer">Gallery</a>
+        <a href="index.html" rel="noreferrer" referrerpolicy="no-referrer">Home</a> |
+        <a href="gallery.html" rel="noreferrer" referrerpolicy="no-referrer">Gallery</a>
     </nav>
 
     <main>
@@ -122,6 +146,7 @@
     </main>
 
     <footer>
+        <p><small>We frequently review our code to ensure we remain a privacy-first, tracker-free site.</small></p>
         <p>&copy; <span id="year"></span> AT&T Long Lines & Bell Labs Community. <small>Site by juler#5461. All rights reserved.</small></p>
     </footer>
     <script>
