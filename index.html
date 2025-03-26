@@ -13,7 +13,10 @@
     <style>
         /* Fix alignment and spacing issues */
         #discord-widget-container {
-            margin: 20px auto;
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            z-index: 1000;
             text-align: center;
         }
 
@@ -58,30 +61,13 @@
     <header>
         <h1>AT&T Long Lines & Bell Labs</h1>
         <p>Pioneering Innovations in Telecommunications</p>
-        <div id="discord-widget-container" class="collapsible">
-            <button id="collapse-button">+</button>
-            <iframe src="https://discord.com/widget?id=807000904397094913&theme=dark" width="350" height="500" allowtransparency="true" frameborder="0"></iframe>
-        </div>
     </header>
 
     <nav>
         <a href="index.html">Home</a>
-        <div class="dropdown">
-            <a href="#">Technology</a>
-            <div class="dropdown-content">
-                <a href="technology.html">Tech Overview</a>
-                <a href="transistor.html">The Transistor</a>
-                <a href="optical-maser.html">Lasers</a>
-                <a href="ccd.html">Digital Imaging (CCDs)</a>
-                <a href="photovoltaic-cell.html">Solar Power</a>
-                <a href="unix.html">UNIX</a>
-                <a href="blit.html">Blit</a> <!-- Added Blit -->
-                <a href="amps.html">AMPS</a> <!-- Added AMPS -->
-            </div>
-        </div>
+        <a href="technology.html">Technology</a>
+        <a href="bell-labs.html">Bell Labs</a>
         <a href="gallery.html">Gallery</a>
-        <a href="bob-lucky.html">Bob Lucky</a>
-        <a href="noc.html">AT&T Network Operations Center</a>
         <a href="#discord">Discord Server</a>
         <button id="dark-mode-toggle">Toggle Dark Mode</button>
     </nav>
@@ -184,6 +170,11 @@
         <p><small>We frequently review our code to ensure we remain a privacy-first, tracker-free site.</small></p>
         <p>&copy; <span id="year"></span> AT&T Long Lines & Bell Labs Community. <small>Site by juler#5461. All rights reserved.</small></p>
     </footer>
+
+    <div id="discord-widget-container" class="collapsible">
+        <button id="collapse-button">+</button>
+        <iframe src="https://discord.com/widget?id=807000904397094913&theme=dark" width="350" height="500" allowtransparency="true" frameborder="0"></iframe>
+    </div>
 
     <script>
         // Update the year dynamically
