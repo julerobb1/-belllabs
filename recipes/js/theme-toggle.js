@@ -17,25 +17,29 @@ window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e)
 });
 
 // Dark mode toggle button functionality
-const toggleButton = document.getElementById('dark-mode-toggle');
-toggleButton.addEventListener('click', () => {
-    if (document.documentElement.classList.contains('dark-mode')) {
-        disableDarkMode();
-        localStorage.setItem('theme', 'light');
-    } else {
-        enableDarkMode();
-        localStorage.setItem('theme', 'dark');
-    }
+document.addEventListener('DOMContentLoaded', () => {
+    const toggleButton = document.getElementById('dark-mode-toggle');
+    toggleButton.addEventListener('click', () => {
+        if (document.documentElement.classList.contains('dark-mode')) {
+            disableDarkMode();
+            localStorage.setItem('theme', 'light');
+        } else {
+            enableDarkMode();
+            localStorage.setItem('theme', 'dark');
+        }
+    });
 });
 
 // Enable dark mode
 function enableDarkMode() {
     document.documentElement.classList.add('dark-mode');
-    toggleButton.textContent = 'Light Mode'; // Update button text
+    const toggleButton = document.getElementById('dark-mode-toggle');
+    if (toggleButton) toggleButton.textContent = 'Light Mode'; // Update button text
 }
 
 // Disable dark mode
 function disableDarkMode() {
     document.documentElement.classList.remove('dark-mode');
-    toggleButton.textContent = 'Dark Mode'; // Update button text
+    const toggleButton = document.getElementById('dark-mode-toggle');
+    if (toggleButton) toggleButton.textContent = 'Dark Mode'; // Update button text
 }
