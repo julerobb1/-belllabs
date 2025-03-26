@@ -6,13 +6,143 @@
     <title>AT&T Long Lines & Bell Labs - Innovations in Communication</title>
     <link rel="icon" href="img/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="recipes/css/styles.css"> <!-- Main styles -->
-    <link rel="stylesheet" href="recipes/css/theme.css"> <!-- Theme styles -->
     <script src="scripts.js" defer></script>
     <script src="recipes/js/discord-widget.js" defer></script>
     <script src="recipes/js/theme-toggle.js" defer></script>
-    <script src="recipes/js/slideshow.js" defer></script> <!-- Restore slideshow script -->
-    <script src="recipes/js/dynamic-gallery.js" defer></script> <!-- Ensure dynamic gallery script is included -->
     <style>
+        :root {
+            /* Light mode (default) variables */
+            --bg-color: #ffffff;
+            --text-color: #333333;
+            --header-bg-color: #0082ca;
+            --section-bg-color: #f5f5f5;
+            --nav-bg-color: #005a9c;
+            --nav-hover-color: #0082ca;
+            --link-color: #0056b3;
+            --link-hover-color: #003d82;
+            --footer-bg-color: #005a9c;
+            --footer-text-color: #ffffff;
+            --slideshow-text-bg: rgba(0, 0, 0, 0.5);
+            --slideshow-text-color: #ffffff;
+            --dot-border-color: #bbb;
+            --dot-active-color: #717171;
+            --form-bg-color: #f8f8f8;
+            --form-border-color: #ddd;
+            --button-bg-color: #005a9c;
+            --button-hover-color: #0082ca;
+            --button-text-color: #ffffff;
+        }
+        
+        .dark-mode {
+            --bg-color: #191919;
+            --text-color: #e0e0e0;
+            --header-bg-color: #333333;
+            --section-bg-color: #252525;
+            --nav-bg-color: #333333;
+            --nav-hover-color: #444444;
+            --link-color: #6aabff;
+            --link-hover-color: #99c9ff;
+            --footer-bg-color: #333333; 
+            --footer-text-color: #e0e0e0;
+            --slideshow-text-bg: rgba(38, 38, 38, 0.7);
+            --slideshow-text-color: #e0e0e0;
+            --dot-border-color: #444444;
+            --dot-active-color: #888888;
+            --form-bg-color: #252525;
+            --form-border-color: #333333;
+            --button-bg-color: #333333;
+            --button-hover-color: #444444;
+            --button-text-color: #e0e0e0;
+        }
+        
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+        
+        header {
+            background-color: var(--header-bg-color);
+            color: white;
+        }
+        
+        .section {
+            background-color: var(--section-bg-color);
+            border-radius: 5px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        
+        main {
+            padding: 20px;
+        }
+        
+        footer {
+            background-color: var(--footer-bg-color);
+            color: var(--footer-text-color);
+            padding: 20px;
+            text-align: center;
+        }
+        
+        a {
+            color: var(--link-color);
+        }
+        
+        a:hover {
+            color: var(--link-hover-color);
+        }
+        
+        /* Slideshow styling */
+        .slideshow-container {
+            background-color: var(--bg-color);
+        }
+        
+        .text {
+            background-color: var(--slideshow-text-bg);
+            color: var(--slideshow-text-color);
+        }
+        
+        .dot {
+            border: 1px solid var(--dot-border-color);
+        }
+        
+        .active, .dot:hover {
+            background-color: var(--dot-active-color);
+        }
+        
+        /* Form styling */
+        form {
+            background-color: var(--form-bg-color);
+            border: 1px solid var(--form-border-color);
+            padding: 15px;
+            border-radius: 5px;
+        }
+        
+        input, button[type="submit"] {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            border: 1px solid var(--form-border-color);
+        }
+        
+        button[type="submit"] {
+            background-color: var(--button-bg-color);
+            color: var(--button-text-color);
+        }
+        
+        button[type="submit"]:hover {
+            background-color: var(--button-hover-color);
+        }
+        
+        /* Navigation dropdown styling */
+        .dropdown-content {
+            background-color: var(--nav-bg-color);
+        }
+        
+        .dropdown-content a:hover {
+            background-color: var(--nav-hover-color);
+        }
+
         /* Fix alignment and spacing issues */
         #discord-widget-container {
             position: fixed;
@@ -77,26 +207,76 @@
         #dark-mode-toggle:hover {
             background-color: var(--header-bg-color);
         }
-    </style>
-    <script>
-        // Automatically apply theme based on system preferences
-        const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-        const savedTheme = localStorage.getItem('theme');
 
-        if (savedTheme) {
-            document.documentElement.classList.toggle('dark-mode', savedTheme === 'dark');
-        } else {
-            document.documentElement.classList.toggle('dark-mode', systemPrefersDark);
+        /* Additional dark mode specific overrides */
+        .dark-mode .section {
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+        }
+        
+        .dark-mode #dark-mode-toggle {
+            background-color: #333333;
+        }
+        
+        .dark-mode #dark-mode-toggle:hover {
+            background-color: #444444;
+        }
+        
+        .dark-mode .prev, .dark-mode .next {
+            color: #e0e0e0;
+            background-color: rgba(38, 38, 38, 0.3);
+        }
+        
+        .dark-mode .numbertext {
+            color: #e0e0e0;
+        }
+        
+        .dark-mode h2 {
+            color: #6aabff;
+        }
+        
+        /* Remove white borders in dark mode */
+        .dark-mode {
+            margin: 0;
+            padding: 0;
+        }
+        
+        .dark-mode body {
+            margin: 0;
+            padding: 0;
+            border: none;
+        }
+        
+        .dark-mode main {
+            margin: 0;
+            border: none;
+        }
+        
+        .dark-mode header, 
+        .dark-mode footer, 
+        .dark-mode nav,
+        .dark-mode .section {
+            border: none;
         }
 
-        // Listen for system preference changes
-        window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
-            const newPrefersDark = e.matches;
-            if (!localStorage.getItem('theme')) {
-                document.documentElement.classList.toggle('dark-mode', newPrefersDark);
-            }
-        });
-    </script>
+        /* Ensure full-width containers in dark mode */
+        .dark-mode .slideshow-container {
+            width: 100%;
+            margin: 0;
+            padding: 0;
+            border: none;
+        }
+        
+        /* Reset margin/padding for HTML/body */
+        html, body {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        *, *:before, *:after {
+            box-sizing: inherit;
+        }
+    </style>
 </head>
 <body>
     <header>
@@ -104,7 +284,7 @@
         <p>Pioneering Innovations in Telecommunications</p>
     </header>
 
-    <button id="dark-mode-toggle">Toggle Dark Theme</button>
+    <button id="dark-mode-toggle">Toggle Dark Mode</button>
 
     <nav>
         <a href="index.html">Home</a>
@@ -134,36 +314,60 @@
 
     <main>
         <div class="slideshow-container">
-            <!-- Slide 1 -->
+
             <div class="mySlides fade">
+                <div class="numbertext">1 / 2</div>
                 <img src="img/map1.jpg" style="width:100%" alt="AT&T Long Lines Network Map">
                 <div class="text">The sprawling AT&T Long Lines Network</div>
             </div>
 
-            <!-- Slide 2 -->
             <div class="mySlides fade">
+                <div class="numbertext">2 / 2</div>
                 <img src="img/map2.jpg" style="width:100%" alt="Another view of the AT&T Long Lines Network">
                 <div class="text">Another look at the Long Lines Network</div>
             </div>
 
-            <!-- Slide 3 -->
-            <div class="mySlides fade">
-                <img src="img/ll1.jpg" style="width:100%" alt="AT&T Long Lines Facility">
-                <div class="text">AT&T Long Lines Facility</div>
-            </div>
-
-            <!-- Navigation Arrows -->
             <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
             <a class="next" onclick="plusSlides(1)">&#10095;</a>
         </div>
         <br>
 
-        <!-- Dots/Indicators -->
         <div class="slideshow-navigation">
             <span class="dot" onclick="currentSlide(1)"></span>
             <span class="dot" onclick="currentSlide(2)"></span>
-            <span class="dot" onclick="currentSlide(3)"></span>
         </div>
+
+        <script>
+            // Slideshow functionality for mySlides
+            let slideIndex = 1;
+            showSlides(slideIndex);
+
+            function plusSlides(n) {
+                showSlides(slideIndex += n);
+            }
+
+            function currentSlide(n) {
+                showSlides(slideIndex = n);
+            }
+
+            function showSlides(n) {
+                let i;
+                const slides = document.getElementsByClassName("mySlides");
+                const dots = document.getElementsByClassName("dot");
+                if (n > slides.length) { slideIndex = 1; }
+                if (n < 1) { slideIndex = slides.length; }
+                for (i = 0; i < slides.length; i++) {
+                    slides[i].style.display = "none";
+                }
+                for (i = 0; i < dots.length; i++) {
+                    dots[i].className = dots[i].className.replace(" active", "");
+                }
+                if (slides[slideIndex - 1]) {
+                    slides[slideIndex - 1].style.display = "block";
+                    dots[slideIndex - 1].className += " active";
+                }
+            }
+        </script>
 
         <section id="history" class="section">
             <h2>History of AT&T Long Lines</h2>
@@ -216,20 +420,33 @@
         // Update the year dynamically
         document.getElementById('year').textContent = new Date().getFullYear();
 
-        // Dark mode toggle functionality
+        // Dark mode toggle functionality - improved version
         const toggleButton = document.getElementById('dark-mode-toggle');
-        const currentTheme = localStorage.getItem('theme');
-
-        // Apply the saved theme on page load
-        if (currentTheme === 'dark') {
-            document.documentElement.classList.add('dark-mode');
+        
+        function setDarkMode(isDark) {
+            if (isDark) {
+                document.body.classList.add('dark-mode');
+                toggleButton.textContent = 'Light Mode';
+                localStorage.setItem('darkMode', 'enabled');
+            } else {
+                document.body.classList.remove('dark-mode');
+                toggleButton.textContent = 'Dark Mode';
+                localStorage.setItem('darkMode', 'disabled');
+            }
         }
-
+        
         toggleButton.addEventListener('click', () => {
-            document.documentElement.classList.toggle('dark-mode');
-            const theme = document.documentElement.classList.contains('dark-mode') ? 'dark' : 'light';
-            localStorage.setItem('theme', theme); // Save the theme preference
+            const isDarkMode = !document.body.classList.contains('dark-mode');
+            setDarkMode(isDarkMode);
         });
+        
+        // Check for saved preference immediately (without waiting for DOMContentLoaded)
+        const savedMode = localStorage.getItem('darkMode');
+        if (savedMode === 'enabled') {
+            setDarkMode(true);
+        } else {
+            setDarkMode(false);
+        }
 
         // Collapsible Discord widget functionality
         const discordWidgetContainer = document.getElementById('discord-widget-container');
@@ -238,41 +455,6 @@
             discordWidgetContainer.classList.toggle('collapsed');
             collapseButton.textContent = discordWidgetContainer.classList.contains('collapsed') ? '+' : '-';
         });
-
-        // Slideshow functionality for mySlides
-        let slideIndex = 1;
-        showSlides(slideIndex);
-
-        function plusSlides(n) {
-            showSlides(slideIndex += n);
-        }
-
-        function currentSlide(n) {
-            showSlides(slideIndex = n);
-        }
-
-        function showSlides(n) {
-            let i;
-            const slides = document.getElementsByClassName("mySlides");
-            const dots = document.getElementsByClassName("dot");
-            if (n > slides.length) { slideIndex = 1; }
-            if (n < 1) { slideIndex = slides.length; }
-            for (i = 0; i < slides.length; i++) {
-                slides[i].style.display = "none";
-            }
-            for (i = 0; i < dots.length; i++) {
-                dots[i].className = dots[i].className.replace(" active", "");
-            }
-            if (slides[slideIndex - 1]) {
-                slides[slideIndex - 1].style.display = "block";
-                dots[slideIndex - 1].className += " active";
-            }
-        }
-
-        // Initialize dynamic gallery
-        if (typeof initializeDynamicGallery === 'function') {
-            initializeDynamicGallery();
-        }
     </script>
 </body>
 </html>
