@@ -10,6 +10,49 @@
     <script src="scripts.js" defer></script>
     <script src="recipes/js/discord-widget.js" defer></script>
     <script src="recipes/js/theme-toggle.js" defer></script>
+    <style>
+        /* Fix alignment and spacing issues */
+        #discord-widget-container {
+            margin: 20px auto;
+            text-align: center;
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 10px;
+            padding: 10px 0;
+            background-color: var(--nav-bg-color);
+        }
+
+        nav a {
+            text-decoration: none;
+            color: white;
+            padding: 5px 10px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        nav a:hover {
+            background-color: var(--nav-hover-color);
+        }
+
+        #dark-mode-toggle {
+            margin-left: 10px;
+            padding: 5px 10px;
+            border: none;
+            background-color: var(--nav-hover-color);
+            color: white;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        #dark-mode-toggle:hover {
+            background-color: var(--header-bg-color);
+        }
+    </style>
 </head>
 <body>
     <header>
@@ -22,7 +65,7 @@
     </header>
 
     <nav>
-        <a href="index.html">Home</a> |
+        <a href="index.html">Home</a>
         <div class="dropdown">
             <a href="#">Technology</a>
             <div class="dropdown-content">
@@ -35,13 +78,12 @@
                 <a href="blit.html">Blit</a> <!-- Added Blit -->
                 <a href="amps.html">AMPS</a> <!-- Added AMPS -->
             </div>
-        </div> |
-        <a href="gallery.html">Gallery</a> |
-        <a href="bob-lucky.html">Bob Lucky</a> |
-        <a href="noc.html">AT&T Network Operations Center</a> |
+        </div>
+        <a href="gallery.html">Gallery</a>
+        <a href="bob-lucky.html">Bob Lucky</a>
+        <a href="noc.html">AT&T Network Operations Center</a>
         <a href="#discord">Discord Server</a>
         <button id="dark-mode-toggle">Toggle Dark Mode</button>
-        <!-- No link to the admin panel for now -->
     </nav>
 
     <main>
