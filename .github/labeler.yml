@@ -11,3 +11,68 @@
     dot: true
     # The pull request number(s)
     pr-number: ${{ github.event.pull_request.number }}
+
+# Label configuration rules
+labels:
+  # Root-level changes
+  root-level HTML:
+    - changed-files:
+        - '*.html'
+  root-level styles:
+    - changed-files:
+        - '*.css'
+  root-level scripts:
+    - changed-files:
+        - '*.js'
+
+  # Subdirectory changes
+  gallery images:
+    - changed-files:
+        - 'img/gallery/**'
+  images:
+    - changed-files:
+        - 'img/**'
+
+  # Detailed labels for specific changes
+  feature addition:
+    - changed-files:
+        - '*.html'
+        - '*.css'
+        - '*.js'
+        - 'img/**'
+  BUG:
+    - changed-files:
+        - '*.html'
+        - '*.css'
+        - '*.js'
+        - 'img/**'
+  hotfix:
+    - changed-files:
+        - '*.html'
+        - '*.css'
+        - '*.js'
+        - 'img/**'
+  Multi-bug:
+    - changed-files:
+        - '*.html'
+        - '*.css'
+        - '*.js'
+        - 'img/**'
+  Multi bug fix:
+    - changed-files:
+        - '*.html'
+        - '*.css'
+        - '*.js'
+        - 'img/**'
+  bug fix:
+    - changed-files:
+        - '*.html'
+        - '*.css'
+        - '*.js'
+        - 'img/**'
+
+  # Documentation
+  documentation:
+    - changed-files:
+        - 'README.md'
+        - 'SECURITY.md'

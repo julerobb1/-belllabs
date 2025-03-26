@@ -1,0 +1,27 @@
+name: Bug Issue Creator
+
+on:
+  pull_request:
+    types:
+      - labeled
+
+jobs:
+  create-issue:
+    if: contains(github.event.label.name, 'BUG') || contains(github.event.label.name, 'Multi-bug')
+    runs-on: ubuntu-latest
+    steps:
+      - name: Create Issue for Bug
+        uses: actions-ecosystem/action-create-issue@v1
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          title: "Bug Detected: ${{ github.event.pull_request.title }}"
+          body: |
+            A bug has been detected in the following file(s):
+            ${{ github.event.pull_request.changed_files }}
+
+            **Issue Description:**
+            ${{ github.event.pull_request.body }}
+
+            **Suggested Remedy:**
+            If a suggested remedy was provided in the pull request description, please review it. Otherwise, collaborate with the team to identify a solution.
+          labels: ${{ github.event.label.name }}

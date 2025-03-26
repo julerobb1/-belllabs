@@ -1,36 +1,76 @@
-# This workflow will triage pull requests and apply a label based on the
-# paths that are modified in the pull request.
-#
-# To use this workflow, you will need to set up a .github/labeler.yml
-# file with configuration.  For more information, see:
-# https://github.com/actions/labeler
-
-name: Labeler
-on: [pull_request_target]
-
-jobs:
-  label:
-
-    runs-on: ubuntu-latest
-    permissions:
-      contents: read
-      pull-requests: write
-
-    steps:
-    - uses: actions/labeler@v5
-      with:
-        repo-token: "${{ secrets.GITHUB_TOKEN }}"
-            - name: Labeler
+- name: Labeler
   uses: actions/labeler@v5.0.0
   with:
     # The GitHub token used to manage labels
-    repo-token: # optional, default is ${{ github.token }}
+    repo-token: ${{ secrets.GITHUB_TOKEN }}
     # The path for the label configurations
-    configuration-path: # optional, default is .github/labeler.yml
+    configuration-path: .github/labeler.yml
     # Whether or not to remove labels when matching files are reverted
-    sync-labels: # optional
+    sync-labels: true
     # Whether or not to auto-include paths starting with dot (e.g. `.github`)
-    dot: # optional, default is true
+    dot: true
     # The pull request number(s)
-    pr-number: # optional
-          
+    pr-number: ${{ github.event.pull_request.number }}
+
+# Label configuration rules
+labels:
+  # Root-level changes
+  root-level HTML:
+    - changed-files:
+        - '*.html'
+  root-level styles:
+    - changed-files:
+        - '*.css'
+  root-level scripts:
+    - changed-files:
+        - '*.js'
+
+  # Subdirectory changes
+  recipes styles:
+    - changed-files:
+        - 'recipes/css/**'
+  recipes scripts:
+    - changed-files:
+        - 'recipes/js/**'
+  gallery images:
+    - changed-files:
+        - 'img/gallery/**'
+  images:
+    - changed-files:
+        - 'img/**'
+
+  # Detailed labels for specific changes
+  feature addition:
+    - changed-files:
+        - '*.html'
+        - '*.css'
+        - '*.js'
+        - 'recipes/**'
+        - 'img/**'
+  bug fix:
+    - changed-files:
+        - '*.html'
+        - '*.css'
+        - '*.js'
+        - 'recipes/**'
+        - 'img/**'
+  hotfix:
+    - changed-files:
+        - '*.html'
+        - '*.css'
+        - '*.js'
+        - 'recipes/**'
+        - 'img/**'
+  refactor:
+    - changed-files:
+        - '*.html'
+        - '*.css'
+        - '*.js'
+        - 'recipes/**'
+        - 'img/**'
+
+  # Documentation
+  documentation:
+    - changed-files:
+        - 'README.md'
+        - 'SECURITY.md'
