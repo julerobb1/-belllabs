@@ -7,71 +7,9 @@
     <link rel="icon" href="img/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="recipes/css/st.css"> <!-- Main styles -->
     <script src="scripts.js" defer></script>
-    <script src="recipes/js/discorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscord-widget.js" defer></script>
+    <script src="recipes/js/discord-widget.js" defer></script>
     <script src="recipes/js/theme-toggle.js" defer></script>
     <style>
-        /* Fix alignment and spacing issues */
-        #discorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscord-widget-container {
-            position: fixed;
-            bottom: 20px;
-            left: 20px;
-            z-index: 1000;
-            text-align: center;
-        }
-
-        #discorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscord-widget-container button {
-            position: absolute;
-            top: 5px;
-            right: 5px;
-            z-index: 1001;
-            background-color: #007acc;
-            color: white;
-            border: none;
-            border-radius: 3px;
-            padding: 5px;
-            cursor: pointer;
-        }
-
-        #discorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscord-widget-container button:hover {
-            background-color: #0056b3;
-        }
-
-        nav {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 10px;
-            padding: 10px 0;
-            background-color: var(--nav-bg-color);
-        }
-
-        nav a {
-            text-decoration: none;
-            color: white;
-            padding: 5px 10px;
-            border-radius: 5px;
-            transition: background-color 0.3s ease;
-        }
-
-        nav a:hover {
-            background-color: var(--nav-hover-color);
-        }
-
-        #dark-mode-toggle {
-            margin-left: 10px;
-            padding: 5px 10px;
-            border: none;
-            background-color: var(--nav-hover-color);
-            color: white;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-
-        #dark-mode-toggle:hover {
-            background-color: var(--header-bg-color);
-        }
-
         /* Dark mode CSS variables */
         :root {
             --bg-color: #ffffff;
@@ -124,11 +62,24 @@
             transition: background-color 0.3s ease, color 0.3s ease;
             margin: 0;
             padding: 0;
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
         }
         
         header {
             background-color: var(--header-bg-color);
             color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        
+        header h1 {
+            margin-top: 0;
+            margin-bottom: 10px;
+        }
+        
+        header p {
+            margin: 0;
         }
         
         .section {
@@ -139,1085 +90,231 @@
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
         }
         
+        main {
+            padding: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
         footer {
             background-color: var(--footer-bg-color);
             color: var(--footer-text-color);
+            padding: 20px;
+            text-align: center;
         }
         
         a {
             color: var(--link-color);
+            text-decoration: none;
         }
         
         a:hover {
             color: var(--link-hover-color);
+            text-decoration: underline;
         }
         
-        /* Enhanced slideshow styling */
-        .mySlides {
-            position: relative;
-        }
-        
+        /* Improved slideshow styling */
         .slideshow-container {
             background-color: var(--bg-color);
+            position: relative;
+            max-width: 100%;
+            margin-bottom: 20px;
+        }
+        
+        .mySlides {
+            position: relative;
+            display: none;
+        }
+        
+        .prev, .next {
+            cursor: pointer;
+            position: absolute;
+            top: 50%;
+            width: auto;
+            margin-top: -22px;
+            padding: 16px;
+            color: white;
+            font-weight: bold;
+            font-size: 18px;
+            transition: 0.6s ease;
+            border-radius: 0 3px 3px 0;
+            user-select: none;
+            background-color: rgba(0, 0, 0, 0.3);
+            z-index: 10;
+        }
+        
+        .next {
+            right: 0;
+            border-radius: 3px 0 0 3px;
+        }
+        
+        .prev {
+            left: 0;
         }
         
         .text {
             background-color: var(--slideshow-text-bg);
             color: var(--slideshow-text-color);
+            padding: 8px 12px;
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            text-align: center;
         }
         
-        .prev, .next {
-            background-color: rgba(0, 0, 0, 0.3);
-            color: white;
-        }
-        
-        .prev:hover, .next:hover {
-            background-color: rgba(0, 0, 0, 0.8);
+        .numbertext {
+            color: #f2f2f2;
+            font-size: 12px;
+            padding: 8px 12px;
+            position: absolute;
+            top: 0;
         }
         
         .dot {
-            border: 1px solid var(--dot-border-color);
+            cursor: pointer;
+            height: 15px;
+            width: 15px;
+            margin: 0 2px;
+            background-color: #bbb;
+            border-radius: 50%;
+            display: inline-block;
+            transition: background-color 0.6s ease;
         }
         
         .active, .dot:hover {
             background-color: var(--dot-active-color);
         }
         
+        .fade {
+            animation-name: fade;
+            animation-duration: 1.5s;
+        }
+        
+        @keyframes fade {
+            from {opacity: .4}
+            to {opacity: 1}
+        }
+        
+        /* Image gallery styling */
+        .image-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 15px;
+            margin: 20px 0;
+        }
+        
+        .image-gallery img {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 5px;
+            transition: transform 0.3s ease;
+        }
+        
+        .image-gallery img:hover {
+            transform: scale(1.05);
+        }
+        
         /* Form styling */
         form {
             background-color: var(--form-bg-color);
             border: 1px solid var(--form-border-color);
+            padding: 15px;
+            border-radius: 5px;
         }
         
         input, button[type="submit"] {
             background-color: var(--bg-color);
             color: var(--text-color);
             border: 1px solid var(--form-border-color);
+            padding: 8px;
+            margin: 5px 0;
+            border-radius: 3px;
         }
         
         button[type="submit"] {
             background-color: var(--button-bg-color);
             color: var(--button-text-color);
+            cursor: pointer;
         }
         
         button[type="submit"]:hover {
             background-color: var(--button-hover-color);
         }
-    </style>
-</head>
-<body>
-    <header>
-        <h1>AT&T Long Lines & Bell Labs</h1>
-        <p>Pioneering Innovations in Telecommunications</p>
-    </header>
-
-    <nav>
-        <a href="index.html">Home</a>
-        <div class="dropdown">
-            <a href="#">Technology</a>
-            <div class="dropdown-content">
-                <a href="technology.html">Tech Overview</a>
-                <a href="transistor.html">The Transistor</a>
-                <a href="optical-maser.html">Lasers</a>
-                <a href="ccd.html">Digital Imaging</a>
-                <a href="photovoltaic-cell.html">Solar Power</a>
-                <a href="unix.html">UNIX</a>
-                <a href="blit.html">Blit</a>
-                <a href="amps.html">AMPS</a>
-                <a href="plan9.html">Plan 9</a>
-                <a href="unix-emulator.html">UNIX Emulator</a>
-            </div>
-        </div>
-        <a href="bell-labs.html">Bell Labs</a>
-        <a href="gallery.html">Gallery</a>
-        <a href="bob-lucky.html">Bob Lucky</a>
-        <a href="noc.html">Network Operations Center</a>
-        <a href="history-att-longlines.html">Long Lines History</a>
-        <a href="history-bell-labs.html">Bell Labs History</a>
-        <a href="contribute.html">Contribute</a>
-        <button id="dark-mode-toggle">Toggle Dark Mode</button>
-    </nav>
-
-    <main>
-        <div class="slideshow-container">
-
-            <div class="mySlides fade">
-                <div class="numbertext">1 / 2</div>
-                <img src="img/map1.jpg" style="width:100%" alt="AT&T Long Lines Network Map">
-                <div class="text">The sprawling AT&T Long Lines Network</div>
-            </div>
-
-            <div class="mySlides fade">
-                <div class="numbertext">2 / 2</div>
-                <img src="img/map2.jpg" style="width:100%" alt="Another view of the AT&T Long Lines Network">
-                <div class="text">Another look at the Long Lines Network</div>
-            </div>
-
-            <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-            <a class="next" onclick="plusSlides(1)">&#10095;</a>
-        </div>
-        <br>
-
-        <div class="slideshow-navigation">
-            <span class="dot" onclick="currentSlide(1)"></span>
-            <span class="dot" onclick="currentSlide(2)"></span>
-        </div>
-
-        <script>
-            // Slideshow functionality for mySlides
-            let slideIndex = 1;
-            showSlides(slideIndex);
-
-            function plusSlides(n) {
-                showSlides(slideIndex += n);
-            }
-
-            function currentSlide(n) {
-                showSlides(slideIndex = n);
-            }
-
-            function showSlides(n) {
-                let i;
-                const slides = document.getElementsByClassName("mySlides");
-                const dots = document.getElementsByClassName("dot");
-                if (n > slides.length) { slideIndex = 1; }
-                if (n < 1) { slideIndex = slides.length; }
-                for (i = 0; i < slides.length; i++) {
-                    slides[i].style.display = "none";
-                }
-                for (i = 0; i < dots.length; i++) {
-                    dots[i].className = dots[i].className.replace(" active", "");
-                }
-                if (slides[slideIndex - 1]) {
-                    slides[slideIndex - 1].style.display = "block";
-                    dots[slideIndex - 1].className += " active";
-                }
-            }
-        </script>
-
-        <section id="history" class="section">
-            <h2>History of AT&T Long Lines</h2>
-            <p>The AT&T Long Lines was a network of communications lines, initially consisting of telephone lines, that were owned and operated by AT&T. It played a pivotal role in long-distance communication in the United States throughout the 20th century.</p>
-            <p>This network not only facilitated telephone calls but also supported television broadcasting, data transmission, and various other forms of communication. Its development marked a significant engineering milestone, involving the construction of numerous repeater stations and the application of cutting-edge technologies.</p>
-            <a href="history-att-longlines.html" rel="noreferrer">Learn More about Bell Lab's History Here</a>
-        </section>
-
-        <section id="technology" class="section">
-            <h2>Technology Behind Long Lines</h2>
-            <p>The Long Lines network utilized a range of technologies, including microwave radio relay systems and coaxial cables, enabling the transmission of signals over vast distances with minimal signal degradation.</p>
-            <p>Essential components included repeater stations, which amplified signals to maintain their strength, and switching centers, which directed calls to their intended destinations. The network continually evolved, integrating new technologies like fiber optics to enhance capacity and improve overall performance.</p>
-            <a href="technology.html" rel="noreferrer">Learn More about the fascinating tech here</a>
-        </section>
-
-        <section id="bell-labs" class="section">
-            <h2>Bell Labs: The Innovation Hub</h2>
-            <p>Bell Labs, formerly known as Bell Telephone Laboratories, was the research and development arm of AT&T. It is renowned for its groundbreaking contributions to science and technology.</p>
-            <p>Bell Labs researchers and engineers invented the transistor, the laser, the photovoltaic cell, the charge-coupled device (CCD), information theory, the Unix operating system, and the C programming language, among other things. Eight Nobel Prizes have been awarded for work completed at Bell Laboratories.</p> Learn more about the innovations at Bell Labs <a href="history-bell-labs.html" rel="noreferrer">here</a>.
-        </section>
-
-        <section id="gallery" class="section">
-            <h2>Gallery</h2>
-            <div class="image-gallery" id="dynamic-gallery">
-                <!-- Images will be dynamically added here -->
-            </div>
-            <p>Explore images of AT&T Long Lines facilities, Bell Labs, and related equipment. <a href="gallery.html" rel="noreferrer">View Full Gallery</a></p>
-            
-            <!-- User Image Submission Form -->
-            <h3>Submit Your Images</h3>
-            <form id="image-upload-form" enctype="multipart/form-data">
-                <label for="image-upload">Upload an image:</label>
-                <input type="file" id="image-upload" name="image" accept="image/*" required>
-                <button type="submit">Submit</button>
-            </form>
-        </section>
-    </main>
-
-    <footer>
-        <p><small>We frequently review our code to ensure we remain a privacy-first, tracker-free site.</small></p>
-        <p>&copy; <span id="year"></span> AT&T Long Lines & Bell Labs Community. <small>Site by juler#5461. All rights reserved.</small></p>
-    </footer>
-
-    <div id="discorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscord-widget-container" class="collapsible">
-        <button id="collapse-button">+</button>
-        <iframe src="https://discorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscord.com/widget?id=807000904397094913&theme=dark" width="350" height="500" allowtransparency="true" frameborder="0"></iframe>
-    </div>
-
-    <script>
-        // Update the year dynamically
-        document.getElementById('year').textContent = new Date().getFullYear();
-
-        // Dark mode toggle functionality with localStorage support
-        const toggleButton = document.getElementById('dark-mode-toggle');
         
-        function setDarkMode(isDark) {
-            if (isDark) {
-                document.documentElement.classList.add('dark-mode');
-                document.body.classList.add('dark-mode');
-                toggleButton.textContent = 'Light Mode';
-                localStorage.setItem('darkMode', 'enabled');
-            } else {
-                document.documentElement.classList.remove('dark-mode');
-                document.body.classList.remove('dark-mode');
-                toggleButton.textContent = 'Dark Mode';
-                localStorage.setItem('darkMode', 'disabled');
-            }
+        /* Navigation styling */
+        nav {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 10px;
+            padding: 10px 0;
+            background-color: var(--nav-bg-color);
+        }
+
+        nav a {
+            text-decoration: none;
+            color: white;
+            padding: 5px 10px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        nav a:hover {
+            background-color: var(--nav-hover-color);
+            text-decoration: none;
+        }
+
+        /* Dropdown menu styling */
+        .dropdown {
+            position: relative;
+            display: inline-block;
         }
         
-        toggleButton.addEventListener('click', () => {
-            const isDarkMode = !document.body.classList.contains('dark-mode');
-            setDarkMode(isDarkMode);
-        });
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: var(--nav-bg-color);
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+            border-radius: 5px;
+            margin-top: 5px;
+        }
         
-        // Check for saved preference on page load
-        document.addEventListener('DOMContentLoaded', () => {
-            const savedMode = localStorage.getItem('darkMode');
-            if (savedMode === 'enabled') {
-                setDarkMode(true);
-            } else {
-                setDarkMode(false);
-            }
-        });
+        .dropdown-content a {
+            color: white;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+            text-align: left;
+        }
+        
+        .dropdown-content a:hover {
+            background-color: var(--nav-hover-color);
+        }
+        
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+        
+        /* Dark mode toggle button */
+        #dark-mode-toggle {
+            margin-left: 10px;
+            padding: 5px 10px;
+            border: none;
+            background-color: var(--nav-hover-color);
+            color: white;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
 
-        // Collapsible Discord widget functionality
-        const discordWidgetContainer = document.getElementById('discorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscorddiscord-widget-container');
-        const collapseButton = document.getElementById('collapse-button');
-        collapseButton.addEventListener('click', () => {
-            discordWidgetContainer.classList.toggle('collapsed');
-            collapseButton.textContent = discordWidgetContainer.classList.contains('collapsed') ? '+' : '-';
-        });
-    </script>
-</body>
-</html>discord
-discord
-discord
-discord
-discord
-discord
-discorddiscord
-discord
-discord
-discord
-discord
-discord
-discorddiscord
-discord
-discord
-discord
-discord
-discord
-discorddiscord
-discord
-discord
-discord
-discord
-discord
-discorddiscord
-discord
-discord
-discord
-discord
-discord
-discorddiscord
-discord
-discord
-discord
-discord
-discord
-discorddiscord
-discord
-discord
-discord
-discord
-discord
-discorddiscord
-discord
-discord
-discord
-discord
-discord
-discorddiscord
-discord
-discord
-discord
-discord
-discord
-discorddiscord
-discord
-discord
-discord
-discord
-discord
-discorddiscord
-discord
-discord
-discord
-discord
-discord
-discorddiscord
-discord
-discord
-discord
-discord
-discord
-discorddiscord
-discord
-discord
-discord
-discord
-discord
-discorddiscord
-discord
-discord
-discord
-discord
-discord
-discorddiscord
-discord
-discord
-discord
-discord
-discord
-discorddiscord
-discord
-discord
-discord
-discord
-discord
-discorddiscord
-discord
-discord
-discord
-discord
-discord
-discorddiscord
-discord
-discord
-discord
-discord
-discord
-discorddiscord
-discord
-discord
-discord
-discord
-discord
-discorddiscord
-discord
-discord
-discord
-discord
-discord
-discorddiscord
-discord
-discord
-discord
-discord
-discord
-discorddiscord
-discord
-discord
-discord
-discord
-discord
-discorddiscord
-discord
-discord
-discord
-discord
-discord
-discorddiscord
-discord
-discord
-discord
-discord
-discord
-discorddiscord
-discord
-discord
-discord
-discord
-discord
-discorddiscord
-discord
-discord
-discord
-discord
-discord
-discorddiscord
-discord
-discord
-discord
-discord
-discord
-discorddiscord
-discord
-discord
-discord
-discord
-discord
-discorddiscord
-discord
-discord
-discord
-discord
-discord
-discorddiscord
-discord
-discord
-discord
-discord
-discord
-discorddiscord
-discord
-discord
-discord
-discord
-discord
-discorddiscord
-discord
-discord
-discord
-discord
-discord
-discorddiscord
-discord
-discord
-discord
-discord
-discord
-discorddiscord
-discord
-discord
-discord
-discord
-discord
-discorddiscord
-discord
-discord
-discord
-discord
-discord
-discorddiscord
-discord
-discord
-discord
-discord
-discord
-discorddiscord
-discord
-discord
-discord
-discord
-discord
-discorddiscord
-discord
-discord
-discord
-discord
-discord
-discorddiscord
-discord
-discord
-discord
-discord
-discord
-discorddiscord
-discord
-discord
-discord
-discord
-discord
-discorddiscord
-discord
-discord
-discord
-discord
-discord
-discorddiscord
-discord
-discord
-discord
-discord
-discord
-discorddiscord
-discord
-discord
-discord
-discord
-discord
-discorddiscord
-discord
-discord
-discord
-discord
-discord
-discorddiscord
-discord
-discord
-discord
-discord
-discord
-discorddiscord
-discord
-discord
-discord
-discord
-discord
-discorddiscord
-discord
-discord
-discord
-discord
-discord
-discorddiscord
-discord
-discord
-discord
-discord
-discord
-discorddiscord
-discord
-discord
-discord
-discord
-discord
-discorddiscord
-discord
-discord
-discord
-discord
-discord
-discorddiscord
-discord
-discord
-discord
-discord
-discord
-discorddiscord
-discord
-discord
-discord
-discord
-discord
-discorddiscord
-discord
-discord
-discord
-discord
-discord
-discorddiscord
-discord
-discord
-discord
-discord
-discord
-discorddiscord
-discord
-discord
-discord
-discord
-discord
-discorddiscord
-discord
-discord
-discord
-discord
-discord
-discorddiscord
-discord
-discord
-discord
-discord
-discord
-discorddiscord
-discord
-discord
-discord
-discord
-discord
-discorddiscord
-discord
-discord
-discord
-discord
-discord
-discorddiscord
-discord
-discord
-discord
-discord
-discord
-discorddiscord
-discord
-discord
-discord
-discord
-discord
-discorddiscord
-discord
-discord
-discord
-discord
-discord
-discorddiscord
-discord
-discord
-discord
-discord
-discord
-discorddiscord
-discord
-discord
-discord
-discord
-discord
-discorddiscord
-discord
-discord
-discord
-discord
-discord
-discorddiscord
-discord
-discord
-discord
-discord
-discord
-discorddiscord
-discord
-discord
-discord
-discord
-discord
-discorddiscord
-discord
-discord
-discord
-discord
-discord
-discorddiscord
-discord
-discord
-discord
-discord
-discord
-discorddiscord
-discord
-discord
-discord
-discord
-discord
-discorddiscord
-discord
-discord
-discord
-discord
-discord
-discorddiscord
-discord
-discord
-discord
-discord
-discord
-discorddiscord
-discord
-discord
-discord
-discord
-discord
-discorddiscord
-discord
-discord
-discord
-discord
-discord
-discorddiscord
-discord
-discord
-discord
-discord
-discord
-discorddiscord
-discord
-discord
-discord
-discord
-discord
-discorddiscord
-discord
-discord
-discord
-discord
-discord
-discorddiscord
-discord
-discord
-discord
-discord
-discord
-discorddiscord
-discord
-discord
-discord
-discord
-discord
-discorddiscord
-discord
-discord
-discord
-discord
-discord
-discorddiscord
-discord
-discord
-discord
-discord
-discord
-discorddiscord
-discord
-discord
-discord
-discord
-discord
-discorddiscord
-discord
-discord
-discord
-discord
-discord
-discorddiscord
-discord
-discord
-discord
-discord
-discord
-discorddiscord
-discord
-discord
-discord
-discord
-discord
-discorddiscord
-discord
-discord
-discord
-discord
-discord
-discorddiscord
-discord
-discord
-discord
-discord
-discord
-discorddiscord
-discord
-discord
-discord
-discord
-discord
-discorddiscord
-discord
-discord
-discord
-discord
-discord
-discorddiscord
-discord
-discord
-discord
-discord
-discord
-discorddiscord
-discord
-discord
-discord
-discord
-discord
-discorddiscord
-discord
-discord
-discord
-discord
-discord
-discorddiscord
-discord
-discord
-discord
-discord
-discord
-discorddiscord
-discord
-discord
-discord
-discord
-discord
-discorddiscord
-discord
-discord
-discord
-discord
-discord
-discorddiscord
-discord
-discord
-discord
-discord
-discord
-discorddiscord
-discord
-discord
-discord
-discord
-discord
-discorddiscord
-discord
-discord
-discord
-discord
-discord
-discorddiscord
-discord
-discord
-discord
-discord
-discord
-discorddiscord
-discord
-discord
-discord
-discord
-discord
-discorddiscord
-discord
-discord
-discord
-discord
-discord
-discorddiscord
-discord
-discord
-discord
-discord
-discord
-discorddiscord
-discord
-discord
-discord
-discord
-discord
-discorddiscord
-discord
-discord
-discord
-discord
-discord
-discorddiscord
-discord
-discord
-discord
-discord
-discord
-discorddiscord
-discord
-discord
-discord
-discord
-discord
-discorddiscord
-discord
-discord
-discord
-discord
-discord
-discorddiscord
-discord
-discord
-discord
-discord
-discord
-discorddiscord
-discord
-discord
-discord
-discord
-discord
-discorddiscord
-discord
-discord
-discord
-discord
-discord
-discorddiscord
-discord
-discord
-discord
-discord
-discord
-discorddiscord
-discord
-discord
-discord
-discord
-discord
-discorddiscord
-discord
-discord
-discord
-discord
-discord
-discorddiscord
-discord
-discord
-discord
-discord
-discord
-discorddiscord
-discord
-discord
-discord
-discord
-discord
-discorddiscord
-discord
-discord
-discord
-discord
-discord
-discorddiscord
-discord
-discord
-discord
-discord
-discord
-discorddiscord
-discord
-discord
-discord
-discord
-discord
-discorddiscord
-discord
-discord
-discord
-discord
-discord
-discorddiscord
-discord
-discord
-discord
-discord
-discord
-discorddiscord
-discord
-discord
-discord
-discord
-discord
-discorddiscord
-discord
-discord
-discord
-discord
-discord
-discorddiscord
-discord
-discord
-discord
-discord
-discord
-discorddiscord
-discord
-discord
-discord
-discord
-discord
-discorddiscord
-discord
-discord
-discord
-discord
-discord
-discorddiscord
-discord
-discord
-discord
-discord
-discord
-discorddiscord
-discord
-discord
-discord
-discord
-discord
-discorddiscord
-discord
-discord
-discord
-discord
-discord
-discorddiscord
-discord
-discord
-discord
-discord
-discord
-discorddiscord
-discord
-discord
-discord
-discord
-discord
-discorddiscord
-discord
-discord
-discord
-discord
-discord
-discorddiscord
-discord
-discord
-discord
-discord
-discord
-discorddiscord
-discord
-discord
-discord
-discord
-discord
-discorddiscord
-discord
-discord
-discord
-discord
-discord
-discorddiscord
-discord
-discord
-discord
-discord
-discord
-discorddiscord
-discord
-discord
-discord
-discord
-discord
-discorddiscord
-discord
-discord
-discord<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AT&T Long Lines & Bell Labs - Innovations in Communication</title>
-    <link rel="icon" href="img/favicon.ico" type="image/x-icon">
-    <link rel="stylesheet" href="recipes/css/st.css"> <!-- Main styles -->
-    <script src="scripts.js" defer></script>
-    <script src="recipes/js/discord-widget.js" defer></script>
-    <script src="recipes/js/theme-toggle.js" defer></script>
-    <style>
+        #dark-mode-toggle:hover {
+            background-color: var(--header-bg-color);
+        }
+        
         /* Fix alignment and spacing issues */
         #discord-widget-container {
             position: fixed;
@@ -1243,559 +340,10 @@ discord<!DOCTYPE html>
         #discord-widget-container button:hover {
             background-color: #0056b3;
         }
-
-        nav {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 10px;
-            padding: 10px 0;
-            background-color: var(--nav-bg-color);
-        }
-
-        nav a {
-            text-decoration: none;
-            color: white;
-            padding: 5px 10px;
-            border-radius: 5px;
-            transition: background-color 0.3s ease;
-        }
-
-        nav a:hover {
-            background-color: var(--nav-hover-color);
-        }
-
-        #dark-mode-toggle {
-            margin-left: 10px;
-            padding: 5px 10px;
-            border: none;
-            background-color: var(--nav-hover-color);
-            color: white;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-
-        #dark-mode-toggle:hover {
-            background-color: var(--header-bg-color);
-        }
-
-        /* Dark mode CSS variables */
-        :root {
-            --bg-color: #ffffff;
-            --text-color: #333333;
-            --header-bg-color: #0082ca;
-            --section-bg-color: #f5f5f5;
-            --nav-bg-color: #005a9c;
-            --nav-hover-color: #0082ca;
-            --link-color: #0056b3;
-            --link-hover-color: #003d82;
-            --footer-bg-color: #005a9c;
-            --footer-text-color: #ffffff;
-            --slideshow-text-bg: rgba(0, 0, 0, 0.5);
-            --slideshow-text-color: #ffffff;
-            --dot-border-color: #bbb;
-            --dot-active-color: #717171;
-            --form-bg-color: #f8f8f8;
-            --form-border-color: #ddd;
-            --button-bg-color: #005a9c;
-            --button-hover-color: #0082ca;
-            --button-text-color: #ffffff;
-        }
         
-        .dark-mode {
-            --bg-color: #191919;
-            --text-color: #e0e0e0;
-            --header-bg-color: #333333;
-            --section-bg-color: #252525;
-            --nav-bg-color: #333333;
-            --nav-hover-color: #444444;
-            --link-color: #6aabff;
-            --link-hover-color: #99c9ff;
-            --footer-bg-color: #333333; 
-            --footer-text-color: #e0e0e0;
-            --slideshow-text-bg: rgba(38, 38, 38, 0.7);
-            --slideshow-text-color: #e0e0e0;
-            --dot-border-color: #444444;
-            --dot-active-color: #888888;
-            --form-bg-color: #252525;
-            --form-border-color: #333333;
-            --button-bg-color: #333333;
-            --button-hover-color: #444444;
-            --button-text-color: #e0e0e0;
-        }
-        
-        /* Basic styling with CSS variables */
-        body {
-            background-color: var(--bg-color);
-            color: var(--text-color);
-            transition: background-color 0.3s ease, color 0.3s ease;
-            margin: 0;
-            padding: 0;
-        }
-        
-        header {
-            background-color: var(--header-bg-color);
-            color: white;
-        }
-        
-        .section {
-            background-color: var(--section-bg-color);
-            border-radius: 5px;
-            padding: 20px;
-            margin-bottom: 20px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-        }
-        
-        footer {
-            background-color: var(--footer-bg-color);
-            color: var(--footer-text-color);
-        }
-        
-        a {
-            color: var(--link-color);
-        }
-        
-        a:hover {
-            color: var(--link-hover-color);
-        }
-        
-        /* Enhanced slideshow styling */
-        .mySlides {
-            position: relative;
-        }
-        
-        .slideshow-container {
-            background-color: var(--bg-color);
-        }
-        
-        .text {
-            background-color: var(--slideshow-text-bg);
-            color: var(--slideshow-text-color);
-        }
-        
-        .prev, .next {
-            background-color: rgba(0, 0, 0, 0.3);
-            color: white;
-        }
-        
-        .prev:hover, .next:hover {
-            background-color: rgba(0, 0, 0, 0.8);
-        }
-        
-        .dot {
-            border: 1px solid var(--dot-border-color);
-        }
-        
-        .active, .dot:hover {
-            background-color: var(--dot-active-color);
-        }
-        
-        /* Form styling */
-        form {
-            background-color: var(--form-bg-color);
-            border: 1px solid var(--form-border-color);
-        }
-        
-        input, button[type="submit"] {
-            background-color: var(--bg-color);
-            color: var(--text-color);
-            border: 1px solid var(--form-border-color);
-        }
-        
-        button[type="submit"] {
-            background-color: var(--button-bg-color);
-            color: var(--button-text-color);
-        }
-        
-        button[type="submit"]:hover {
-            background-color: var(--button-hover-color);
-        }
-    </style>
-</head>
-<body>
-    <header>
-        <h1>AT&T Long Lines & Bell Labs</h1>
-        <p>Pioneering Innovations in Telecommunications</p>
-    </header>
-
-    <nav>
-        <a href="index.html">Home</a>
-        <div class="dropdown">
-            <a href="#">Technology</a>
-            <div class="dropdown-content">
-                <a href="technology.html">Tech Overview</a>
-                <a href="transistor.html">The Transistor</a>
-                <a href="optical-maser.html">Lasers</a>
-                <a href="ccd.html">Digital Imaging</a>
-                <a href="photovoltaic-cell.html">Solar Power</a>
-                <a href="unix.html">UNIX</a>
-                <a href="blit.html">Blit</a>
-                <a href="amps.html">AMPS</a>
-                <a href="plan9.html">Plan 9</a>
-                <a href="unix-emulator.html">UNIX Emulator</a>
-            </div>
-        </div>
-        <a href="bell-labs.html">Bell Labs</a>
-        <a href="gallery.html">Gallery</a>
-        <a href="bob-lucky.html">Bob Lucky</a>
-        <a href="noc.html">Network Operations Center</a>
-        <a href="history-att-longlines.html">Long Lines History</a>
-        <a href="history-bell-labs.html">Bell Labs History</a>
-        <a href="contribute.html">Contribute</a>
-        <button id="dark-mode-toggle">Toggle Dark Mode</button>
-    </nav>
-
-    <main>
-        <div class="slideshow-container">
-
-            <div class="mySlides fade">
-                <div class="numbertext">1 / 2</div>
-                <img src="img/map1.jpg" style="width:100%" alt="AT&T Long Lines Network Map">
-                <div class="text">The sprawling AT&T Long Lines Network</div>
-            </div>
-
-            <div class="mySlides fade">
-                <div class="numbertext">2 / 2</div>
-                <img src="img/map2.jpg" style="width:100%" alt="Another view of the AT&T Long Lines Network">
-                <div class="text">Another look at the Long Lines Network</div>
-            </div>
-
-            <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-            <a class="next" onclick="plusSlides(1)">&#10095;</a>
-        </div>
-        <br>
-
-        <div class="slideshow-navigation">
-            <span class="dot" onclick="currentSlide(1)"></span>
-            <span class="dot" onclick="currentSlide(2)"></span>
-        </div>
-
-        <script>
-            // Slideshow functionality for mySlides
-            let slideIndex = 1;
-            showSlides(slideIndex);
-
-            function plusSlides(n) {
-                showSlides(slideIndex += n);
-            }
-
-            function currentSlide(n) {
-                showSlides(slideIndex = n);
-            }
-
-            function showSlides(n) {
-                let i;
-                const slides = document.getElementsByClassName("mySlides");
-                const dots = document.getElementsByClassName("dot");
-                if (n > slides.length) { slideIndex = 1; }
-                if (n < 1) { slideIndex = slides.length; }
-                for (i = 0; i < slides.length; i++) {
-                    slides[i].style.display = "none";
-                }
-                for (i = 0; i < dots.length; i++) {
-                    dots[i].className = dots[i].className.replace(" active", "");
-                }
-                if (slides[slideIndex - 1]) {
-                    slides[slideIndex - 1].style.display = "block";
-                    dots[slideIndex - 1].className += " active";
-                }
-            }
-        </script>
-
-        <section id="history" class="section">
-            <h2>History of AT&T Long Lines</h2>
-            <p>The AT&T Long Lines was a network of communications lines, initially consisting of telephone lines, that were owned and operated by AT&T. It played a pivotal role in long-distance communication in the United States throughout the 20th century.</p>
-            <p>This network not only facilitated telephone calls but also supported television broadcasting, data transmission, and various other forms of communication. Its development marked a significant engineering milestone, involving the construction of numerous repeater stations and the application of cutting-edge technologies.</p>
-            <a href="history-att-longlines.html" rel="noreferrer">Learn More about Bell Lab's History Here</a>
-        </section>
-
-        <section id="technology" class="section">
-            <h2>Technology Behind Long Lines</h2>
-            <p>The Long Lines network utilized a range of technologies, including microwave radio relay systems and coaxial cables, enabling the transmission of signals over vast distances with minimal signal degradation.</p>
-            <p>Essential components included repeater stations, which amplified signals to maintain their strength, and switching centers, which directed calls to their intended destinations. The network continually evolved, integrating new technologies like fiber optics to enhance capacity and improve overall performance.</p>
-            <a href="technology.html" rel="noreferrer">Learn More about the fascinating tech here</a>
-        </section>
-
-        <section id="bell-labs" class="section">
-            <h2>Bell Labs: The Innovation Hub</h2>
-            <p>Bell Labs, formerly known as Bell Telephone Laboratories, was the research and development arm of AT&T. It is renowned for its groundbreaking contributions to science and technology.</p>
-            <p>Bell Labs researchers and engineers invented the transistor, the laser, the photovoltaic cell, the charge-coupled device (CCD), information theory, the Unix operating system, and the C programming language, among other things. Eight Nobel Prizes have been awarded for work completed at Bell Laboratories.</p> Learn more about the innovations at Bell Labs <a href="history-bell-labs.html" rel="noreferrer">here</a>.
-        </section>
-
-        <section id="gallery" class="section">
-            <h2>Gallery</h2>
-            <div class="image-gallery" id="dynamic-gallery">
-                <!-- Images will be dynamically added here -->
-            </div>
-            <p>Explore images of AT&T Long Lines facilities, Bell Labs, and related equipment. <a href="gallery.html" rel="noreferrer">View Full Gallery</a></p>
-            
-            <!-- User Image Submission Form -->
-            <h3>Submit Your Images</h3>
-            <form id="image-upload-form" enctype="multipart/form-data">
-                <label for="image-upload">Upload an image:</label>
-                <input type="file" id="image-upload" name="image" accept="image/*" required>
-                <button type="submit">Submit</button>
-            </form>
-        </section>
-    </main>
-
-    <footer>
-        <p><small>We frequently review our code to ensure we remain a privacy-first, tracker-free site.</small></p>
-        <p>&copy; <span id="year"></span> AT&T Long Lines & Bell Labs Community. <small>Site by juler#5461. All rights reserved.</small></p>
-    </footer>
-
-    <div id="discord-widget-container" class="collapsible">
-        <button id="collapse-button">+</button>
-        <iframe src="https://discord.com/widget?id=807000904397094913&theme=dark" width="350" height="500" allowtransparency="true" frameborder="0"></iframe>
-    </div>
-
-    <script>
-        // Update the year dynamically
-        document.getElementById('year').textContent = new Date().getFullYear();
-
-        // Dark mode toggle functionality with localStorage support
-        const toggleButton = document.getElementById('dark-mode-toggle');
-        
-        function setDarkMode(isDark) {
-            if (isDark) {
-                document.documentElement.classList.add('dark-mode');
-                document.body.classList.add('dark-mode');
-                toggleButton.textContent = 'Light Mode';
-                localStorage.setItem('darkMode', 'enabled');
-            } else {
-                document.documentElement.classList.remove('dark-mode');
-                document.body.classList.remove('dark-mode');
-                toggleButton.textContent = 'Dark Mode';
-                localStorage.setItem('darkMode', 'disabled');
-            }
-        }
-        
-        toggleButton.addEventListener('click', () => {
-            const isDarkMode = !document.body.classList.contains('dark-mode');
-            setDarkMode(isDarkMode);
-        });
-        
-        // Check for saved preference on page load
-        document.addEventListener('DOMContentLoaded', () => {
-            const savedMode = localStorage.getItem('darkMode');
-            if (savedMode === 'enabled') {
-                setDarkMode(true);
-            } else {
-                setDarkMode(false);
-            }
-        });
-
-        // Collapsible Discord widget functionality
-        const discordWidgetContainer = document.getElementById('discord-widget-container');
-        const collapseButton = document.getElementById('collapse-button');
-        collapseButton.addEventListener('click', () => {
-            discordWidgetContainer.classList.toggle('collapsed');
-            collapseButton.textContent = discordWidgetContainer.classList.contains('collapsed') ? '+' : '-';
-        });<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AT&T Long Lines & Bell Labs - Innovations in Communication</title>
-    <link rel="icon" href="img/favicon.ico" type="image/x-icon">
-    <link rel="stylesheet" href="recipes/css/st.css"> <!-- Main styles -->
-    <script src="scripts.js" defer></script>
-    <script src="recipes/js/discord-widget.js" defer></script>
-    <script src="recipes/js/theme-toggle.js" defer></script>
-    <style>
-        /* Fix alignment and spacing issues */
-        #discord-widget-container {
-            position: fixed;
-            bottom: 20px;
-            left: 20px;
-            z-index: 1000;
-            text-align: center;
-        }
-
-        #discord-widget-container button {
-            position: absolute;
-            top: 5px;
-            right: 5px;
-            z-index: 1001;
-            background-color: #007acc;
-            color: white;
-            border: none;
-            border-radius: 3px;
-            padding: 5px;
-            cursor: pointer;
-        }
-
-        #discord-widget-container button:hover {
-            background-color: #0056b3;
-        }
-
-        nav {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 10px;
-            padding: 10px 0;
-            background-color: var(--nav-bg-color);
-        }
-
-        nav a {
-            text-decoration: none;
-            color: white;
-            padding: 5px 10px;
-            border-radius: 5px;
-            transition: background-color 0.3s ease;
-        }
-
-        nav a:hover {
-            background-color: var(--nav-hover-color);
-        }
-
-        #dark-mode-toggle {
-            margin-left: 10px;
-            padding: 5px 10px;
-            border: none;
-            background-color: var(--nav-hover-color);
-            color: white;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-
-        #dark-mode-toggle:hover {
-            background-color: var(--header-bg-color);
-        }
-
-        /* Dark mode CSS variables */
-        :root {
-            --bg-color: #ffffff;
-            --text-color: #333333;
-            --header-bg-color: #0082ca;
-            --section-bg-color: #f5f5f5;
-            --nav-bg-color: #005a9c;
-            --nav-hover-color: #0082ca;
-            --link-color: #0056b3;
-            --link-hover-color: #003d82;
-            --footer-bg-color: #005a9c;
-            --footer-text-color: #ffffff;
-            --slideshow-text-bg: rgba(0, 0, 0, 0.5);
-            --slideshow-text-color: #ffffff;
-            --dot-border-color: #bbb;
-            --dot-active-color: #717171;
-            --form-bg-color: #f8f8f8;
-            --form-border-color: #ddd;
-            --button-bg-color: #005a9c;
-            --button-hover-color: #0082ca;
-            --button-text-color: #ffffff;
-        }
-        
-        .dark-mode {
-            --bg-color: #191919;
-            --text-color: #e0e0e0;
-            --header-bg-color: #333333;
-            --section-bg-color: #252525;
-            --nav-bg-color: #333333;
-            --nav-hover-color: #444444;
-            --link-color: #6aabff;
-            --link-hover-color: #99c9ff;
-            --footer-bg-color: #333333; 
-            --footer-text-color: #e0e0e0;
-            --slideshow-text-bg: rgba(38, 38, 38, 0.7);
-            --slideshow-text-color: #e0e0e0;
-            --dot-border-color: #444444;
-            --dot-active-color: #888888;
-            --form-bg-color: #252525;
-            --form-border-color: #333333;
-            --button-bg-color: #333333;
-            --button-hover-color: #444444;
-            --button-text-color: #e0e0e0;
-        }
-        
-        /* Basic styling with CSS variables */
-        body {
-            background-color: var(--bg-color);
-            color: var(--text-color);
-            transition: background-color 0.3s ease, color 0.3s ease;
-            margin: 0;
-            padding: 0;
-        }
-        
-        header {
-            background-color: var(--header-bg-color);
-            color: white;
-        }
-        
-        .section {
-            background-color: var(--section-bg-color);
-            border-radius: 5px;
-            padding: 20px;
-            margin-bottom: 20px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-        }
-        
-        footer {
-            background-color: var(--footer-bg-color);
-            color: var(--footer-text-color);
-        }
-        
-        a {
-            color: var(--link-color);
-        }
-        
-        a:hover {
-            color: var(--link-hover-color);
-        }
-        
-        /* Enhanced slideshow styling */
-        .mySlides {
-            position: relative;
-        }
-        
-        .slideshow-container {
-            background-color: var(--bg-color);
-        }
-        
-        .text {
-            background-color: var(--slideshow-text-bg);
-            color: var(--slideshow-text-color);
-        }
-        
-        .prev, .next {
-            background-color: rgba(0, 0, 0, 0.3);
-            color: white;
-        }
-        
-        .prev:hover, .next:hover {
-            background-color: rgba(0, 0, 0, 0.8);
-        }
-        
-        .dot {
-            border: 1px solid var(--dot-border-color);
-        }
-        
-        .active, .dot:hover {
-            background-color: var(--dot-active-color);
-        }
-        
-        /* Form styling */
-        form {
-            background-color: var(--form-bg-color);
-            border: 1px solid var(--form-border-color);
-        }
-        
-        input, button[type="submit"] {
-            background-color: var(--bg-color);
-            color: var(--text-color);
-            border: 1px solid var(--form-border-color);
-        }
-        
-        button[type="submit"] {
-            background-color: var(--button-bg-color);
-            color: var(--button-text-color);
-        }
-        
-        button[type="submit"]:hover {
-            background-color: var(--button-hover-color);
+        /* Add collapsed state for discord widget */
+        .collapsible.collapsed iframe {
+            display: none;
         }
     </style>
 </head>
@@ -1982,15 +530,3 @@ discord<!DOCTYPE html>
     </script>
 </body>
 </html>
-    </script>
-</body>
-</html>
-discord
-discord
-discorddiscord
-discord
-discord
-discord
-discord
-discord
-discord
