@@ -345,6 +345,39 @@
         .collapsible.collapsed iframe {
             display: none;
         }
+
+        /* Alert/Notice styling */
+        .alert-banner {
+            background-color: #CC0000;
+            color: #FFFF33;
+            font-weight: bold;
+            padding: 10px;
+            text-align: center;
+            width: 100%;
+        }
+        
+        .alert-banner a {
+            color: #FFFF33;
+            text-decoration: underline;
+        }
+        
+        .alert-banner a:hover {
+            color: #FFFFFF;
+        }
+        
+        /* Dark mode modifications for alert banner */
+        .dark-mode .alert-banner {
+            background-color: #990000;
+            color: #FFFF99;
+        }
+        
+        .dark-mode .alert-banner a {
+            color: #FFFF99;
+        }
+        
+        .dark-mode .alert-banner a:hover {
+            color: #FFFFFF;
+        }
     </style>
 </head>
 <body>
@@ -352,6 +385,11 @@
         <h1>AT&T Long Lines & Bell Labs</h1>
         <p>Pioneering Innovations in Telecommunications</p>
     </header>
+
+    <!-- Add alert banner below header -->
+    <div class="alert-banner">
+        Important Notice: This site is a historical tribute to Bell Labs and AT&T Long Lines. It is not affiliated with AT&T Inc.
+    </div>
 
     <nav>
         <a href="index.html">Home</a>
