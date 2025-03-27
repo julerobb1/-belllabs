@@ -276,6 +276,81 @@
         *, *:before, *:after {
             box-sizing: inherit;
         }
+
+        /* Apply border-box to everything for consistent sizing */
+        *, *:before, *:after {
+            box-sizing: border-box;
+        }
+        
+        /* Reset HTML and body margins/padding */
+        html, body {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            overflow-x: hidden; /* Prevent horizontal scroll */
+        }
+        
+        /* Additional dark mode specific overrides */
+        .dark-mode .section {
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+        }
+        
+        .dark-mode #dark-mode-toggle {
+            background-color: #333333;
+        }
+        
+        .dark-mode #dark-mode-toggle:hover {
+            background-color: #444444;
+        }
+        
+        /* Remove all potential white borders in dark mode */
+        .dark-mode body {
+            background-color: #191919;
+            color: #e0e0e0;
+        }
+        
+        .dark-mode main {
+            padding: 0;
+            margin: 0;
+        }
+        
+        .dark-mode .section {
+            margin: 20px;
+        }
+        
+        .dark-mode .slideshow-container {
+            width: 100vw;
+            max-width: 100%;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            position: relative;
+            left: 0;
+            right: 0;
+        }
+        
+        /* Fix spacing in dark mode to ensure no white gaps */
+        .dark-mode header {
+            width: 100%;
+            margin: 0;
+            padding: 20px;
+        }
+        
+        .dark-mode nav {
+            width: 100%;
+            margin: 0;
+        }
+        
+        .dark-mode footer {
+            width: 100%;
+            margin: 0;
+        }
+        
+        /* Remove default outline on focused elements in dark mode */
+        .dark-mode *:focus {
+            outline: none;
+        }
     </style>
 </head>
 <body>
@@ -425,10 +500,12 @@
         
         function setDarkMode(isDark) {
             if (isDark) {
+                document.documentElement.classList.add('dark-mode');
                 document.body.classList.add('dark-mode');
                 toggleButton.textContent = 'Light Mode';
                 localStorage.setItem('darkMode', 'enabled');
             } else {
+                document.documentElement.classList.remove('dark-mode');
                 document.body.classList.remove('dark-mode');
                 toggleButton.textContent = 'Dark Mode';
                 localStorage.setItem('darkMode', 'disabled');
