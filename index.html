@@ -499,31 +499,31 @@
         function setDarkMode(isDark) {
             if (isDark) {
                 document.documentElement.classList.add('dark-mode');
-                document.body.classList.add('dark-mode');
-                toggleButton.textContent = 'Light Mode';
+                docu Mode';
                 localStorage.setItem('darkMode', 'enabled');
             } else {
                 document.documentElement.classList.remove('dark-mode');
                 document.body.classList.remove('dark-mode');
-                toggleButton.textContent = 'Dark Mode';
+                toggleButton.textConte(isDarkMode);
+        });
+        
+        // Check for saved preference immediately (without waiting for DOMContentLoaded)
+        const savedMode = localStorage.getItem('darkMode');
+        if (savedMode === 'enabled') {
+            setDarkMoment.body.classList.add('dark-mode');
+                toggleButton.textContent = 'Lightde(true);
+        } else {
+            setDarkMode(false);
+        }
+
+        // Collapsible Discord widget functionalent = 'Dark Mode';
                 localStorage.setItem('darkMode', 'disabled');
             }
         }
         
         toggleButton.addEventListener('click', () => {
             const isDarkMode = !document.body.classList.contains('dark-mode');
-            setDarkMode(isDarkMode);
-        });
-        
-        // Check for saved preference immediately (without waiting for DOMContentLoaded)
-        const savedMode = localStorage.getItem('darkMode');
-        if (savedMode === 'enabled') {
-            setDarkMode(true);
-        } else {
-            setDarkMode(false);
-        }
-
-        // Collapsible Discord widget functionality
+            setDarkModity
         const discordWidgetContainer = document.getElementById('discord-widget-container');
         const collapseButton = document.getElementById('collapse-button');
         collapseButton.addEventListener('click', () => {
