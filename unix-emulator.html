@@ -1,21 +1,239 @@
 <!DOCTYPE html>
-<html lang="en">
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang="en"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BETA Unix Emulator</title>
-    <link rel="stylesheet" href="recipes/css/styles.css">
+    <meta name="referrer" content="no-referrer">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net https://bellard.org https://copy.sh https://jslinux.org https://www.pcjs.org 'unsafe-eval'; style-src 'self' 'unsafe-inline'; frame-src https://bellard.org https://copy.sh https://jslinux.org https://www.pcjs.org;">
+    <title>UNIX Emulator - AT&T Long Lines & Bell Labs</title>
+    <link rel="icon" href="img/favicon.ico" type="image/x-icon">
+    <link href="/img/favicon.ico" rel="shortcut icon">
+    <link rel="stylesheet" href="recipes/css/st.css">
+    <script src="compat.js"></script>
+    <script src="scripts.js" defer></script>
+    <style>
+        .emulator-container {
+            border: 1px solid #ccc;
+            margin: 20px 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            overflow: hidden;
+            border-radius: 5px;
+            height: 600px;
+            position: relative;
+        }
+        
+        .emulator-container iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+        
+        .emulator-loading {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: #f5f5f5;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            z-index: 10;
+        }
+        
+        .emulator-loading.hidden {
+            display: none;
+        }
+        
+        .spinner {
+            border: 5px solid #f3f3f3;
+            border-top: 5px solid #0082ca;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            animation: spin 1s linear infinite;
+            margin-bottom: 20px;
+        }
+        
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
+        .emulator-tabs {
+            display: flex;
+            border-bottom: 1px solid #ccc;
+            background-color: #f0f0f0;
+        }
+        
+        .emulator-tab {
+            padding: 10px 15px;
+            cursor: pointer;
+            border-right: 1px solid #ccc;
+            background-color: #f0f0f0;
+        }
+        
+        .emulator-tab.active {
+            background-color: #ffffff;
+            border-bottom: 2px solid #0082ca;
+        }
+        
+        .terminal-instructions {
+            background-color: #f9f9f9;
+            padding: 15px;
+            border-left: 4px solid #0082ca;
+            margin: 20px 0;
+        }
+        
+        .command-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        
+        .command-table th, .command-table td {
+            padding: 8px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+        
+        .command-table th {
+            background-color: #f0f0f0;
+        }
+        
+        .dark-mode .emulator-loading {
+            background-color: #333333;
+            color: #e0e0e0;
+        }
+        
+        .dark-mode .spinner {
+            border: 5px solid #444444;
+            border-top: 5px solid #6aabff;
+        }
+        
+        .dark-mode .emulator-tabs {
+            background-color: #222222;
+            border-bottom: 1px solid #444444;
+        }
+        
+        .dark-mode .emulator-tab {
+            background-color: #222222;
+            border-right: 1px solid #444444;
+            color: #e0e0e0;
+        }
+        
+        .dark-mode .emulator-tab.active {
+            background-color: #333333;
+            border-bottom: 2px solid #6aabff;
+        }
+        
+        .dark-mode .terminal-instructions {
+            background-color: #252525;
+            border-left: 4px solid #6aabff;
+            color: #e0e0e0;
+        }
+        
+        .dark-mode .command-table th {
+            background-color: #333333;
+            color: #e0e0e0;
+        }
+        
+        .dark-mode .command-table td {
+            border-bottom: 1px solid #444444;
+        }
+    </style>
 </head>
 <body>
     <header>
-        <h1>BETA Unix Emulator</h1>
-        <p>Experience the Bell Labs Unix Environment</p>
+        <h1>UNIX Emulator - Experience Bell Labs History</h1>
+        <p>Experience the groundbreaking UNIX operating system developed at Bell Labs in the late 1960s and early 1970s by Ken Thompson, Dennis Ritchie, and others. This interactive emulator allows you to try real AT&T UNIX versions directly in your browser.</p>
     </header>
     <main>
-        <section>
-            <h2>Emulator</h2>
-            <p>Welcome to the BETA version of our Unix emulator. This emulator replicates the environment of the original Bell Labs Unix system. Please note that this is a work in progress and may not fully represent the original system.</p>
-            <iframe src="path/to/unix-emulator" width="100%" height="500px"></iframe>
+        <section class="section">
+            <div class="terminal-instructions">
+                <h3>About UNIX at Bell Labs</h3>
+                <p>UNIX was developed at Bell Labs starting in 1969 when Ken Thompson, Dennis Ritchie, and others began working on an operating system for the PDP-7 computer. The first version was written in assembly language, but by 1973, the system was rewritten in the C programming language, making it much more portable across different computer architectures.</p>
+                <p>UNIX revolutionized operating system design with its modular architecture, consistent file system, and powerful command-line interface. It introduced many concepts that are standard in modern operating systems, including hierarchical file systems, pipes for connecting program outputs to inputs, and the separation of the kernel from utilities.</p>
+                <p>Below, you can interact with UNIX V7, released in 1979, which is considered one of the most influential versions of AT&T UNIX.</p>
+            </div>
+            
+            <div class="emulator-tabs">
+                <div class="emulator-tab active" data-emulator="unixv7">UNIX V7 (1979)</div>
+                <div class="emulator-tab" data-emulator="unixv6">UNIX V6 (1975)</div>
+                <div class="emulator-tab" data-emulator="research">UNIX Research (Bell Labs)</div>
+            </div>
+            
+            <div class="emulator-container">
+                <div class="emulator-loading" id="loading-screen">
+                    <div class="spinner"></div>
+                    <p>Loading UNIX Emulator... Please wait.</p>
+                    <p><small>This may take a few moments depending on your connection.</small></p>
+                </div>
+                <iframe id="unix-emulator" src="about:blank" allowfullscreen sandbox="allow-same-origin allow-scripts allow-forms" loading="lazy"></iframe>
+            </div>
+            
+            <div class="terminal-instructions">
+                <h3>Basic UNIX Commands</h3>
+                <p>Here are some basic commands to get you started with the UNIX terminal:</p>
+                
+                <table class="command-table">
+                    <thead>
+                        <tr>
+                            <th>Command</th>
+                            <th>Description</th>
+                            <th>Example</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><code>ls</code></td>
+                            <td>List files in current directory</td>
+                            <td><code>ls -la</code> (list all files with details)</td>
+                        </tr>
+                        <tr>
+                            <td><code>cd</code></td>
+                            <td>Change directory</td>
+                            <td><code>cd /usr/bin</code> (go to /usr/bin)</td>
+                        </tr>
+                        <tr>
+                            <td><code>pwd</code></td>
+                            <td>Print working directory</td>
+                            <td><code>pwd</code> (show current path)</td>
+                        </tr>
+                        <tr>
+                            <td><code>cat</code></td>
+                            <td>Display file contents</td>
+                            <td><code>cat /etc/passwd</code> (show passwd file)</td>
+                        </tr>
+                        <tr>
+                            <td><code>man</code></td>
+                            <td>Display manual pages</td>
+                            <td><code>man ls</code> (show help for ls command)</td>
+                        </tr>
+                        <tr>
+                            <td><code>vi</code></td>
+                            <td>Text editor</td>
+                            <td><code>vi myfile.txt</code> (edit myfile.txt)</td>
+                        </tr>
+                        <tr>
+                            <td><code>grep</code></td>
+                            <td>Search for patterns</td>
+                            <td><code>grep "root" /etc/passwd</code> (find "root" in passwd)</td>
+                        </tr>
+                    </tbody>
+                </table>
+                
+                <p><strong>Note:</strong> These emulators are running in your browser, so no data is persisted between sessions. Any changes you make will be lost when you close the page or reload the emulator.</p>
+            </div>
+            
+            <h3>Historical Significance</h3>
+            <p>UNIX's influence extends far beyond Bell Labs. It spawned numerous derivatives and inspired many operating systems, including Linux, macOS (based on BSD UNIX), and even aspects of Windows. The C programming language created for UNIX remains one of the most influential programming languages ever developed.</p>
+            <p>The UNIX philosophy—emphasizing simplicity, modularity, and the idea that programs should "do one thing and do it well"—continues to shape software development to this day.</p>
         </section>
     </main>
     <footer>
@@ -23,6 +241,42 @@
     </footer>
     <script>
         document.getElementById('year').textContent = new Date().getFullYear();
+        document.addEventListener('DOMContentLoaded', function() {
+            const tabs = document.querySelectorAll('.emulator-tab');
+            const emulatorFrame = document.getElementById('unix-emulator');
+            const loadingScreen = document.getElementById('loading-screen');
+            
+            const emulators = {
+                unixv7: 'https://bellard.org/jslinux/vm.html?url=unixv7.json&mem=128&graphic=0&term=vt100',
+                unixv6: 'https://www.pcjs.org/software/pcx86/sys/unix/ibm/pc-ix/1.00/embed.html',
+                research: 'https://copy.sh/v86/?profile=unix'
+            };
+            
+            function switchEmulator(emulatorId) {
+                loadingScreen.classList.remove('hidden');
+                tabs.forEach(tab => {
+                    if (tab.dataset.emulator === emulatorId) {
+                        tab.classList.add('active');
+                    } else {
+                        tab.classList.remove('active');
+                    }
+                });
+                emulatorFrame.src = emulators[emulatorId];
+                emulatorFrame.onload = function() {
+                    setTimeout(function() {
+                        loadingScreen.classList.add('hidden');
+                    }, 1000);
+                };
+            }
+            
+            tabs.forEach(tab => {
+                tab.addEventListener('click', function() {
+                    switchEmulator(this.dataset.emulator);
+                });
+            });
+            
+            switchEmulator('unixv7');
+        });
     </script>
 </body>
 </html>
