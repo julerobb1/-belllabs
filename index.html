@@ -352,6 +352,124 @@
             outline: none;
         }
     </style>
+</head> /* Enhanced slideshow styling to match reference */
+<body>  .mySlides {
+    <header>position: relative;
+        <h1>AT&T Long Lines & Bell Labs</h1>
+        <p>Pioneering Innovations in Telecommunications</p>
+    </header>, .next {
+            cursor: pointer;
+    <button id="dark-mode-toggle">Toggle Dark Mode</button>
+            top: 50%;
+    <nav>   width: auto;
+        <a href="index.html">Home</a>
+        <div class="dropdown">
+            color: white;
+            font-weight: bold;
+            font-size: 18px;
+            transition: 0.6s ease;
+            border-radius: 0 3px 3px 0;
+            user-select: none;
+            background-color: rgba(0, 0, 0, 0.3);
+            z-index: 10;
+        }
+        
+        .next {
+            right: 0;
+            border-radius: 3px 0 0 3px;
+        }
+        
+        .prev {
+            left: 0;
+        }
+        
+        .prev:hover, .next:hover {
+            background-color: rgba(0, 0, 0, 0.8);
+        }
+        
+        /* Image gallery styling */
+        .image-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 15px;
+            margin: 20px 0;
+        }
+        
+        .image-gallery img {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 5px;
+            transition: transform 0.3s ease;
+        }
+        
+        .image-gallery img:hover {
+            transform: scale(1.05);
+        }
+        
+        /* Better section styling */
+        .section h2 {
+            color: var(--header-bg-color);
+            border-bottom: 2px solid var(--header-bg-color);
+            padding-bottom: 5px;
+            margin-top: 0;
+        }
+        
+        /* Improved form styling */
+        input, button[type="submit"] {
+            padding: 8px;
+            margin: 5px 0;
+            border-radius: 3px;
+        }
+        
+        /* Better dark mode styling */
+        .dark-mode {
+            --bg-color: #191919;
+            --text-color: #e0e0e0;
+            --header-bg-color: #333333;
+            --section-bg-color: #252525;
+            --nav-bg-color: #333333;
+            --nav-hover-color: #444444;
+            --link-color: #6aabff;
+            --link-hover-color: #99c9ff;
+            --footer-bg-color: #333333; 
+            --footer-text-color: #e0e0e0;
+            --slideshow-text-bg: rgba(38, 38, 38, 0.7);
+            --slideshow-text-color: #e0e0e0;
+            --dot-border-color: #444444;
+            --dot-active-color: #888888;
+            --form-bg-color: #252525;
+            --form-border-color: #333333;
+            --button-bg-color: #333333;
+            --button-hover-color: #444444;
+            --button-text-color: #e0e0e0;
+        }
+        
+        .dark-mode .section h2 {
+            color: #6aabff;
+            border-bottom-color: #444444;
+        }
+        
+        .dark-mode .prev, .dark-mode .next {
+            background-color: rgba(38, 38, 38, 0.5);
+        }
+        
+        .dark-mode .prev:hover, .dark-mode .next:hover {
+            background-color: rgba(38, 38, 38, 0.8);
+        }
+        
+        /* Ensure zero margins for dark mode */
+        html.dark-mode, body.dark-mode {
+            background-color: #191919;
+            margin: 0;
+            padding: 0;
+        }
+        
+        .dark-mode main {
+            margin: 0;
+            padding: 20px;  /* Keep padding for content spacing */
+        }
+    </style>
 </head>
 <body>
     <header>
