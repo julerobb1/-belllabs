@@ -645,7 +645,50 @@
 
         // Collapsible Discord widget functionality
         const discordWidgetContainer = document.getElementById('discord-widget-container');
-        const collapseButton = document.getElementById('collapse-button');
+        const collapseButton = document.getElementById('collapse-bu
+        toggleButton.addEventListener('click', () => {
+            const isDarkMode = !document.body.classList.contains('dark-mode');
+            setDarkMode(isDarkMode);
+        });
+        
+        // Check for saved preference immediately (without waiting for DOMContentLoaded)
+        const savedMode = localStorage.getItem('darkMode');
+        if (savedMode === 'enabled') {
+            setDarerence immediately (without waiting for DOMContentLoaded)
+        const savedMode = localStorage.getItem('darkMode');
+        if (savedMode === 'enabled') {
+            setDarkMode(true);
+        } else {
+            setDarkMode(false);
+        }
+
+        // Collapsible Discord widget functionality
+        const discordWidgetContainer = document.getElementById('discord-widget-container');
+        const collapseButton = document.getElementById('collapse-bu
+        toggleButton.addEventListener('click', () => {
+            const isDarkMode = !document.body.classList.contains('dark-mode');
+            setDarkMode(isDarkMode);
+        });kMode(true);
+        } else {
+            setDarkModeerence immediately (without waiting for DOMContentLoaded)
+        const savedMode = localStorage.getItem('darkMode');
+        if (savedMode === 'enabled') {
+            setDarkMode(true);
+        } else {
+            setDarkMode(false);
+        }
+
+        // Collapsible Discord widget functionality
+        const discordWidgetContainer = document.getElementById('discord-widget-container');
+        const collapseButton = document.getElementById('collapse-bu
+        toggleButton.addEventListener('click', () => {
+            const isDarkMode = !document.body.classList.contains('dark-mode');
+            setDarkMode(isDarkMode);
+        });(false);
+        }
+
+        // Collapsible Discord widget functionality
+        const discordWidgetContainer = document.getElementById('discord-widgettton');
         collapseButton.addEventListener('click', () => {
             discordWidgetContainer.classList.toggle('collapsed');
             collapseButton.textContent = discordWidgetContainer.classList.contains('collapsed') ? '+' : '-';
