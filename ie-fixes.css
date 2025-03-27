@@ -1,0 +1,98 @@
+/* 
+ * Internet Explorer 11 Specific Fixes
+ * This stylesheet provides fixes for IE11 compatibility
+ */
+
+/* General fixes */
+body {
+    font-family: Arial, sans-serif !important;
+    background-color: #ffffff !important;
+    color: #333333 !important;
+}
+
+header {
+    background-color: #0082ca !important;
+    color: white !important;
+}
+
+.section {
+    background-color: #f5f5f5 !important;
+    border-radius: 5px !important;
+    padding: 20px !important;
+    margin-bottom: 20px !important;
+}
+
+nav {
+    background-color: #005a9c !important;
+}
+
+nav a {
+    color: white !important;
+}
+
+nav a:hover {
+    background-color: #0082ca !important;
+}
+
+footer {
+    background-color: #005a9c !important;
+    color: #ffffff !important;
+}
+
+a {
+    color: #0056b3 !important;
+}
+
+a:hover {
+    color: #003d82 !important;
+}
+
+/* Specific fixes for components */
+.slideshow-container {
+    position: relative !important;
+    margin-bottom: 20px !important;
+}
+
+.mySlides {
+    position: relative !important;
+}
+
+.prev, .next {
+    position: absolute !important;
+    top: 50% !important;
+    background-color: rgba(0, 0, 0, 0.3) !important;
+    color: white !important;
+}
+
+.prev {
+    left: 0 !important;
+}
+
+.next {
+    right: 0 !important;
+}
+
+/* Fix for image gallery in IE11 */
+.image-gallery {
+    display: block !important;
+    overflow: hidden !important;
+}
+
+.image-gallery img {
+    float: left !important;
+    width: 48% !important;
+    margin: 1% !important;
+}
+
+/* Fix for Discord widget */
+#discord-widget-container {
+    position: fixed !important;
+    bottom: 20px !important;
+    left: 20px !important;
+}
+
+/* Fix for forms */
+input, button {
+    padding: 8px !important;
+    margin: 5px 0 !important;
+}
