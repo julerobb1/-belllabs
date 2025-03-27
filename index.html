@@ -729,7 +729,7 @@
         // Update the year dynamically
         document.getElementById('year').textContent = new Date().getFullYear();
 
-        // Dark mode toggle functionality with localStorage support
+        // Dark mode toggle functionality with localStorage support and auto-detection
         const toggleButton = document.getElementById('dark-mode-toggle');
         
         function setDarkMode(isDark) {
@@ -751,13 +751,28 @@
             setDarkMode(isDarkMode);
         });
         
-        // Check for saved preference on page load
+        // Check for saved preference on page load or use system preference
         document.addEventListener('DOMContentLoaded', () => {
             const savedMode = localStorage.getItem('darkMode');
+            
             if (savedMode === 'enabled') {
+                // User previously enabled dark mode
                 setDarkMode(true);
-            } else {
+            } else if (savedMode === 'disabled') {
+                // User previously disabled dark mode
                 setDarkMode(false);
+            } else {
+                // No saved preference, check system preference
+                const prefersDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches;
+                setDarkMode(prefersDarkMode);
+                
+                // Update when system preference changes
+                window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', e => {
+                    // Only auto-switch if user hasn't manually set a preference
+                    if (!localStorage.getItem('darkMode')) {
+                        setDarkMode(e.matches);
+                    }
+                });
             }
         });
 
