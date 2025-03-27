@@ -258,17 +258,7 @@
             border: none;
         }
 
-        /* Ensure full-width containers in dark mode */
-        .dark-mode .slideshow-container {
-            width: 100%;
-            margin: 0;
-            padding: 0;
-            border: none;
-        }
-        
-        /* Reset margin/padding for HTML/body */
-        html, body {
-            margin: 0;
+        /* Ensure rgin: 0;
             padding: 0;
             box-sizing: border-box;
         }
@@ -527,10 +517,7 @@
 
         <div class="slideshow-navigation">
             <span class="dot" onclick="currentSlide(1)"></span>
-            <span class="dot" onclick="currentSlide(2)"></span>
-        </div>
-
-        <script>
+            <span class="dot" onclick="cu
             // Slideshow functionality for mySlides
             let slideIndex = 1;
             showSlides(slideIndex);
@@ -551,7 +538,10 @@
                 if (n < 1) { slideIndex = slides.length; }
                 for (i = 0; i < slides.length; i++) {
                     slides[i].style.display = "none";
-                }
+                }rrentSlide(2)"></span>
+        </div>
+
+        <script>
                 for (i = 0; i < dots.length; i++) {
                     dots[i].className = dots[i].className.replace(" active", "");
                 }
@@ -611,14 +601,7 @@
 
     <script>
         // Update the year dynamically
-        document.getElementById('year').textContent = new Date().getFullYear();
-
-        // Dark mode toggle functionality - improved version
-        const toggleButton = document.getElementById('dark-mode-toggle');
-        
-        function setDarkMode(isDark) {
-            if (isDark) {
-                document.documentElement.classList.add('dark-mode');
+        document.getElemenlement.classList.add('dark-mode');
                 document.body.classList.add('dark-mode');
                 toggleButton.textContent = 'Light Mode';
                 localStorage.setItem('darkMode', 'enabled');
@@ -628,43 +611,44 @@
                 toggleButton.textContent = 'Dark Mode';
                 localStorage.setItem('darkMode', 'disabled');
             }
-        }
+        }tById('year').textContent = new Date().getFullYear();
+
+        // Dark mode toggle functionality - improved version
+        const toggleButton = document.getElementById('dark-mode-toggle');
         
-        toggleButton.addEventListener('click', () => {
-            const isDarkMode = !document.body.classList.contains('dark-mode');
-            setDarkMode(isDarkMode);
+        function setDarkMode(isDark) {
+            if (isDark) {
+                document.documentE
+        
+        toggleButton.addEvenMode(isDarkM
+            setDarkMode(false);
+        }tListener('click', () => {
+            const isDarkMode
+
+        // Collapsible Discord widget functionality
+        const discordWidgetContainer = d = !document.body.classList.contains('dark-mode');
+            setDarkocument.getElementById('discord-widget-container');
+        const collapseButton  discordWidgetContainer.classList.toggle('collapsed');
+            collapseBut= document.getElementById('collapse-button');
+        collapseBusavedMode = lotton.addEventListener('click', () => {
+           ton.t</html>full-width containers in dark mode */
+        .dark-mode .slideshow-container {
+            width: 100%;
+            margin: 0;
+            padding: 0;
+            border: none;
+        }
+        ode);
         });
         
         // Check for saved preference immediately (without waiting for DOMContentLoaded)
-        const savedMode = localStorage.getItem('darkMode');
+        const calStorage.getItem('darkMode');
         if (savedMode === 'enabled') {
             setDarkMode(true);
         } else {
-            setDarkMdgetContainer = document.getElementById('discord-widgettton');
-        collapseButton.addEventListener('click', () => {
-            discordWidgetContainer.classList.toggle('collapsed');
-            collapseButton.textContent = discordWidgetContainer.classList.contains('collapsed') ? '+' : '-';
+        /* Reset margin/padding for HTML/body */
+        html, body {
+            maextContent = discordWidgetContainer.classList.contains('collapsed') ? '+' : '-';
         });
     </script>
 </body>
-</html>ode(false);
-        }
-
-        // Collapsible Discord widget functionality
-        const discordWidgetContainer = document.getElementById('discord-widget-container');
-        const collapseButton = document.getElementById('collapse-bu
-        toggleButton.addEventListener('click', () => {
-            const isDarkMode = !document.body.classList.contains('dark-mode');
-            setDarkMode(isDarkMode);
-        });
-        
-        // Check for saved preference immediately (without waiting for DOMContentLoaded)
-        const savedMode = localStorage.getItem('darkMode');
-        if (savedMode === 'enabled') {
-            setDarkMode(true);
-        } else {
-            setDarkMode(false);
-        }
-
-        // Collapsible Discord widget functionality
-        const discordWi
