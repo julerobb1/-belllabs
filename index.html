@@ -2,14 +2,20 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="referrer" content="no-referrer">
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; frame-src https://discord.com;">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net; style-src 'self' 'unsafe-inline'; frame-src https://discord.com;">
     <title>AT&T Long Lines & Bell Labs - Innovations in Communication</title>
     <link rel="icon" href="img/favicon.ico" type="image/x-icon">
     <link href="/img/favicon.ico" rel="shortcut icon">
     <link rel="stylesheet" href="recipes/css/st.css"> <!-- Main styles -->
     <link rel="alternate" type="application/rss+xml" title="AT&T Long Lines & Bell Labs Updates" href="rss.xml" />
+    <!--[if IE]>
+    <link rel="stylesheet" type="text/css" href="ie-fixes.css">
+    <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+    <![endif]-->
     <script src="scripts.js" defer></script>
     <script src="recipes/js/discord-widget.js" defer></script>
     <script src="recipes/js/theme-toggle.js" defer></script>
@@ -507,9 +513,48 @@
             white-space: nowrap;
             border-width: 0;
         }
+
+        /* IE11 fallbacks - for CSS variables not supported in IE11 */
+        @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+            /* Base styles for IE11 */
+            body {
+                background-color: #ffffff;
+                color: #333333;
+            }
+            header {
+                background-color: #0082ca;
+                color: white;
+            }
+            .section {
+                background-color: #f5f5f5;
+            }
+            nav {
+                background-color: #005a9c;
+            }
+            footer {
+                background-color: #005a9c;
+                color: #ffffff;
+            }
+            a {
+                color: #0056b3;
+            }
+            a:hover {
+                color: #003d82;
+            }
+            .dark-mode-enabled {
+                display: none;
+            }
+        }
     </style>
 </head>
 <body>
+    <!-- IE11 warning message - only visible in IE -->
+    <!--[if IE]>
+    <div style="background-color: #ffeb3b; padding: 10px; text-align: center; position: relative;">
+        <p><strong>Note:</strong> You're using Internet Explorer. While this site works with IE, we recommend using a modern browser for the best experience.</p>
+    </div>
+    <![endif]-->
+    
     <header>
         <h1>AT&T Long Lines & Bell Labs</h1>
         <p>Pioneering Innovations in Telecommunications</p>
@@ -548,7 +593,7 @@
         <a href="contribute.html" rel="noreferrer noopener">Contribute</a>
         
         <!-- RSS Button -->
-        <a href="rss.xml" title="Subscribe to RSS Feed" class="rss-button" rel="noreferrer noopener">
+        <a href="rss-helper.html" title="Subscribe to RSS Feed" class="rss-button" rel="noreferrer noopener">
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
                 <circle cx="6.18" cy="17.82" r="2.18"/>
                 <path d="M4 4.44v2.83c7.03 0 12.73 5.7 12.73 12.73h2.83c0-8.59-6.97-15.56-15.56-15.56zm0 5.66v2.83c3.9 0 7.07 3.17 7.07 7.07h2.83c0-5.47-4.43-9.9-9.9-9.9z"/>
@@ -785,6 +830,33 @@
             discordWidgetContainer.classList.toggle('collapsed');
             collapseButton.textContent = discordWidgetContainer.classList.contains('collapsed') ? '+' : '-';
         });
+
+        // IE11 compatibility polyfills
+        if (!Array.prototype.forEach) {
+            Array.prototype.forEach = function(callback, thisArg) {
+                if (this == null) {
+                    throw new TypeError('Array.prototype.forEach called on null or undefined');
+                }
+                var T, k;
+                var O = Object(this);
+                var len = O.length >>> 0;
+                if (typeof callback !== 'function') {
+                    throw new TypeError(callback + ' is not a function');
+                }
+                if (arguments.length > 1) {
+                    T = thisArg;
+                }
+                k = 0;
+                while (k < len) {
+                    var kValue;
+                    if (k in O) {
+                        kValue = O[k];
+                        callback.call(T, kValue, k, O);
+                    }
+                    k++;
+                }
+            };
+        }
     </script>
 </body>
 </html>
