@@ -471,52 +471,86 @@
         .dark-mode .image-gallery img:hover {
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.7);
         }
+        
+        /* RSS Button Styling */
+        .rss-button {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 5px 10px;
+            color: white;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+        
+        .rss-button svg {
+            width: 16px;
+            height: 16px;
+            fill: white;
+        }
+        
+        .rss-button:hover {
+            background-color: var(--nav-hover-color);
+        }
+        
+        /* For screen readers only */
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border-width: 0;
+        }
     </style>
 </head>
 <body>
     <header>
         <h1>AT&T Long Lines & Bell Labs</h1>
         <p>Pioneering Innovations in Telecommunications</p>
-    </header>
-
-    <!-- Comment out the alert banner -->
-    <!--
-    <div class="alert-banner">
+    </header>-- RSS Button -->
+        <a href="rss.xml" title="Subscribe to RSS Feed" class="rss-button">
+    <!-- Comment out the alert banner -->  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+    <!--82" r="2.18"/>
+    <div class="alert-banner">                <path d="M4 4.44v2.83c7.03 0 12.73 5.7 12.73 12.73h2.83c0-8.59-6.97-15.56-15.56-15.56zm0 5.66v2.83c3.9 0 7.07 3.17 7.07 7.07h2.83c0-5.47-4.43-9.9-9.9-9.9z"/>
         Important Notice: This site is a historical tribute to Bell Labs and AT&T Long Lines. It is not affiliated with AT&T Inc.
     </div>
     -->
 
-    <nav>
-        <a href="index.html">Home</a>
+    <nav>="dark-mode-toggle">Toggle Dark Mode</button>
+        <a href="index.html">Home</a>    </nav>
         <div class="dropdown">
             <a href="#">Technology</a>
             <div class="dropdown-content">
                 <a href="technology.html">Tech Overview</a>
-                <a href="transistor.html">The Transistor</a>
-                <a href="optical-maser.html">Lasers</a>
-                <a href="ccd.html">Digital Imaging</a>
-                <a href="photovoltaic-cell.html">Solar Power</a>
-                <a href="unix.html">UNIX</a>
+                <a href="transistor.html">The Transistor</a>lass="mySlides fade">
+                <a href="optical-maser.html">Lasers</a>                <div class="numbertext">1 / 2</div>
+                <a href="ccd.html">Digital Imaging</a>T&T Long Lines Network Map">
+                <a href="photovoltaic-cell.html">Solar Power</a>Network</div>
+                <a href="unix.html">UNIX</a>div>
                 <a href="blit.html">Blit</a>
-                <a href="amps.html">AMPS</a>
-                <a href="plan9.html">Plan 9</a>
-                <a href="unix-emulator.html">UNIX Emulator</a>
-            </div>
-        </div>
+                <a href="amps.html">AMPS</a>            <div class="mySlides fade">
+                <a href="plan9.html">Plan 9</a>/ 2</div>
+                <a href="unix-emulator.html">UNIX Emulator</a>"Another view of the AT&T Long Lines Network">
+            </div>s Network</div>
+        </div>div>
         <a href="bell-labs.html">Bell Labs</a>
-        <a href="gallery.html">Gallery</a>
-        <a href="bob-lucky.html">Bob Lucky</a>
+        <a href="gallery.html">Gallery</a>lass="prev" onclick="plusSlides(-1)">&#10094;</a>
+        <a href="bob-lucky.html">Bob Lucky</a>>&#10095;</a>
         <a href="noc.html">Network Operations Center</a>
         <a href="history-att-longlines.html">Long Lines History</a>
         <a href="history-bell-labs.html">Bell Labs History</a>
-        <a href="contribute.html">Contribute</a>
-        <button id="dark-mode-toggle">Toggle Dark Mode</button>
-    </nav>
-
+        <a href="contribute.html">Contribute</a>tion">
+        <button id="dark-mode-toggle">Toggle Dark Mode</button>ntSlide(1)"></span>
+    </nav>span class="dot" onclick="currentSlide(2)"></span>
+        </div>
     <main>
         <div class="slideshow-container">
-
-            <div class="mySlides fade">
+/ Slideshow functionality for mySlides
+            <div class="mySlides fade">            let slideIndex = 1;
                 <div class="numbertext">1 / 2</div>
                 <img src="img/map1.jpg" style="width:100%" alt="AT&T Long Lines Network Map">
                 <div class="text">The sprawling AT&T Long Lines Network</div>
@@ -528,57 +562,57 @@
                 <div class="text">Another look at the Long Lines Network</div>
             </div>
 
-            <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-            <a class="next" onclick="plusSlides(1)">&#10095;</a>
-        </div>
+            <a class="prev" onclick="plusSlides(-1)">&#10094;</a>et i;
+            <a class="next" onclick="plusSlides(1)">&#10095;</a>ementsByClassName("mySlides");
+        </div>;
         <br>
-
-        <div class="slideshow-navigation">
-            <span class="dot" onclick="currentSlide(1)"></span>
-            <span class="dot" onclick="currentSlide(2)"></span>
-        </div>
-
+f (n < 1) { slideIndex = slides.length; }
+        <div class="slideshow-navigation">   for (i = 0; i < slides.length; i++) {
+            <span class="dot" onclick="currentSlide(1)"></span>   slides[i].style.display = "none";
+            <span class="dot" onclick="currentSlide(2)"></span>                }
+        </div>++) {
+.className.replace(" active", "");
         <script>
             // Slideshow functionality for mySlides
             let slideIndex = 1;
-            showSlides(slideIndex);
-
+            showSlides(slideIndex);  dots[slideIndex - 1].className += " active";
+                }
             function plusSlides(n) {
                 showSlides(slideIndex += n);
             }
 
             function currentSlide(n) {
-                showSlides(slideIndex = n);
-            }
-
+                showSlides(slideIndex = n); AT&T Long Lines was a network of communications lines, initially consisting of telephone lines, that were owned and operated by AT&T. It played a pivotal role in long-distance communication in the United States throughout the 20th century.</p>
+            }            <p>This network not only facilitated telephone calls but also supported television broadcasting, data transmission, and various other forms of communication. Its development marked a significant engineering milestone, involving the construction of numerous repeater stations and the application of cutting-edge technologies.</p>
+ rel="noreferrer">Learn More about Bell Lab's History Here</a>
             function showSlides(n) {
                 let i;
                 const slides = document.getElementsByClassName("mySlides");
-                const dots = document.getElementsByClassName("dot");
-                if (n > slides.length) { slideIndex = 1; }
-                if (n < 1) { slideIndex = slides.length; }
-                for (i = 0; i < slides.length; i++) {
+                const dots = document.getElementsByClassName("dot");chnology Behind Long Lines</h2>
+                if (n > slides.length) { slideIndex = 1; }            <p>The Long Lines network utilized a range of technologies, including microwave radio relay systems and coaxial cables, enabling the transmission of signals over vast distances with minimal signal degradation.</p>
+                if (n < 1) { slideIndex = slides.length; }epeater stations, which amplified signals to maintain their strength, and switching centers, which directed calls to their intended destinations. The network continually evolved, integrating new technologies like fiber optics to enhance capacity and improve overall performance.</p>
+                for (i = 0; i < slides.length; i++) {ogy.html" rel="noreferrer">Learn More about the fascinating tech here</a>
                     slides[i].style.display = "none";
                 }
-                for (i = 0; i < dots.length; i++) {
+                for (i = 0; i < dots.length; i++) {d="bell-labs" class="section">
                     dots[i].className = dots[i].className.replace(" active", "");
-                }
-                if (slides[slideIndex - 1]) {
+                }<p>Bell Labs, formerly known as Bell Telephone Laboratories, was the research and development arm of AT&T. It is renowned for its groundbreaking contributions to science and technology.</p>
+                if (slides[slideIndex - 1]) { the transistor, the laser, the photovoltaic cell, the charge-coupled device (CCD), information theory, the Unix operating system, and the C programming language, among other things. Eight Nobel Prizes have been awarded for work completed at Bell Laboratories.</p> Learn more about the innovations at Bell Labs <a href="history-bell-labs.html" rel="noreferrer">here</a>.
                     slides[slideIndex - 1].style.display = "block";
                     dots[slideIndex - 1].className += " active";
                 }
-            }
+            }llery</h2>
         </script>
-
+ript -->
         <section id="history" class="section">
-            <h2>History of AT&T Long Lines</h2>
+            <h2>History of AT&T Long Lines</h2>es in our <a href="gallery.html" rel="noreferrer">full gallery</a>.</p>
             <p>The AT&T Long Lines was a network of communications lines, initially consisting of telephone lines, that were owned and operated by AT&T. It played a pivotal role in long-distance communication in the United States throughout the 20th century.</p>
-            <p>This network not only facilitated telephone calls but also supported television broadcasting, data transmission, and various other forms of communication. Its development marked a significant engineering milestone, involving the construction of numerous repeater stations and the application of cutting-edge technologies.</p>
-            <a href="history-att-longlines.html" rel="noreferrer">Learn More about Bell Lab's History Here</a>
+            <p>This network not only facilitated telephone calls but also supported television broadcasting, data transmission, and various other forms of communication. Its development marked a significant engineering milestone, involving the construction of numerous repeater stations and the application of cutting-edge technologies.</p>ser Image Submission Form with notice -->
+            <a href="history-att-longlines.html" rel="noreferrer">Learn More about Bell Lab's History Here</a>            <h3>Submit Your Images</h3>
         </section>
-
+<p><strong>Note:</strong> This image submission form is currently a placeholder and is not functional. In the future, this feature will allow community contributions to our gallery.</p>
         <section id="technology" class="section">
-            <h2>Technology Behind Long Lines</h2>
+            <h2>Technology Behind Long Lines</h2>form" enctype="multipart/form-data">
             <p>The Long Lines network utilized a range of technologies, including microwave radio relay systems and coaxial cables, enabling the transmission of signals over vast distances with minimal signal degradation.</p>
             <p>Essential components included repeater stations, which amplified signals to maintain their strength, and switching centers, which directed calls to their intended destinations. The network continually evolved, integrating new technologies like fiber optics to enhance capacity and improve overall performance.</p>
             <a href="technology.html" rel="noreferrer">Learn More about the fascinating tech here</a>
@@ -589,136 +623,146 @@
             <p>Bell Labs, formerly known as Bell Telephone Laboratories, was the research and development arm of AT&T. It is renowned for its groundbreaking contributions to science and technology.</p>
             <p>Bell Labs researchers and engineers invented the transistor, the laser, the photovoltaic cell, the charge-coupled device (CCD), information theory, the Unix operating system, and the C programming language, among other things. Eight Nobel Prizes have been awarded for work completed at Bell Laboratories.</p> Learn more about the innovations at Bell Labs <a href="history-bell-labs.html" rel="noreferrer">here</a>.
         </section>
-
-        <section id="gallery" class="section">
-            <h2>Gallery</h2>
-            <div class="image-gallery" id="dynamic-gallery">
-                <!-- Images will be dynamically loaded with JavaScript -->
-            </div>
-            <p class="gallery-link">Explore more images in our <a href="gallery.html" rel="noreferrer">full gallery</a>.</p>
-            
-            <!-- User Image Submission Form with notice -->
-            <h3>Submit Your Images</h3>
-            <div class="notice-box">
-                <p><strong>Note:</strong> This image submission form is currently a placeholder and is not functional. In the future, this feature will allow community contributions to our gallery.</p>
-            </div>
+ea." },
+        <section id="gallery" class="section">,
+            <h2>Gallery</h2>  { src: "img/gallery/20250309_172527.jpg", alt: "Microwave relay tower standing tall under a clear blue sky." },
+            <div class="image-gallery" id="dynamic-gallery">    { src: "img/gallery/dhtspll_base.jpg", alt: "Base of a microwave relay tower with structural details." },
+                <!-- Images will be dynamically loaded with JavaScript -->wave relay tower surrounded by a fenced area and greenery." },
+            </div>l_Reflector_HI.jpg", alt: "Close-up of a microwave reflector dish on the tower." },
+            <p class="gallery-link">Explore more images in our <a href="gallery.html" rel="noreferrer">full gallery</a>.</p>op section of a microwave relay tower with antennas." },
+            tilation system on the side of a building near the tower." },
+            <!-- User Image Submission Form with notice -->tant view of a microwave relay tower in a grassy field." },
+            <h3>Submit Your Images</h3> src: "img/gallery/dhtspll2.jpg", alt: "Microwave relay tower with a clear view of its structural design." },
+            <div class="notice-box">allery/dhtspll3.jpg", alt: "Detailed view of the microwave relay tower's framework." },
+                <p><strong>Note:</strong> This image submission form is currently a placeholder and is not functional. In the future, this feature will allow community contributions to our gallery.</p>   { src: "img/gallery/dhtspll4.jpg", alt: "Microwave relay tower with a building at its base in a field." }
+            </div>];
             <form id="image-upload-form" enctype="multipart/form-data">
-                <label for="image-upload">Upload an image:</label>
+                <label for="image-upload">Upload an image:</label>r-Yates algorithm)
                 <input type="file" id="image-upload" name="image" accept="image/*" required>
-                <button type="submit">Submit</button>
-            </form>
-        </section>
+                <button type="submit">Submit</button>1; i > 0; i--) {
+            </form>    const j = Math.floor(Math.random() * (i + 1));
+        </section>= [array[j], array[i]];
 
-        <!-- Add script for dynamic gallery functionality -->
+        <!-- Add script for dynamic gallery functionality -->return array;
         <script>
             // Array of available images in the gallery directory
-            const galleryImages = [
-                { src: "img/gallery/20250304_145346.jpg", alt: "Collapsed microwave relay equipment near a fenced area." },
-                { src: "img/gallery/20250304_145429.jpg", alt: "Damaged microwave relay equipment lying on the ground." },
+            const galleryImages = [unction to populate the dynamic gallery with random images
+                { src: "img/gallery/20250304_145346.jpg", alt: "Collapsed microwave relay equipment near a fenced area." },) {
+                { src: "img/gallery/20250304_145429.jpg", alt: "Damaged microwave relay equipment lying on the ground." },etElementById('dynamic-gallery');
                 { src: "img/gallery/20250309_172527.jpg", alt: "Microwave relay tower standing tall under a clear blue sky." },
                 { src: "img/gallery/dhtspll_base.jpg", alt: "Base of a microwave relay tower with structural details." },
                 { src: "img/gallery/dhtspll_out.jpg", alt: "Microwave relay tower surrounded by a fenced area and greenery." },
                 { src: "img/gallery/dhtspll_Reflector_HI.jpg", alt: "Close-up of a microwave reflector dish on the tower." },
                 { src: "img/gallery/dhtspll_TB.jpg", alt: "Top section of a microwave relay tower with antennas." },
-                { src: "img/gallery/dhtspll_vents1.jpg", alt: "Ventilation system on the side of a building near the tower." },
-                { src: "img/gallery/dhtspll1_far.jpg", alt: "Distant view of a microwave relay tower in a grassy field." },
+                { src: "img/gallery/dhtspll_vents1.jpg", alt: "Ventilation system on the side of a building near the tower." },huffle the array and take the first 4 images
+                { src: "img/gallery/dhtspll1_far.jpg", alt: "Distant view of a microwave relay tower in a grassy field." },ages]).slice(0, 4);
                 { src: "img/gallery/dhtspll2.jpg", alt: "Microwave relay tower with a clear view of its structural design." },
                 { src: "img/gallery/dhtspll3.jpg", alt: "Detailed view of the microwave relay tower's framework." },
-                { src: "img/gallery/dhtspll4.jpg", alt: "Microwave relay tower with a building at its base in a field." }
-            ];
+                { src: "img/gallery/dhtspll4.jpg", alt: "Microwave relay tower with a building at its base in a field." }dImages.forEach(image => {
+            ];const imgElement = document.createElement('img');
             
             // Function to shuffle array (Fisher-Yates algorithm)
-            function shuffleArray(array) {
-                for (let i = array.length - 1; i > 0; i--) {
-                    const j = Math.floor(Math.random() * (i + 1));
-                    [array[i], array[j]] = [array[j], array[i]];
-                }
-                return array;
+            function shuffleArray(array) {imgElement.loading = "lazy"; // Add lazy loading for better performance
+                for (let i = array.length - 1; i > 0; i--) {oltip
+                    const j = Math.floor(Math.random() * (i + 1)); 
+                    [array[i], array[j]] = [array[j], array[i]];       // Add click handler to open the full gallery
+                }        imgElement.addEventListener('click', function() {
+                return array;.html';
             }
-            
-            // Function to populate the dynamic gallery with random images
-            function populateDynamicGallery() {
-                const dynamicGallery = document.getElementById('dynamic-gallery');
+               
+            // Function to populate the dynamic gallery with random images         // Set cursor style to indicate clickability
+            function populateDynamicGallery() {                    imgElement.style.cursor = 'pointer';
+                const dynamicGallery = document.getElementById('dynamic-gallery');        
                 if (!dynamicGallery) return;
                 
                 // Clear existing content
-                dynamicGallery.innerHTML = '';
+                dynamicGallery.innerHTML = '';            
                 
-                // Shuffle the array and take the first 4 images
+                // Shuffle the array and take the first 4 imagesntLoaded', populateDynamicGallery);
                 const shuffledImages = shuffleArray([...galleryImages]).slice(0, 4);
-                
+                >
                 // Add images to the gallery
                 shuffledImages.forEach(image => {
-                    const imgElement = document.createElement('img');
-                    imgElement.src = image.src;
-                    imgElement.alt = image.alt;
+                    const imgElement = document.createElement('img'); our code to ensure we remain a privacy-first, tracker-free site.</small></p>
+                    imgElement.src = image.src;. <small>Site by juler#5461. All rights reserved.</small></p>
+                    imgElement.alt = image.alt;    </footer>
                     imgElement.loading = "lazy"; // Add lazy loading for better performance
                     imgElement.title = image.alt; // Add tooltip
-                    
-                    // Add click handler to open the full gallery
+                    <button id="collapse-button">+</button>
+                    // Add click handler to open the full galleryom/widget?id=807000904397094913&theme=dark" width="350" height="500" allowtransparency="true" frameborder="0"></iframe>
                     imgElement.addEventListener('click', function() {
                         window.location.href = 'gallery.html';
                     });
                     
-                    // Set cursor style to indicate clickability
+                    // Set cursor style to indicate clickabilityte().getFullYear();
                     imgElement.style.cursor = 'pointer';
                     
-                    dynamicGallery.appendChild(imgElement);
+                    dynamicGallery.appendChild(imgElement);ode-toggle');
                 });
             }
-            
-            // Call the function when the DOM is loaded
-            document.addEventListener('DOMContentLoaded', populateDynamicGallery);
-        </script>
+            f (isDark) {
+            // Call the function when the DOM is loaded       document.documentElement.classList.add('dark-mode');
+            document.addEventListener('DOMContentLoaded', populateDynamicGallery);        document.body.classList.add('dark-mode');
+        </script>';
     </main>
 
-    <footer>
-        <p><small>We frequently review our code to ensure we remain a privacy-first, tracker-free site.</small></p>
-        <p>&copy; <span id="year"></span> AT&T Long Lines & Bell Labs Community. <small>Site by juler#5461. All rights reserved.</small></p>
+    <footer>     document.documentElement.classList.remove('dark-mode');
+        <p><small>We frequently review our code to ensure we remain a privacy-first, tracker-free site.</small></p>        document.body.classList.remove('dark-mode');
+        <p>&copy; <span id="year"></span> AT&T Long Lines & Bell Labs Community. <small>Site by juler#5461. All rights reserved.</small></p>ode';
     </footer>
 
     <div id="discord-widget-container" class="collapsible">
         <button id="collapse-button">+</button>
-        <iframe src="https://discord.com/widget?id=807000904397094913&theme=dark" width="350" height="500" allowtransparency="true" frameborder="0"></iframe>
-    </div>
-
+        <iframe src="https://discord.com/widget?id=807000904397094913&theme=dark" width="350" height="500" allowtransparency="true" frameborder="0"></iframe>.addEventListener('click', () => {
+    </div>ument.body.classList.contains('dark-mode');
+etDarkMode(isDarkMode);
     <script>
-        // Update the year dynamically
+        // Update the year dynamically        
         document.getElementById('year').textContent = new Date().getFullYear();
 
         // Dark mode toggle functionality with localStorage support
         const toggleButton = document.getElementById('dark-mode-toggle');
         
         function setDarkMode(isDark) {
-            if (isDark) {
+            if (isDark) {     setDarkMode(false);
                 document.documentElement.classList.add('dark-mode');
-                document.body.classList.add('dark-mode');
+                document.body.classList.add('dark-mode'); });
                 toggleButton.textContent = 'Light Mode';
-                localStorage.setItem('darkMode', 'enabled');
-            } else {
-                document.documentElement.classList.remove('dark-mode');
-                document.body.classList.remove('dark-mode');
-                toggleButton.textContent = 'Dark Mode';
-                localStorage.setItem('darkMode', 'disabled');
-            }
-        }
-        
-        toggleButton.addEventListener('click', () => {
-            const isDarkMode = !document.body.classList.contains('dark-mode');
-            setDarkMode(isDarkMode);
-        });
-        
-        // Check for saved preference on page load
-        document.addEventListener('DOMContentLoaded', () => {
-            const savedMode = localStorage.getItem('darkMode');
-            if (savedMode === 'enabled') {
-                setDarkMode(true);
-            } else {
-                setDarkMode(false);
-            }
-        });
 
-        // Collapsible Discord widget functionality
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</html></body>    </script>        });            collapseButton.textContent = discordWidgetContainer.classList.contains('collapsed') ? '+' : '-';            discordWidgetContainer.classList.toggle('collapsed');        collapseButton.addEventListener('click', () => {        const collapseButton = document.getElementById('collapse-button');        const discordWidgetContainer = document.getElementById('discord-widget-container');        // Collapsible Discord widget functionality        });            }                setDarkMode(false);            } else {                setDarkMode(true);            if (savedMode === 'enabled') {            const savedMode = localStorage.getItem('darkMode');        document.addEventListener('DOMContentLoaded', () => {        // Check for saved preference on page load                });            setDarkMode(isDarkMode);            const isDarkMode = !document.body.classList.contains('dark-mode');        toggleButton.addEventListener('click', () => {                }            }                localStorage.setItem('darkMode', 'disabled');                toggleButton.textContent = 'Dark Mode';                document.body.classList.remove('dark-mode');                document.documentElement.classList.remove('dark-mode');            } else {                localStorage.setItem('darkMode', 'enabled');        // Collapsible Discord widget functionality
         const discordWidgetContainer = document.getElementById('discord-widget-container');
         const collapseButton = document.getElementById('collapse-button');
         collapseButton.addEventListener('click', () => {
