@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AT&T Long Lines & Bell Labs - Innovations in Communication</title>
     <link rel="icon" href="img/favicon.ico" type="image/x-icon">
+    <link href="/img/favicon.ico" rel="shortcut icon">
     <link rel="stylesheet" href="recipes/css/st.css"> <!-- Main styles -->
     <script src="scripts.js" defer></script>
     <script src="recipes/js/discord-widget.js" defer></script>
@@ -198,21 +199,49 @@
         /* Image gallery styling */
         .image-gallery {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            grid-template-columns: repeat(2, 1fr);
             gap: 15px;
             margin: 20px 0;
         }
         
         .image-gallery img {
             width: 100%;
-            height: 150px;
-            object-fit: cover;
-            border-radius: 5px;
-            transition: transform 0.3s ease;
+            height: auto;
+            border-radius: 8px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
         }
         
         .image-gallery img:hover {
-            transform: scale(1.05);
+            transform: scale(1.03);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+        
+        /* Responsive adjustments for gallery */
+        @media (max-width: 1024px) {
+            .image-gallery img {
+                width: calc(33.33% - 10px);
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .image-gallery img {
+                width: calc(50% - 8px);
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .image-gallery img {
+                width: 100%;
+            }
+        }
+        
+        .dark-mode .image-gallery img {
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+        }
+        
+        .dark-mode .image-gallery img:hover {
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.7);
         }
         
         /* Form styling */
@@ -397,23 +426,41 @@
         /* Improved image gallery styling */
         .image-gallery {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            grid-template-columns: repeat(2, 1fr);
             gap: 15px;
             margin: 20px 0;
         }
         
         .image-gallery img {
             width: 100%;
-            height: 150px;
-            object-fit: cover;
-            border-radius: 5px;
+            height: auto;
+            border-radius: 8px;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
         }
         
         .image-gallery img:hover {
-            transform: scale(1.05);
+            transform: scale(1.03);
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+        
+        /* Responsive adjustments for gallery */
+        @media (max-width: 1024px) {
+            .image-gallery img {
+                width: calc(33.33% - 10px);
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .image-gallery img {
+                width: calc(50% - 8px);
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .image-gallery img {
+                width: 100%;
+            }
         }
         
         .dark-mode .image-gallery img {
@@ -547,7 +594,7 @@
             <div class="image-gallery" id="dynamic-gallery">
                 <!-- Images will be dynamically loaded with JavaScript -->
             </div>
-            <p>Explore images of AT&T Long Lines facilities, Bell Labs, and related equipment. <a href="gallery.html" rel="noreferrer">View Full Gallery</a></p>
+            <p class="gallery-link">Explore more images in our <a href="gallery.html" rel="noreferrer">full gallery</a>.</p>
             
             <!-- User Image Submission Form with notice -->
             <h3>Submit Your Images</h3>
@@ -565,18 +612,18 @@
         <script>
             // Array of available images in the gallery directory
             const galleryImages = [
-                { src: "img/gallery/belllabs1.jpg", alt: "Bell Labs Building" },
-                { src: "img/gallery/tower1.jpg", alt: "AT&T Long Lines Tower" },
-                { src: "img/gallery/microwave1.jpg", alt: "Microwave Relay Station" },
-                { src: "img/gallery/transistor1.jpg", alt: "The First Transistor" },
-                { src: "img/gallery/unix1.jpg", alt: "UNIX System" },
-                { src: "img/gallery/satellite1.jpg", alt: "Communications Satellite" },
-                { src: "img/gallery/computer1.jpg", alt: "Early Computer System" },
-                { src: "img/gallery/phonesystem1.jpg", alt: "Telephone Exchange" },
-                { src: "img/gallery/scientists1.jpg", alt: "Bell Labs Scientists" },
-                { src: "img/gallery/waveguide1.jpg", alt: "Waveguide System" },
-                { src: "img/gallery/dish1.jpg", alt: "Satellite Dish" },
-                { src: "img/gallery/labequipment1.jpg", alt: "Laboratory Equipment" }
+                { src: "img/gallery/20250304_145346.jpg", alt: "Collapsed microwave relay equipment near a fenced area." },
+                { src: "img/gallery/20250304_145429.jpg", alt: "Damaged microwave relay equipment lying on the ground." },
+                { src: "img/gallery/20250309_172527.jpg", alt: "Microwave relay tower standing tall under a clear blue sky." },
+                { src: "img/gallery/dhtspll_base.jpg", alt: "Base of a microwave relay tower with structural details." },
+                { src: "img/gallery/dhtspll_out.jpg", alt: "Microwave relay tower surrounded by a fenced area and greenery." },
+                { src: "img/gallery/dhtspll_Reflector_HI.jpg", alt: "Close-up of a microwave reflector dish on the tower." },
+                { src: "img/gallery/dhtspll_TB.jpg", alt: "Top section of a microwave relay tower with antennas." },
+                { src: "img/gallery/dhtspll_vents1.jpg", alt: "Ventilation system on the side of a building near the tower." },
+                { src: "img/gallery/dhtspll1_far.jpg", alt: "Distant view of a microwave relay tower in a grassy field." },
+                { src: "img/gallery/dhtspll2.jpg", alt: "Microwave relay tower with a clear view of its structural design." },
+                { src: "img/gallery/dhtspll3.jpg", alt: "Detailed view of the microwave relay tower's framework." },
+                { src: "img/gallery/dhtspll4.jpg", alt: "Microwave relay tower with a building at its base in a field." }
             ];
             
             // Function to shuffle array (Fisher-Yates algorithm)
@@ -605,6 +652,16 @@
                     imgElement.src = image.src;
                     imgElement.alt = image.alt;
                     imgElement.loading = "lazy"; // Add lazy loading for better performance
+                    imgElement.title = image.alt; // Add tooltip
+                    
+                    // Add click handler to open the full gallery
+                    imgElement.addEventListener('click', function() {
+                        window.location.href = 'gallery.html';
+                    });
+                    
+                    // Set cursor style to indicate clickability
+                    imgElement.style.cursor = 'pointer';
+                    
                     dynamicGallery.appendChild(imgElement);
                 });
             }
