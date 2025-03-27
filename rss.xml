@@ -1,9 +1,9 @@
-<?xml version="1.0" encoding="UTF-8" ?>
+<?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
 <channel>
-  <title>AT&T Long Lines &amp; Bell Labs</title>
+  <title>AT&amp;T Long Lines &amp; Bell Labs</title>
   <link>https://belllabs.example.com/</link>
-  <description>News and updates about AT&T Long Lines and Bell Labs history, technology, and innovation</description>
+  <description>News and updates about AT&amp;T Long Lines and Bell Labs history, technology, and innovation</description>
   <language>en-us</language>
   <lastBuildDate>Wed, 26 Mar 2025 22:39:00 -0600</lastBuildDate>
   <atom:link href="https://belllabs.example.com/rss.xml" rel="self" type="application/rss+xml" />
@@ -21,7 +21,7 @@
   <item>
     <title>New Microwave Tower Images Added to Gallery</title>
     <link>https://belllabs.example.com/gallery.html</link>
-    <description>We've added a collection of historic microwave relay tower images to our gallery, showcasing these engineering marvels of the AT&T Long Lines network.</description>
+    <description>We've added a collection of historic microwave relay tower images to our gallery, showcasing these engineering marvels of the AT&amp;T Long Lines network.</description>
     <pubDate>Wed, 26 Mar 2025 22:39:00 -0600</pubDate>
     <guid>https://belllabs.example.com/gallery.html?update=towers-20250326</guid>
   </item>
@@ -43,9 +43,9 @@
   </item>
 
   <item>
-    <title>AT&T Long Lines History: Building America's Communications Network</title>
+    <title>AT&amp;T Long Lines History: Building America's Communications Network</title>
     <link>https://belllabs.example.com/history-att-longlines.html</link>
-    <description>Discover the fascinating history of AT&T Long Lines and how it built the nationwide communications infrastructure that connected America.</description>
+    <description>Discover the fascinating history of AT&amp;T Long Lines and how it built the nationwide communications infrastructure that connected America.</description>
     <pubDate>Sat, 06 May 2023 12:45:00 GMT</pubDate>
     <guid>https://belllabs.example.com/history-att-longlines.html</guid>
   </item>
