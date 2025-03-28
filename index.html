@@ -11,22 +11,22 @@
     <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net; style-src 'self' 'unsafe-inline'; frame-src https://discord.com;">
     <title>AT&T Long Lines & Bell Labs - Innovations in Communication</title>
     <link rel="icon" href="img/favicon.ico" type="image/x-icon">
-    <link href="/img/favicon.ico" rel="shortcut icon">
-    <link rel="stylesheet" href="recipes/css/st.css"> <!-- Main styles -->
+    <link href="img/favicon.ico" rel="shortcut icon">
+    <link rel="stylesheet" href="recipes/css/styles.css"> <!-- Main styles -->
     <link rel="alternate" type="application/rss+xml" title="AT&T Long Lines & Bell Labs Updates" href="rss.xml" />
     
     <!--[if lt IE 9]>
-    <link rel="stylesheet" type="text/css" href="ie-fixes.css">
     <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/selectivizr@1.0.3/selectivizr.min.js"></script>
     <![endif]-->
     
     <!-- Load compat.js script first -->
-    <script src="compat.js"></script>
-    <script src="scripts.js" defer></script>
+    <script src="recipes/js/compat.js"></script>
+    <script src="recipes/js/scripts.js" defer></script>
     <script src="recipes/js/discord-widget.js" defer></script>
     <script src="recipes/js/theme-toggle.js" defer></script>
+    <link rel="stylesheet" type="text/css" href="recipes/css/ie-fixes.css">
     <style>
         /* Dark mode CSS variables with fallbacks for older browsers */
         :root {
@@ -952,4 +952,3 @@
                 if (bodyClasses.indexOf('dark-mode') === -1) {
                     document.body.className = bodyClasses + ' dark-mode';
                 }
-                
