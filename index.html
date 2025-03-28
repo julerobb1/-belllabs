@@ -216,11 +216,8 @@
             to {opacity: 1}
         }
         
-        /* Image gallery styling */
+        /* Improved image gallery styling */
         .image-gallery {
-            *zoom: 1; /* IE6/7 */
-            overflow: hidden; /* Clearfix */
-            display: block; /* Fallback */
             display: grid;
             grid-template-columns: repeat(2, 1fr);
             gap: 15px;
@@ -228,10 +225,7 @@
         }
         
         .image-gallery img {
-            float: left; /* Fallback */
-            width: 48%; /* Fallback */
-            margin: 1%; /* Fallback */
-            width: 100%; /* For modern browsers */
+            width: 100%;
             height: auto;
             border-radius: 8px;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -247,10 +241,6 @@
         @media (max-width: 1024px) {
             .image-gallery {
                 grid-template-columns: repeat(3, 1fr);
-            }
-            
-            .image-gallery img {
-                width: calc(33.33% - 10px);
             }
         }
         
@@ -303,10 +293,8 @@
         
         /* Navigation styling */
         nav {
-            *zoom: 1; /* IE6/7 */
-            overflow: hidden; /* Clearfix */
-            text-align: center; /* Fallback */
-            background-color: #005a9c;
+            overflow: hidden;
+            text-align: center;
             background-color: var(--nav-bg-color);
             display: flex;
             justify-content: center;
@@ -317,10 +305,8 @@
         }
 
         nav a {
-            display: inline-block; /* Fallback */
-            *display: inline; /* IE7 */
-            *zoom: 1; /* IE7 */
-            margin: 0 5px; /* Fallback */
+            display: inline-block;
+            margin: 0 5px;
             text-decoration: none;
             color: white;
             padding: 5px 10px;
