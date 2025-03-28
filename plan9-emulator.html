@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang="en"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="referrer" content="no-referrer">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net https://9p.io https://cat-v.org 'unsafe-eval'; style-src 'self' 'unsafe-inline'; frame-src https://9p.io https://cat-v.org;">
+    <title>Plan 9 Emulator - AT&T Long Lines & Bell Labs</title>
+    <link rel="icon" href="img/favicon.ico" type="image/x-icon">
+    <link href="img/favicon.ico" rel="shortcut icon">
+    <link rel="stylesheet" href="recipes/css/styles.css">
+    <script src="recipes/js/compat.js"></script>
+    <script src="recipes/js/scripts.js" defer></script>
+    <style>
+        .emulator-container {
+            border: 1px solid #ccc;
+            margin: 20px 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            overflow: hidden;
+            border-radius: 5px;
+            height: 600px;
+            position: relative;
+        }
+        
+        .emulator-container iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+        
+        .emulator-loading {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: #f5f5f5;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            z-index: 10;
+        }
+        
+        .emulator-loading.hidden {
+            display: none;
+        }
+        
+        .spinner {
+            border: 5px solid #f3f3f3;
+            border-top: 5px solid #0082ca;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            animation: spin 1s linear infinite;
+            margin-bottom: 20px;
+        }
+        
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
+        .terminal-instructions {
+            background-color: #f9f9f9;
+            padding: 15px;
+            border-left: 4px solid #0082ca;
+            margin: 20px 0;
+        }
+        
+        .command-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        
+        .command-table th, .command-table td {
+            padding: 8px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+        
+        .command-table th {
+            background-color: #f0f0f0;
+        }
+        
+        .back-link {
+            display: inline-block;
+            margin-bottom: 20px;
+        }
+        
+        .dark-mode .emulator-loading {
+            background-color: #333333;
+            color: #e0e0e0;
+        }
+        
+        .dark-mode .spinner {
+            border: 5px solid #444444;
+            border-top: 5px solid #6aabff;
+        }
+        
+        .dark-mode .terminal-instructions {
+            background-color: #252525;
+            border-left: 4px solid #6aabff;
+            color: #e0e0e0;
+        }
+        
+        .dark-mode .command-table th {
+            background-color: #333333;
+            color: #e0e0e0;
+        }
+        
+        .dark-mode .command-table td {
+            border-bottom: 1px solid #444444;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Plan 9 Emulator</h1>
+        <p>Experience Bell Labs' innovative operating system directly in your browser</p>
+    </header>
+    
+    <main>
+        <section class="section">
+            <a href="plan9.html" class="back-link">← Back to Plan 9 Information</a>
+            
+            <p>This interactive emulator allows you to experience Plan 9 from Bell Labs directly in your browser. Plan 9 was developed in the late 1980s and early 1990s as a research successor to UNIX by many of the same people, including Ken Thompson, Rob Pike, and Dave Presotto.</p>
+            
+            <div class="terminal-instructions">
+                <h3>Using the Plan 9 Emulator</h3>
+                <p>Once the emulator loads, you'll see the Plan 9 graphical interface:</p>
+                <ul>
+                    <li>Use your mouse to interact with the system</li>
+                    <li>Right-click opens contextual menus</li>
+                    <li>Middle-click (or scroll wheel click) for text operations</li>
+                    <li>The emulator runs entirely in your browser - no data is saved between sessions</li>
+                </ul>
+            </div>
+            
+            <div class="emulator-container">
+                <div class="emulator-loading" id="loading-screen">
+                    <div class="spinner"></div>
+                    <p>Loading Plan 9 Emulator... Please wait.</p>
+                    <p><small>This may take a few moments depending on your connection.</small></p>
+                </div>
+                <iframe id="plan9-emulator" src="about:blank" allowfullscreen sandbox="allow-same-origin allow-scripts allow-forms" loading="lazy"></iframe>
+            </div>
+            
+            <div class="terminal-instructions">
+                <h3>Quick Reference: Plan 9 Commands</h3>
+                <p>Here are some basic commands to help you get started:</p>
+                
+                <table class="command-table">
+                    <thead>
+                        <tr>
+                            <th>Command</th>
+                            <th>Description</th>
+                            <th>Example</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><code>ls</code></td>
+                            <td>List files in current directory</td>
+                            <td><code>ls -l</code> (list with details)</td>
+                        </tr>
+                        <tr>
+                            <td><code>cd</code></td>
+                            <td>Change directory</td>
+                            <td><code>cd /usr</code> (go to /usr)</td>
+                        </tr>
+                        <tr>
+                            <td><code>cat</code></td>
+                            <td>Display file contents</td>
+                            <td><code>cat /lib/keyboard</code></td>
+                        </tr>
+                        <tr>
+                            <td><code>acme</code></td>
+                            <td>Text editor and programming environment</td>
+                            <td><code>acme</code></td>
+                        </tr>
+                        <tr>
+                            <td><code>sam</code></td>
+                            <td>Text editor</td>
+                            <td><code>sam file.txt</code></td>
+                        </tr>
+                        <tr>
+                            <td><code>rc</code></td>
+                            <td>The Plan 9 shell</td>
+                            <td><code>rc -c 'echo hello'</code></td>
+                        </tr>
+                    </tbody>
+                </table>
+                
+                <p><small>For more information about Plan 9, including its history and significance, visit our <a href="plan9.html">Plan 9 information page</a>.</small></p>
+            </div>
+        </section>
+    </main>
+    
+    <footer>
+        <p>&copy; <span id="year"></span> AT&T Long Lines & Bell Labs Community. <small>Site by juler#5461. All rights reserved.</small></p>
+    </footer>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const emulatorFrame = document.getElementById('plan9-emulator');
+            const loadingScreen = document.getElementById('loading-screen');
+            
+            // The emulator URL - using 9front JS emulator which is a browser-friendly version of Plan 9
+            const emulatorUrl = 'https://cat-v.org/9front/js/';
+            
+            function loadEmulator() {
+                // Show loading screen
+                loadingScreen.classList.remove('hidden');
+                
+                // Load the emulator
+                emulatorFrame.src = emulatorUrl;
+                
+                // Hide loading screen when iframe loads
+                emulatorFrame.onload = function() {
+                    setTimeout(function() {
+                        loadingScreen.classList.add('hidden');
+                    }, 1500); // Add small delay to ensure emulator is ready
+                };
+            }
+            
+            // Initialize emulator
+            loadEmulator();
+            
+            // Set copyright year
+            const currentYear = new Date().getFullYear();
+            document.querySelector('#year').textContent = currentYear;
+        });
+    </script>
+</body>
+</html>
