@@ -937,7 +937,7 @@
         document.getElementById('year').innerHTML = new Date().getFullYear();
         
         // Dark mode toggle with IE8 compatibility
-        var toggleButton = document.getElementById('dark-mode-toggle');
+        const otherToggleButton = document.getElementById('other-toggle-button');
         
         function setDarkMode(isDark) {
             if (isDark) {
@@ -952,3 +952,11 @@
                 if (bodyClasses.indexOf('dark-mode') === -1) {
                     document.body.className = bodyClasses + ' dark-mode';
                 }
+            } else {
+                document.documentElement.className = (document.documentElement.className || '').replace(/\bdark-mode\b/g, '');
+                document.body.className = (document.body.className || '').replace(/\bdark-mode\b/g, '');
+            }
+        }
+    </script>
+</body>
+</html>
