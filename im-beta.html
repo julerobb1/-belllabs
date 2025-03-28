@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Map - Beta | Bell Labs and AT&T Long Lines History</title>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="/recipes/css/timeline-chronicle.css">
+    <style>
+        .map-container {
+            width: 100%;
+            height: 80vh;
+            margin: 20px 0;
+        }
+        
+        .map-container iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+        
+        .attribution-banner {
+            background-color: var(--nav-bg-color);
+            color: #ffffff;
+            padding: 10px;
+            text-align: center;
+            font-size: 0.9em;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+        
+        .attribution-banner a {
+            color: #ffffff;
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <!-- Navigation links would go here -->
+            <a href="index.html">Home</a>
+            <a href="timeline.html">Timeline</a>
+            <a href="llmap-int.html">Interactive Map</a>
+            <a href="im-beta.html" class="active">Interactive Map - Beta</a>
+            <a href="technical-archives.html">Technical Archives</a>
+            <a href="preservation-efforts.html">Preservation Efforts</a>
+            <!-- Other navigation links -->
+        </nav>
+    </header>
+
+    <main>
+        <div class="attribution-banner">
+            This interactive map is from <a href="https://long-lines.com" target="_blank" rel="noopener">long-lines.com</a>, owned by N3TUQ. We are displaying it here for educational purposes.
+        </div>
+        
+        <!-- Interactive Map Section -->
+        <section id="map" class="section">
+            <h2>Interactive Map - Beta</h2>
+            <p>Explore the geographical locations of AT&T Long Lines sites and Bell Labs facilities across the United States.</p>
+            
+            <div class="map-container">
+                <iframe src="https://long-lines.com/map/" title="AT&T Long Lines Map" allowfullscreen></iframe>
+            </div>
+            
+            <div class="map-notes">
+                <h3>About This Map</h3>
+                <p>This interactive map shows the historical network of AT&T Long Lines microwave relay towers, coaxial cable routes, and other telecommunications infrastructure that formed the backbone of America's communications system for decades.</p>
+                <p>You can zoom in/out and click on markers to get more details about specific sites.</p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <!-- Footer content -->
+        <p>&copy; 2023 Bell Labs & AT&T Long Lines Historical Archive. All rights reserved.</p>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
