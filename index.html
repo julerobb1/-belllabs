@@ -248,6 +248,10 @@
             .image-gallery {
                 grid-template-columns: repeat(3, 1fr);
             }
+            
+            .image-gallery img {
+                width: calc(33.33% - 10px);
+            }
         }
         
         @media (max-width: 768px) {
@@ -455,54 +459,6 @@
             background-color: #333333;
             border-left: 4px solid #ffeb3b;
             color: #e0e0e0;
-        }
-        
-        /* Improved image gallery styling */
-        .image-gallery {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 15px;
-            margin: 20px 0;
-        }
-        
-        .image-gallery img {
-            width: 100%;
-            height: auto;
-            border-radius: 8px;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-        }
-        
-        .image-gallery img:hover {
-            transform: scale(1.03);
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-        }
-        
-        /* Responsive adjustments for gallery */
-        @media (max-width: 1024px) {
-            .image-gallery img {
-                width: calc(33.33% - 10px);
-            }
-        }
-        
-        @media (max-width: 768px) {
-            .image-gallery img {
-                width: calc(50% - 8px);
-            }
-        }
-        
-        @media (max-width: 480px) {
-            .image-gallery img {
-                width: 100%;
-            }
-        }
-        
-        .dark-mode .image-gallery img {
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
-        }
-        
-        .dark-mode .image-gallery img:hover {
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.7);
         }
         
         /* RSS Button Styling */
