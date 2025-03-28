@@ -245,8 +245,8 @@
         
         /* Responsive adjustments for gallery */
         @media (max-width: 1024px) {
-            .image-gallery img {
-                width: calc(33.33% - 10px);
+            .image-gallery {
+                grid-template-columns: repeat(3, 1fr);
             }
         }
         
