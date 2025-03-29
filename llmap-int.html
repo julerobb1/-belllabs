@@ -88,6 +88,18 @@
             0% { transform: translateX(100%); }
             100% { transform: translateX(-100%); }
         }
+        
+        /* Archive Notice */
+        .archive-notice {
+            background-color: #ffeecc;
+            border: 2px solid #ff9900;
+            color: #663300;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 5px;
+            font-weight: bold;
+            text-align: center;
+        }
     </style>
 </head>
 <body>
@@ -95,8 +107,7 @@
         <nav>
             <a href="index.html">Home</a>
             <a href="timeline.html">Timeline</a>
-            <a href="llmap-int.html" class="active">Interactive Network Map</a>
-            <a href="im-beta.html">Interactive Map - Beta</a>
+            <!-- Map pages removed from navigation -->
             <a href="technical-archives.html">Technical Archives</a>
             <a href="preservation-efforts.html">Preservation Efforts</a>
             <a href="bell-labs.html">Bell Labs</a>
@@ -110,6 +121,11 @@
     </header>
 
     <main>
+        <!-- Archive Notice -->
+        <div class="archive-notice">
+            <p>⚠️ ARCHIVED PAGE: This interactive map feature has been deprecated and is no longer functional. This page is maintained for historical reference only.</p>
+        </div>
+        
         <!-- Interactive Map Section -->
         <section id="map" class="section">
             <h2>Interactive Network Map</h2>
@@ -147,7 +163,7 @@
                 <h3>About This Map</h3>
                 <p>This interactive map shows the extensive AT&T Long Lines communications network that was developed throughout the 20th century. The network consisted of microwave relay towers, coaxial cable routes, and various facilities that formed the backbone of America's telecommunications infrastructure.</p>
                 <p>Use the zoom and pan controls to navigate the map. Click on individual markers to view detailed information about specific sites including historical photographs and technical specifications where available.</p>
-                <p>For a beta version of our map with additional features, visit our <a href="im-beta.html">Interactive Map - Beta</a> page.</p>
+                <!-- Removed reference to beta map page -->
             </div>
         </section>
     </main>
