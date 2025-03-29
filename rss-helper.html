@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="referrer" content="no-referrer">
+    <title>RSS Feed Access - AT&T Long Lines & Bell Labs</title>
+    <!--[if IE]>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <![endif]-->
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            line-height: 1.6;
+        }
+        .container {
+            background-color: #f5f5f5;
+            border-radius: 5px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        .button {
+            display: inline-block;
+            background-color: #005a9c;
+            color: white !important;
+            padding: 10px 15px;
+            text-decoration: none;
+            border-radius: 4px;
+            margin: 10px 10px 10px 0;
+        }
+        .button:hover {
+            background-color: #0082ca;
+        }
+        .note {
+            background-color: #fffde7;
+            border-left: 4px solid #ffeb3b;
+            padding: 10px 15px;
+            margin-bottom: 15px;
+        }
+        
+        /* IE11 specific styles */
+        @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+            /* IE11 and below specific styles */
+            body {
+                font-family: Arial, sans-serif !important;
+            }
+            .button {
+                display: inline-block;
+                background-color: #005a9c !important;
+                color: white !important;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>RSS Feed Access Options</h1>
+        
+        <div class="note">
+            <p><strong>Note:</strong> RSS feeds work best with dedicated RSS readers. Internet Explorer 11 has built-in RSS support, which you can use to subscribe to our updates.</p>
+        </div>
+        
+        <h2>Choose an option to access our RSS feed:</h2>
+        
+        <div id="options">
+            <a href="rss.xml" class="button" download="belllabs-feed.xml">Download RSS Feed</a>
+            <a href="rss.xml" class="button" id="ie-button">Open in Internet Explorer</a>
+            <a href="javascript:void(0)" class="button" id="copy-button">Copy RSS URL</a>
+        </div>
+        
+        <div id="info" style="margin-top: 20px;">
+            <h3>About RSS Feeds</h3>
+            <p>RSS (Really Simple Syndication) allows you to subscribe to website updates. You can use:</p>
+            <ul>
+                <li>Dedicated RSS reader applications (Feedly, NewsBlur, Inoreader)</li>
+                <li>Browser extensions for RSS reading</li>
+                <li>Internet Explorer 11's built-in RSS reader (if available on your system)</li>
+            </ul>
+        </div>
+        
+        <div style="margin-top: 20px;">
+            <a href="index.html">← Return to Homepage</a>
+        </div>
+    </div>
+
+    <script>
+        // Polyfill for older browsers
+        if (!window.Promise) {
+            document.write('<script src="https://cdn.jsdelivr.net/npm/promise-polyfill@8/dist/polyfill.min.js"><\/script>');
+        }
+        
+        // Better IE detection - covers all versions of IE
+        function isIE() {
+            var ua = window.navigator.userAgent;
+            var msie = ua.indexOf('MSIE ');
+            if (msie > 0) {
+                // IE 10 or older
+                return true;
+            }
+            var trident = ua.indexOf('Trident/');
+            if (trident > 0) {
+                // IE 11
+                return true;
+            }
+            return false;
+        }
+        
+        // IE button behavior
+        var ieButton = document.getElementById('ie-button');
+        
+        if (isIE()) {
+            // Already in IE, just go to the feed directly
+            ieButton.innerText = "View RSS Feed";
+            ieButton.href = "rss.xml";
+        } else {
+            // In a different browser
+            ieButton.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                // Try to launch IE via custom protocol
+                try {
+                    // Fallback approach - direct link that could open in IE
+                    var fullPath = window.location.protocol + "//" + window.location.host + "/rss.xml";
+                    
+                    // Try with a protocol handler approach
+                    window.location.href = "microsoft-edge:http://ielink.example.com?url=" + encodeURIComponent(fullPath);
+                    
+                    // Show message after delay
+                    setTimeout(function() {
+                        alert("If Internet Explorer did not open, you can manually open IE and navigate to our RSS feed URL (copied to clipboard).");
+                        
+                        // Try to copy URL to clipboard
+                        copyToClipboard(fullPath);
+                    }, 1000);
+                } catch(err) {
+                    alert("Please open Internet Explorer manually and navigate to our RSS feed.");
+                }
+            });
+        }
+        
+        // Copy URL to clipboard with IE11 compatibility
+        function copyToClipboard(text) {
+            // Create temporary element
+            var textArea = document.createElement("textarea");
+            textArea.value = text;
+            
+            // Make the textarea out of viewport
+            textArea.style.position = "fixed";
+            textArea.style.left = "-999999px";
+            textArea.style.top = "-999999px";
+            document.body.appendChild(textArea);
+            textArea.focus();
+            textArea.select();
+            
+            try {
+                // Execute copy command
+                var successful = document.execCommand('copy');
+                if (!successful) {
+                    console.log('Failed to copy text');
+                }
+            } catch (err) {
+                console.log('Error copying text: ', err);
+            }
+            
+            document.body.removeChild(textArea);
+        }
+        
+        // Copy button event handler
+        document.getElementById('copy-button').addEventListener('click', function() {
+            var fullPath = window.location.protocol + "//" + window.location.host + "/rss.xml";
+            copyToClipboard(fullPath);
+            alert('RSS feed URL copied to clipboard: ' + fullPath);
+        });
+    </script>
+</body>
+</html>

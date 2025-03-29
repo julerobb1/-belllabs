@@ -1,16 +1,34 @@
 <!DOCTYPE html>
-<html lang="en">
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang="en"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="referrer" content="no-referrer">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net; style-src 'self' 'unsafe-inline'; frame-src https://discord.com;">
     <title>AT&T Long Lines & Bell Labs - Innovations in Communication</title>
     <link rel="icon" href="img/favicon.ico" type="image/x-icon">
-    <link rel="stylesheet" href="recipes/css/st.css"> <!-- Main styles -->
-    <script src="scripts.js" defer></script>
+    <link href="img/favicon.ico" rel="shortcut icon">
+    <link rel="stylesheet" href="recipes/css/styles.css"> <!-- Main styles -->
+    <link rel="alternate" type="application/rss+xml" title="AT&T Long Lines & Bell Labs Updates" href="rss.xml" />
+    
+    <!--[if lt IE 9]>
+    <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/selectivizr@1.0.3/selectivizr.min.js"></script>
+    <![endif]-->
+    
+    <!-- Load compat.js script first -->
+    <script src="recipes/js/compat.js"></script>
+    <script src="recipes/js/scripts.js" defer></script>
     <script src="recipes/js/discord-widget.js" defer></script>
     <script src="recipes/js/theme-toggle.js" defer></script>
+    <link rel="stylesheet" type="text/css" href="recipes/css/ie-fixes.css">
     <style>
-        /* Dark mode CSS variables */
+        /* Dark mode CSS variables with fallbacks for older browsers */
         :root {
             --bg-color: #ffffff;
             --text-color: #333333;
@@ -57,7 +75,9 @@
         
         /* Basic styling with CSS variables */
         body {
+            background-color: #ffffff; /* Fallback for browsers without CSS var support */
             background-color: var(--bg-color);
+            color: #333333;
             color: var(--text-color);
             transition: background-color 0.3s ease, color 0.3s ease;
             margin: 0;
@@ -67,6 +87,7 @@
         }
         
         header {
+            background-color: #0082ca;
             background-color: var(--header-bg-color);
             color: white;
             padding: 20px;
@@ -195,24 +216,52 @@
             to {opacity: 1}
         }
         
-        /* Image gallery styling */
+        /* Improved image gallery styling */
         .image-gallery {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            grid-template-columns: repeat(2, 1fr);
             gap: 15px;
             margin: 20px 0;
         }
         
         .image-gallery img {
             width: 100%;
-            height: 150px;
-            object-fit: cover;
-            border-radius: 5px;
-            transition: transform 0.3s ease;
+            height: auto;
+            border-radius: 8px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
         }
         
         .image-gallery img:hover {
-            transform: scale(1.05);
+            transform: scale(1.03);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+        
+        /* Responsive adjustments for gallery */
+        @media (max-width: 1024px) {
+            .image-gallery {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .image-gallery img {
+                width: calc(50% - 8px);
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .image-gallery img {
+                width: 100%;
+            }
+        }
+        
+        .dark-mode .image-gallery img {
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+        }
+        
+        .dark-mode .image-gallery img:hover {
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.7);
         }
         
         /* Form styling */
@@ -244,16 +293,20 @@
         
         /* Navigation styling */
         nav {
+            overflow: hidden;
+            text-align: center;
+            background-color: var(--nav-bg-color);
             display: flex;
             justify-content: center;
             align-items: center;
             flex-wrap: wrap;
             gap: 10px;
             padding: 10px 0;
-            background-color: var(--nav-bg-color);
         }
 
         nav a {
+            display: inline-block;
+            margin: 0 5px;
             text-decoration: none;
             color: white;
             padding: 5px 10px;
@@ -345,44 +398,209 @@
         .collapsible.collapsed iframe {
             display: none;
         }
+
+        /* Alert/Notice styling */
+        .alert-banner {
+            background-color: #CC0000;
+            color: #FFFF33;
+            font-weight: bold;
+            padding: 10px;
+            text-align: center;
+            width: 100%;
+        }
+        
+        .alert-banner a {
+            color: #FFFF33;
+            text-decoration: underline;
+        }
+        
+        .alert-banner a:hover {
+            color: #FFFFFF;
+        }
+        
+        /* Dark mode modifications for alert banner */
+        .dark-mode .alert-banner {
+            background-color: #990000;
+            color: #FFFF99;
+        }
+        
+        .dark-mode .alert-banner a {
+            color: #FFFF99;
+        }
+        
+        .dark-mode .alert-banner a:hover {
+            color: #FFFFFF;
+        }
+        
+        /* Notice box styling */
+        .notice-box {
+            background-color: #fffde7;
+            border-left: 4px solid #ffeb3b;
+            padding: 10px 15px;
+            margin-bottom: 15px;
+            border-radius: 0 4px 4px 0;
+        }
+        
+        .dark-mode .notice-box {
+            background-color: #333333;
+            border-left: 4px solid #ffeb3b;
+            color: #e0e0e0;
+        }
+        
+        /* RSS Button Styling */
+        .rss-button {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 5px 10px;
+            color: white;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+        
+        .rss-button svg {
+            width: 16px;
+            height: 16px;
+            fill: white;
+        }
+        
+        .rss-button:hover {
+            background-color: var(--nav-hover-color);
+        }
+        
+        /* For screen readers only */
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border-width: 0;
+        }
+
+        /* IE11 fallbacks - for CSS variables not supported in IE11 */
+        @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+            /* Base styles for IE11 */
+            body {
+                background-color: #ffffff;
+                color: #333333;
+            }
+            header {
+                background-color: #0082ca;
+                color: white;
+            }
+            .section {
+                background-color: #f5f5f5;
+            }
+            nav {
+                background-color: #005a9c;
+            }
+            footer {
+                background-color: #005a9c;
+                color: #ffffff;
+            }
+            a {
+                color: #0056b3;
+            }
+            a:hover {
+                color: #003d82;
+            }
+            .dark-mode-enabled {
+                display: none;
+            }
+        }
+        
+        /* Clearfix for older browsers */
+        .clearfix:before,
+        .clearfix:after {
+            content: " ";
+            display: table;
+        }
+        
+        .clearfix:after {
+            clear: both;
+        }
+        
+        .clearfix {
+            zoom: 1; /* IE6/7 */
+        }
+        
+        /* IE8 and below specific styles */
+        @media \0screen {
+            body { background-color: #ffffff; color: #333333; }
+            header { background-color: #0082ca; }
+            nav { background-color: #005a9c; }
+            .section { background-color: #f5f5f5; }
+            footer { background-color: #005a9c; color: #ffffff; }
+        }
     </style>
 </head>
-<body>
+<body class="clearfix">
+    <!--[if lt IE 9]>
+    <div style="border: 1px solid #F7941D; background: #FEEFDA; text-align: center; clear: both; height: auto; position: relative; padding: 0 10px;">
+        <div style="padding: 10px; font-size: 14px;">
+            <p>You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/" target="_blank">upgrade your browser</a> to improve your experience and security.</p>
+            <p>If you cannot upgrade, be aware that some features may not work correctly, but we've done our best to make the site usable.</p>
+        </div>
+    </div>
+    <![endif]-->
+    
     <header>
         <h1>AT&T Long Lines & Bell Labs</h1>
         <p>Pioneering Innovations in Telecommunications</p>
     </header>
 
+    <!-- Comment out the alert banner -->
+    <!--
+    <div class="alert-banner">
+        Important Notice: This site is a historical tribute to Bell Labs and AT&T Long Lines. It is not affiliated with AT&T Inc.
+    </div>
+    -->
+
     <nav>
-        <a href="index.html">Home</a>
+        <a href="index.html" rel="noreferrer noopener">Home</a>
         <div class="dropdown">
-            <a href="#">Technology</a>
+            <a href="#" rel="noreferrer noopener">Technology</a>
             <div class="dropdown-content">
-                <a href="technology.html">Tech Overview</a>
-                <a href="transistor.html">The Transistor</a>
-                <a href="optical-maser.html">Lasers</a>
-                <a href="ccd.html">Digital Imaging</a>
-                <a href="photovoltaic-cell.html">Solar Power</a>
-                <a href="unix.html">UNIX</a>
-                <a href="blit.html">Blit</a>
-                <a href="amps.html">AMPS</a>
-                <a href="plan9.html">Plan 9</a>
-                <a href="unix-emulator.html">UNIX Emulator</a>
+                <a href="technology.html" rel="noreferrer noopener">Tech Overview</a>
+                <a href="transistor.html" rel="noreferrer noopener">The Transistor</a>
+                <a href="optical-maser.html" rel="noreferrer noopener">Lasers</a>
+                <a href="ccd.html" rel="noreferrer noopener">Digital Imaging</a>
+                <a href="photovoltaic-cell.html" rel="noreferrer noopener">Solar Power</a>
+                <a href="unix.html" rel="noreferrer noopener">UNIX</a>
+                <a href="blit.html" rel="noreferrer noopener">Blit</a>
+                <a href="amps.html" rel="noreferrer noopener">AMPS</a>
+                <a href="plan9.html" rel="noreferrer noopener">Plan 9</a>
+                <a href="unix-emulator.html" rel="noreferrer noopener">UNIX Emulator</a>
             </div>
         </div>
-        <a href="bell-labs.html">Bell Labs</a>
-        <a href="gallery.html">Gallery</a>
-        <a href="bob-lucky.html">Bob Lucky</a>
-        <a href="noc.html">Network Operations Center</a>
-        <a href="history-att-longlines.html">Long Lines History</a>
-        <a href="history-bell-labs.html">Bell Labs History</a>
-        <a href="contribute.html">Contribute</a>
+        <a href="bell-labs.html" rel="noreferrer noopener">Bell Labs</a>
+        <a href="gallery.html" rel="noreferrer noopener">Gallery</a>
+        <a href="bob-lucky.html" rel="noreferrer noopener">Bob Lucky</a>
+        <a href="noc.html" rel="noreferrer noopener">Network Operations Center</a>
+        <a href="history-att-longlines.html" rel="noreferrer noopener">Long Lines History</a>
+        <a href="history-bell-labs.html" rel="noreferrer noopener">Bell Labs History</a>
+        <a href="llmap-int.html" rel="noreferrer noopener">Interactive Network Map</a>
+        <a href="im-beta.html" rel="noreferrer noopener">Interactive Map - Beta</a>
+        <a href="contribute.html" rel="noreferrer noopener">Contribute</a>
+        
+        <!-- RSS Button -->
+        <a href="rss-helper.html" title="Subscribe to RSS Feed" class="rss-button" rel="noreferrer noopener">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                <circle cx="6.18" cy="17.82" r="2.18"/>
+                <path d="M4 4.44v2.83c7.03 0 12.73 5.7 12.73 12.73h2.83c0-8.59-6.97-15.56-15.56-15.56zm0 5.66v2.83c3.9 0 7.07 3.17 7.07 7.07h2.83c0-5.47-4.43-9.9-9.9-9.9z"/>
+            </svg>
+            <span class="sr-only">RSS</span>
+        </a>
+        
         <button id="dark-mode-toggle">Toggle Dark Mode</button>
     </nav>
 
     <main>
         <div class="slideshow-container">
-
             <div class="mySlides fade">
                 <div class="numbertext">1 / 2</div>
                 <img src="img/map1.jpg" style="width:100%" alt="AT&T Long Lines Network Map">
@@ -460,18 +678,83 @@
         <section id="gallery" class="section">
             <h2>Gallery</h2>
             <div class="image-gallery" id="dynamic-gallery">
-                <!-- Images will be dynamically added here -->
+                <!-- Images will be dynamically loaded with JavaScript -->
             </div>
-            <p>Explore images of AT&T Long Lines facilities, Bell Labs, and related equipment. <a href="gallery.html" rel="noreferrer">View Full Gallery</a></p>
+            <p class="gallery-link">Explore more images in our <a href="gallery.html" rel="noreferrer">full gallery</a>.</p>
             
-            <!-- User Image Submission Form -->
+            <!-- User Image Submission Form with notice -->
             <h3>Submit Your Images</h3>
+            <div class="notice-box">
+                <p><strong>Note:</strong> This image submission form is currently a placeholder and is not functional. In the future, this feature will allow community contributions to our gallery.</p>
+            </div>
             <form id="image-upload-form" enctype="multipart/form-data">
                 <label for="image-upload">Upload an image:</label>
                 <input type="file" id="image-upload" name="image" accept="image/*" required>
                 <button type="submit">Submit</button>
             </form>
         </section>
+
+        <!-- Add script for dynamic gallery functionality -->
+        <script>
+            // Array of available images in the gallery directory
+            const galleryImages = [
+                { src: "img/gallery/20250304_145346.jpg", alt: "Collapsed microwave relay equipment near a fenced area." },
+                { src: "img/gallery/20250304_145429.jpg", alt: "Damaged microwave relay equipment lying on the ground." },
+                { src: "img/gallery/20250309_172527.jpg", alt: "Microwave relay tower standing tall under a clear blue sky." },
+                { src: "img/gallery/dhtspll_base.jpg", alt: "Base of a microwave relay tower with structural details." },
+                { src: "img/gallery/dhtspll_out.jpg", alt: "Microwave relay tower surrounded by a fenced area and greenery." },
+                { src: "img/gallery/dhtspll_Reflector_HI.jpg", alt: "Close-up of a microwave reflector dish on the tower." },
+                { src: "img/gallery/dhtspll_TB.jpg", alt: "Top section of a microwave relay tower with antennas." },
+                { src: "img/gallery/dhtspll_vents1.jpg", alt: "Ventilation system on the side of a building near the tower." },
+                { src: "img/gallery/dhtspll1_far.jpg", alt: "Distant view of a microwave relay tower in a grassy field." },
+                { src: "img/gallery/dhtspll2.jpg", alt: "Microwave relay tower with a clear view of its structural design." },
+                { src: "img/gallery/dhtspll3.jpg", alt: "Detailed view of the microwave relay tower's framework." },
+                { src: "img/gallery/dhtspll4.jpg", alt: "Microwave relay tower with a building at its base in a field." }
+            ];
+            
+            // Function to shuffle array (Fisher-Yates algorithm)
+            function shuffleArray(array) {
+                for (let i = array.length - 1; i > 0; i--) {
+                    const j = Math.floor(Math.random() * (i + 1));
+                    [array[i], array[j]] = [array[j], array[i]];
+                }
+                return array;
+            }
+            
+            // Function to populate the dynamic gallery with random images
+            function populateDynamicGallery() {
+                const dynamicGallery = document.getElementById('dynamic-gallery');
+                if (!dynamicGallery) return;
+                
+                // Clear existing content
+                dynamicGallery.innerHTML = '';
+                
+                // Shuffle the array and take the first 4 images
+                const shuffledImages = shuffleArray([...galleryImages]).slice(0, 4);
+                
+                // Add images to the gallery
+                shuffledImages.forEach(image => {
+                    const imgElement = document.createElement('img');
+                    imgElement.src = image.src;
+                    imgElement.alt = image.alt;
+                    imgElement.loading = "lazy"; // Add lazy loading for better performance6
+                    imgElement.title = image.alt; // Add tooltip
+                    
+                    // Add click handler to open the full gallery
+                    imgElement.addEventListener('click', function() {
+                        window.location.href = 'gallery.html';
+                    });
+                    
+                    // Set cursor style to indicate clickability
+                    imgElement.style.cursor = 'pointer';
+                    
+                    dynamicGallery.appendChild(imgElement);
+                });
+            }
+            
+            // Call the function when the DOM is loaded
+            document.addEventListener('DOMContentLoaded', populateDynamicGallery);
+        </script>
     </main>
 
     <footer>
@@ -481,52 +764,139 @@
 
     <div id="discord-widget-container" class="collapsible">
         <button id="collapse-button">+</button>
-        <iframe src="https://discord.com/widget?id=807000904397094913&theme=dark" width="350" height="500" allowtransparency="true" frameborder="0"></iframe>
+        <iframe src="https://discord.com/widget?id=807000904397094913&theme=dark" width="350" height="500" allowtransparency="true" frameborder="0" referrerpolicy="no-referrer" loading="lazy"></iframe>
     </div>
 
     <script>
         // Update the year dynamically
-        document.getElementById('year').textContent = new Date().getFullYear();
+        document.getElementById('year').innerHTML = new Date().getFullYear();
 
-        // Dark mode toggle functionality with localStorage support
+        // Function to get dark mode preference from localStorage or cookies
+        function getDarkModePreference() {
+            try {
+                return localStorage.getItem('darkMode');
+            } catch (e) {
+                // Fallback for browsers without localStorage
+                const cookies = document.cookie.split(';');
+                for (let i = 0; i < cookies.length; i++) {
+                    const cookie = cookies[i].trim();
+                    if (cookie.indexOf('darkMode=') === 0) {
+                        return cookie.substring('darkMode='.length, cookie.length);
+                    }
+                }
+                return null;
+            }
+        }
+
+        // Dark mode toggle functionality with localStorage support and auto-detection
         const toggleButton = document.getElementById('dark-mode-toggle');
         
         function setDarkMode(isDark) {
             if (isDark) {
-                document.documentElement.classList.add('dark-mode');
-                document.body.classList.add('dark-mode');
-                toggleButton.textContent = 'Light Mode';
-                localStorage.setItem('darkMode', 'enabled');
+                // For IE8 that doesn't support classList
+                var htmlClasses = document.documentElement.className || '';
+                var bodyClasses = document.body.className || '';
+                
+                if (htmlClasses.indexOf('dark-mode') === -1) {
+                    document.documentElement.className = htmlClasses + ' dark-mode';
+                }
+                
+                if (bodyClasses.indexOf('dark-mode') === -1) {
+                    document.body.className = bodyClasses + ' dark-mode';
+                }
+                
+                toggleButton.innerHTML = 'Light Mode';
+                
+                try {
+                    localStorage.setItem('darkMode', 'enabled');
+                } catch (e) {
+                    // Fallback for browsers without localStorage
+                    document.cookie = "darkMode=enabled; path=/; max-age=31536000";
+                }
             } else {
-                document.documentElement.classList.remove('dark-mode');
-                document.body.classList.remove('dark-mode');
-                toggleButton.textContent = 'Dark Mode';
-                localStorage.setItem('darkMode', 'disabled');
+                // Remove dark-mode class
+                document.documentElement.className = (document.documentElement.className || '').replace(/\bdark-mode\b/g, '');
+                document.body.className = (document.body.className || '').replace(/\bdark-mode\b/g, '');
+                
+                toggleButton.innerHTML = 'Dark Mode';
+                
+                try {
+                    localStorage.setItem('darkMode', 'disabled');
+                } catch (e) {
+                    // Fallback for browsers without localStorage
+                    document.cookie = "darkMode=disabled; path=/; max-age=31536000";
+                }
             }
         }
         
         toggleButton.addEventListener('click', () => {
-            const isDarkMode = !document.body.classList.contains('dark-mode');
+            const isDarkMode = document.body.className.indexOf('dark-mode') === -1;
             setDarkMode(isDarkMode);
         });
         
-        // Check for saved preference on page load
+        // Check for saved preference on page load or use system preference
         document.addEventListener('DOMContentLoaded', () => {
-            const savedMode = localStorage.getItem('darkMode');
+            const savedMode = getDarkModePreference();
+            
             if (savedMode === 'enabled') {
+                // User previously enabled dark mode
                 setDarkMode(true);
-            } else {
+            } else if (savedMode === 'disabled') {
+                // User previously disabled dark mode
                 setDarkMode(false);
+            } else {
+                // No saved preference, check system preference
+                const prefersDarkMode = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+                setDarkMode(prefersDarkMode);
+                
+                // Update when system preference changes
+                if (window.matchMedia) {
+                    window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', e => {
+                        // Only auto-switch if user hasn't manually set a preference
+                        if (!getDarkModePreference()) {
+                            setDarkMode(e.matches);
+                        }
+                    });
+                }
             }
         });
 
         // Collapsible Discord widget functionality
         const discordWidgetContainer = document.getElementById('discord-widget-container');
         const collapseButton = document.getElementById('collapse-button');
-        collapseButton.addEventListener('click', () => {
-            discordWidgetContainer.classList.toggle('collapsed');
-            collapseButton.textContent = discordWidgetContainer.classList.contains('collapsed') ? '+' : '-';
-        });
+        if (collapseButton && discordWidgetContainer) {
+            collapseButton.addEventListener('click', () => {
+                discordWidgetContainer.classList.toggle('collapsed');
+                collapseButton.textContent = discordWidgetContainer.classList.contains('collapsed') ? '+' : '-';
+            });
+        }
+
+        // IE11 compatibility polyfills
+        if (!Array.prototype.forEach) {
+            Array.prototype.forEach = function(callback, thisArg) {
+                if (this == null) {
+                    throw new TypeError('Array.prototype.forEach called on null or undefined');
+                }
+                var T, k;
+                var O = Object(this);
+                var len = O.length >>> 0;
+                if (typeof callback !== 'function') {
+                    throw new TypeError(callback + ' is not a function');
+                }
+                if (arguments.length > 1) {
+                    T = thisArg;
+                }
+                k = 0;
+                while (k < len) {
+                    var kValue;
+                    if (k in O) {
+                        kValue = O[k];
+                        callback.call(T, kValue, k, O);
+                    }
+                    k++;
+                }
+            };
+        }
     </script>
 </body>
 </html>

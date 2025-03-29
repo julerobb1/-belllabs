@@ -1,52 +1,114 @@
 <!DOCTYPE html>
-<html lang="en">
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang="en"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Plan 9 from Bell Labs</title>
+    <meta name="referrer" content="no-referrer">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net; style-src 'self' 'unsafe-inline'; frame-src https://9p.io https://cat-v.org;">
+    <title>Plan 9 - Bell Labs Operating System</title>
     <link rel="icon" href="img/favicon.ico" type="image/x-icon">
+    <link href="img/favicon.ico" rel="shortcut icon">
+    <link rel="stylesheet" href="recipes/css/styles.css">
+    <script src="recipes/js/compat.js"></script>
+    <script src="recipes/js/scripts.js" defer></script>
     <style>
-        /* Basic CSS for styling */
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            margin: 0;
-            padding: 20px;
-            background-color: #f4f4f4;
-            color: #333;
-            line-height: 1.6;
+        .terminal-instructions {
+            background-color: #f9f9f9;
+            padding: 15px;
+            border-left: 4px solid #0082ca;
+            margin: 20px 0;
         }
-        header {
-            background-color: #003366;
+        
+        .command-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        
+        .command-table th, .command-table td {
+            padding: 8px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+        
+        .command-table th {
+            background-color: #f0f0f0;
+        }
+        
+        .alternative-access {
+            margin-top: 30px;
+            padding: 15px;
+            background-color: #e8f4fc;
+            border-radius: 5px;
+        }
+        
+        .screenshot-gallery {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+            margin: 20px 0;
+        }
+        
+        .screenshot-gallery img {
+            width: 100%;
+            height: auto;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        
+        .dark-mode .terminal-instructions {
+            background-color: #252525;
+            border-left: 4px solid #6aabff;
+            color: #e0e0e0;
+        }
+        
+        .dark-mode .command-table th {
+            background-color: #333333;
+            color: #e0e0e0;
+        }
+        
+        .dark-mode .command-table td {
+            border-bottom: 1px solid #444444;
+        }
+        
+        .dark-mode .alternative-access {
+            background-color: #253545;
+            color: #e0e0e0;
+        }
+        
+        .dark-mode .screenshot-gallery img {
+            border: 1px solid #444444;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background-color: #0082ca;
             color: white;
-            padding: 1em 0;
+            padding: 12px 24px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            margin-top: 20px;
+            margin-bottom: 30px;
             text-align: center;
         }
-        main {
-            max-width: 800px;
-            margin: 20px auto;
-            background-color: white;
-            padding: 30px;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
-        h1, h2 {
-            color: #003366;
-        }
-        a {
-            color: #007acc;
+        
+        .cta-button:hover {
+            background-color: #0056b3;
             text-decoration: none;
         }
-        a:hover {
-            text-decoration: underline;
+        
+        .dark-mode .cta-button {
+            background-color: #6aabff;
+            color: #333;
         }
-        footer {
-            background-color: #003366;
-            color: white;
-            text-align: center;
-            padding: 1em 0;
-            position: fixed;
-            width: 100%;
-            bottom: 0;
+        
+        .dark-mode .cta-button:hover {
+            background-color: #99c9ff;
         }
     </style>
 </head>
@@ -55,26 +117,136 @@
         <h1>Plan 9 from Bell Labs</h1>
     </header>
     <main>
-        <h2>Introduction</h2>
-        <p>Plan 9 from Bell Labs is a distributed operating system, developed as the successor to Unix by Bell Labs. It was designed to make a network of computers appear as a single system.</p>
-
-        <h2>Key Features</h2>
-        <p>Plan 9 introduced several innovative features, including:</p>
-        <ul>
-            <li>Unified namespace: All resources, including files, devices, and network connections, are represented as part of a single hierarchical file system.</li>
-            <li>9P protocol: A network protocol used for communication between components of the system, allowing for transparent access to remote resources.</li>
-            <li>Graphical user interface: The Rio windowing system provides a simple and efficient graphical interface.</li>
-            <li>Advanced file system: The Fossil and Venti file systems offer features like snapshots and archival storage.</li>
-        </ul>
-
-        <h2>Legacy</h2>
-        <p>Although Plan 9 did not achieve widespread adoption, its concepts and technologies have influenced many modern operating systems and software projects. It remains an important part of the history of operating systems and continues to be used and studied by enthusiasts and researchers.</p>
+        <section class="section">
+            <p>Plan 9 is a revolutionary distributed operating system developed at Bell Labs in the late 1980s and early 1990s by many of the same people who created UNIX, including Ken Thompson, Rob Pike, and Dave Presotto.</p>
+            
+            <a href="plan9-emulator.html" class="cta-button">Try the Plan 9 Emulator in Your Browser</a>
+            
+            <div class="terminal-instructions">
+                <h3>About Plan 9 from Bell Labs</h3>
+                <p>Plan 9 was developed as a research successor to UNIX, taking many of UNIX's principles to their logical conclusion. Its design focuses on representing all resources as files within a hierarchical filesystem, which simplifies the interface and allows for transparent access to remote resources.</p>
+                <p>Named after the cult sci-fi film "Plan 9 from Outer Space," the operating system introduced several innovative concepts:</p>
+                <ul>
+                    <li><strong>Per-process namespaces:</strong> Each process can have its own view of the filesystem</li>
+                    <li><strong>9P protocol:</strong> A lightweight file protocol allowing transparent access to remote resources</li>
+                    <li><strong>UTF-8:</strong> Plan 9 was the origin of the UTF-8 character encoding now used throughout the world</li>
+                    <li><strong>Rio window system:</strong> A novel graphical user interface with seamless remote display</li>
+                </ul>
+            </div>
+            
+            <h3>Key Features of Plan 9</h3>
+            <p>Plan 9 reimagined how operating systems should work with a focus on distributed computing:</p>
+            <ul>
+                <li><strong>Everything is a file:</strong> Not just a philosophy but a strict design principle where all resources (including networks, processes, and graphical windows) are accessed through the file system interface</li>
+                <li><strong>Distributed system:</strong> Plan 9 was designed from the ground up to function as a seamlessly distributed system, with computing resources spread across networks</li>
+                <li><strong>Private namespaces:</strong> Each process can have its own view of the filesystem hierarchy, allowing for powerful customization</li>
+                <li><strong>Clean, minimalist design:</strong> The entire system was built with simplicity and clarity as core design principles</li>
+            </ul>
+            
+            <div class="terminal-instructions">
+                <h3>Basic Plan 9 Commands</h3>
+                <p>Here are some basic commands used in the Plan 9 operating system:</p>
+                
+                <table class="command-table">
+                    <thead>
+                        <tr>
+                            <th>Command</th>
+                            <th>Description</th>
+                            <th>Example</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><code>ls</code></td>
+                            <td>List files in current directory</td>
+                            <td><code>ls -l</code> (list with details)</td>
+                        </tr>
+                        <tr>
+                            <td><code>cd</code></td>
+                            <td>Change directory</td>
+                            <td><code>cd /usr</code> (go to /usr)</td>
+                        </tr>
+                        <tr>
+                            <td><code>cat</code></td>
+                            <td>Display file contents</td>
+                            <td><code>cat /lib/keyboard</code></td>
+                        </tr>
+                        <tr>
+                            <td><code>acme</code></td>
+                            <td>Text editor and programming environment</td>
+                            <td><code>acme</code></td>
+                        </tr>
+                        <tr>
+                            <td><code>sam</code></td>
+                            <td>Text editor</td>
+                            <td><code>sam file.txt</code></td>
+                        </tr>
+                        <tr>
+                            <td><code>9fs</code></td>
+                            <td>Mount a 9P filesystem</td>
+                            <td><code>9fs sources</code></td>
+                        </tr>
+                        <tr>
+                            <td><code>rc</code></td>
+                            <td>The Plan 9 shell</td>
+                            <td><code>rc -c 'echo hello'</code></td>
+                        </tr>
+                    </tbody>
+                </table>
+                
+                <p><strong>Note:</strong> The mouse is heavily used in Plan 9. The right mouse button opens menus, and the middle button is used for text selection and operations.</p>
+            </div>
+            
+            <h3>Plan 9 Screenshots</h3>
+            <div class="screenshot-gallery">
+                <img src="img/plan9-1.png" alt="Plan 9 Rio window system showing the desktop environment">
+                <img src="img/plan9-2.png" alt="Plan 9 Acme text editor and development environment">
+                <img src="img/plan9-3.png" alt="Plan 9 terminal with system information">
+                <img src="img/plan9-4.png" alt="Plan 9 filesystem browser">
+            </div>
+            
+            <div class="alternative-access">
+                <h3>Ways to Experience Plan 9</h3>
+                <p>There are several ways to experience Plan 9:</p>
+                <ul>
+                    <li><strong>Try our browser-based emulator:</strong> <a href="plan9-emulator.html">Plan 9 Emulator</a></li>
+                    <li><strong>9front:</strong> A fork of Plan 9 with additional drivers and software - <a href="http://9front.org/" target="_blank" rel="noreferrer noopener">http://9front.org/</a></li>
+                    <li><strong>Plan 9 from User Space (plan9port):</strong> Port of Plan 9 tools to Unix-like systems - <a href="https://9fans.github.io/plan9port/" target="_blank" rel="noreferrer noopener">https://9fans.github.io/plan9port/</a></li>
+                    <li><strong>VM Images:</strong> Official Plan 9 VM images are available from Bell Labs - <a href="https://9p.io/plan9/" target="_blank" rel="noreferrer noopener">https://9p.io/plan9/</a></li>
+                </ul>
+            </div>
+            
+            <h3>Historical Significance</h3>
+            <p>While Plan 9 never achieved widespread commercial adoption, its innovative ideas have had a profound influence on operating system design. Many concepts pioneered in Plan 9 have found their way into modern systems:</p>
+            <ul>
+                <li>UTF-8 encoding is now the dominant character encoding on the web</li>
+                <li>Linux has adopted aspects of the /proc filesystem from Plan 9</li>
+                <li>The 9P protocol influenced modern distributed file systems</li>
+                <li>Plan 9's clean design continues to inspire operating system researchers</li>
+            </ul>
+            <p>The Plan 9 project demonstrates Bell Labs' continued innovation in operating systems well after the development of UNIX, showing how the research lab continued to push boundaries in computer science.</p>
+        </section>
     </main>
-    <footer style="background-color: #003366; color: white;">
+    <footer>
         <p>&copy; <span id="year"></span> AT&T Long Lines & Bell Labs Community. <small>Site by juler#5461. All rights reserved.</small></p>
     </footer>
     <script>
-        document.addEventListener('DOMContentLoaded', () => {
+        document.addEventListener('DOMContentLoaded', function() {
+            function createPlaceholderImages() {
+                const gallery = document.querySelector('.screenshot-gallery');
+                if (!gallery) return;
+                
+                const images = gallery.querySelectorAll('img');
+                images.forEach(img => {
+                    img.onerror = function() {
+                        this.src = 'data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22400%22%20height%3D%22300%22%20viewBox%3D%220%200%20400%20300%22%3E%3Crect%20fill%3D%22%23f0f0f0%22%20width%3D%22400%22%20height%3D%22300%22%2F%3E%3Ctext%20fill%3D%22%23999999%22%20font-family%3D%22Arial%2CSans-serif%22%20font-size%3D%2216%22%20x%3D%22125%22%20y%3D%22150%22%3EPlan%209%20Screenshot%3C%2Ftext%3E%3C%2Fsvg%3E';
+                        this.alt = 'Plan 9 Screenshot Placeholder';
+                    };
+                });
+            }
+            
+            createPlaceholderImages();
+            
             const currentYear = new Date().getFullYear();
             document.querySelector('#year').textContent = currentYear;
         });

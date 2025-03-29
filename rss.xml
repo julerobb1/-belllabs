@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/css" href="rss-style.css"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<channel>
+  <title>AT&amp;T Long Lines &amp; Bell Labs</title>
+  <link>https://belllabs.example.com/</link>
+  <description>News and updates about AT&amp;T Long Lines and Bell Labs history, technology, and innovation</description>
+  <language>en-us</language>
+  <lastBuildDate>Wed, 26 Mar 2025 22:39:00 -0600</lastBuildDate>
+  <atom:link href="https://belllabs.example.com/rss.xml" rel="self" type="application/rss+xml" />
+
+  <!-- 
+    IMPLEMENTATION NOTES:
+    - The lastBuildDate should be updated each time this RSS file is modified
+    - For each item, pubDate should reflect when that specific content was last updated
+    - To generate current date in the correct format: 
+      - Use a tool like https://www.timestampgenerator.com/
+      - Or JavaScript: new Date().toUTCString()
+    - Dates should be in RFC 822 format (e.g. Sat, 06 May 2023 15:32:46 GMT)
+  -->
+
+  <item>
+    <title>New Microwave Tower Images Added to Gallery</title>
+    <link>https://belllabs.example.com/gallery.html</link>
+    <description>We've added a collection of historic microwave relay tower images to our gallery, showcasing these engineering marvels of the AT&amp;T Long Lines network.</description>
+    <pubDate>Wed, 26 Mar 2025 22:39:00 -0600</pubDate>
+    <guid>https://belllabs.example.com/gallery.html?update=towers-20250326</guid>
+  </item>
+
+  <item>
+    <title>The Transistor: Bell Labs' Revolutionary Invention</title>
+    <link>https://belllabs.example.com/transistor.html</link>
+    <description>Explore the history of the transistor, invented at Bell Labs in 1947 by John Bardeen, Walter Brattain, and William Shockley, which revolutionized electronics and computing.</description>
+    <pubDate>Wed, 26 Mar 2025 14:30:00 -0600</pubDate>
+    <guid>https://belllabs.example.com/transistor.html</guid>
+  </item>
+
+  <item>
+    <title>UNIX Operating System: A Bell Labs Innovation</title>
+    <link>https://belllabs.example.com/unix.html</link>
+    <description>Learn about UNIX, the groundbreaking operating system developed at Bell Labs by Ken Thompson and Dennis Ritchie in the late 1960s and early 1970s.</description>
+    <pubDate>Sat, 06 May 2023 13:15:00 GMT</pubDate>
+    <guid>https://belllabs.example.com/unix.html</guid>
+  </item>
+
+  <item>
+    <title>AT&amp;T Long Lines History: Building America's Communications Network</title>
+    <link>https://belllabs.example.com/history-att-longlines.html</link>
+    <description>Discover the fascinating history of AT&amp;T Long Lines and how it built the nationwide communications infrastructure that connected America.</description>
+    <pubDate>Sat, 06 May 2023 12:45:00 GMT</pubDate>
+    <guid>https://belllabs.example.com/history-att-longlines.html</guid>
+  </item>
+</channel>
+</rss>

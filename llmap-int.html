@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Network Map | Bell Labs and AT&T Long Lines History</title>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="/recipes/css/timeline-chronicle.css">
+    <style>
+        .map-container {
+            width: 100%;
+            height: 80vh;
+            margin: 20px 0;
+        }
+        
+        .map-container iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+        
+        .legend {
+            background-color: var(--section-bg-color);
+            padding: 15px;
+            border-radius: 5px;
+            margin-top: 20px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        
+        .legend h3 {
+            margin-top: 0;
+        }
+        
+        .legend-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 8px;
+        }
+        
+        .legend-color {
+            width: 20px;
+            height: 20px;
+            margin-right: 10px;
+            border-radius: 3px;
+        }
+        
+        .tower-color {
+            background-color: #ff4500;
+        }
+        
+        .cable-color {
+            background-color: #4169e1;
+        }
+        
+        .facility-color {
+            background-color: #2e8b57;
+        }
+        
+        /* Memory Scroller Attribution Banner */
+        .attribution-banner {
+            background-color: #000080;
+            color: #ffffff;
+            padding: 8px 0;
+            margin-top: 10px;
+            overflow: hidden;
+            white-space: nowrap;
+            border-radius: 4px;
+            font-family: "Courier New", monospace;
+            font-weight: bold;
+            text-align: center;
+        }
+        
+        .attribution-banner .scroller {
+            display: inline-block;
+            animation: scroll 30s linear infinite;
+        }
+        
+        .attribution-banner a {
+            color: #ffffff;
+            text-decoration: underline;
+        }
+        
+        .attribution-banner a:hover {
+            color: #ccccff;
+        }
+        
+        @keyframes scroll {
+            0% { transform: translateX(100%); }
+            100% { transform: translateX(-100%); }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="timeline.html">Timeline</a>
+            <a href="llmap-int.html" class="active">Interactive Network Map</a>
+            <a href="im-beta.html">Interactive Map - Beta</a>
+            <a href="technical-archives.html">Technical Archives</a>
+            <a href="preservation-efforts.html">Preservation Efforts</a>
+            <a href="bell-labs.html">Bell Labs</a>
+            <a href="gallery.html">Gallery</a>
+            <a href="bob-lucky.html">Bob Lucky</a>
+            <a href="noc.html">Network Operations Center</a>
+            <a href="history-att-longlines.html">Long Lines History</a>
+            <a href="history-bell-labs.html">Bell Labs History</a>
+            <a href="contribute.html">Contribute</a>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Interactive Map Section -->
+        <section id="map" class="section">
+            <h2>Interactive Network Map</h2>
+            <p>Explore the historical AT&T Long Lines network across the United States, including microwave relay towers, coaxial cable routes, and key facilities.</p>
+            
+            <div class="map-container">
+                <!-- Embedding the original map from long-lines.com -->
+                <iframe src="https://long-lines.com/map/original" title="AT&T Long Lines Network Map" allowfullscreen></iframe>
+            </div>
+            
+            <!-- Attribution Banner -->
+            <div class="attribution-banner">
+                <div class="scroller">
+                    * * * ATTRIBUTION NOTICE: This map is not owned or created by us. It is sourced from <a href="https://long-lines.com/map/original" target="_blank" rel="noopener noreferrer">N3TUQ's Long-lines.com website</a>. All map rights belong to their respective owners. * * *
+                </div>
+            </div>
+            
+            <div class="legend">
+                <h3>Map Legend</h3>
+                <div class="legend-item">
+                    <div class="legend-color tower-color"></div>
+                    <span>Microwave Relay Towers</span>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-color cable-color"></div>
+                    <span>Coaxial Cable Routes</span>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-color facility-color"></div>
+                    <span>Switching Centers & Key Facilities</span>
+                </div>
+            </div>
+            
+            <div class="map-notes">
+                <h3>About This Map</h3>
+                <p>This interactive map shows the extensive AT&T Long Lines communications network that was developed throughout the 20th century. The network consisted of microwave relay towers, coaxial cable routes, and various facilities that formed the backbone of America's telecommunications infrastructure.</p>
+                <p>Use the zoom and pan controls to navigate the map. Click on individual markers to view detailed information about specific sites including historical photographs and technical specifications where available.</p>
+                <p>For a beta version of our map with additional features, visit our <a href="im-beta.html">Interactive Map - Beta</a> page.</p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2023 Bell Labs & AT&T Long Lines Historical Archive. All rights reserved.</p>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
