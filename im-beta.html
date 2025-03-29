@@ -3,78 +3,154 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Interactive Map - Beta | Bell Labs and AT&T Long Lines History</title>
+    <title>Interactive Map Beta | Bell Labs and AT&T Long Lines History</title>
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="/recipes/css/timeline-chronicle.css">
     <style>
+        /* Archive Notice */
+        .archive-notice {
+            background-color: #ffeecc;
+            border: 2px solid #ff9900;
+            color: #663300;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 5px;
+            font-weight: bold;
+            text-align: center;
+        }
+        
+        /* Beta Banner */
+        .beta-banner {
+            background-color: #007bff;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            font-weight: bold;
+            margin-bottom: 20px;
+            border-radius: 5px;
+        }
+        
+        /* Map container */
         .map-container {
             width: 100%;
             height: 80vh;
             margin: 20px 0;
+            background-color: #f5f5f5;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
         
-        .map-container iframe {
-            width: 100%;
-            height: 100%;
-            border: none;
-        }
-        
-        .attribution-banner {
-            background-color: var(--nav-bg-color);
-            color: #ffffff;
-            padding: 10px;
+        .map-placeholder {
             text-align: center;
-            font-size: 0.9em;
-            position: sticky;
-            top: 0;
-            z-index: 100;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            padding: 20px;
+        }
+        
+        /* Memory Scroller Attribution Banner */
+        .attribution-banner {
+            background-color: #000080;
+            color: #ffffff;
+            padding: 8px 0;
+            margin-top: 10px;
+            overflow: hidden;
+            white-space: nowrap;
+            border-radius: 4px;
+            font-family: "Courier New", monospace;
+            font-weight: bold;
+            text-align: center;
+        }
+        
+        .attribution-banner .scroller {
+            display: inline-block;
+            animation: scroll 30s linear infinite;
         }
         
         .attribution-banner a {
             color: #ffffff;
             text-decoration: underline;
         }
+        
+        .attribution-banner a:hover {
+            color: #ccccff;
+        }
+        
+        @keyframes scroll {
+            0% { transform: translateX(100%); }
+            100% { transform: translateX(-100%); }
+        }
     </style>
 </head>
 <body>
     <header>
         <nav>
-            <!-- Navigation links would go here -->
             <a href="index.html">Home</a>
+            <div class="dropdown">
+                <a href="technology.html">Technology</a>
+                <div class="dropdown-content">
+                    <a href="technology.html">Tech Overview</a>
+                    <a href="transistor.html">The Transistor</a>
+                    <a href="optical-maser.html">Lasers</a>
+                    <a href="ccd.html">Digital Imaging (CCDs)</a>
+                    <a href="photovoltaic-cell.html">Solar Power</a>
+                    <a href="unix.html">UNIX</a>
+                    <a href="blit.html">Blit</a>
+                    <a href="amps.html">AMPS</a>
+                </div>
+            </div>
             <a href="timeline.html">Timeline</a>
-            <a href="llmap-int.html">Interactive Map</a>
-            <a href="im-beta.html" class="active">Interactive Map - Beta</a>
             <a href="technical-archives.html">Technical Archives</a>
             <a href="preservation-efforts.html">Preservation Efforts</a>
-            <!-- Other navigation links -->
+            <a href="bell-labs.html">Bell Labs</a>
+            <a href="gallery.html">Gallery</a>
+            <a href="bob-lucky.html">Bob Lucky</a>
+            <a href="noc.html">Network Operations Center</a>
+            <a href="history-att-longlines.html">Long Lines History</a>
+            <a href="history-bell-labs.html">Bell Labs History</a>
+            <a href="contribute.html">Contribute</a>
         </nav>
     </header>
 
     <main>
-        <div class="attribution-banner">
-            This interactive map is from <a href="https://long-lines.com" target="_blank" rel="noopener">long-lines.com</a>, owned by N3TUQ. We are displaying it here for educational purposes.
+        <!-- Archive Notice -->
+        <div class="archive-notice">
+            <p>⚠️ ARCHIVED PAGE: This interactive map feature has been deprecated and is no longer functional. This page is maintained for historical reference only.</p>
+        </div>
+        
+        <div class="beta-banner">
+            BETA VERSION
         </div>
         
         <!-- Interactive Map Section -->
         <section id="map" class="section">
-            <h2>Interactive Map - Beta</h2>
-            <p>Explore the geographical locations of AT&T Long Lines sites and Bell Labs facilities across the United States.</p>
+            <h2>Interactive Network Map - Beta Version</h2>
+            <p>This was an experimental version of our interactive map with enhanced features for exploring the AT&T Long Lines network.</p>
             
             <div class="map-container">
-                <iframe src="https://long-lines.com/map/" title="AT&T Long Lines Map" allowfullscreen></iframe>
+                <div class="map-placeholder">
+                    <h3>Map Functionality Deprecated</h3>
+                    <p>The interactive map beta functionality is no longer available.</p>
+                    <p>Please visit <a href="https://long-lines.com/map/original" target="_blank" rel="noopener noreferrer">Long-lines.com</a> to explore AT&T Long Lines infrastructure.</p>
+                </div>
+            </div>
+            
+            <!-- Attribution Banner -->
+            <div class="attribution-banner">
+                <div class="scroller">
+                    * * * ATTRIBUTION NOTICE: Original map data and imagery sourced from <a href="https://long-lines.com" target="_blank" rel="noopener noreferrer">N3TUQ's Long-lines.com website</a>. All map rights belong to their respective owners. * * *
+                </div>
             </div>
             
             <div class="map-notes">
                 <h3>About This Map</h3>
-                <p>This interactive map shows the historical network of AT&T Long Lines microwave relay towers, coaxial cable routes, and other telecommunications infrastructure that formed the backbone of America's communications system for decades.</p>
-                <p>You can zoom in/out and click on markers to get more details about specific sites.</p>
+                <p>This beta version was intended to provide enhanced visualization of the AT&T Long Lines network with additional features such as timeline controls, filtering options, and improved mobile responsiveness.</p>
+                <p>Due to technical limitations, this feature has been discontinued.</p>
             </div>
         </section>
     </main>
 
     <footer>
-        <!-- Footer content -->
         <p>&copy; 2023 Bell Labs & AT&T Long Lines Historical Archive. All rights reserved.</p>
     </footer>
 
