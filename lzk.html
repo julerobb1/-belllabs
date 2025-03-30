@@ -2,68 +2,30 @@
 <head>
 <style>
 html, body {
-	height: 99%;
+	height: 100%;
+	margin: 0;
 }
 
 #cf {
-	position:relative;
-	margin:0 auto;
+	position: relative;
+	margin: 0 auto;
 	height: 100%;
 	width: 100%;
+	overflow: hidden;
 }
 
 #cf img {
-	position:absolute;
-	left:0px;
-	top:0px;
+	position: absolute;
+	left: 0;
+	top: 0;
 	height: 100%;
 	width: 100%;
-	
-	-webkit-animation-name: cfFadeInOut;
-	-webkit-animation-timing-function: linear;
-	-webkit-animation-iteration-count: infinite;
-	-webkit-animation-duration: 30s;
-
-	-moz-animation-name: cfFadeInOut;
-	-moz-animation-timing-function: ease-in-out;
-	-moz-animation-iteration-count: infinite;
-	-moz-animation-duration: 30s;
-
-	-o-animation-name: cfFadeInOut;
-	-o-animation-timing-function: ease-in-out;
-	-o-animation-iteration-count: infinite;
-	-o-animation-duration: 30s;
-
-	animation-name: cfFadeInOut;
-	animation-timing-function: ease-in-out;
-	animation-iteration-count: infinite;
-	animation-duration: 30s;
-	z-index: 0; /* Ensure z-index is set for stacking order */
+	opacity: 0;
+	transition: opacity 1s ease-in-out;
 }
 
-@keyframes cfFadeInOut 
-{
-	0%   { visibility:visible; }
-	7.14%   { visibility:hidden; }
-	100% { visibility:hidden; }
-}
-@-webkit-keyframes cfFadeInOut 
-{
-	0%   { visibility:visible; }
-	7.14%   { visibility:hidden; }
-	100% { visibility:hidden; }
-}
-@-moz-keyframes cfFadeInOut 
-{
-	0%   { visibility:visible; }
-	7.14%   { visibility:hidden; }
-	100% { visibility:hidden; }
-}
-@-o-keyframes cfFadeInOut 
-{
-	0%   { visibility:visible; }
-	7.14%   { visibility:hidden; }
-	100% { visibility:hidden; }
+#cf img.active {
+	opacity: 1;
 }
 </style>
 </head>
@@ -79,15 +41,22 @@ const folderPath = `${baseFolder}${folderName}/`;
 const imageCount = 14; // Adjust this if the number of images changes
 const container = document.getElementById('cf');
 
+// Create and append images
 for (let i = 1; i <= imageCount; i++) {
 	const img = document.createElement('img');
 	img.src = `${folderPath}30March2025AM_Briefing-page-${String(i).padStart(3, '0')}.jpg`;
-	img.style.zIndex = imageCount - i + 1; // Ensure images are stacked in order
+	if (i === 1) img.classList.add('active'); // Set the first image as active
 	container.appendChild(img);
 }
 
-// No auto-refresh logic is included
-console.log(`Using folder: ${folderPath}`);
+// Cycle through images
+let currentIndex = 0;
+const images = container.querySelectorAll('img');
+setInterval(() => {
+	images[currentIndex].classList.remove('active');
+	currentIndex = (currentIndex + 1) % images.length;
+	images[currentIndex].classList.add('active');
+}, 3000); // Change image every 3 seconds
 </script>
 </body>
 </html>
