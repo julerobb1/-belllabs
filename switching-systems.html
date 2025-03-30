@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AT&T Long Lines Switching Systems</title>
+    <link rel="icon" href="img/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="recipes/css/styles.css">
+    <script src="recipes/js/compat.js"></script>
+    <script src="recipes/js/scripts.js" defer></script>
+    <style>
+        .switch-types {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+        
+        .switch-item {
+            background-color: var(--section-bg-color);
+            border-radius: 5px;
+            padding: 15px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        
+        .switch-item h3 {
+            margin-top: 0;
+            color: var(--header-bg-color);
+            border-bottom: 2px solid var(--nav-bg-color);
+            padding-bottom: 8px;
+        }
+        
+        .switch-diagram {
+            text-align: center;
+            margin: 30px 0;
+        }
+        
+        .switch-diagram img {
+            max-width: 100%;
+            border-radius: 8px;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+        }
+        
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 30px 0;
+        }
+        
+        .comparison-table th, 
+        .comparison-table td {
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            text-align: left;
+        }
+        
+        .comparison-table th {
+            background-color: var(--header-bg-color);
+            color: white;
+        }
+        
+        .comparison-table tr:nth-child(even) {
+            background-color: rgba(0,0,0,0.05);
+        }
+        
+        .comparison-table tr:hover {
+            background-color: rgba(0,0,0,0.1);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>AT&T Long Lines & Bell Labs</h1>
+        <p>Exploring Telephone Switching Systems</p>
+    </header>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <div class="dropdown">
+            <a href="#">Tech & Inventions</a>
+            <div class="dropdown-content">
+                <a href="technology.html">Tech Overview</a>
+                <a href="transistor.html">The Transistor</a>
+                <a href="optical-maser.html">Lasers</a>
+                <a href="ccd.html">Digital Imaging (CCDs)</a>
+                <a href="photovoltaic-cell.html">Solar Power</a>
+                <a href="unix.html">UNIX</a>
+            </div>
+        </div>
+        <div class="dropdown">
+            <a href="#">Long Lines Infrastructure</a>
+            <div class="dropdown-content">
+                <a href="microwave-relay-towers.html">Microwave Relay Towers</a>
+                <a href="coaxial-cable-systems.html">Coaxial Cable Systems</a>
+                <a href="switching-systems.html" class="active">Switching Systems</a>
+                <a href="repeater-stations.html">Repeater Stations</a>
+            </div>
+        </div>
+        <a href="gallery.html">Gallery</a>
+        <a href="#discord">Join the Community</a>
+    </nav>
+
+    <main>
+        <section id="overview" class="section">
+            <h2>Switching Systems: The Unseen Intelligence</h2>
+            <p>While transmission systems carried telecommunications signals across the country, AT&T's switching systems formed the intelligence of the network, routing calls to their proper destinations. These complex systems evolved from manual switchboards to sophisticated computerized networks, representing some of Bell Labs' most significant engineering achievements.</p>
+            
+            <p>Switching systems were housed in specialized buildings known as Central Offices or Toll Centers, which contained the equipment necessary to connect local calls and route long-distance traffic through the Long Lines network. These facilities formed the critical nodes in the nationwide telecommunications grid.</p>
+        </section>
+
+        <section id="evolution" class="section">
+            <h2>Evolution of Switching Technology</h2>
+            <p>The development of switching technology at Bell Labs progressed through distinct generations, each representing a massive leap in capabilities:</p>
+            
+            <div class="switch-types">
+                <div class="switch-item">
+                    <h3>Manual Switching (Pre-1920s)</h3>
+                    <p>The earliest long-distance connections required human operators who manually connected circuits using cords and plugs at switchboards. These operators worked at "toll boards" specially designed for long-distance routing, using paper tickets to track call durations and billing.</p>
+                </div>
+                
+                <div class="switch-item">
+                    <h3>Step-by-Step (Strowger)</h3>
+                    <p>The first automatic switches used in the Bell System, these electromechanical systems used rotary selectors that moved in response to dial pulses. While mainly used for local service, they formed part of the early long-distance network for smaller locations.</p>
+                </div>
+                
+                <div class="switch-item">
+                    <h3>Panel Switching</h3>
+                    <p>Developed for high-density urban areas, Panel systems used vertical selector rods to make connections. They were the first to separate the dialing process from the switching process, allowing for more efficient use of equipment.</p>
+                </div>
+                
+                <div class="switch-item">
+                    <h3>Crossbar Switching</h3>
+                    <p>Introduced in the 1930s, Crossbar systems represented a major advance in reliability and flexibility. They used a matrix of horizontal and vertical bars with relay contacts at the intersections, controlled by a common control system that could optimize routing.</p>
+                </div>
+                
+                <div class="switch-item">
+                    <h3>Electronic Switching (No. 1 ESS)</h3>
+                    <p>Introduced in 1965, the No. 1 ESS was the first large-scale electronic switching system. It used stored-program control—essentially a specialized computer—to handle call processing, offering unprecedented flexibility and new features.</p>
+                </div>
+                
+                <div class="switch-item">
+                    <h3>Digital Switching (No. 4 ESS)</h3>
+                    <p>Deployed in 1976, the No. 4 ESS was specifically designed for toll (long-distance) switching. It represented a revolution in network design, processing calls digitally and integrating with the emerging digital transmission network.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="toll-network" class="section">
+            <h2>The Long Lines Toll Network</h2>
+            <p>AT&T's Long Lines division operated a hierarchical switching network designed to efficiently route calls across the country while maintaining high quality and reliability:</p>
+            
+            <div class="switch-diagram">
+                <img src="img/switching-hierarchy.jpg" alt="Diagram of AT&T Long Lines switching hierarchy" onerror="this.src='data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22600%22%20height%3D%22400%22%20viewBox%3D%220%200%20600%20400%22%3E%3Crect%20fill%3D%22%23f0f0f0%22%20width%3D%22600%22%20height%3D%22400%22%2F%3E%3Ctext%20fill%3D%22%23999999%22%20font-family%3D%22Arial%2CSans-serif%22%20font-size%3D%2220%22%20x%3D%22110%22%20y%3D%22200%22%3ESwitching%20Hierarchy%20Diagram%3C%2Ftext%3E%3C%2Fsvg%3E'">
+            </div>
+            
+            <p>The Long Lines network was organized in a five-level hierarchy:</p>
+            
+            <ol>
+                <li><strong>Class 5 Offices</strong> - Local central offices serving end customers (not part of Long Lines)</li>
+                <li><strong>Class 4: Toll Center/Point</strong> - First level of the toll network, connecting to local offices</li>
+                <li><strong>Class 3: Primary Center</strong> - Connected multiple toll centers in a region</li>
+                <li><strong>Class 2: Sectional Center</strong> - Connected primary centers across larger areas</li>
+                <li><strong>Class 1: Regional Center</strong> - The highest level, connecting sectional centers nationwide</li>
+            </ol>
+            
+            <p>At its peak, the network contained about 10 Regional Centers, 67 Sectional Centers, and hundreds of Primary Centers and Toll Centers across the United States. This hierarchical design ensured calls could be completed even during heavy traffic or partial network failures.</p>
+        </section>
+
+        <section id="4ess" class="section">
+            <h2>The No. 4 ESS: Revolutionary Toll Switch</h2>
+            <p>The No. 4 Electronic Switching System, introduced in 1976, revolutionized long-distance telecommunications. It was Bell Labs' crowning achievement in switching technology and became the backbone of AT&T's network.</p>
+            
+            <ul>
+                <li><strong>Digital Processing</strong> - The 4ESS was a fully digital switch, converting analog voice signals to digital form and processing them entirely in the digital domain.</li>
+                <li><strong>Massive Capacity</strong> - A single 4ESS could handle up to 107,000 trunks (inter-office circuits) and process more than 550,000 calls per hour during peak times.</li>
+                <li><strong>Reliability</strong> - Designed with redundant processors and memory systems, the 4ESS achieved "five nines" reliability (99.999% uptime), equating to less than 5.3 minutes of downtime per year.</li>
+                <li><strong>Remote Monitoring</strong> - The system incorporated sophisticated diagnostic capabilities, allowing centralized monitoring from the Network Operations Centers.</li>
+                <li><strong>Software-Defined Routing</strong> - Dynamic routing capabilities could adjust to traffic patterns and network conditions in real-time.</li>
+            </ul>
+            
+            <p>By the early 1980s, 4ESS switches handled approximately 80% of AT&T's long-distance traffic, dramatically improving call quality and network efficiency while reducing operating costs.</p>
+            
+            <table class="comparison-table">
+                <tr>
+                    <th>System</th>
+                    <th>Introduction</th>
+                    <th>Technology</th>
+                    <th>Call Capacity</th>
+                    <th>Floor Space</th>
+                    <th>Power Consumption</th>
+                </tr>
+                <tr>
+                    <td>No. 4A Crossbar</td>
+                    <td>1943</td>
+                    <td>Electromechanical</td>
+                    <td>~38,000 calls/hour</td>
+                    <td>~25,000 sq ft</td>
+                    <td>~750 kW</td>
+                </tr>
+                <tr>
+                    <td>No. 4 ESS</td>
+                    <td>1976</td>
+                    <td>Digital</td>
+                    <td>~550,000 calls/hour</td>
+                    <td>~7,000 sq ft</td>
+                    <td>~150 kW</td>
+                </tr>
+            </table>
+        </section>
+
+        <section id="network-management" class="section">
+            <h2>Network Management Centers</h2>
+            <p>As the switching network grew more complex, AT&T developed sophisticated network management facilities to monitor and control the system. These centers represented the operational nerve centers of the Long Lines network:</p>
+            
+            <ul>
+                <li><strong>Network Operations Center (NOC)</strong> - The primary NOC, located in Bedminster, NJ, provided 24/7 monitoring of the entire network, with massive wall displays showing network status.</li>
+                <li><strong>Regional Centers</strong> - Secondary NOCs in major cities provided more localized management of network resources.</li>
+                <li><strong>Traffic Control</strong> - Specialized systems monitored call volumes and could implement controls to prevent network congestion during peak times or emergencies.</li>
+                <li><strong>CCIS Network</strong> - The Common Channel Interoffice Signaling network, introduced in the 1970s, separated call control signals from voice paths, improving efficiency and enabling new services.</li>
+            </ul>
+            
+            <p>These management systems enabled AT&T to maintain extraordinary reliability even as the network handled hundreds of millions of calls daily. The technological and operational methods developed for the toll network continue to influence modern telecommunications network management.</p>
+        </section>
+
+        <section id="legacy" class="section">
+            <h2>Legacy and Modern Impact</h2>
+            <p>The switching systems developed by Bell Labs transformed global telecommunications and established standards that continue to influence network design today:</p>
+            
+            <ul>
+                <li><strong>SS7 Signaling</strong> - The out-of-band signaling concepts developed for the toll network evolved into the global Signaling System 7 protocol that remains fundamental to telecommunications.</li>
+                <li><strong>Intelligent Network</strong> - Features like toll-free numbers, calling cards, and advanced routing were pioneered on the Long Lines network.</li>
+                <li><strong>Reliability Engineering</strong> - The "five nines" reliability standard set by Bell Labs remains the gold standard for critical infrastructure.</li>
+                <li><strong>Traffic Engineering</strong> - Mathematical models developed for the toll network established the field of telecommunications traffic engineering.</li>
+            </ul>
+            
+            <p>Though most of the physical switching systems have been decommissioned, their architectural and design principles live on in modern software-defined networks and Voice over IP systems. The No. 4 ESS itself remained in service for over 40 years, with the last systems only recently being retired—a testament to the extraordinary engineering that went into their design.</p>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; <span id="year"></span> AT&T Long Lines & Bell Labs Community. <small>All rights reserved.</small></p>
+    </footer>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const currentYear = new Date().getFullYear();
+            document.querySelector('#year').textContent = currentYear;
+        });
+    </script>
+</body>
+</html>
