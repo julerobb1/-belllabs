@@ -32,16 +32,15 @@ html, body {
 <body>
 <div id='cf'></div>
 <script>
-// Detect folder name dynamically
+// Define folder and image logic
 const baseFolder = '/img/';
 const folderName = '30March2025AM_Briefing'; // Replace this with dynamic detection logic if needed
 const folderPath = `${baseFolder}${folderName}/`;
+const imageCount = 14; // Total number of images
 
-// Detect images in the folder
-const imageCount = 14; // Adjust this if the number of images changes
 const container = document.getElementById('cf');
 
-// Create and append images
+// Create and append images in order
 for (let i = 1; i <= imageCount; i++) {
 	const img = document.createElement('img');
 	img.src = `${folderPath}30March2025AM_Briefing-page-${String(i).padStart(3, '0')}.jpg`;
@@ -49,7 +48,7 @@ for (let i = 1; i <= imageCount; i++) {
 	container.appendChild(img);
 }
 
-// Cycle through images
+// Cycle through images in order
 let currentIndex = 0;
 const images = container.querySelectorAll('img');
 setInterval(() => {
