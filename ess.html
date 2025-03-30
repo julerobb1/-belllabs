@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Electronic Switching System (ESS) - Bell Labs</title>
+    <link rel="icon" href="img/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="recipes/css/styles.css">
+    <script src="recipes/js/compat.js"></script>
+</head>
+<body>
+    <header>
+        <h1>AT&T Long Lines & Bell Labs</h1>
+        <p>Electronic Switching System (ESS): Revolutionizing Telephone Networks</p>
+    </header>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <div class="dropdown">
+            <a href="technology.html">Technology</a>
+            <div class="dropdown-content">
+                <a href="technology.html">Tech Overview</a>
+                <a href="transistor.html">The Transistor</a>
+                <a href="optical-maser.html">Lasers</a>
+                <a href="ccd.html">Digital Imaging (CCDs)</a>
+                <a href="photovoltaic-cell.html">Solar Power</a>
+                <a href="unix.html">UNIX</a>
+            </div>
+        </div>
+        <a href="gallery.html">Gallery</a>
+        <a href="#discord">Join the Community</a>
+    </nav>
+
+    <main>
+        <section class="section">
+            <h2>Electronic Switching System: The Digital Revolution in Telephony</h2>
+            <p>The Electronic Switching System (ESS) represents one of Bell Labs' most profound contributions to telecommunications infrastructure. This groundbreaking technology replaced mechanical switching systems with computer-controlled electronic components, fundamentally transforming how telephone calls were connected and managed.</p>
+            
+            <h3>From Mechanical to Electronic Switching</h3>
+            <p>Before ESS, telephone switching was accomplished through mechanical systems:</p>
+            <ul>
+                <li><strong>Step-by-Step Systems:</strong> Used electromechanical switches that physically moved in response to dialed digits</li>
+                <li><strong>Crossbar Systems:</strong> Used matrices of horizontal and vertical bars with connecting points</li>
+                <li><strong>Panel Systems:</strong> Used large panels of contacts that moved up and down to make connections</li>
+            </ul>
+            
+            <p>These mechanical systems were reliable but had significant limitations:</p>
+            <ul>
+                <li>Slow connection times</li>
+                <li>Limited capacity for call volume</li>
+                <li>High maintenance requirements due to moving parts</li>
+                <li>Inability to support advanced features</li>
+                <li>Substantial space requirements for equipment</li>
+                <li>Noise during operation (the characteristic clicking of a telephone exchange)</li>
+            </ul>
+
+            <h3>ESS Development</h3>
+            <p>Bell Labs began research into electronic switching in the 1930s, but the technology didn't become practical until the development of reliable transistors and stored-program control concepts in the 1950s. The project to develop ESS was one of the largest undertaken by Bell Labs:</p>
+            
+            <ul>
+                <li>More than 2,000 engineers and scientists worked on various aspects of ESS development</li>
+                <li>Development cost exceeded $500 million (equivalent to billions in today's dollars)</li>
+                <li>Over 10,000 patent disclosures were filed during the project</li>
+                <li>The first commercial installation occurred in 1965 in Succasunna, New Jersey</li>
+            </ul>
+        </section>
+
+        <section class="section">
+            <h2>ESS Generations and Technical Evolution</h2>
+            
+            <h3>No. 1 ESS (1965)</h3>
+            <p>The first production electronic switch introduced several revolutionary concepts:</p>
+            <ul>
+                <li>Computer-controlled switching using stored-program control</li>
+                <li>Time-division multiplexing for greater efficiency</li>
+                <li>Redundant processors for reliability</li>
+                <li>Call capacity of up to 65,000 lines per switch</li>
+                <li>Custom-designed logic circuits using discrete transistors</li>
+            </ul>
+            
+            <h3>No. 1A ESS (1976)</h3>
+            <p>Enhanced version that incorporated integrated circuits:</p>
+            <ul>
+                <li>Doubled the call processing capacity</li>
+                <li>Reduced power consumption and space requirements</li>
+                <li>Improved reliability through better component integration</li>
+                <li>Enhanced software capabilities for additional features</li>
+            </ul>
+            
+            <h3>No. 4 ESS (1976)</h3>
+            <p>Designed specifically for long-distance (toll) switching:</p>
+            <ul>
+                <li>Digital transmission paths using time-division multiplexing</li>
+                <li>Capacity to handle 107,000 trunks</li>
+                <li>Could process 550,000 calls per hour</li>
+                <li>Became the backbone of AT&T's long-distance network</li>
+            </ul>
+            
+            <h3>No. 5 ESS (1982)</h3>
+            <p>The most advanced local digital switch:</p>
+            <ul>
+                <li>Fully digital switching and transmission</li>
+                <li>Integrated ISDN capabilities</li>
+                <li>Modular design for easier expansion</li>
+                <li>Support for advanced calling features like call waiting, call forwarding, and caller ID</li>
+                <li>Flexible software that could be updated remotely</li>
+            </ul>
+
+            <h3>Impact on Telecommunications</h3>
+            <p>ESS transformed telecommunications in several fundamental ways:</p>
+            <ul>
+                <li><strong>New Services:</strong> Enabled custom calling features like speed dialing, call waiting, and conference calling</li>
+                <li><strong>Improved Reliability:</strong> Reduced system downtime from hours per year to minutes</li>
+                <li><strong>Network Efficiency:</strong> Doubled the call-carrying capacity of the network while reducing operational costs</li>
+                <li><strong>Computerization:</strong> Introduced computer control to the telephone network, laying groundwork for today's intelligent networks</li>
+                <li><strong>Workforce Changes:</strong> Shifted telephone company jobs from mechanical maintenance to computer programming and electronic troubleshooting</li>
+            </ul>
+            
+            <p>By the 1990s, virtually all telephone switching in the United States had been converted to ESS technology. The software developed for ESS switches became some of the most complex and reliable computer programs ever written, with millions of lines of code designed to achieve "five nines" reliability (99.999% uptime).</p>
+            
+            <p>ESS technology paved the way for the modern telecommunications network and introduced concepts of computer-controlled communications that would later enable the internet and cellular networks. It represents one of Bell Labs' most enduring contributions to global infrastructure.</p>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; <span id="year"></span> AT&T Long Lines & Bell Labs Community. <small>All rights reserved.</small></p>
+    </footer>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const currentYear = new Date().getFullYear();
+            document.querySelector('#year').textContent = currentYear;
+        });
+    </script>
+</body>
+</html>
