@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AT&T Long Lines Microwave Relay Network</title>
+    <link rel="icon" href="img/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="recipes/css/styles.css">
+    <script src="recipes/js/compat.js"></script>
+</head>
+<body>
+    <header>
+        <h1>AT&T Long Lines & Bell Labs</h1>
+        <p>Microwave Relay Network: The Backbone of American Communications</p>
+    </header>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <div class="dropdown">
+            <a href="technology.html">Technology</a>
+            <div class="dropdown-content">
+                <a href="technology.html">Tech Overview</a>
+                <a href="transistor.html">The Transistor</a>
+                <a href="optical-maser.html">Lasers</a>
+                <a href="ccd.html">Digital Imaging (CCDs)</a>
+                <a href="photovoltaic-cell.html">Solar Power</a>
+                <a href="unix.html">UNIX</a>
+            </div>
+        </div>
+        <a href="gallery.html">Gallery</a>
+        <a href="#discord">Join the Community</a>
+    </nav>
+
+    <main>
+        <section class="section">
+            <h2>The Microwave Relay Network: America's Communication Backbone</h2>
+            <p>From the 1950s to the 1980s, AT&T's Long Lines microwave relay network formed the invisible backbone of American telecommunications. This engineering marvel consisted of a chain of towers, typically spaced 25-30 miles apart, that relayed telephone calls, television signals, and data across the continental United States.</p>
+            
+            <h3>How Microwave Relay Worked</h3>
+            <p>Each tower was equipped with distinctive horn-shaped antennas that functioned as both receivers and transmitters. These antennas sent microwave signals from tower to tower in a direct line-of-sight arrangement. The signals were focused like a spotlight beam, requiring precise alignment between towers and careful placement on hilltops and high buildings to maintain this visual connection.</p>
+
+            <h3>Key Components of a Relay Tower</h3>
+            <ul>
+                <li><strong>Antennas:</strong> The iconic horn-shaped KS-15676 microwave antennas became a distinctive feature of the American landscape</li>
+                <li><strong>Waveguides:</strong> Special metal tubes that guided microwave signals between antennas and electronic equipment</li>
+                <li><strong>Repeaters:</strong> Electronic systems that amplified and retransmitted signals to compensate for signal loss over distance</li>
+                <li><strong>Tower Structure:</strong> Designed to maintain stability in extreme weather while providing access for maintenance</li>
+                <li><strong>Equipment Buildings:</strong> Climate-controlled facilities at the base housing power systems, backup generators, and switching equipment</li>
+            </ul>
+
+            <h3>Technical Evolution</h3>
+            <p>The Long Lines network evolved through several system generations:</p>
+            <ul>
+                <li><strong>TD Radio Systems (1950s):</strong> The initial TD-2 system operated at 4 GHz with 5 MHz channels, carrying up to 480 telephone calls per channel</li>
+                <li><strong>TH Radio Systems (1960s):</strong> The 6 GHz TH-1 system increased capacity to 1,860 voice channels per radio channel</li>
+                <li><strong>TN Radio Systems (1970s):</strong> Later systems operated at 11 GHz with digital modulation</li>
+                <li><strong>DR Radio (1980s):</strong> The final generation used 18-bit digital encoding with time-division multiplexing</li>
+            </ul>
+
+            <h3>Network Scope</h3>
+            <p>At its peak, the network included approximately 1,000 microwave towers, connecting almost every major city in the United States. The system could route more than 50 million telephone calls simultaneously across the country, while also carrying television network feeds. Major routes had multiple redundant paths to ensure service continuity in case of equipment failure.</p>
+        </section>
+
+        <section class="section">
+            <h2>Historical Significance</h2>
+            <p>The Long Lines microwave network represented a technological breakthrough that transformed American telecommunications. Before fiber optics, it enabled the first truly nationwide real-time communications system. This infrastructure:</p>
+            <ul>
+                <li>Made long-distance phone calls much more affordable and accessible to average Americans</li>
+                <li>Enabled live coast-to-coast television broadcasts, transforming American culture</li>
+                <li>Served as critical communications infrastructure during the Cold War</li>
+                <li>Provided emergency communications during natural disasters</li>
+            </ul>
+            
+            <p>While most of the network was decommissioned in the 1990s as fiber optic technology became dominant, many of the towers still stand as monuments to this engineering achievement. Some have been repurposed for cellular communications or purchased by smaller carriers, while others stand abandoned as "ghost towers" across the American landscape.</p>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; <span id="year"></span> AT&T Long Lines & Bell Labs Community. <small>All rights reserved.</small></p>
+    </footer>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const currentYear = new Date().getFullYear();
+            document.querySelector('#year').textContent = currentYear;
+        });
+    </script>
+</body>
+</html>
