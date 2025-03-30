@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Telstar - Bell Labs' Revolutionary Communications Satellite</title>
+    <link rel="icon" href="img/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="recipes/css/styles.css">
+    <script src="recipes/js/compat.js"></script>
+</head>
+<body>
+    <header>
+        <h1>AT&T Long Lines & Bell Labs</h1>
+        <p>Telstar: The World's First Active Communications Satellite</p>
+    </header>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <div class="dropdown">
+            <a href="technology.html">Technology</a>
+            <div class="dropdown-content">
+                <a href="technology.html">Tech Overview</a>
+                <a href="transistor.html">The Transistor</a>
+                <a href="optical-maser.html">Lasers</a>
+                <a href="ccd.html">Digital Imaging (CCDs)</a>
+                <a href="photovoltaic-cell.html">Solar Power</a>
+                <a href="unix.html">UNIX</a>
+            </div>
+        </div>
+        <a href="gallery.html">Gallery</a>
+        <a href="#discord">Join the Community</a>
+    </nav>
+
+    <main>
+        <section class="section">
+            <h2>Telstar: Opening the Age of Satellite Communications</h2>
+            <p>On July 10, 1962, Bell Laboratories and AT&T launched Telstar I, the world's first active communications satellite. This technological marvel forever changed global communications by demonstrating the feasibility of transmitting telephone calls, television signals, and data across oceans via satellites.</p>
+            
+            <h3>Technical Design</h3>
+            <p>Telstar represented a remarkable engineering achievement for its time:</p>
+            
+            <ul>
+                <li><strong>Size and Structure:</strong> The satellite was spherical, measuring 34.5 inches (88 cm) in diameter and weighing 170 pounds (77 kg)</li>
+                <li><strong>Power System:</strong> 3,600 solar cells covered the exterior, generating about 14 watts of power</li>
+                <li><strong>Communications System:</strong> A transponder that received signals at 6 GHz, amplified them, and retransmitted at 4 GHz</li>
+                <li><strong>Bandwidth:</strong> Capable of handling one television channel or 600 telephone calls simultaneously</li>
+                <li><strong>Orbit:</strong> Elliptical medium-Earth orbit ranging from 593 to 3,673 miles (954 to 5,911 km) above Earth</li>
+                <li><strong>Spin Stabilization:</strong> The satellite rotated at 180 rpm to maintain stability</li>
+            </ul>
+
+            <h3>Ground Infrastructure</h3>
+            <p>Successful satellite communication required massive ground stations with enormous antennas:</p>
+            
+            <ul>
+                <li><strong>Andover Earth Station (Maine):</strong> AT&T's primary ground station featured a 177-foot (54 m) horn antenna housed in a radome</li>
+                <li><strong>Pleumeur-Bodou (France):</strong> The French ground station built to receive European transmissions</li>
+                <li><strong>Goonhilly Down (UK):</strong> The British facility with an 85-foot (26 m) parabolic antenna</li>
+            </ul>
+            
+            <p>These ground stations tracked the satellite during its brief 20-minute passes overhead when communication was possible. The massive antennas needed to move with extreme precision to maintain contact with the rapidly moving satellite.</p>
+        </section>
+
+        <section class="section">
+            <h2>Historical Impact</h2>
+            <h3>First Live Transatlantic Television</h3>
+            <p>On July 23, 1962, Telstar transmitted the first live transatlantic television broadcast, featuring images of the American flag waving outside the Andover Earth Station, followed by remarks from President John F. Kennedy. An estimated 100 million viewers across Europe watched this historic broadcast.</p>
+            
+            <p>In the following weeks, Telstar would transmit numerous "firsts," including:</p>
+            <ul>
+                <li>The first live sports broadcast between continents</li>
+                <li>The first transatlantic press conference</li>
+                <li>The first public telephone call via satellite</li>
+                <li>The first facsimile transmission via satellite</li>
+                <li>The first live musical performance transmitted across the Atlantic</li>
+            </ul>
+            
+            <h3>Technical Challenges and Limitations</h3>
+            <p>Despite its success, Telstar faced significant challenges:</p>
+            <ul>
+                <li>The satellite's elliptical orbit meant it could only provide service for about 20 minutes per pass</li>
+                <li>Radiation from high-altitude nuclear tests (particularly the Starfish Prime test) damaged Telstar's transistors</li>
+                <li>The satellite ceased functioning in February 1963, after only 7 months of operation</li>
+            </ul>
+            
+            <h3>Legacy</h3>
+            <p>Telstar fundamentally changed how the world communicates:</p>
+            <ul>
+                <li>It proved the commercial viability of satellite communications</li>
+                <li>It demonstrated the potential for global television distribution</li>
+                <li>It paved the way for future satellite systems like Intelsat and modern communications satellites</li>
+                <li>It introduced people worldwide to the concept of instant global communication</li>
+                <li>It inspired numerous cultural references, including Joe Meek's hit instrumental song "Telstar"</li>
+            </ul>
+            
+            <p>While most modern communications satellites now operate in geosynchronous orbit (unlike Telstar's elliptical orbit), the principles demonstrated by Telstar continue to underpin billions of daily communications worldwide. Bell Labs' pioneering work on Telstar established the foundation for today's global communications infrastructure.</p>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; <span id="year"></span> AT&T Long Lines & Bell Labs Community. <small>All rights reserved.</small></p>
+    </footer>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const currentYear = new Date().getFullYear();
+            document.querySelector('#year').textContent = currentYear;
+        });
+    </script>
+</body>
+</html>
