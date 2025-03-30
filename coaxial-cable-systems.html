@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AT&T Long Lines Coaxial Cable Systems</title>
+    <link rel="icon" href="img/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="recipes/css/styles.css">
+    <script src="recipes/js/compat.js"></script>
+    <script src="recipes/js/scripts.js" defer></script>
+    <style>
+        .cable-timeline {
+            position: relative;
+            margin: 40px 0;
+            padding: 20px 0;
+        }
+        
+        .cable-timeline::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            width: 4px;
+            background-color: var(--nav-bg-color);
+            transform: translateX(-50%);
+        }
+        
+        .timeline-item {
+            position: relative;
+            margin-bottom: 40px;
+            width: 100%;
+        }
+        
+        .timeline-content {
+            position: relative;
+            width: 45%;
+            padding: 15px;
+            background-color: var(--section-bg-color);
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        
+        .timeline-item:nth-child(odd) .timeline-content {
+            margin-left: auto;
+        }
+        
+        .timeline-content h3 {
+            margin-top: 0;
+            color: var(--header-bg-color);
+        }
+        
+        .timeline-date {
+            position: absolute;
+            top: 15px;
+            width: 80px;
+            padding: 5px 10px;
+            background-color: var(--nav-bg-color);
+            color: white;
+            border-radius: 4px;
+            text-align: center;
+            font-weight: bold;
+        }
+        
+        .timeline-item:nth-child(odd) .timeline-date {
+            left: -100px;
+        }
+        
+        .timeline-item:nth-child(even) .timeline-date {
+            right: -100px;
+        }
+        
+        .cable-cross-section {
+            text-align: center;
+            margin: 30px 0;
+        }
+        
+        .cable-cross-section img {
+            max-width: 100%;
+            border-radius: 8px;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+        }
+        
+        @media (max-width: 768px) {
+            .cable-timeline::before {
+                left: 30px;
+            }
+            
+            .timeline-content {
+                width: calc(100% - 80px);
+                margin-left: 80px !important;
+            }
+            
+            .timeline-date {
+                left: -50px !important;
+                right: auto !important;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>AT&T Long Lines & Bell Labs</h1>
+        <p>Exploring the Coaxial Cable Network Infrastructure</p>
+    </header>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <div class="dropdown">
+            <a href="#">Tech & Inventions</a>
+            <div class="dropdown-content">
+                <a href="technology.html">Tech Overview</a>
+                <a href="transistor.html">The Transistor</a>
+                <a href="optical-maser.html">Lasers</a>
+                <a href="ccd.html">Digital Imaging (CCDs)</a>
+                <a href="photovoltaic-cell.html">Solar Power</a>
+                <a href="unix.html">UNIX</a>
+            </div>
+        </div>
+        <div class="dropdown">
+            <a href="#">Long Lines Infrastructure</a>
+            <div class="dropdown-content">
+                <a href="microwave-relay-towers.html">Microwave Relay Towers</a>
+                <a href="coaxial-cable-systems.html" class="active">Coaxial Cable Systems</a>
+                <a href="switching-systems.html">Switching Systems</a>
+                <a href="repeater-stations.html">Repeater Stations</a>
+            </div>
+        </div>
+        <a href="gallery.html">Gallery</a>
+        <a href="#discord">Join the Community</a>
+    </nav>
+
+    <main>
+        <section id="overview" class="section">
+            <h2>Coaxial Cable Systems: The Underground Backbone</h2>
+            <p>While AT&T's microwave towers were visible across the American landscape, equally important was the vast network of underground and undersea coaxial cables that formed a critical part of the Long Lines system. These cables provided reliable, high-capacity connections, especially in areas where microwave transmission was impractical or as backup for critical routes.</p>
+            
+            <p>Coaxial cables revolutionized telecommunications by dramatically increasing capacity compared to traditional copper wire pairs. A single coaxial cable could carry thousands of simultaneous telephone conversations, transforming long-distance communication capabilities.</p>
+        </section>
+
+        <section id="technology" class="section">
+            <h2>Coaxial Cable Technology</h2>
+            <p>AT&T and Bell Labs pioneered coaxial cable technology for telecommunications, developing increasingly sophisticated systems over decades.</p>
+            
+            <div class="cable-cross-section">
+                <img src="img/coaxial-cable-cross-section.jpg" alt="Cross-section of an AT&T Long Lines coaxial cable" onerror="this.src='data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22600%22%20height%3D%22400%22%20viewBox%3D%220%200%20600%20400%22%3E%3Crect%20fill%3D%22%23f0f0f0%22%20width%3D%22600%22%20height%3D%22400%22%2F%3E%3Ctext%20fill%3D%22%23999999%22%20font-family%3D%22Arial%2CSans-serif%22%20font-size%3D%2220%22%20x%3D%22100%22%20y%3D%22200%22%3ECoaxial%20Cable%20Cross-section%3C%2Ftext%3E%3C%2Fsvg%3E'">
+            </div>
+            
+            <p>The basic structure of a coaxial cable includes:</p>
+            <ul>
+                <li><strong>Center Conductor</strong> - Usually copper, carrying the signal</li>
+                <li><strong>Dielectric Insulator</strong> - Separating the center conductor from the shield</li>
+                <li><strong>Metallic Shield</strong> - Typically copper or aluminum, preventing signal leakage and interference</li>
+                <li><strong>Protective Jacket</strong> - Outer covering protecting against environmental factors</li>
+            </ul>
+            
+            <p>Long Lines coaxial cables were typically bundled in groups of multiple tubes within a protective sheath, with additional layers for underground or undersea installation. Some of the largest cables contained up to 22 separate coaxial tubes plus numerous copper pairs for maintenance and control functions.</p>
+        </section>
+
+        <section id="carrier-systems" class="section">
+            <h2>Carrier Systems Evolution</h2>
+            <p>AT&T developed a series of increasingly sophisticated "carrier systems" that multiplexed numerous voice channels onto coaxial cables:</p>
+            
+            <div class="cable-timeline">
+                <div class="timeline-item">
+                    <div class="timeline-date">1941</div>
+                    <div class="timeline-content">
+                        <h3>L1 Carrier</h3>
+                        <p>The first commercial coaxial system, carrying 480 voice channels per coaxial pair. The initial L1 route connected Stevens Point, WI to Minneapolis, MN.</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-date">1950</div>
+                    <div class="timeline-content">
+                        <h3>L3 Carrier</h3>
+                        <p>Significant upgrade to 1,860 voice channels per coaxial tube, with improved amplifiers spaced at 4-mile intervals. The L3 system formed the backbone of early television network distribution.</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-date">1967</div>
+                    <div class="timeline-content">
+                        <h3>L4 Carrier</h3>
+                        <p>Increased capacity to 3,600 voice channels per tube with solid-state electronics replacing vacuum tubes. L4 systems introduced more sophisticated equalization for improved signal quality.</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-date">1974</div>
+                    <div class="timeline-content">
+                        <h3>L5 Carrier</h3>
+                        <p>A major leap to 10,800 voice channels per coaxial tube. L5 incorporated extensive digital control systems while maintaining analog transmission, representing the pinnacle of analog coaxial technology.</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-date">1980s</div>
+                    <div class="timeline-content">
+                        <h3>Digital Systems</h3>
+                        <p>Transition to fully digital transmission systems using Time Division Multiplexing (TDM), marking the beginning of the end for analog coaxial systems and eventually leading to fiber optic replacement.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="undersea" class="section">
+            <h2>Undersea Coaxial Cables</h2>
+            <p>AT&T laid numerous undersea coaxial cables, connecting continents and enabling international telecommunications:</p>
+            
+            <ul>
+                <li><strong>TAT-1 (1956)</strong> - The first transatlantic telephone cable, connecting Newfoundland to Scotland, carrying 36 voice channels</li>
+                <li><strong>TAT-2 (1959)</strong> - Connected France and Newfoundland with 48 voice circuits</li>
+                <li><strong>TAT-3 (1963)</strong> - New Jersey to England, with 138 voice channels</li>
+                <li><strong>TAT-4 (1965)</strong> - New Jersey to France, also with 138 channels</li>
+                <li><strong>TAT-5 (1970)</strong> - Rhode Island to Spain, expanded to 845 voice channels</li>
+                <li><strong>TAT-6 (1976)</strong> - Rhode Island to France, a major upgrade to 4,000 voice channels</li>
+                <li><strong>TAT-7 (1983)</strong> - New Jersey to England, also with 4,000 channels, the last AT&T analog coaxial transatlantic cable</li>
+            </ul>
+            
+            <p>These undersea cables required specialized repeaters designed to operate reliably at ocean depths for decades without maintenance. Bell Labs engineers developed hermetically sealed, pressure-resistant housings that became marvels of reliability engineering.</p>
+        </section>
+
+        <section id="infrastructure" class="section">
+            <h2>Cable Route Infrastructure</h2>
+            <p>The construction and maintenance of coaxial cable routes required extensive infrastructure:</p>
+            
+            <ul>
+                <li><strong>Repeater Stations</strong> - Built every 4-8 miles along routes to amplify signals, these facilities housed equipment, power supplies, and often emergency generators</li>
+                <li><strong>Test Stations</strong> - Strategically placed locations where technicians could monitor and test cable performance</li>
+                <li><strong>Cable Protection</strong> - Underground cables were placed in conduits, directly buried, or armored depending on terrain and environmental factors</li>
+                <li><strong>Right-of-Way Management</strong> - AT&T maintained thousands of miles of cable right-of-way, often alongside railroads, highways, or power lines</li>
+                <li><strong>Cable Pressurization</strong> - Many cables were kept under positive air pressure to prevent water intrusion if the outer sheath was damaged</li>
+            </ul>
+        </section>
+
+        <section id="legacy" class="section">
+            <h2>Legacy and Historical Significance</h2>
+            <p>The coaxial cable network represented a critical transition technology between the early open-wire systems and modern fiber optic networks. At its peak in the 1970s, AT&T operated over 65,000 miles of coaxial cable routes across North America.</p>
+            
+            <p>Though most of these systems have been decommissioned or replaced with fiber optics, their legacy lives on in several ways:</p>
+            
+            <ul>
+                <li>Many of today's fiber optic cables follow the same rights-of-way established for coaxial systems</li>
+                <li>The multiplexing technologies developed for coaxial cables influenced modern digital transmission systems</li>
+                <li>Repeater building designs and infrastructure practices established during the coaxial era still influence telecommunications facility design</li>
+                <li>Several former coaxial cable routes and facilities have been preserved as historical sites</li>
+            </ul>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; <span id="year"></span> AT&T Long Lines & Bell Labs Community. <small>All rights reserved.</small></p>
+    </footer>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const currentYear = new Date().getFullYear();
+            document.querySelector('#year').textContent = currentYear;
+        });
+    </script>
+</body>
+</html>
