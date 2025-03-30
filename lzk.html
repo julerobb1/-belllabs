@@ -1,6 +1,5 @@
 <html>
 <head>
-<meta http-equiv="refresh" content="75" >
 <style>
 html, body {
 	height: 99%;
@@ -23,80 +22,71 @@ html, body {
 	-webkit-animation-name: cfFadeInOut;
 	-webkit-animation-timing-function: linear;
 	-webkit-animation-iteration-count: infinite;
-	-webkit-animation-duration: 75s;
+	-webkit-animation-duration: 30s;
 
 	-moz-animation-name: cfFadeInOut;
 	-moz-animation-timing-function: ease-in-out;
 	-moz-animation-iteration-count: infinite;
-	-moz-animation-duration: 75s;
+	-moz-animation-duration: 30s;
 
 	-o-animation-name: cfFadeInOut;
 	-o-animation-timing-function: ease-in-out;
 	-o-animation-iteration-count: infinite;
-	-o-animation-duration: 75s;
+	-o-animation-duration: 30s;
 
 	animation-name: cfFadeInOut;
 	animation-timing-function: ease-in-out;
 	animation-iteration-count: infinite;
-	animation-duration: 75s;
+	animation-duration: 30s;
 }
 
 @keyframes cfFadeInOut 
 {
 	0%   { visibility:visible; }
-	6.67%   { visibility:hidden; }
+	7.14%   { visibility:hidden; }
 	100% { visibility:hidden; }
 }
 @-webkit-keyframes cfFadeInOut 
 {
 	0%   { visibility:visible; }
-	6.67%   { visibility:hidden; }
+	7.14%   { visibility:hidden; }
 	100% { visibility:hidden; }
 }
 @-moz-keyframes cfFadeInOut 
 {
 	0%   { visibility:visible; }
-	6.67%   { visibility:hidden; }
+	7.14%   { visibility:hidden; }
 	100% { visibility:hidden; }
 }
 @-o-keyframes cfFadeInOut 
 {
 	0%   { visibility:visible; }
-	6.67%   { visibility:hidden; }
+	7.14%   { visibility:hidden; }
 	100% { visibility:hidden; }
 }
-#cf img.c14 { animation-delay: 0s; }
-#cf img.c13 { animation-delay: 5.36s; }
-#cf img.c12 { animation-delay: 10.71s; }
-#cf img.c11 { animation-delay: 16.07s; }
-#cf img.c10 { animation-delay: 21.43s; }
-#cf img.c9 { animation-delay: 26.79s; }
-#cf img.c8 { animation-delay: 32.14s; }
-#cf img.c7 { animation-delay: 37.50s; }
-#cf img.c6 { animation-delay: 42.86s; }
-#cf img.c5 { animation-delay: 48.21s; }
-#cf img.c4 { animation-delay: 53.57s; }
-#cf img.c3 { animation-delay: 58.93s; }
-#cf img.c2 { animation-delay: 64.29s; }
-#cf img.c1 { animation-delay: 69.64s; }
 </style>
 </head>
 <body>
-<div id='cf'>
-	<img src='/img/30March2025AM_Briefing/30March2025AM_Briefing-page-014.jpg' border='0' class='c14' />
-	<img src='/img/30March2025AM_Briefing/30March2025AM_Briefing-page-013.jpg' border='0' class='c13' />
-	<img src='/img/30March2025AM_Briefing/30March2025AM_Briefing-page-012.jpg' border='0' class='c12' />
-	<img src='/img/30March2025AM_Briefing/30March2025AM_Briefing-page-011.jpg' border='0' class='c11' />
-	<img src='/img/30March2025AM_Briefing/30March2025AM_Briefing-page-010.jpg' border='0' class='c10' />
-	<img src='/img/30March2025AM_Briefing/30March2025AM_Briefing-page-009.jpg' border='0' class='c9' />
-	<img src='/img/30March2025AM_Briefing/30March2025AM_Briefing-page-008.jpg' border='0' class='c8' />
-	<img src='/img/30March2025AM_Briefing/30March2025AM_Briefing-page-007.jpg' border='0' class='c7' />
-	<img src='/img/30March2025AM_Briefing/30March2025AM_Briefing-page-006.jpg' border='0' class='c6' />
-	<img src='/img/30March2025AM_Briefing/30March2025AM_Briefing-page-005.jpg' border='0' class='c5' />
-	<img src='/img/30March2025AM_Briefing/30March2025AM_Briefing-page-004.jpg' border='0' class='c4' />
-	<img src='/img/30March2025AM_Briefing/30March2025AM_Briefing-page-003.jpg' border='0' class='c3' />
-	<img src='/img/30March2025AM_Briefing/30March2025AM_Briefing-page-002.jpg' border='0' class='c2' />
-	<img src='/img/30March2025AM_Briefing/30March2025AM_Briefing-page-001.jpg' border='0' class='c1' />
-</div>
+<div id='cf'></div>
+<script>
+// Detect folder name dynamically
+const baseFolder = '/img/';
+const folderName = '30March2025AM_Briefing'; // Replace this with dynamic detection logic if needed
+const folderPath = `${baseFolder}${folderName}/`;
+
+// Detect images in the folder
+const imageCount = 14; // Adjust this if the number of images changes
+const container = document.getElementById('cf');
+
+for (let i = 1; i <= imageCount; i++) {
+	const img = document.createElement('img');
+	img.src = `${folderPath}30March2025AM_Briefing-page-${String(i).padStart(3, '0')}.jpg`;
+	img.className = `c${imageCount - i + 1}`;
+	container.appendChild(img);
+}
+
+// Dynamically adjust paths based on folder name
+console.log(`Using folder: ${folderPath}`);
+</script>
 </body>
 </html>
