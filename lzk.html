@@ -38,6 +38,7 @@ html, body {
 	animation-timing-function: ease-in-out;
 	animation-iteration-count: infinite;
 	animation-duration: 30s;
+	z-index: 0; /* Ensure z-index is set for stacking order */
 }
 
 @keyframes cfFadeInOut 
@@ -81,7 +82,7 @@ const container = document.getElementById('cf');
 for (let i = 1; i <= imageCount; i++) {
 	const img = document.createElement('img');
 	img.src = `${folderPath}30March2025AM_Briefing-page-${String(i).padStart(3, '0')}.jpg`;
-	img.className = `c${imageCount - i + 1}`;
+	img.style.zIndex = imageCount - i + 1; // Ensure images are stacked in order
 	container.appendChild(img);
 }
 
