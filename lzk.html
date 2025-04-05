@@ -22,22 +22,22 @@ html, body {
     -webkit-animation-name: cfFadeInOut;
     -webkit-animation-timing-function: linear;
     -webkit-animation-iteration-count: infinite;
-    -webkit-animation-duration: 30s;
+    -webkit-animation-duration: 20s; /* Reduced from 30s to 20s */
 
     -moz-animation-name: cfFadeInOut;
     -moz-animation-timing-function: ease-in-out;
     -moz-animation-iteration-count: infinite;
-    -moz-animation-duration: 30s;
+    -moz-animation-duration: 20s; /* Reduced from 30s to 20s */
 
     -o-animation-name: cfFadeInOut;
     -o-animation-timing-function: ease-in-out;
     -o-animation-iteration-count: infinite;
-    -o-animation-duration: 30s;
+    -o-animation-duration: 20s; /* Reduced from 30s to 20s */
 
     animation-name: cfFadeInOut;
     animation-timing-function: ease-in-out;
     animation-iteration-count: infinite;
-    animation-duration: 30s;
+    animation-duration: 20s; /* Reduced from 30s to 20s */
 }
 
 @keyframes cfFadeInOut 
@@ -64,20 +64,20 @@ html, body {
     7.14%   { visibility:hidden; }
     100% { visibility:hidden; }
 }
-#cf img.c14 { animation-delay: 0s; }
-#cf img.c13 { animation-delay: 2.14s; }
-#cf img.c12 { animation-delay: 4.29s; }
-#cf img.c11 { animation-delay: 6.43s; }
-#cf img.c10 { animation-delay: 8.57s; }
-#cf img.c9 { animation-delay: 10.71s; }
-#cf img.c8 { animation-delay: 12.86s; }
-#cf img.c7 { animation-delay: 15s; }
-#cf img.c6 { animation-delay: 17.14s; }
-#cf img.c5 { animation-delay: 19.29s; }
-#cf img.c4 { animation-delay: 21.43s; }
-#cf img.c3 { animation-delay: 23.57s; }
-#cf img.c2 { animation-delay: 25.71s; }
-#cf img.c1 { animation-delay: 27.86s; }
+#cf img.c1 { animation-delay: 0s; }
+#cf img.c2 { animation-delay: 1.43s; }
+#cf img.c3 { animation-delay: 2.86s; }
+#cf img.c4 { animation-delay: 4.29s; }
+#cf img.c5 { animation-delay: 5.71s; }
+#cf img.c6 { animation-delay: 7.14s; }
+#cf img.c7 { animation-delay: 8.57s; }
+#cf img.c8 { animation-delay: 10s; }
+#cf img.c9 { animation-delay: 11.43s; }
+#cf img.c10 { animation-delay: 12.86s; }
+#cf img.c11 { animation-delay: 14.29s; }
+#cf img.c12 { animation-delay: 15.71s; }
+#cf img.c13 { animation-delay: 17.14s; }
+#cf img.c14 { animation-delay: 18.57s; }
 </style>
 </head>
 <body>
@@ -95,7 +95,7 @@ const container = document.getElementById('cf');
 for (let i = 1; i <= imageCount; i++) {
     const img = document.createElement('img');
     img.src = `${folderPath}04April2025PM_Briefing_page-${String(i).padStart(4, '0')}.jpg`; // Updated file names
-    img.className = `c${imageCount - i + 1}`;
+    img.className = `c${i}`; // Updated to match the reversed order
     container.appendChild(img);
 }
 
