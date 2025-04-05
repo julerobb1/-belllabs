@@ -2,60 +2,105 @@
 <head>
 <style>
 html, body {
-	height: 100%;
-	margin: 0;
+    height: 99%;
 }
 
 #cf {
-	position: relative;
-	margin: 0 auto;
-	height: 100%;
-	width: 100%;
-	overflow: hidden;
+    position:relative;
+    margin:0 auto;
+    height: 100%;
+    width: 100%;
 }
 
 #cf img {
-	position: absolute;
-	left: 0;
-	top: 0;
-	height: 100%;
-	width: 100%;
-	opacity: 0;
-	transition: opacity 1s ease-in-out;
+    position:absolute;
+    left:0px;
+    top:0px;
+    height: 100%;
+    width: 100%;
+    
+    -webkit-animation-name: cfFadeInOut;
+    -webkit-animation-timing-function: linear;
+    -webkit-animation-iteration-count: infinite;
+    -webkit-animation-duration: 30s;
+
+    -moz-animation-name: cfFadeInOut;
+    -moz-animation-timing-function: ease-in-out;
+    -moz-animation-iteration-count: infinite;
+    -moz-animation-duration: 30s;
+
+    -o-animation-name: cfFadeInOut;
+    -o-animation-timing-function: ease-in-out;
+    -o-animation-iteration-count: infinite;
+    -o-animation-duration: 30s;
+
+    animation-name: cfFadeInOut;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+    animation-duration: 30s;
 }
 
-#cf img.active {
-	opacity: 1;
+@keyframes cfFadeInOut 
+{
+    0%   { visibility:visible; }
+    7.14%   { visibility:hidden; }
+    100% { visibility:hidden; }
 }
+@-webkit-keyframes cfFadeInOut 
+{
+    0%   { visibility:visible; }
+    7.14%   { visibility:hidden; }
+    100% { visibility:hidden; }
+}
+@-moz-keyframes cfFadeInOut 
+{
+    0%   { visibility:visible; }
+    7.14%   { visibility:hidden; }
+    100% { visibility:hidden; }
+}
+@-o-keyframes cfFadeInOut 
+{
+    0%   { visibility:visible; }
+    7.14%   { visibility:hidden; }
+    100% { visibility:hidden; }
+}
+#cf img.c14 { animation-delay: 0s; }
+#cf img.c13 { animation-delay: 2.14s; }
+#cf img.c12 { animation-delay: 4.29s; }
+#cf img.c11 { animation-delay: 6.43s; }
+#cf img.c10 { animation-delay: 8.57s; }
+#cf img.c9 { animation-delay: 10.71s; }
+#cf img.c8 { animation-delay: 12.86s; }
+#cf img.c7 { animation-delay: 15s; }
+#cf img.c6 { animation-delay: 17.14s; }
+#cf img.c5 { animation-delay: 19.29s; }
+#cf img.c4 { animation-delay: 21.43s; }
+#cf img.c3 { animation-delay: 23.57s; }
+#cf img.c2 { animation-delay: 25.71s; }
+#cf img.c1 { animation-delay: 27.86s; }
 </style>
 </head>
 <body>
 <div id='cf'></div>
 <script>
-// Define folder and image logic
+// Detect folder name dynamically
 const baseFolder = '/img/';
-const folderName = '30March2025AM_Briefing'; // Replace this with dynamic detection logic if needed
+const folderName = '30March2025AM_Briefing'; // Folder path remains the same
 const folderPath = `${baseFolder}${folderName}/`;
-const imageCount = 14; // Total number of images
 
+// Detect images in the folder
+const imageCount = 14; // Adjust this if the number of images changes
 const container = document.getElementById('cf');
 
-// Create and append images in order
 for (let i = 1; i <= imageCount; i++) {
-	const img = document.createElement('img');
-	img.src = `${folderPath}30March2025AM_Briefing-page-${String(i).padStart(3, '0')}.jpg`;
-	if (i === 1) img.classList.add('active'); // Set the first image as active
-	container.appendChild(img);
+    const img = document.createElement('img');
+    img.src = `${folderPath}04April2025PM_Briefing_page-${String(i).padStart(4, '0')}.jpg`; // Updated file names
+    img.className = `c${imageCount - i + 1}`;
+    container.appendChild(img);
 }
 
-// Cycle through images in order
-let currentIndex = 0;
-const images = container.querySelectorAll('img');
-setInterval(() => {
-	images[currentIndex].classList.remove('active');
-	currentIndex = (currentIndex + 1) % images.length;
-	images[currentIndex].classList.add('active');
-}, 1000); // Change image every 10 seconds (slowed down)
+// Dynamically adjust paths based on folder name
+console.log(`Using folder: ${folderPath}`);
 </script>
 </body>
 </html>
