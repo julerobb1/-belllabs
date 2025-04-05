@@ -22,46 +22,46 @@ html, body {
     -webkit-animation-name: cfFadeInOut;
     -webkit-animation-timing-function: linear;
     -webkit-animation-iteration-count: infinite;
-    -webkit-animation-duration: 20s; /* Reduced from 30s to 20s */
+    -webkit-animation-duration: 60s; /* Increased duration for slower slideshow */
 
     -moz-animation-name: cfFadeInOut;
     -moz-animation-timing-function: ease-in-out;
     -moz-animation-iteration-count: infinite;
-    -moz-animation-duration: 20s; /* Reduced from 30s to 20s */
+    -moz-animation-duration: 60s; /* Increased duration for slower slideshow */
 
     -o-animation-name: cfFadeInOut;
     -o-animation-timing-function: ease-in-out;
     -o-animation-iteration-count: infinite;
-    -o-animation-duration: 20s; /* Reduced from 30s to 20s */
+    -o-animation-duration: 60s; /* Increased duration for slower slideshow */
 
     animation-name: cfFadeInOut;
     animation-timing-function: ease-in-out;
     animation-iteration-count: infinite;
-    animation-duration: 20s; /* Reduced from 30s to 20s */
+    animation-duration: 60s; /* Increased duration for slower slideshow */
 }
 
 @keyframes cfFadeInOut 
 {
     0%   { visibility:visible; }
-    7.14%   { visibility:hidden; }
+    14.29%   { visibility:hidden; } /* Adjusted timing for slower transitions */
     100% { visibility:hidden; }
 }
 @-webkit-keyframes cfFadeInOut 
 {
     0%   { visibility:visible; }
-    7.14%   { visibility:hidden; }
+    14.29%   { visibility:hidden; } /* Adjusted timing for slower transitions */
     100% { visibility:hidden; }
 }
 @-moz-keyframes cfFadeInOut 
 {
     0%   { visibility:visible; }
-    7.14%   { visibility:hidden; }
+    14.29%   { visibility:hidden; } /* Adjusted timing for slower transitions */
     100% { visibility:hidden; }
 }
 @-o-keyframes cfFadeInOut 
 {
     0%   { visibility:visible; }
-    7.14%   { visibility:hidden; }
+    14.29%   { visibility:hidden; } /* Adjusted timing for slower transitions */
     100% { visibility:hidden; }
 }
 #cf img.c1 { animation-delay: 0s; }
@@ -85,7 +85,7 @@ html, body {
 <script>
 // Detect folder name dynamically
 const baseFolder = '/img/';
-const folderName = '30March2025AM_Briefing'; // Folder path remains the same
+const folderName = 'slides'; // Updated folder name
 const folderPath = `${baseFolder}${folderName}/`;
 
 // Detect images in the folder
@@ -94,8 +94,8 @@ const container = document.getElementById('cf');
 
 for (let i = 1; i <= imageCount; i++) {
     const img = document.createElement('img');
-    img.src = `${folderPath}04April2025PM_Briefing_page-${String(i).padStart(4, '0')}.jpg`; // Updated file names
-    img.className = `c${i}`; // Updated to match the reversed order
+    img.src = `${folderPath}Hazardous Weather Briefing - Sat, Apr 5 527 AM_page-${String(i).padStart(4, '0')}.jpg`; // Updated file names
+    img.className = `c${i}`;
     container.appendChild(img);
 }
 
