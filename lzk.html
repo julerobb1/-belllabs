@@ -43,63 +43,109 @@ html, body {
 @keyframes cfFadeInOut 
 {
     0%   { visibility:visible; }
-    14.29%   { visibility:hidden; } /* Adjusted timing for slower transitions */
+    12.5%   { visibility:hidden; } /* Adjusted timing for slower transitions */
     100% { visibility:hidden; }
 }
 @-webkit-keyframes cfFadeInOut 
 {
     0%   { visibility:visible; }
-    14.29%   { visibility:hidden; } /* Adjusted timing for slower transitions */
+    12.5%   { visibility:hidden; } /* Adjusted timing for slower transitions */
     100% { visibility:hidden; }
 }
 @-moz-keyframes cfFadeInOut 
 {
     0%   { visibility:visible; }
-    14.29%   { visibility:hidden; } /* Adjusted timing for slower transitions */
+    12.5%   { visibility:hidden; } /* Adjusted timing for slower transitions */
     100% { visibility:hidden; }
 }
 @-o-keyframes cfFadeInOut 
 {
     0%   { visibility:visible; }
-    14.29%   { visibility:hidden; } /* Adjusted timing for slower transitions */
+    12.5%   { visibility:hidden; } /* Adjusted timing for slower transitions */
     100% { visibility:hidden; }
 }
+
+/* DO NOT UNTOGGLE BELOW, SEVERE BUGGINESS
+WILL OCCUR IF UNCOMMENTED */
+
+/*
 #cf img.c1 { animation-delay: 0s; }
-#cf img.c2 { animation-delay: 1.43s; }
-#cf img.c3 { animation-delay: 2.86s; }
-#cf img.c4 { animation-delay: 4.29s; }
-#cf img.c5 { animation-delay: 5.71s; }
-#cf img.c6 { animation-delay: 7.14s; }
-#cf img.c7 { animation-delay: 8.57s; }
-#cf img.c8 { animation-delay: 10s; }
-#cf img.c9 { animation-delay: 11.43s; }
-#cf img.c10 { animation-delay: 12.86s; }
-#cf img.c11 { animation-delay: 14.29s; }
-#cf img.c12 { animation-delay: 15.71s; }
-#cf img.c13 { animation-delay: 17.14s; }
-#cf img.c14 { animation-delay: 18.57s; }
+#cf img.c2 { animation-delay: 7.5s; }
+#cf img.c3 { animation-delay: 15s; }
+#cf img.c4 { animation-delay: 22.5s; }
+#cf img.c5 { animation-delay: 30s; }
+#cf img.c6 { animation-delay: 37.5s; }
+#cf img.c7 { animation-delay: 45s; }
+#cf img.c8 { animation-delay: 52.5s; }
+*/
 </style>
 </head>
 <body>
 <div id='cf'></div>
 <script>
 // Detect folder name dynamically
-const baseFolder = '/img/';
+const baseFolder = 'img/';
 const folderName = 'slides'; // Updated folder name
 const folderPath = `${baseFolder}${folderName}/`;
 
 // Detect images in the folder
-const imageCount = 14; // Adjust this if the number of images changes
+const imageFiles = [
+    '20April2025AM_Briefing - 01.jpg',
+    '20April2025AM_Briefing - 02.jpg',
+    '20April2025AM_Briefing - 03.jpg',
+    '20April2025AM_Briefing - 04.jpg',
+    '20April2025AM_Briefing -05.jpg', // This is actually 05
+    '20April2025AM_Briefing - 06.jpg',
+    '20April2025AM_Briefing - 07.jpg',
+    '20April2025AM_Briefing - 08.jpg'
+];
 const container = document.getElementById('cf');
 
-for (let i = 1; i <= imageCount; i++) {
-    const img = document.createElement('img');
-    img.src = `${folderPath}Hazardous Weather Briefing - Sat, Apr 5 527 AM_page-${String(i).padStart(4, '0')}.jpg`; // Updated file names
-    img.className = `c${i}`;
-    container.appendChild(img);
-}
+// Slideshow timing (in seconds)
+const totalDuration = 65; // increased total animation duration in seconds for longer display per image
+const perImage = totalDuration / imageFiles.length;
+const visiblePercent = 100 / imageFiles.length;
 
-// Dynamically adjust paths based on folder name
+// Dynamically generate CSS for animation delays and keyframes
+let dynamicCSS = '';
+imageFiles.forEach((file, idx) => {
+    // For the last image, subtract one interval from the delay so it wraps smoothly
+    const delay = idx === imageFiles.length - 1 ? perImage * idx - perImage : perImage * idx;
+    dynamicCSS += `#cf img.c${idx+1} { animation-delay: ${delay}s; }\n`;
+});
+
+dynamicCSS += `\n@keyframes cfFadeInOut {\n`;
+dynamicCSS += `  0% { visibility: visible; }\n`;
+dynamicCSS += `  ${visiblePercent}% { visibility: hidden; }\n`;
+dynamicCSS += `  100% { visibility: hidden; }\n`;
+dynamicCSS += `}\n`;
+dynamicCSS += `@-webkit-keyframes cfFadeInOut {\n`;
+dynamicCSS += `  0% { visibility: visible; }\n`;
+dynamicCSS += `  ${visiblePercent}% { visibility: hidden; }\n`;
+dynamicCSS += `  100% { visibility: hidden; }\n`;
+dynamicCSS += `}\n`;
+dynamicCSS += `@-moz-keyframes cfFadeInOut {\n`;
+dynamicCSS += `  0% { visibility: visible; }\n`;
+dynamicCSS += `  ${visiblePercent}% { visibility: hidden; }\n`;
+dynamicCSS += `  100% { visibility: hidden; }\n`;
+dynamicCSS += `}\n`;
+dynamicCSS += `@-o-keyframes cfFadeInOut {\n`;
+dynamicCSS += `  0% { visibility: visible; }\n`;
+dynamicCSS += `  ${visiblePercent}% { visibility: hidden; }\n`;
+dynamicCSS += `  100% { visibility: hidden; }\n`;
+dynamicCSS += `}`;
+
+const style = document.createElement('style');
+style.innerHTML = dynamicCSS;
+document.head.appendChild(style);
+
+imageFiles.forEach((file, idx) => {
+    const img = document.createElement('img');
+    img.src = `${folderPath}${file}`;
+    img.className = `c${idx + 1}`;
+    container.appendChild(img);
+});
+
 console.log(`Using folder: ${folderPath}`);
 </script>
 </body>
