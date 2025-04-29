@@ -3,6 +3,9 @@
 <style>
 html, body {
     height: 99%;
+    margin: 0;
+    padding: 0;
+    background: #000;
 }
 
 #cf {
@@ -10,6 +13,8 @@ html, body {
     margin:0 auto;
     height: 100%;
     width: 100%;
+    background: #000;
+    overflow: hidden;
 }
 
 #cf img {
@@ -18,51 +23,53 @@ html, body {
     top:0px;
     height: 100%;
     width: 100%;
-    
+    pointer-events: none;
+    opacity: 0;
+    -webkit-opacity: 0;
+    -moz-opacity: 0;
+    -o-opacity: 0;
+    will-change: opacity;
+    /* Animation will be set dynamically via JS */
     -webkit-animation-name: cfFadeInOut;
     -webkit-animation-timing-function: linear;
     -webkit-animation-iteration-count: infinite;
-    -webkit-animation-duration: 60s; /* Increased duration for slower slideshow */
 
     -moz-animation-name: cfFadeInOut;
     -moz-animation-timing-function: ease-in-out;
     -moz-animation-iteration-count: infinite;
-    -moz-animation-duration: 60s; /* Increased duration for slower slideshow */
 
     -o-animation-name: cfFadeInOut;
     -o-animation-timing-function: ease-in-out;
     -o-animation-iteration-count: infinite;
-    -o-animation-duration: 60s; /* Increased duration for slower slideshow */
 
     animation-name: cfFadeInOut;
     animation-timing-function: ease-in-out;
     animation-iteration-count: infinite;
-    animation-duration: 60s; /* Increased duration for slower slideshow */
 }
 
 @keyframes cfFadeInOut 
 {
-    0%   { visibility:visible; }
-    12.5%   { visibility:hidden; } /* Adjusted timing for slower transitions */
-    100% { visibility:hidden; }
+    0%   { opacity: 1; }
+    12.5%   { opacity: 0; }
+    100% { opacity: 0; }
 }
 @-webkit-keyframes cfFadeInOut 
 {
-    0%   { visibility:visible; }
-    12.5%   { visibility:hidden; } /* Adjusted timing for slower transitions */
-    100% { visibility:hidden; }
+    0%   { opacity: 1; }
+    12.5%   { opacity: 0; }
+    100% { opacity: 0; }
 }
 @-moz-keyframes cfFadeInOut 
 {
-    0%   { visibility:visible; }
-    12.5%   { visibility:hidden; } /* Adjusted timing for slower transitions */
-    100% { visibility:hidden; }
+    0%   { opacity: 1; }
+    12.5%   { opacity: 0; }
+    100% { opacity: 0; }
 }
 @-o-keyframes cfFadeInOut 
 {
-    0%   { visibility:visible; }
-    12.5%   { visibility:hidden; } /* Adjusted timing for slower transitions */
-    100% { visibility:hidden; }
+    0%   { opacity: 1; }
+    12.5%   { opacity: 0; }
+    100% { opacity: 0; }
 }
 
 /* DO NOT UNTOGGLE BELOW, SEVERE BUGGINESS
@@ -90,20 +97,25 @@ const folderPath = `${baseFolder}${folderName}/`;
 
 // Detect images in the folder
 const imageFiles = [
-    '28April2025AM_Briefing_page-0001.jpg',
-    '28April2025AM_Briefing_page-0002.jpg',
-    '28April2025AM_Briefing_page-0003.jpg',
-    '28April2025AM_Briefing_page-0004.jpg',
-    '28April2025AM_Briefing_page-0005.jpg',
-    '28April2025AM_Briefing_page-0006.jpg',
-    '28April2025AM_Briefing_page-0007.jpg',
-    '28April2025AM_Briefing_page-0008.jpg',
-    '28April2025AM_Briefing_page-0009.jpg',
-    '28April2025AM_Briefing_page-0010.jpg',
-    '28April2025AM_Briefing_page-0011.jpg',
-    '28April2025AM_Briefing_page-0012.jpg',
-    '28April2025AM_Briefing_page-0013.jpg',
-    '28April2025AM_Briefing_page-0014.jpg'
+    '29April2025AM_Briefing_page-0001.jpg',
+    '29April2025AM_Briefing_page-0002.jpg',
+    '29April2025AM_Briefing_page-0003.jpg',
+    '29April2025AM_Briefing_page-0004.jpg',
+    '29April2025AM_Briefing_page-0005.jpg',
+    '29April2025AM_Briefing_page-0006.jpg',
+    '29April2025AM_Briefing_page-0007.jpg',
+    '29April2025AM_Briefing_page-0008.jpg',
+    '29April2025AM_Briefing_page-0009.jpg',
+    '29April2025AM_Briefing_page-0010.jpg',
+    '29April2025AM_Briefing_page-0011.jpg',
+    '29April2025AM_Briefing_page-0012.jpg',
+    '29April2025AM_Briefing_page-0013.jpg',
+    '29April2025AM_Briefing_page-0014.jpg',
+    '29April2025AM_Briefing_page-0015.jpg',
+    '29April2025AM_Briefing_page-0016.jpg',
+    '29April2025AM_Briefing_page-0017.jpg',
+    '29April2025AM_Briefing_page-0018.jpg',
+    '29April2025AM_Briefing_page-0019.jpg'
 ];
 const container = document.getElementById('cf');
 
@@ -112,45 +124,64 @@ const totalDuration = 65; // increased total animation duration in seconds for l
 const perImage = totalDuration / imageFiles.length;
 const visiblePercent = 100 / imageFiles.length;
 
-// Dynamically generate CSS for animation delays and keyframes
-let dynamicCSS = '';
+// Preload images before starting animation for best OBS/browser compatibility
+let loadedCount = 0;
 imageFiles.forEach((file, idx) => {
-    // For the last image, subtract one interval from the delay so it wraps smoothly
-    const delay = idx === imageFiles.length - 1 ? perImage * idx - perImage : perImage * idx;
-    dynamicCSS += `#cf img.c${idx+1} { animation-delay: ${delay}s; }\n`;
-});
-
-dynamicCSS += `\n@keyframes cfFadeInOut {\n`;
-dynamicCSS += `  0% { visibility: visible; }\n`;
-dynamicCSS += `  ${visiblePercent}% { visibility: hidden; }\n`;
-dynamicCSS += `  100% { visibility: hidden; }\n`;
-dynamicCSS += `}\n`;
-dynamicCSS += `@-webkit-keyframes cfFadeInOut {\n`;
-dynamicCSS += `  0% { visibility: visible; }\n`;
-dynamicCSS += `  ${visiblePercent}% { visibility: hidden; }\n`;
-dynamicCSS += `  100% { visibility: hidden; }\n`;
-dynamicCSS += `}\n`;
-dynamicCSS += `@-moz-keyframes cfFadeInOut {\n`;
-dynamicCSS += `  0% { visibility: visible; }\n`;
-dynamicCSS += `  ${visiblePercent}% { visibility: hidden; }\n`;
-dynamicCSS += `  100% { visibility: hidden; }\n`;
-dynamicCSS += `}\n`;
-dynamicCSS += `@-o-keyframes cfFadeInOut {\n`;
-dynamicCSS += `  0% { visibility: visible; }\n`;
-dynamicCSS += `  ${visiblePercent}% { visibility: hidden; }\n`;
-dynamicCSS += `  100% { visibility: hidden; }\n`;
-dynamicCSS += `}`;
-
-const style = document.createElement('style');
-style.innerHTML = dynamicCSS;
-document.head.appendChild(style);
-
-imageFiles.forEach((file, idx) => {
-    const img = document.createElement('img');
+    const img = new Image();
+    img.onload = () => {
+        loadedCount++;
+        if (loadedCount === imageFiles.length) startSlideshow();
+    };
+    img.onerror = () => {
+        loadedCount++;
+        if (loadedCount === imageFiles.length) startSlideshow();
+    };
     img.src = `${folderPath}${file}`;
-    img.className = `c${idx + 1}`;
-    container.appendChild(img);
 });
+
+function startSlideshow() {
+    // Dynamically generate CSS for animation delays, keyframes, and animation duration
+    let dynamicCSS = '';
+    imageFiles.forEach((file, idx) => {
+        const delay = idx === imageFiles.length - 1 ? perImage * idx - perImage : perImage * idx;
+        dynamicCSS += `#cf img.c${idx+1} { animation-delay: ${delay}s; -webkit-animation-delay: ${delay}s; -moz-animation-delay: ${delay}s; -o-animation-delay: ${delay}s; animation-duration: ${totalDuration}s; -webkit-animation-duration: ${totalDuration}s; -moz-animation-duration: ${totalDuration}s; -o-animation-duration: ${totalDuration}s; }\n`;
+    });
+
+    // Use opacity for fade in/out for best compatibility
+    dynamicCSS += `\n@keyframes cfFadeInOut {\n`;
+    dynamicCSS += `  0% { opacity: 1; }\n`;
+    dynamicCSS += `  ${visiblePercent}% { opacity: 0; }\n`;
+    dynamicCSS += `  100% { opacity: 0; }\n`;
+    dynamicCSS += `}\n`;
+    dynamicCSS += `@-webkit-keyframes cfFadeInOut {\n`;
+    dynamicCSS += `  0% { opacity: 1; }\n`;
+    dynamicCSS += `  ${visiblePercent}% { opacity: 0; }\n`;
+    dynamicCSS += `  100% { opacity: 0; }\n`;
+    dynamicCSS += `}\n`;
+    dynamicCSS += `@-moz-keyframes cfFadeInOut {\n`;
+    dynamicCSS += `  0% { opacity: 1; }\n`;
+    dynamicCSS += `  ${visiblePercent}% { opacity: 0; }\n`;
+    dynamicCSS += `  100% { opacity: 0; }\n`;
+    dynamicCSS += `}\n`;
+    dynamicCSS += `@-o-keyframes cfFadeInOut {\n`;
+    dynamicCSS += `  0% { opacity: 1; }\n`;
+    dynamicCSS += `  ${visiblePercent}% { opacity: 0; }\n`;
+    dynamicCSS += `  100% { opacity: 0; }\n`;
+    dynamicCSS += `}`;
+
+    const style = document.createElement('style');
+    style.innerHTML = dynamicCSS;
+    document.head.appendChild(style);
+
+    imageFiles.forEach((file, idx) => {
+        const img = document.createElement('img');
+        img.src = `${folderPath}${file}`;
+        img.className = `c${idx + 1}`;
+        document.getElementById('cf').appendChild(img);
+    });
+
+    console.log(`Using folder: ${folderPath}`);
+}
 
 console.log(`Using folder: ${folderPath}`);
 </script>
