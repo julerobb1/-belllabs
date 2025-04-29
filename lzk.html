@@ -66,10 +66,11 @@ const imageFiles = [
 const container = document.getElementById('cf');
 
 // Slideshow timing (in seconds)
-const totalDuration = 88; // decimal values are supported
-const perImage = totalDuration / imageFiles.length;
-// Instead of visiblePercent, use a higher percent for fade-out (e.g., 90%)
-const fadeOutPercent = 90;
+const perImage = 8; // seconds each image is shown (adjust as needed)
+const totalDuration = perImage * imageFiles.length;
+const intervalPercent = 100 / imageFiles.length;
+const showPercent = intervalPercent * 0.95;
+const hidePercent = intervalPercent;
 
 // Preload images before starting animation for best OBS/browser compatibility
 let loadedCount = 0;
@@ -111,27 +112,23 @@ function startSlideshow() {
         }\n`;
     });
 
-    // Generate keyframes with fade out at 90% for smoother transition
+    // No fade in/out, just instant switch: always fully visible during its interval, then instantly hidden
     dynamicCSS += `
     @keyframes cfFadeInOut {
         0% { opacity: 1; }
-        ${fadeOutPercent}% { opacity: 1; }
-        100% { opacity: 0; }
+        100% { opacity: 1; }
     }
     @-webkit-keyframes cfFadeInOut {
         0% { opacity: 1; }
-        ${fadeOutPercent}% { opacity: 1; }
-        100% { opacity: 0; }
+        100% { opacity: 1; }
     }
     @-moz-keyframes cfFadeInOut {
         0% { opacity: 1; }
-        ${fadeOutPercent}% { opacity: 1; }
-        100% { opacity: 0; }
+        100% { opacity: 1; }
     }
     @-o-keyframes cfFadeInOut {
         0% { opacity: 1; }
-        ${fadeOutPercent}% { opacity: 1; }
-        100% { opacity: 0; }
+        100% { opacity: 1; }
     }
     `;
 
@@ -150,6 +147,20 @@ function startSlideshow() {
         img.src = `${folderPath}${file}`;
         img.className = `c${idx + 1}`;
         document.getElementById('cf').appendChild(img);
+    });
+
+    // Pause on hover (like the referenced page)
+    container.addEventListener('mouseenter', () => {
+        container.querySelectorAll('img').forEach(img => {
+            img.style.animationPlayState = 'paused';
+            img.style.webkitAnimationPlayState = 'paused';
+        });
+    });
+    container.addEventListener('mouseleave', () => {
+        container.querySelectorAll('img').forEach(img => {
+            img.style.animationPlayState = 'running';
+            img.style.webkitAnimationPlayState = 'running';
+        });
     });
 
     console.log(`Using folder: ${folderPath}`);
