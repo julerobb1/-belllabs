@@ -27,22 +27,33 @@ html, body {
     opacity: 0;
     will-change: opacity;
     /* Animation will be set dynamically via JS */
-    /* animation-name, animation-duration, animation-delay, etc. are set by JS */
 }
 
-/* DO NOT UNTOGGLE BELOW, SEVERE BUGGINESS
-WILL OCCUR IF UNCOMMENTED */
-
-/*
-#cf img.c1 { animation-delay: 0s; }
-#cf img.c2 { animation-delay: 7.5s; }
-#cf img.c3 { animation-delay: 15s; }
-#cf img.c4 { animation-delay: 22.5s; }
-#cf img.c5 { animation-delay: 30s; }
-#cf img.c6 { animation-delay: 37.5s; }
-#cf img.c7 { animation-delay: 45s; }
-#cf img.c8 { animation-delay: 52.5s; }
-*/
+/* Keyframes only: */
+@keyframes cfFadeInOut 
+{
+    0%   { opacity: 1; }
+    12.5%   { opacity: 0; }
+    100% { opacity: 0; }
+}
+@-webkit-keyframes cfFadeInOut 
+{
+    0%   { opacity: 1; }
+    12.5%   { opacity: 0; }
+    100% { opacity: 0; }
+}
+@-moz-keyframes cfFadeInOut 
+{
+    0%   { opacity: 1; }
+    12.5%   { opacity: 0; }
+    100% { opacity: 0; }
+}
+@-o-keyframes cfFadeInOut 
+{
+    0%   { opacity: 1; }
+    12.5%   { opacity: 0; }
+    100% { opacity: 0; }
+}
 </style>
 </head>
 <body>
