@@ -120,7 +120,7 @@ const imageFiles = [
 const container = document.getElementById('cf');
 
 // Slideshow timing (in seconds)
-const totalDuration = 65; // increased total animation duration in seconds for longer display per image
+const totalDuration = 65; // set to 65 seconds for the whole slideshow
 const perImage = totalDuration / imageFiles.length;
 const visiblePercent = 100 / imageFiles.length;
 
@@ -143,7 +143,7 @@ function startSlideshow() {
     // Dynamically generate CSS for animation delays, keyframes, and animation duration
     let dynamicCSS = '';
     imageFiles.forEach((file, idx) => {
-        const delay = idx === imageFiles.length - 1 ? perImage * idx - perImage : perImage * idx;
+        const delay = perImage * idx; // use consistent delay for all images
         dynamicCSS += `#cf img.c${idx+1} { animation-delay: ${delay}s; -webkit-animation-delay: ${delay}s; -moz-animation-delay: ${delay}s; -o-animation-delay: ${delay}s; animation-duration: ${totalDuration}s; -webkit-animation-duration: ${totalDuration}s; -moz-animation-duration: ${totalDuration}s; -o-animation-duration: ${totalDuration}s; }\n`;
     });
 
