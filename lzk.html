@@ -13,7 +13,7 @@ html, body {
     margin:0 auto;
     height: 100%;
     width: 100%;
-    background: #000;
+    /* background: #000; */ /* Remove black background */
     overflow: hidden;
 }
 
@@ -26,34 +26,11 @@ html, body {
     pointer-events: none;
     opacity: 0;
     will-change: opacity;
+    background: transparent; /* Remove black background from images */
     /* Animation will be set dynamically via JS */
 }
 
-/* Keyframes only: */
-@keyframes cfFadeInOut 
-{
-    0%   { opacity: 1; }
-    12.5%   { opacity: 0; }
-    100% { opacity: 0; }
-}
-@-webkit-keyframes cfFadeInOut 
-{
-    0%   { opacity: 1; }
-    12.5%   { opacity: 0; }
-    100% { opacity: 0; }
-}
-@-moz-keyframes cfFadeInOut 
-{
-    0%   { opacity: 1; }
-    12.5%   { opacity: 0; }
-    100% { opacity: 0; }
-}
-@-o-keyframes cfFadeInOut 
-{
-    0%   { opacity: 1; }
-    12.5%   { opacity: 0; }
-    100% { opacity: 0; }
-}
+/* Remove all static @keyframes from here */
 </style>
 </head>
 <body>
@@ -89,9 +66,10 @@ const imageFiles = [
 const container = document.getElementById('cf');
 
 // Slideshow timing (in seconds)
-const totalDuration = 65; // set to 65 seconds for the whole slideshow
+const totalDuration = 88; // decimal values are supported
 const perImage = totalDuration / imageFiles.length;
-const visiblePercent = 100 / imageFiles.length;
+// Instead of visiblePercent, use a higher percent for fade-out (e.g., 90%)
+const fadeOutPercent = 90;
 
 // Preload images before starting animation for best OBS/browser compatibility
 let loadedCount = 0;
@@ -106,42 +84,67 @@ imageFiles.forEach((file, idx) => {
         if (loadedCount === imageFiles.length) startSlideshow();
     };
     img.src = `${folderPath}${file}`;
+    // Do NOT append img to the DOM here!
 });
 
 function startSlideshow() {
-    // Dynamically generate CSS for animation delays, keyframes, and animation duration
     let dynamicCSS = '';
     imageFiles.forEach((file, idx) => {
-        const delay = perImage * idx; // use consistent delay for all images
-        dynamicCSS += `#cf img.c${idx+1} { animation-delay: ${delay}s; -webkit-animation-delay: ${delay}s; -moz-animation-delay: ${delay}s; -o-animation-delay: ${delay}s; animation-duration: ${totalDuration}s; -webkit-animation-duration: ${totalDuration}s; -moz-animation-duration: ${totalDuration}s; -o-animation-duration: ${totalDuration}s; }\n`;
+        const delay = perImage * idx;
+        dynamicCSS += `#cf img.c${idx+1} { 
+            animation-name: cfFadeInOut;
+            animation-delay: ${delay}s; 
+            -webkit-animation-name: cfFadeInOut;
+            -webkit-animation-delay: ${delay}s; 
+            -moz-animation-name: cfFadeInOut;
+            -moz-animation-delay: ${delay}s; 
+            -o-animation-name: cfFadeInOut;
+            -o-animation-delay: ${delay}s; 
+            animation-duration: ${totalDuration}s; 
+            -webkit-animation-duration: ${totalDuration}s; 
+            -moz-animation-duration: ${totalDuration}s; 
+            -o-animation-duration: ${totalDuration}s; 
+            animation-iteration-count: infinite;
+            -webkit-animation-iteration-count: infinite;
+            -moz-animation-iteration-count: infinite;
+            -o-animation-iteration-count: infinite;
+        }\n`;
     });
 
-    // Use opacity for fade in/out for best compatibility
-    dynamicCSS += `\n@keyframes cfFadeInOut {\n`;
-    dynamicCSS += `  0% { opacity: 1; }\n`;
-    dynamicCSS += `  ${visiblePercent}% { opacity: 0; }\n`;
-    dynamicCSS += `  100% { opacity: 0; }\n`;
-    dynamicCSS += `}\n`;
-    dynamicCSS += `@-webkit-keyframes cfFadeInOut {\n`;
-    dynamicCSS += `  0% { opacity: 1; }\n`;
-    dynamicCSS += `  ${visiblePercent}% { opacity: 0; }\n`;
-    dynamicCSS += `  100% { opacity: 0; }\n`;
-    dynamicCSS += `}\n`;
-    dynamicCSS += `@-moz-keyframes cfFadeInOut {\n`;
-    dynamicCSS += `  0% { opacity: 1; }\n`;
-    dynamicCSS += `  ${visiblePercent}% { opacity: 0; }\n`;
-    dynamicCSS += `  100% { opacity: 0; }\n`;
-    dynamicCSS += `}\n`;
-    dynamicCSS += `@-o-keyframes cfFadeInOut {\n`;
-    dynamicCSS += `  0% { opacity: 1; }\n`;
-    dynamicCSS += `  ${visiblePercent}% { opacity: 0; }\n`;
-    dynamicCSS += `  100% { opacity: 0; }\n`;
-    dynamicCSS += `}`;
+    // Generate keyframes with fade out at 90% for smoother transition
+    dynamicCSS += `
+    @keyframes cfFadeInOut {
+        0% { opacity: 1; }
+        ${fadeOutPercent}% { opacity: 1; }
+        100% { opacity: 0; }
+    }
+    @-webkit-keyframes cfFadeInOut {
+        0% { opacity: 1; }
+        ${fadeOutPercent}% { opacity: 1; }
+        100% { opacity: 0; }
+    }
+    @-moz-keyframes cfFadeInOut {
+        0% { opacity: 1; }
+        ${fadeOutPercent}% { opacity: 1; }
+        100% { opacity: 0; }
+    }
+    @-o-keyframes cfFadeInOut {
+        0% { opacity: 1; }
+        ${fadeOutPercent}% { opacity: 1; }
+        100% { opacity: 0; }
+    }
+    `;
+
+    // Remove any previous dynamic style blocks created by this script
+    const prevDynamicStyles = document.querySelectorAll('style[data-slideshow-style]');
+    prevDynamicStyles.forEach(style => style.remove());
 
     const style = document.createElement('style');
+    style.setAttribute('data-slideshow-style', 'true');
     style.innerHTML = dynamicCSS;
     document.head.appendChild(style);
 
+    // Only append images here, once
     imageFiles.forEach((file, idx) => {
         const img = document.createElement('img');
         img.src = `${folderPath}${file}`;
@@ -151,6 +154,12 @@ function startSlideshow() {
 
     console.log(`Using folder: ${folderPath}`);
 }
+
+// Prevent any click from pausing or resetting the animation
+document.addEventListener('click', function(e) {
+    e.preventDefault();
+    return false;
+}, true);
 
 console.log(`Using folder: ${folderPath}`);
 </script>
