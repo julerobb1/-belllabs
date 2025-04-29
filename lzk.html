@@ -25,51 +25,9 @@ html, body {
     width: 100%;
     pointer-events: none;
     opacity: 0;
-    -webkit-opacity: 0;
-    -moz-opacity: 0;
-    -o-opacity: 0;
     will-change: opacity;
     /* Animation will be set dynamically via JS */
-    -webkit-animation-name: cfFadeInOut;
-    -webkit-animation-timing-function: linear;
-    -webkit-animation-iteration-count: infinite;
-
-    -moz-animation-name: cfFadeInOut;
-    -moz-animation-timing-function: ease-in-out;
-    -moz-animation-iteration-count: infinite;
-
-    -o-animation-name: cfFadeInOut;
-    -o-animation-timing-function: ease-in-out;
-    -o-animation-iteration-count: infinite;
-
-    animation-name: cfFadeInOut;
-    animation-timing-function: ease-in-out;
-    animation-iteration-count: infinite;
-}
-
-@keyframes cfFadeInOut 
-{
-    0%   { opacity: 1; }
-    12.5%   { opacity: 0; }
-    100% { opacity: 0; }
-}
-@-webkit-keyframes cfFadeInOut 
-{
-    0%   { opacity: 1; }
-    12.5%   { opacity: 0; }
-    100% { opacity: 0; }
-}
-@-moz-keyframes cfFadeInOut 
-{
-    0%   { opacity: 1; }
-    12.5%   { opacity: 0; }
-    100% { opacity: 0; }
-}
-@-o-keyframes cfFadeInOut 
-{
-    0%   { opacity: 1; }
-    12.5%   { opacity: 0; }
-    100% { opacity: 0; }
+    /* animation-name, animation-duration, animation-delay, etc. are set by JS */
 }
 
 /* DO NOT UNTOGGLE BELOW, SEVERE BUGGINESS
