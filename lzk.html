@@ -43,44 +43,29 @@ const folderPath = `${baseFolder}${folderName}/`;
 
 // Detect images in the folder
 const imageFiles = [
-    // '29April2025PM_Briefing-page-00001.jpg',
-    // '29April2025PM_Briefing-page-00002.jpg',
-    // '29April2025PM_Briefing-page-00003.jpg',
-    // '29April2025PM_Briefing-page-00004.jpg',
-    // '29April2025PM_Briefing-page-00005.jpg',
-    // '29April2025PM_Briefing-page-00006.jpg',
-    // '29April2025PM_Briefing-page-00007.jpg',
-    // '29April2025PM_Briefing-page-00008.jpg',
-    // '29April2025PM_Briefing-page-00009.jpg',
-    // '29April2025PM_Briefing-page-00010.jpg',
-    // '29April2025PM_Briefing-page-00011.jpg',
-    // '29April2025PM_Briefing-page-00012.jpg',
-    // '29April2025PM_Briefing-page-00013.jpg',
-    // '29April2025PM_Briefing-page-00014.jpg',
-    // '29April2025PM_Briefing-page-00015.jpg',
-    // '29April2025PM_Briefing-page-00016.jpg',
-    // '29April2025AM_Briefing_page-0017.jpg',
-    // '29April2025AM_Briefing_page-0018.jpg',
-    // '29April2025AM_Briefing_page-0019.jpg',
-    'Briefing - Wed, Apr 30 531 AM-page-00001.jpg',
-    'Briefing - Wed, Apr 30 531 AM-page-00002.jpg',
-    'Briefing - Wed, Apr 30 531 AM-page-00003.jpg',
-    'Briefing - Wed, Apr 30 531 AM-page-00004.jpg',
-    'Briefing - Wed, Apr 30 531 AM-page-00005.jpg',
-    'Briefing - Wed, Apr 30 531 AM-page-00006.jpg',
-    'Briefing - Wed, Apr 30 531 AM-page-00007.jpg',
-    'Briefing - Wed, Apr 30 531 AM-page-00008.jpg',
-    'Briefing - Wed, Apr 30 531 AM-page-00009.jpg',
-    'Briefing - Wed, Apr 30 531 AM-page-00010.jpg',
-    'Briefing - Wed, Apr 30 531 AM-page-00011.jpg',
-    'Briefing - Wed, Apr 30 531 AM-page-00012.jpg',
-    'Briefing - Wed, Apr 30 531 AM-page-00013.jpg',
-    'Briefing - Wed, Apr 30 531 AM-page-00014.jpg'
+    'Hazardous Weather Briefing - Thu, May 1, 2025-page-00001.jpg',
+    'Hazardous Weather Briefing - Thu, May 1, 2025-page-00002.jpg',
+    'Hazardous Weather Briefing - Thu, May 1, 2025-page-00003.jpg',
+    'Hazardous Weather Briefing - Thu, May 1, 2025-page-00004.jpg',
+    'Hazardous Weather Briefing - Thu, May 1, 2025-page-00005.jpg',
+    'Hazardous Weather Briefing - Thu, May 1, 2025-page-00006.jpg',
+    'Hazardous Weather Briefing - Thu, May 1, 2025-page-00007.jpg',
+    'Hazardous Weather Briefing - Thu, May 1, 2025-page-00008.jpg',
+    'Hazardous Weather Briefing - Thu, May 1, 2025-page-00009.jpg',
+    'Hazardous Weather Briefing - Thu, May 1, 2025-page-00010.jpg',
+    'Hazardous Weather Briefing - Thu, May 1, 2025-page-00011.jpg',
+    'Hazardous Weather Briefing - Thu, May 1, 2025-page-00012.jpg'
+    // 'Hazardous Weather Briefing - Thu, May 1, 2025-page-00013.jpg',
+    // 'Hazardous Weather Briefing - Thu, May 1, 2025-page-00014.jpg',
+    // 'Hazardous Weather Briefing - Thu, May 1, 2025-page-00015.jpg',
+    // 'Hazardous Weather Briefing - Thu, May 1, 2025-page-00016.jpg',
+    // 'Hazardous Weather Briefing - Thu, May 1, 2025-page-00017.jpg',
+    // 'Hazardous Weather Briefing - Thu, May 1, 2025-page-00018.jpg',
+    // 'Hazardous Weather Briefing - Thu, May 1, 2025-page-00019.jpg',
 ];
 const container = document.getElementById('cf');
-
 // Slideshow timing (in seconds)
-const perImage = 8; // seconds each image is shown (adjust as needed)
+const perImage = 7; // seconds each image is shown (adjust as needed)
 const totalDuration = perImage * imageFiles.length;
 const intervalPercent = 100 / imageFiles.length;
 const showPercent = intervalPercent * 0.95;
