@@ -60,10 +60,10 @@ const imageFiles = [
 ];
 const container = document.getElementById('cf');
 // Slideshow timing (in seconds)
-const perImage = 7; // seconds each image is shown (adjust as needed)
+const perImage = 10; // seconds each image is shown (adjust as needed)
 const totalDuration = perImage * imageFiles.length;
 const intervalPercent = 100 / imageFiles.length;
-const showPercent = intervalPercent * 0.95;
+const showPercent = intervalPercent * 0.96;
 const hidePercent = intervalPercent;
 
 // Preload images before starting animation for best OBS/browser compatibility
