@@ -3,6 +3,17 @@
  * Supports: IE8+, Firefox 16+, early Chrome versions
  */
 
+// Utility function to sanitize URLs
+function sanitizeUrl(url) {
+    try {
+        var parsedUrl = new URL(url, window.location.origin);
+        return parsedUrl.pathname + parsedUrl.search + parsedUrl.hash;
+    } catch (e) {
+        console.error('Invalid URL:', url);
+        return '';
+    }
+}
+
 // Polyfill for console (IE8 crashes when console is undefined and DevTools not open)
 if (!window.console) {
     window.console = {
@@ -445,8 +456,9 @@ function fixRSSForIE() {
                 if (window.navigator.userAgent.indexOf('Trident/') > -1) {
                     // Only intercept in IE
                     e.preventDefault();
+                    var sanitizedUrl = sanitizeUrl(this.getAttribute('data-rss-url'));
                     window.location = 'read:' + window.location.protocol + '//' + 
-                                    window.location.host + '/' + this.getAttribute('data-rss-url');
+                                    window.location.host + '/' + sanitizedUrl;
                 }
             });
         }
