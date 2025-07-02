@@ -443,8 +443,9 @@ function fixRSSForIE() {
                 if (window.navigator.userAgent.indexOf('Trident/') > -1) {
                     // Only intercept in IE
                     e.preventDefault();
+                    var sanitizedUrl = encodeURIComponent(this.getAttribute('data-rss-url'));
                     window.location = 'read:' + window.location.protocol + '//' + 
-                                    window.location.host + '/' + this.getAttribute('data-rss-url');
+                                    window.location.host + '/' + sanitizedUrl;
                 }
             });
         }
