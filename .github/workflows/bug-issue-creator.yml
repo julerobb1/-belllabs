@@ -1,5 +1,9 @@
 name: Bug Issue Creator
 
+permissions:
+  contents: read
+  issues: write
+
 on:
   pull_request:
     types:

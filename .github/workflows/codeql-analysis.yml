@@ -1,5 +1,7 @@
 # Remove this file if CodeQL is not needed.
 name: CodeQL Analysis
+permissions:
+  contents: read
 
 on:
   push:
