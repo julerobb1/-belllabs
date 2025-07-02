@@ -7,7 +7,9 @@
 function sanitizeUrl(url) {
     try {
         var parsedUrl = new URL(url, window.location.origin);
-        return parsedUrl.pathname + parsedUrl.search + parsedUrl.hash;
+        return encodeURIComponent(parsedUrl.pathname) + 
+               encodeURIComponent(parsedUrl.search) + 
+               encodeURIComponent(parsedUrl.hash);
     } catch (e) {
         console.error('Invalid URL:', url);
         return '';
@@ -456,9 +458,14 @@ function fixRSSForIE() {
                 if (window.navigator.userAgent.indexOf('Trident/') > -1) {
                     // Only intercept in IE
                     e.preventDefault();
-                    var sanitizedUrl = sanitizeUrl(this.getAttribute('data-rss-url'));
-                    window.location = 'read:' + window.location.protocol + '//' + 
-                                    window.location.host + '/' + sanitizedUrl;
+                    var rssUrl = this.getAttribute('data-rss-url');
+                    if (rssUrl && rssUrl.startsWith('http')) { // Basic validation
+                        var sanitizedUrl = sanitizeUrl(rssUrl);
+                        window.location = 'read:' + window.location.protocol + '//' + 
+                                        window.location.host + '/' + sanitizedUrl;
+                    } else {
+                        console.error('Invalid RSS URL:', rssUrl);
+                    }
                 }
             });
         }
