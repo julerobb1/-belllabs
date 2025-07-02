@@ -63,7 +63,7 @@ if (!window.console) {
             stringify: function(obj) {
                 // Very basic stringify implementation
                 if (obj === null || obj === undefined) return 'null';
-                if (typeof obj === 'string') return '"' + obj.replace(/"/g, '\\"') + '"';
+                if (typeof obj === 'string') return '"' + obj.replace(/["\\]/g, '\\$&') + '"';
                 if (typeof obj === 'number' || typeof obj === 'boolean') return String(obj);
                 if (Array.isArray(obj)) {
                     return '[' + obj.map(function(item) {
