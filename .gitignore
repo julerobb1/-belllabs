@@ -1,5 +1,7 @@
 *.md
+!README.md
 newtheme.css
 img/gallery/Thumbs.db
 slideshow.html
 *.zip
+img/image-sizes.json

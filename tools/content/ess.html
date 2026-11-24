@@ -1,0 +1,52 @@
+<section class="section">
+    <h1>Electronic Switching System (ESS)</h1>
+    <p class="page-lede">The Electronic Switching System was Bell Labs’ stored-program family of telephone switches. Instead of setting up a call by stepping relays in a fixed wiring pattern, an ESS used a stored program—software—to control a switching network. That idea, first placed in commercial service in 1965, is the direct ancestor of the computer-controlled central offices that still sit behind today’s telephone and VoIP networks.</p>
+</section>
+
+<section class="section">
+    <h2>From electromechanical offices to stored program control</h2>
+    <p>For most of the twentieth century, Bell System local and toll offices used electromechanical switches: Strowger step-by-step, Panel, and later Crossbar. Those machines were fast and reliable for their time, but adding a new feature meant changing hardware. Common-control crossbar offices (the No. 5 Crossbar and No. 4A Crossbar used in the toll network) already separated “thinking” from “talking,” but the control was still relay logic.</p>
+    <p>Bell Labs spent the 1950s and early 1960s developing stored-program control for switching. An experimental electronic office, the Morris Electronic Central Office in Morris, Illinois, cut over in 1960 and proved that a stored program could run a live exchange. The production design that followed was the No. 1 Electronic Switching System.</p>
+</section>
+
+<section class="section">
+    <h2>No. 1 ESS</h2>
+    <p>The first commercial No. 1 ESS cut over on May 30, 1965, at Succasunna, New Jersey, serving a modest local office. The system used a duplicated central processor executing a stored program, with call paths through a network of ferreed switches (sealed contacts operated by magnetic fields). Memory included both electronically alterable call-store and a large program store; early program stores used twistor memory, later replaced by semiconductor memory as that technology matured.</p>
+    <p>Because features lived in software, telephone companies could introduce services such as custom calling (call waiting, three-way calling, speed calling) by loading new generic programs rather than rebuilding the office. Maintenance and diagnostics were also program-controlled, which was a sharp break from relay-timing charts.</p>
+    <p>No. 1 ESS was aimed at medium and large local offices. A later high-capacity processor, No. 1A ESS, used the same switching fabric with a faster control complex and was widely deployed in the 1970s.</p>
+</section>
+
+<section class="section">
+    <h2>The ESS family</h2>
+    <div class="card-grid">
+        <article class="spec-item">
+            <h3>No. 2 ESS and No. 3 ESS</h3>
+            <p>Smaller stored-program local offices for communities that did not justify a No. 1 ESS. They used the same stored-program idea with hardware scaled to lighter traffic.</p>
+        </article>
+        <article class="spec-item">
+            <h3>No. 4 ESS</h3>
+            <p>A digital time-division toll switch, first placed in service in Chicago in January 1976. It was designed for the Long Lines / AT&amp;T long-distance network rather than local loops, and it interconnected with digital carrier such as T1/T3. See <a href="switching-systems.html">Switching systems</a> for how it sat in the toll hierarchy.</p>
+        </article>
+        <article class="spec-item">
+            <h3>No. 5 ESS</h3>
+            <p>A digital local switch introduced in 1982 (first office at Seneca, Illinois). It used distributed processors and a digital switching network, and it became one of the most widely installed local digital offices in the former Bell companies.</p>
+        </article>
+    </div>
+    <p>Western Electric manufactured ESS equipment; Bell Labs wrote the generics and designed the hardware. Deployment was a multi-decade replacement of crossbar and step-by-step, not an overnight cutover.</p>
+</section>
+
+<section class="section">
+    <h2>What ESS changed</h2>
+    <p>Stored-program switching made the telephone network programmable. Routing, billing, and new services could be changed in software. Combined with Common Channel Interoffice Signaling (and later SS7), ESS offices could exchange signaling without stealing a voice path, which enabled 800-service, credit-card calling, and the intelligent-network features of the 1980s.</p>
+    <p>For Long Lines, the important machine was No. 4 ESS: a digital toll switch that meshed with the evolving digital transmission plant and with network-management centers such as the <a href="noc.html">Network Operations Center</a>. Local ESS machines were usually operated by the Bell operating companies, not by Long Lines, but they were the on-ramps to the long-distance network.</p>
+</section>
+
+<section class="section">
+    <h2>Sources and further reading</h2>
+    <p>Contemporary descriptions of No. 1 ESS appear in the <cite>Bell System Technical Journal</cite> (especially the 1964 ESS issues) and in Bell Labs / Western Electric engineering papers. Dates given above—Succasunna, 30 May 1965; Chicago No. 4 ESS, January 1976; Seneca No. 5 ESS, 1982—are the standard commercial cutover dates reported in those accounts and in later AT&amp;T historical summaries.</p>
+    <ul>
+        <li><a href="switching-systems.html">Switching systems on the Long Lines network</a></li>
+        <li><a href="technical-archives.html">Technical archives</a></li>
+        <li><a href="https://archive.org/details/bstj" rel="noopener noreferrer">Bell System Technical Journal on the Internet Archive</a></li>
+    </ul>
+</section>

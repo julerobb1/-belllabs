@@ -1,158 +1,122 @@
 <!DOCTYPE html>
-<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
-<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang="en"> <![endif]-->
-<!--[if IE 8]>         <html class="no-js lt-ie9" lang="en"> <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="referrer" content="no-referrer">
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net https://bellard.org https://copy.sh https://jslinux.org https://www.pcjs.org 'unsafe-eval'; style-src 'self' 'unsafe-inline'; frame-src https://bellard.org https://copy.sh https://jslinux.org https://www.pcjs.org;">
-    <title>UNIX Emulator - AT&T Long Lines & Bell Labs</title>
+    <title>UNIX emulator - Bell Labs</title>
+    <meta name="description" content="Browser emulators for historical UNIX versions, linked from this Bell Labs historical site.">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://belllaboratories.net/unix-emulator">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="AT&amp;T Long Lines &amp; Bell Labs">
+    <meta property="og:title" content="UNIX emulator - Bell Labs">
+    <meta property="og:description" content="Browser emulators for historical UNIX versions, linked from this Bell Labs historical site.">
+    <meta property="og:url" content="https://belllaboratories.net/unix-emulator">
+    <meta property="og:image" content="https://belllaboratories.net/img/map1.jpg">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="UNIX emulator - Bell Labs">
+    <meta name="twitter:description" content="Browser emulators for historical UNIX versions, linked from this Bell Labs historical site.">
+    <meta name="twitter:image" content="https://belllaboratories.net/img/map1.jpg">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://bellard.org https://copy.sh https://www.pcjs.org; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; connect-src 'self'; frame-src https://bellard.org https://copy.sh https://www.pcjs.org https://jslinux.org; base-uri 'self'; form-action 'self'">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
     <link rel="icon" href="img/favicon.ico" type="image/x-icon">
-    <link href="img/favicon.ico" rel="shortcut icon">
-    <link rel="stylesheet" href="recipes/css/styles.css">
-    <script src="recipes/js/compat.js"></script>
-    <script src="recipes/js/scripts.js" defer></script>
-    <style>
-        .emulator-container {
-            border: 1px solid #ccc;
-            margin: 20px 0;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-            overflow: hidden;
-            border-radius: 5px;
-            height: 600px;
-            position: relative;
-        }
-        
-        .emulator-container iframe {
-            width: 100%;
-            height: 100%;
-            border: none;
-        }
-        
-        .emulator-loading {
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background-color: #f5f5f5;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-direction: column;
-            z-index: 10;
-        }
-        
-        .emulator-loading.hidden {
-            display: none;
-        }
-        
-        .spinner {
-            border: 5px solid #f3f3f3;
-            border-top: 5px solid #0082ca;
-            border-radius: 50%;
-            width: 50px;
-            height: 50px;
-            animation: spin 1s linear infinite;
-            margin-bottom: 20px;
-        }
-        
-        @keyframes spin {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
-        }
-        
-        .emulator-tabs {
-            display: flex;
-            border-bottom: 1px solid #ccc;
-            background-color: #f0f0f0;
-        }
-        
-        .emulator-tab {
-            padding: 10px 15px;
-            cursor: pointer;
-            border-right: 1px solid #ccc;
-            background-color: #f0f0f0;
-        }
-        
-        .emulator-tab.active {
-            background-color: #ffffff;
-            border-bottom: 2px solid #0082ca;
-        }
-        
-        .terminal-instructions {
-            background-color: #f9f9f9;
-            padding: 15px;
-            border-left: 4px solid #0082ca;
-            margin: 20px 0;
-        }
-        
-        .command-table {
-            width: 100%;
-            border-collapse: collapse;
-            margin: 20px 0;
-        }
-        
-        .command-table th, .command-table td {
-            padding: 8px;
-            text-align: left;
-            border-bottom: 1px solid #ddd;
-        }
-        
-        .command-table th {
-            background-color: #f0f0f0;
-        }
-        
-        .dark-mode .emulator-loading {
-            background-color: #333333;
-            color: #e0e0e0;
-        }
-        
-        .dark-mode .spinner {
-            border: 5px solid #444444;
-            border-top: 5px solid #6aabff;
-        }
-        
-        .dark-mode .emulator-tabs {
-            background-color: #222222;
-            border-bottom: 1px solid #444444;
-        }
-        
-        .dark-mode .emulator-tab {
-            background-color: #222222;
-            border-right: 1px solid #444444;
-            color: #e0e0e0;
-        }
-        
-        .dark-mode .emulator-tab.active {
-            background-color: #333333;
-            border-bottom: 2px solid #6aabff;
-        }
-        
-        .dark-mode .terminal-instructions {
-            background-color: #252525;
-            border-left: 4px solid #6aabff;
-            color: #e0e0e0;
-        }
-        
-        .dark-mode .command-table th {
-            background-color: #333333;
-            color: #e0e0e0;
-        }
-        
-        .dark-mode .command-table td {
-            border-bottom: 1px solid #444444;
-        }
-    </style>
+    <link rel="alternate" type="application/rss+xml" title="AT&amp;T Long Lines &amp; Bell Labs updates" href="rss.xml">
+    <link rel="stylesheet" href="css/site.css">
+    <script>
+        (function () {
+            try {
+                var theme = localStorage.getItem("theme");
+                if (!theme) {
+                    var legacy = localStorage.getItem("darkMode");
+                    if (legacy === "enabled" || legacy === "true") theme = "dark";
+                    else if (legacy === "disabled" || legacy === "false") theme = "light";
+                }
+                if (theme === "dark" || (!theme && window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches)) {
+                    document.documentElement.classList.add("dark-mode");
+                }
+            } catch (e) {}
+        })();
+    </script>
+    <script src="js/site.js" defer></script>
+    <script src="js/unix-emulator.js" defer></script>
 </head>
 <body>
-    <header>
-        <h1>UNIX Emulator - Experience Bell Labs History</h1>
-        <p>Experience the groundbreaking UNIX operating system developed at Bell Labs in the late 1960s and early 1970s by Ken Thompson, Dennis Ritchie, and others. This interactive emulator allows you to try real AT&T UNIX versions directly in your browser.</p>
+    <header class="site-header">
+        <h1><a href="index.html">AT&amp;T Long Lines &amp; Bell Labs</a></h1>
+        <p class="tagline">Try UNIX in the browser</p>
     </header>
+    
+<nav class="site-nav" aria-label="Main">
+    <button type="button" class="nav-toggle" aria-controls="nav-menu" aria-expanded="false">Menu</button>
+    <div id="nav-menu" class="nav-menu">
+        <a href="index.html">Home</a>
+        <div class="dropdown">
+            <button type="button" class="drop-toggle" aria-expanded="false">Technology</button>
+            <div class="dropdown-content">
+                <a href="technology.html">Tech overview</a>
+                <a href="transistor.html">Transistor</a>
+                <a href="optical-maser.html">Lasers</a>
+                <a href="ccd.html">CCD imaging</a>
+                <a href="photovoltaic-cell.html">Solar cell</a>
+                <a href="unix.html">UNIX</a>
+                <a href="plan9.html">Plan 9</a>
+                <a href="blit.html">Blit</a>
+                <a href="amps.html">AMPS</a>
+                <a href="ess.html">ESS</a>
+                <a href="telstar.html">Telstar</a>
+            </div>
+        </div>
+        <div class="dropdown">
+            <button type="button" class="drop-toggle" aria-expanded="false">Long Lines</button>
+            <div class="dropdown-content">
+                <a href="history-att-longlines.html">History</a>
+                <a href="microwave-relay.html">Microwave relay</a>
+                <a href="microwave-relay-towers.html">Relay towers</a>
+                <a href="l-carrier.html">L-carrier</a>
+                <a href="coaxial-cable-systems.html">Coaxial cable</a>
+                <a href="switching-systems.html">Switching</a>
+                <a href="repeater-stations.html">Repeaters</a>
+                <a href="longlines-facilities.html">Facilities</a>
+                <a href="noc.html">Network Operations Center</a>
+                <a href="llmap-int.html">Network map</a>
+            </div>
+        </div>
+        <div class="dropdown">
+            <button type="button" class="drop-toggle" aria-expanded="false">Bell Labs</button>
+            <div class="dropdown-content">
+                <a href="bell-labs.html">Overview</a>
+                <a href="history-bell-labs.html">History</a>
+                <a href="bob-lucky.html">Bob Lucky</a>
+                <a href="unix-emulator.html" class="active">UNIX emulator</a>
+                <a href="plan9-emulator.html">Plan 9 emulator</a>
+            </div>
+        </div>
+        <a href="timeline.html">Timeline</a>
+        <a href="gallery.html">Gallery</a>
+        <div class="dropdown">
+            <button type="button" class="drop-toggle" aria-expanded="false">More</button>
+            <div class="dropdown-content">
+                <a href="technical-archives.html">Technical archives</a>
+                <a href="research-archives.html">Research archives</a>
+                <a href="educational-resources.html">Educational resources</a>
+                <a href="preservation-efforts.html">Preservation</a>
+                <a href="museum-project.html">Museum project</a>
+                <a href="contribute.html">Contribute</a>
+                <a href="rss-helper.html">RSS</a>
+                <a href="interactive-timeline.html">Interactive timeline</a>
+            </div>
+        </div>
+        <a href="rss.xml" class="rss-button" title="RSS feed">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" width="16" height="16">
+                <circle cx="6.18" cy="17.82" r="2.18"/>
+                <path d="M4 4.44v2.83c7.03 0 12.73 5.7 12.73 12.73h2.83c0-8.59-6.97-15.56-15.56-15.56zm0 5.66v2.83c3.9 0 7.07 3.17 7.07 7.07h2.83c0-5.47-4.43-9.9-9.9-9.9z"/>
+            </svg>
+            <span class="sr-only">RSS</span>
+        </a>
+    </div>
+    <button type="button" id="theme-toggle" class="theme-toggle" aria-pressed="false">Dark mode</button>
+</nav>
+
     <main>
         <section class="section">
             <div class="terminal-instructions">
@@ -236,47 +200,10 @@
             <p>The UNIX philosophy—emphasizing simplicity, modularity, and the idea that programs should "do one thing and do it well"—continues to shape software development to this day.</p>
         </section>
     </main>
-    <footer>
-        <p>&copy; <span id="year"></span> AT&T Long Lines & Bell Labs Community. All rights reserved.</p>
+    <footer class="site-footer">
+        <p><small>This is an independent historical tribute. It is not affiliated with AT&amp;T Inc. or Nokia Bell Labs. We do not use advertising trackers.</small></p>
+        <p>&copy; <span id="year"></span> AT&amp;T Long Lines &amp; Bell Labs Community. <small>Site by juler#5461.</small></p>
     </footer>
-    <script>
-        document.getElementById('year').textContent = new Date().getFullYear();
-        document.addEventListener('DOMContentLoaded', function() {
-            const tabs = document.querySelectorAll('.emulator-tab');
-            const emulatorFrame = document.getElementById('unix-emulator');
-            const loadingScreen = document.getElementById('loading-screen');
-            
-            const emulators = {
-                unixv7: 'https://bellard.org/jslinux/vm.html?url=unixv7.json&mem=128&graphic=0&term=vt100',
-                unixv6: 'https://www.pcjs.org/software/pcx86/sys/unix/ibm/pc-ix/1.00/embed.html',
-                research: 'https://copy.sh/v86/?profile=unix'
-            };
-            
-            function switchEmulator(emulatorId) {
-                loadingScreen.classList.remove('hidden');
-                tabs.forEach(tab => {
-                    if (tab.dataset.emulator === emulatorId) {
-                        tab.classList.add('active');
-                    } else {
-                        tab.classList.remove('active');
-                    }
-                });
-                emulatorFrame.src = emulators[emulatorId];
-                emulatorFrame.onload = function() {
-                    setTimeout(function() {
-                        loadingScreen.classList.add('hidden');
-                    }, 1000);
-                };
-            }
-            
-            tabs.forEach(tab => {
-                tab.addEventListener('click', function() {
-                    switchEmulator(this.dataset.emulator);
-                });
-            });
-            
-            switchEmulator('unixv7');
-        });
-    </script>
+    
 </body>
 </html>

@@ -3,157 +3,181 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AT&T Long Lines & Bell Labs - Full Gallery</title>
-    <link rel="icon" href="img/favicon.ico" type="image/x-icon" referrerpolicy="no-referrer">
-    <style>
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f9f9f9;
-            color: #333;
-            line-height: 1.7;
-        }
-
-        header {
-            background-color: #003366;
-            color: white;
-            text-align: center;
-            padding: 2em 0;
-            margin-bottom: 20px;
-        }
-
-        nav {
-            background-color: #007acc;
-            color: white;
-            padding: 0.7em 0;
-            text-align: center;
-            margin-bottom: 20px;
-        }
-
-        nav a {
-            color: white;
-            text-decoration: none;
-            padding: 0.7em 1.5em;
-            display: inline-block;
-            transition: background-color 0.3s ease;
-        }
-
-        nav a:hover {
-            background-color: #0056b3;
-        }
-
-        main {
-            padding: 30px;
-            max-width: 900px;
-            margin: 20px auto;
-            background-color: white;
-            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
-            border-radius: 8px;
-        }
-
-        .image-gallery {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-around;
-            margin-top: 20px;
-        }
-
-        .image-gallery img {
-            width: 30%;
-            margin-bottom: 15px;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s ease;
-        }
-
-        .image-gallery img:hover {
-            transform: scale(1.05);
-        }
-
-        footer {
-            text-align: center;
-            padding: 2em 0;
-            background-color: #003366;
-            color: white;
-            position: relative;
-            bottom: 0;
-            width: 100%;
-        }
-
-        @media (max-width: 768px) {
-            .image-gallery img {
-                width: 100%;
-            }
-        }
-
-        .dark-mode {
-            background-color: #121212;
-            color: #e0e0e0;
-        }
-
-        .dark-mode header {
-            background-color: #1f1f1f;
-        }
-
-        .dark-mode nav a {
-            color: #e0e0e0;
-        }
-
-        .dark-mode main {
-            background-color: #1f1f1f;
-            box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
-        }
-    </style>
+    <title>Gallery - AT&amp;T Long Lines sites</title>
+    <meta name="description" content="Photographs of remaining AT&amp;T Long Lines microwave towers, horn-reflector antennas, and equipment buildings.">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://belllaboratories.net/gallery">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="AT&amp;T Long Lines &amp; Bell Labs">
+    <meta property="og:title" content="Gallery - AT&amp;T Long Lines sites">
+    <meta property="og:description" content="Photographs of remaining AT&amp;T Long Lines microwave towers, horn-reflector antennas, and equipment buildings.">
+    <meta property="og:url" content="https://belllaboratories.net/gallery">
+    <meta property="og:image" content="https://belllaboratories.net/img/map1.jpg">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Gallery - AT&amp;T Long Lines sites">
+    <meta name="twitter:description" content="Photographs of remaining AT&amp;T Long Lines microwave towers, horn-reflector antennas, and equipment buildings.">
+    <meta name="twitter:image" content="https://belllaboratories.net/img/map1.jpg">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; connect-src 'self'; frame-src 'none'; base-uri 'self'; form-action 'self'">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="icon" href="img/favicon.ico" type="image/x-icon">
+    <link rel="alternate" type="application/rss+xml" title="AT&amp;T Long Lines &amp; Bell Labs updates" href="rss.xml">
+    <link rel="stylesheet" href="css/site.css">
     <script>
-        function toggleDarkMode() {
-            document.body.classList.toggle('dark-mode');
-        }
+        (function () {
+            try {
+                var theme = localStorage.getItem("theme");
+                if (!theme) {
+                    var legacy = localStorage.getItem("darkMode");
+                    if (legacy === "enabled" || legacy === "true") theme = "dark";
+                    else if (legacy === "disabled" || legacy === "false") theme = "light";
+                }
+                if (theme === "dark" || (!theme && window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches)) {
+                    document.documentElement.classList.add("dark-mode");
+                }
+            } catch (e) {}
+        })();
     </script>
+    <script src="js/site.js" defer></script>
+
 </head>
 <body>
-    <header>
-        <h1>AT&T Long Lines & Bell Labs - Full Gallery</h1>
-        <button onclick="toggleDarkMode()">Toggle Dark Mode</button>
+    <header class="site-header">
+        <h1><a href="index.html">AT&amp;T Long Lines &amp; Bell Labs</a></h1>
+        <p class="tagline">Photographs of the plant</p>
     </header>
-
-    <nav>
-        <a href="index.html" rel="noreferrer" referrerpolicy="no-referrer">Home</a> |
-        <a href="gallery.html" rel="noreferrer" referrerpolicy="no-referrer">Gallery</a>
-    </nav>
+    
+<nav class="site-nav" aria-label="Main">
+    <button type="button" class="nav-toggle" aria-controls="nav-menu" aria-expanded="false">Menu</button>
+    <div id="nav-menu" class="nav-menu">
+        <a href="index.html">Home</a>
+        <div class="dropdown">
+            <button type="button" class="drop-toggle" aria-expanded="false">Technology</button>
+            <div class="dropdown-content">
+                <a href="technology.html">Tech overview</a>
+                <a href="transistor.html">Transistor</a>
+                <a href="optical-maser.html">Lasers</a>
+                <a href="ccd.html">CCD imaging</a>
+                <a href="photovoltaic-cell.html">Solar cell</a>
+                <a href="unix.html">UNIX</a>
+                <a href="plan9.html">Plan 9</a>
+                <a href="blit.html">Blit</a>
+                <a href="amps.html">AMPS</a>
+                <a href="ess.html">ESS</a>
+                <a href="telstar.html">Telstar</a>
+            </div>
+        </div>
+        <div class="dropdown">
+            <button type="button" class="drop-toggle" aria-expanded="false">Long Lines</button>
+            <div class="dropdown-content">
+                <a href="history-att-longlines.html">History</a>
+                <a href="microwave-relay.html">Microwave relay</a>
+                <a href="microwave-relay-towers.html">Relay towers</a>
+                <a href="l-carrier.html">L-carrier</a>
+                <a href="coaxial-cable-systems.html">Coaxial cable</a>
+                <a href="switching-systems.html">Switching</a>
+                <a href="repeater-stations.html">Repeaters</a>
+                <a href="longlines-facilities.html">Facilities</a>
+                <a href="noc.html">Network Operations Center</a>
+                <a href="llmap-int.html">Network map</a>
+            </div>
+        </div>
+        <div class="dropdown">
+            <button type="button" class="drop-toggle" aria-expanded="false">Bell Labs</button>
+            <div class="dropdown-content">
+                <a href="bell-labs.html">Overview</a>
+                <a href="history-bell-labs.html">History</a>
+                <a href="bob-lucky.html">Bob Lucky</a>
+                <a href="unix-emulator.html">UNIX emulator</a>
+                <a href="plan9-emulator.html">Plan 9 emulator</a>
+            </div>
+        </div>
+        <a href="timeline.html">Timeline</a>
+        <a href="gallery.html" class="active">Gallery</a>
+        <div class="dropdown">
+            <button type="button" class="drop-toggle" aria-expanded="false">More</button>
+            <div class="dropdown-content">
+                <a href="technical-archives.html">Technical archives</a>
+                <a href="research-archives.html">Research archives</a>
+                <a href="educational-resources.html">Educational resources</a>
+                <a href="preservation-efforts.html">Preservation</a>
+                <a href="museum-project.html">Museum project</a>
+                <a href="contribute.html">Contribute</a>
+                <a href="rss-helper.html">RSS</a>
+                <a href="interactive-timeline.html">Interactive timeline</a>
+            </div>
+        </div>
+        <a href="rss.xml" class="rss-button" title="RSS feed">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" width="16" height="16">
+                <circle cx="6.18" cy="17.82" r="2.18"/>
+                <path d="M4 4.44v2.83c7.03 0 12.73 5.7 12.73 12.73h2.83c0-8.59-6.97-15.56-15.56-15.56zm0 5.66v2.83c3.9 0 7.07 3.17 7.07 7.07h2.83c0-5.47-4.43-9.9-9.9-9.9z"/>
+            </svg>
+            <span class="sr-only">RSS</span>
+        </a>
+    </div>
+    <button type="button" id="theme-toggle" class="theme-toggle" aria-pressed="false">Dark mode</button>
+</nav>
 
     <main>
-        <section id="gallery" class="section">
-            <h2>Full Gallery</h2>
-            <div class="image-gallery">
-                <img src="img/long-lines-facility.jpg" alt="AT&T Long Lines Facility">
-                <img src="img/transistor.jpg" alt="Transistor at Bell Labs">
-                <!-- <img src="img/bell-labs-interior.jpg" alt="Bell Labs Interior">
-                <img src="img/bell-labs-view.jpg" alt="Another Bell Labs View"> -->
-                <img src="img/ll1.jpg" alt="AT&T Long Lines Tower">
-                <img src="img/gallery/20250304_145429.jpg" alt="AT&T Long Lines Horn">
-                <img src="img/gallery/20250304_145346.jpg" alt="Horn on its side">
-                <img src="img/gallery/20250309_172527.jpg" alt="Tower">
-                <img src="img/gallery/dhtspll1_far.jpg" alt="Another Tower from afar">
-                <img src="img/gallery/dhtspll_out.jpg" alt="An outbuilding at a tower site">
-                <img src="img/gallery/dhtspll_vents1.jpg" alt="large vents on the side of a building">
-                <img src="img/gallery/dhtspll_Reflector_HI.jpg" alt="Hi-res image of KS reflector antenna ">
-                <img src="img/gallery/dhtspll2.jpg" alt="Other image of tower next to a building">
-                <img src="img/gallery/dhtspll3.jpg" alt="Another tower">
-                <img src="img/gallery/dhtspll_base.jpg" alt=" Tower base"> ">
-            </div>
-        </section>
-    </main>
+        
+<section class="section">
+    <h1>Gallery</h1>
+    <p>Photographs of former Long Lines microwave stations, horn-reflector antennas, and equipment buildings. Locations are volunteer-documented field sites, not an official AT&amp;T collection.</p>
+    <div class="image-gallery">
+        <figure class="figure"><picture>
+  <source srcset="img/gallery/20250304_145346.webp" type="image/webp">
+  <img src="img/gallery/20250304_145346.jpg" alt="20250304 145346" width="1920" height="1081" fetchpriority="high">
+</picture><figcaption>20250304 145346</figcaption></figure><figure class="figure"><picture>
+  <source srcset="img/gallery/20250304_145429.webp" type="image/webp">
+  <img src="img/gallery/20250304_145429.jpg" alt="20250304 145429" width="1920" height="1081" loading="lazy">
+</picture><figcaption>20250304 145429</figcaption></figure><figure class="figure"><picture>
+  <source srcset="img/gallery/20250309_172527.webp" type="image/webp">
+  <img src="img/gallery/20250309_172527.jpg" alt="20250309 172527" width="1440" height="1920" loading="lazy">
+</picture><figcaption>20250309 172527</figcaption></figure><figure class="figure"><picture>
+  <source srcset="img/gallery/dhtspll1_far.webp" type="image/webp">
+  <img src="img/gallery/dhtspll1_far.jpg" alt="dhtspll1 far" width="1446" height="1920" loading="lazy">
+</picture><figcaption>dhtspll1 far</figcaption></figure><figure class="figure"><picture>
+  <source srcset="img/gallery/dhtspll2.webp" type="image/webp">
+  <img src="img/gallery/dhtspll2.jpg" alt="dhtspll2" width="1446" height="1920" loading="lazy">
+</picture><figcaption>dhtspll2</figcaption></figure><figure class="figure"><picture>
+  <source srcset="img/gallery/dhtspll3.webp" type="image/webp">
+  <img src="img/gallery/dhtspll3.jpg" alt="dhtspll3" width="1446" height="1920" loading="lazy">
+</picture><figcaption>dhtspll3</figcaption></figure><figure class="figure"><picture>
+  <source srcset="img/gallery/dhtspll4.webp" type="image/webp">
+  <img src="img/gallery/dhtspll4.jpg" alt="dhtspll4" width="1920" height="1446" loading="lazy">
+</picture><figcaption>dhtspll4</figcaption></figure><figure class="figure"><picture>
+  <source srcset="img/gallery/dhtspll_Reflector_HI.webp" type="image/webp">
+  <img src="img/gallery/dhtspll_Reflector_HI.jpg" alt="dhtspll Reflector HI" width="1446" height="1920" loading="lazy">
+</picture><figcaption>dhtspll Reflector HI</figcaption></figure><figure class="figure"><picture>
+  <source srcset="img/gallery/dhtspll_TB.webp" type="image/webp">
+  <img src="img/gallery/dhtspll_TB.jpg" alt="dhtspll TB" width="1920" height="1446" loading="lazy">
+</picture><figcaption>dhtspll TB</figcaption></figure><figure class="figure"><picture>
+  <source srcset="img/gallery/dhtspll_base.webp" type="image/webp">
+  <img src="img/gallery/dhtspll_base.jpg" alt="dhtspll base" width="1920" height="1446" loading="lazy">
+</picture><figcaption>dhtspll base</figcaption></figure><figure class="figure"><picture>
+  <source srcset="img/gallery/dhtspll_out.webp" type="image/webp">
+  <img src="img/gallery/dhtspll_out.jpg" alt="dhtspll out" width="1920" height="1446" loading="lazy">
+</picture><figcaption>dhtspll out</figcaption></figure><figure class="figure"><picture>
+  <source srcset="img/gallery/dhtspll_vents1.webp" type="image/webp">
+  <img src="img/gallery/dhtspll_vents1.jpg" alt="dhtspll vents1" width="1446" height="1920" loading="lazy">
+</picture><figcaption>dhtspll vents1</figcaption></figure><figure class="figure"><picture>
+  <source srcset="img/ll1.webp" type="image/webp">
+  <img src="img/ll1.jpg" alt="ll1" width="960" height="631" loading="lazy">
+</picture></figure><figure class="figure"><picture>
+  <source srcset="img/transistor.webp" type="image/webp">
+  <img src="img/transistor.jpg" alt="transistor" width="474" height="474" loading="lazy">
+</picture></figure><figure class="figure"><picture>
+  <source srcset="img/map1.webp" type="image/webp">
+  <img src="img/map1.jpg" alt="map1" width="1920" height="1179" loading="lazy">
+</picture></figure>
+    </div>
+    <p>If you have additional photographs, see <a href="contribute.html">Contribute</a>.</p>
+</section>
 
-    <footer>
-        <p><small>We frequently review our code to ensure we remain a privacy-first, tracker-free site.</small></p>
-        <p>&copy; <span id="year"></span> AT&T Long Lines & Bell Labs Community. <small>Site by juler#5461. All rights reserved.</small></p>
+    </main>
+    <footer class="site-footer">
+        <p><small>This is an independent historical tribute. It is not affiliated with AT&amp;T Inc. or Nokia Bell Labs. We do not use advertising trackers.</small></p>
+        <p>&copy; <span id="year"></span> AT&amp;T Long Lines &amp; Bell Labs Community. <small>Site by juler#5461.</small></p>
     </footer>
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const currentYear = new Date().getFullYear();
-            document.querySelector('#year').textContent = currentYear;
-        });
-    </script>
+    
 </body>
 </html>

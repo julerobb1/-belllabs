@@ -3,40 +3,161 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contribute to Our Site</title>
-    <link rel="stylesheet" href="templates/css-template.css">
+    <title>Contribute - AT&amp;T Long Lines &amp; Bell Labs</title>
+    <meta name="description" content="How to contribute photographs, documents, or edits to this independent historical site.">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://belllaboratories.net/contribute">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="AT&amp;T Long Lines &amp; Bell Labs">
+    <meta property="og:title" content="Contribute - AT&amp;T Long Lines &amp; Bell Labs">
+    <meta property="og:description" content="How to contribute photographs, documents, or edits to this independent historical site.">
+    <meta property="og:url" content="https://belllaboratories.net/contribute">
+    <meta property="og:image" content="https://belllaboratories.net/img/map1.jpg">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Contribute - AT&amp;T Long Lines &amp; Bell Labs">
+    <meta name="twitter:description" content="How to contribute photographs, documents, or edits to this independent historical site.">
+    <meta name="twitter:image" content="https://belllaboratories.net/img/map1.jpg">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; connect-src 'self'; frame-src 'none'; base-uri 'self'; form-action 'self'">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="icon" href="img/favicon.ico" type="image/x-icon">
+    <link rel="alternate" type="application/rss+xml" title="AT&amp;T Long Lines &amp; Bell Labs updates" href="rss.xml">
+    <link rel="stylesheet" href="css/site.css">
+    <script>
+        (function () {
+            try {
+                var theme = localStorage.getItem("theme");
+                if (!theme) {
+                    var legacy = localStorage.getItem("darkMode");
+                    if (legacy === "enabled" || legacy === "true") theme = "dark";
+                    else if (legacy === "disabled" || legacy === "false") theme = "light";
+                }
+                if (theme === "dark" || (!theme && window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches)) {
+                    document.documentElement.classList.add("dark-mode");
+                }
+            } catch (e) {}
+        })();
+    </script>
+    <script src="js/site.js" defer></script>
+
 </head>
 <body>
-    <header>
-        <h1>Contribute to Our Site</h1>
-        <p>Help us grow and improve the AT&T Long Lines & Bell Labs community!</p>
+    <header class="site-header">
+        <h1><a href="index.html">AT&amp;T Long Lines &amp; Bell Labs</a></h1>
+        <p class="tagline">Help document the network</p>
     </header>
-    <nav>
-        <a href="404.html">Home</a> |
-        <a href="amps.html" rel="noreferrer">Gallery</a> |
-        <a href="contribute.html" rel="noreferrer">Get Involved</a> |
-        <a href="#discord">Join the Community</a>
-    </nav>
+    
+<nav class="site-nav" aria-label="Main">
+    <button type="button" class="nav-toggle" aria-controls="nav-menu" aria-expanded="false">Menu</button>
+    <div id="nav-menu" class="nav-menu">
+        <a href="index.html">Home</a>
+        <div class="dropdown">
+            <button type="button" class="drop-toggle" aria-expanded="false">Technology</button>
+            <div class="dropdown-content">
+                <a href="technology.html">Tech overview</a>
+                <a href="transistor.html">Transistor</a>
+                <a href="optical-maser.html">Lasers</a>
+                <a href="ccd.html">CCD imaging</a>
+                <a href="photovoltaic-cell.html">Solar cell</a>
+                <a href="unix.html">UNIX</a>
+                <a href="plan9.html">Plan 9</a>
+                <a href="blit.html">Blit</a>
+                <a href="amps.html">AMPS</a>
+                <a href="ess.html">ESS</a>
+                <a href="telstar.html">Telstar</a>
+            </div>
+        </div>
+        <div class="dropdown">
+            <button type="button" class="drop-toggle" aria-expanded="false">Long Lines</button>
+            <div class="dropdown-content">
+                <a href="history-att-longlines.html">History</a>
+                <a href="microwave-relay.html">Microwave relay</a>
+                <a href="microwave-relay-towers.html">Relay towers</a>
+                <a href="l-carrier.html">L-carrier</a>
+                <a href="coaxial-cable-systems.html">Coaxial cable</a>
+                <a href="switching-systems.html">Switching</a>
+                <a href="repeater-stations.html">Repeaters</a>
+                <a href="longlines-facilities.html">Facilities</a>
+                <a href="noc.html">Network Operations Center</a>
+                <a href="llmap-int.html">Network map</a>
+            </div>
+        </div>
+        <div class="dropdown">
+            <button type="button" class="drop-toggle" aria-expanded="false">Bell Labs</button>
+            <div class="dropdown-content">
+                <a href="bell-labs.html">Overview</a>
+                <a href="history-bell-labs.html">History</a>
+                <a href="bob-lucky.html">Bob Lucky</a>
+                <a href="unix-emulator.html">UNIX emulator</a>
+                <a href="plan9-emulator.html">Plan 9 emulator</a>
+            </div>
+        </div>
+        <a href="timeline.html">Timeline</a>
+        <a href="gallery.html">Gallery</a>
+        <div class="dropdown">
+            <button type="button" class="drop-toggle" aria-expanded="false">More</button>
+            <div class="dropdown-content">
+                <a href="technical-archives.html">Technical archives</a>
+                <a href="research-archives.html">Research archives</a>
+                <a href="educational-resources.html">Educational resources</a>
+                <a href="preservation-efforts.html">Preservation</a>
+                <a href="museum-project.html">Museum project</a>
+                <a href="contribute.html" class="active">Contribute</a>
+                <a href="rss-helper.html">RSS</a>
+                <a href="interactive-timeline.html">Interactive timeline</a>
+            </div>
+        </div>
+        <a href="rss.xml" class="rss-button" title="RSS feed">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" width="16" height="16">
+                <circle cx="6.18" cy="17.82" r="2.18"/>
+                <path d="M4 4.44v2.83c7.03 0 12.73 5.7 12.73 12.73h2.83c0-8.59-6.97-15.56-15.56-15.56zm0 5.66v2.83c3.9 0 7.07 3.17 7.07 7.07h2.83c0-5.47-4.43-9.9-9.9-9.9z"/>
+            </svg>
+            <span class="sr-only">RSS</span>
+        </a>
+    </div>
+    <button type="button" id="theme-toggle" class="theme-toggle" aria-pressed="false">Dark mode</button>
+</nav>
+
     <main>
-        <section>
-            <h2>How to Contribute</h2>
-            <p>We welcome contributions from everyone! Follow the steps below to get started:</p>
-            <ol>
-                <li>Clone our repository from GitHub.</li>
-                <li>Use the templates provided in the <code>templates</code> directory for creating new pages.</li>
-                <li>Follow the naming scheme outlined in the <a href="templates/naming-scheme.html">Naming Scheme</a>.</li>
-                <li>Submit a pull request with your changes.</li>
-            </ol>
-        </section>
+        <section class="section">
+    <h1>Contribute</h1>
+    <p class="page-lede">This is a volunteer historical site about AT&amp;T Long Lines and Bell Labs. If you have photographs of stations, documents, corrections, or first-hand knowledge, you can help.</p>
+</section>
+
+<section class="section">
+    <h2>Photographs and documents</h2>
+    <p>Useful contributions include:</p>
+    <ul>
+        <li>Photographs of former Long Lines towers, horns, coaxial huts, and operating buildings (with location and date if you know them)</li>
+        <li>Scans of non-confidential Bell System Practices, training notes, or route maps you are allowed to share</li>
+        <li>Corrections to names, dates, or technical descriptions on these pages</li>
+    </ul>
+    <p>Please do not send material that is still proprietary, that you do not have the right to publish, or that was obtained by trespassing. Blur license plates and faces if privacy is a concern.</p>
+    <p>The gallery upload form on the home page is not connected to a server. To send files, open an issue or pull request on the project’s GitHub repository, or ask in the Discord community linked from the home page.</p>
+    <p><a class="cta-button" href="https://github.com/julerobb1/-belllabs">GitHub repository</a></p>
+</section>
+
+<section class="section">
+    <h2>Editing the site</h2>
+    <p>The site is plain HTML and CSS. There is no framework. To propose a change:</p>
+    <ol>
+        <li>Fork <a href="https://github.com/julerobb1/-belllabs">julerobb1/-belllabs</a>.</li>
+        <li>Edit the relevant <code>.html</code> page. Shared layout lives in <code>css/site.css</code> and <code>js/site.js</code>. Keep new pages in the same header/nav/footer pattern as an existing article.</li>
+        <li>Use relative links. Do not add trackers or third-party ads.</li>
+        <li>Open a pull request with a short description of what you changed.</li>
+    </ol>
+    <p>Factual claims about Bell System technology should be checkable against the <cite>Bell System Technical Journal</cite>, Bell Labs / AT&amp;T historical publications, or other primary sources. Do not invent quotations or traffic figures.</p>
+</section>
+
+<section class="section">
+    <h2>Community</h2>
+    <p>A Discord server for people interested in Long Lines and Bell Labs history is embedded on the <a href="index.html#community">home page</a>. That widget is the public join path; this site does not collect email addresses.</p>
+</section>
+
     </main>
-    <footer>
-        <p>&copy; <span id="year"></span> AT&T Long Lines & Bell Labs Community. All rights reserved.</p>
+    <footer class="site-footer">
+        <p><small>This is an independent historical tribute. It is not affiliated with AT&amp;T Inc. or Nokia Bell Labs. We do not use advertising trackers.</small></p>
+        <p>&copy; <span id="year"></span> AT&amp;T Long Lines &amp; Bell Labs Community. <small>Site by juler#5461.</small></p>
     </footer>
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const currentYear = new Date().getFullYear();
-            document.querySelector('#year').textContent = currentYear;
-        });
-    </script>
+    
 </body>
 </html>
