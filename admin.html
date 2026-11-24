@@ -4,18 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin - AT&amp;T Long Lines &amp; Bell Labs</title>
-    <meta name="description" content="There is no public admin panel on this historical site.">
+    <meta name="description" content="Owner gallery moderation. Requires the L5_GALLERY_TOKEN secret.">
     <meta name="robots" content="noindex, nofollow">
     <link rel="canonical" href="https://belllaboratories.net/admin">
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="AT&amp;T Long Lines &amp; Bell Labs">
     <meta property="og:title" content="Admin - AT&amp;T Long Lines &amp; Bell Labs">
-    <meta property="og:description" content="There is no public admin panel on this historical site.">
+    <meta property="og:description" content="Owner gallery moderation. Requires the L5_GALLERY_TOKEN secret.">
     <meta property="og:url" content="https://belllaboratories.net/admin">
     <meta property="og:image" content="https://belllaboratories.net/img/map1.jpg">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Admin - AT&amp;T Long Lines &amp; Bell Labs">
-    <meta name="twitter:description" content="There is no public admin panel on this historical site.">
+    <meta name="twitter:description" content="Owner gallery moderation. Requires the L5_GALLERY_TOKEN secret.">
     <meta name="twitter:image" content="https://belllaboratories.net/img/map1.jpg">
     <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; connect-src 'self'; frame-src 'none'; base-uri 'self'; form-action 'self'">
     <link rel="icon" href="favicon.ico" type="image/x-icon">
@@ -38,6 +38,7 @@
         })();
     </script>
     <script src="js/site.js" defer></script>
+    <script src="js/gallery-admin.js" defer></script>
 
 </head>
 <body>
@@ -119,9 +120,27 @@
 
     <main>
         <section class="section">
-    <h1>Admin</h1>
-    <p>There is no public administration panel on this site. Image review and publishing are done in the Git repository, not in the browser.</p>
-    <p>If you want to contribute photographs, see <a href="contribute.html">Contribute</a>.</p>
+    <h1>Gallery admin</h1>
+    <p>Pending community photographs sit in a private queue until you approve or reject them. Approved items receive a future <code>publish_at</code> so they appear on <a href="gallery.html">/gallery</a> a few per hour. Put this page behind Cloudflare Access if you can; the <code>L5_GALLERY_TOKEN</code> is still required.</p>
+    <p>The token is stored only in this browser tab (<code>sessionStorage</code>). It is never written into the page HTML. API reference: <a href="docs/gallery-api.md">docs/gallery-api.md</a>.</p>
+</section>
+<section class="section">
+    <form id="admin-token-form" class="admin-token-form">
+        <label for="admin-token">Bearer token</label>
+        <input id="admin-token" name="token" type="password" autocomplete="off" spellcheck="false">
+        <label for="admin-status">Queue</label>
+        <select id="admin-status">
+            <option value="pending" selected>Pending</option>
+            <option value="scheduled">Scheduled</option>
+            <option value="live">Live</option>
+            <option value="rejected">Rejected</option>
+        </select>
+        <button type="submit" class="cta-button">Open queue</button>
+        <button type="button" id="admin-clear" class="cta-button admin-reject">Clear token</button>
+    </form>
+    <p id="admin-counts" class="admin-muted"></p>
+    <p id="admin-message" class="admin-message" role="status"></p>
+    <div id="admin-list" class="admin-list"></div>
 </section>
 
     </main>

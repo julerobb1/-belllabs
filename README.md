@@ -19,6 +19,18 @@ Helpers used while compressing images and wrapping chrome (optional, not require
 - `tools/compress_images.py`
 - `tools/wrap_pages.py` and `tools/content/`
 
+## Community gallery
+
+Discord bot **L5** can upload photographs to a private pending queue. Owners approve or reject them at `/admin`. Approved images go public on `/gallery` a few per hour, each credited as `Photo: <name>`.
+
+API, auth, staggered publish, and Cloudflare setup: [docs/gallery-api.md](docs/gallery-api.md).
+
+Required Pages secret (do not commit a value): `L5_GALLERY_TOKEN`.
+
 ## Deploy
 
-Cloudflare Pages project `belllabs`. The GitHub Action in `.github/workflows/publish.yml` publishes the repository root.
+Cloudflare Pages project `belllabs`. The GitHub Action in `.github/workflows/publish.yml` publishes the repository root. After the first Functions deploy, set the gallery token:
+
+```bash
+npx wrangler pages secret put L5_GALLERY_TOKEN --project-name belllabs
+```

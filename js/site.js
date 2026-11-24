@@ -238,10 +238,37 @@
             galleryImages[i] = galleryImages[j];
             galleryImages[j] = tmp;
         }
-        holder.innerHTML = "";
-        galleryImages.slice(0, 4).forEach(function (image) {
-            holder.appendChild(createPicture(image));
-        });
+        function showStatic() {
+            holder.innerHTML = "";
+            galleryImages.slice(0, 4).forEach(function (image) {
+                holder.appendChild(createPicture(image));
+            });
+        }
+        fetch("/api/gallery?limit=4")
+            .then(function (response) {
+                if (!response.ok) {
+                    throw new Error("offline");
+                }
+                return response.json();
+            })
+            .then(function (data) {
+                var community = ((data && data.items) || []).slice(0, 4);
+                if (!community.length) {
+                    throw new Error("empty");
+                }
+                holder.innerHTML = "";
+                community.forEach(function (item) {
+                    holder.appendChild(
+                        createPicture({
+                            src: item.url,
+                            alt: item.caption ? item.caption + " Photo: " + item.credit : "Photo: " + item.credit,
+                            width: item.width,
+                            height: item.height,
+                        })
+                    );
+                });
+            })
+            .catch(showStatic);
     }
 
     function initDiscord() {
@@ -264,6 +291,9 @@
         document.querySelectorAll("form").forEach(function (form) {
             var action = form.getAttribute("action") || "";
             var dead = form.id === "image-upload-form" || form.id === "support-form" || form.id === "research-access-form" || action === "" || action === "#";
+            if (form.id === "admin-token-form") {
+                return;
+            }
             if (!dead) {
                 return;
             }

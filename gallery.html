@@ -4,18 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gallery - AT&amp;T Long Lines sites</title>
-    <meta name="description" content="Photographs of remaining AT&amp;T Long Lines microwave towers, horn-reflector antennas, and equipment buildings.">
+    <meta name="description" content="Photographs of remaining AT&amp;T Long Lines microwave towers, horn-reflector antennas, and equipment buildings, including community submissions.">
     <meta name="robots" content="index, follow">
     <link rel="canonical" href="https://belllaboratories.net/gallery">
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="AT&amp;T Long Lines &amp; Bell Labs">
     <meta property="og:title" content="Gallery - AT&amp;T Long Lines sites">
-    <meta property="og:description" content="Photographs of remaining AT&amp;T Long Lines microwave towers, horn-reflector antennas, and equipment buildings.">
+    <meta property="og:description" content="Photographs of remaining AT&amp;T Long Lines microwave towers, horn-reflector antennas, and equipment buildings, including community submissions.">
     <meta property="og:url" content="https://belllaboratories.net/gallery">
     <meta property="og:image" content="https://belllaboratories.net/img/map1.jpg">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Gallery - AT&amp;T Long Lines sites">
-    <meta name="twitter:description" content="Photographs of remaining AT&amp;T Long Lines microwave towers, horn-reflector antennas, and equipment buildings.">
+    <meta name="twitter:description" content="Photographs of remaining AT&amp;T Long Lines microwave towers, horn-reflector antennas, and equipment buildings, including community submissions.">
     <meta name="twitter:image" content="https://belllaboratories.net/img/map1.jpg">
     <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; connect-src 'self'; frame-src 'none'; base-uri 'self'; form-action 'self'">
     <link rel="icon" href="favicon.ico" type="image/x-icon">
@@ -38,6 +38,7 @@
         })();
     </script>
     <script src="js/site.js" defer></script>
+    <script src="js/gallery.js" defer></script>
 
 </head>
 <body>
@@ -122,6 +123,15 @@
 <section class="section">
     <h1>Gallery</h1>
     <p>Photographs of former Long Lines microwave stations, horn-reflector antennas, and equipment buildings. Locations are volunteer-documented field sites, not an official AT&amp;T collection.</p>
+</section>
+<section class="section">
+    <h2>Community photographs</h2>
+    <p>Submitted from Discord by the L5 bot. Each image is credited as <strong>Photo: name</strong>. Approved pictures go live a few per hour instead of all at once.</p>
+    <p id="community-gallery-status">Loading community photographs…</p>
+    <div id="community-gallery" class="image-gallery"></div>
+</section>
+<section class="section">
+    <h2>Site collection</h2>
     <div class="image-gallery">
         <figure class="figure"><picture>
   <source srcset="img/gallery/20250304_145346.webp" type="image/webp">

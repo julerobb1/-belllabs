@@ -55,11 +55,12 @@ PAGES = {
     },
     "admin.html": {
         "title": "Admin - AT&T Long Lines & Bell Labs",
-        "description": "There is no public admin panel on this historical site.",
+        "description": "Owner gallery moderation. Requires the L5_GALLERY_TOKEN secret.",
         "subtitle": "Administration",
         "canonical": "/admin",
         "fragment": "admin.html",
         "noindex": True,
+        "extra_js": ["js/gallery-admin.js"],
     },
     "amps.html": {
         "title": "AMPS cellular system - Bell Labs",
@@ -124,10 +125,11 @@ PAGES = {
     },
     "gallery.html": {
         "title": "Gallery - AT&T Long Lines sites",
-        "description": "Photographs of remaining AT&T Long Lines microwave towers, horn-reflector antennas, and equipment buildings.",
+        "description": "Photographs of remaining AT&T Long Lines microwave towers, horn-reflector antennas, and equipment buildings, including community submissions.",
         "subtitle": "Photographs of the plant",
         "canonical": "/gallery",
         "gallery": True,
+        "extra_js": ["js/gallery.js"],
     },
     "history-att-longlines.html": {
         "title": "History of AT&T Long Lines",
@@ -438,6 +440,15 @@ def build_gallery_main() -> str:
 <section class="section">
     <h1>Gallery</h1>
     <p>Photographs of former Long Lines microwave stations, horn-reflector antennas, and equipment buildings. Locations are volunteer-documented field sites, not an official AT&amp;T collection.</p>
+</section>
+<section class="section">
+    <h2>Community photographs</h2>
+    <p>Submitted from Discord by the L5 bot. Each image is credited as <strong>Photo: name</strong>. Approved pictures go live a few per hour instead of all at once.</p>
+    <p id="community-gallery-status">Loading community photographs…</p>
+    <div id="community-gallery" class="image-gallery"></div>
+</section>
+<section class="section">
+    <h2>Site collection</h2>
     <div class="image-gallery">
         {"".join(items + extra)}
     </div>
