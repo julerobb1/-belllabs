@@ -3,102 +3,119 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AT&T Long Lines Switching Systems</title>
+    <title>Switching systems - AT&amp;T Long Lines</title>
+    <meta name="description" content="From toll boards and crossbar to No. 4 ESS: how AT&amp;T switched long-distance calls.">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://belllaboratories.net/switching-systems">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="AT&amp;T Long Lines &amp; Bell Labs">
+    <meta property="og:title" content="Switching systems - AT&amp;T Long Lines">
+    <meta property="og:description" content="From toll boards and crossbar to No. 4 ESS: how AT&amp;T switched long-distance calls.">
+    <meta property="og:url" content="https://belllaboratories.net/switching-systems">
+    <meta property="og:image" content="https://belllaboratories.net/img/map1.jpg">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Switching systems - AT&amp;T Long Lines">
+    <meta name="twitter:description" content="From toll boards and crossbar to No. 4 ESS: how AT&amp;T switched long-distance calls.">
+    <meta name="twitter:image" content="https://belllaboratories.net/img/map1.jpg">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; connect-src 'self'; frame-src 'none'; base-uri 'self'; form-action 'self'">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
     <link rel="icon" href="img/favicon.ico" type="image/x-icon">
-    <link rel="stylesheet" href="recipes/css/styles.css">
-    <script src="recipes/js/compat.js"></script>
-    <script src="recipes/js/scripts.js" defer></script>
-    <style>
-        .switch-types {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 20px;
-            margin: 30px 0;
-        }
-        
-        .switch-item {
-            background-color: var(--section-bg-color);
-            border-radius: 5px;
-            padding: 15px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-        }
-        
-        .switch-item h3 {
-            margin-top: 0;
-            color: var(--header-bg-color);
-            border-bottom: 2px solid var(--nav-bg-color);
-            padding-bottom: 8px;
-        }
-        
-        .switch-diagram {
-            text-align: center;
-            margin: 30px 0;
-        }
-        
-        .switch-diagram img {
-            max-width: 100%;
-            border-radius: 8px;
-            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
-        }
-        
-        .comparison-table {
-            width: 100%;
-            border-collapse: collapse;
-            margin: 30px 0;
-        }
-        
-        .comparison-table th, 
-        .comparison-table td {
-            padding: 12px 15px;
-            border: 1px solid #ddd;
-            text-align: left;
-        }
-        
-        .comparison-table th {
-            background-color: var(--header-bg-color);
-            color: white;
-        }
-        
-        .comparison-table tr:nth-child(even) {
-            background-color: rgba(0,0,0,0.05);
-        }
-        
-        .comparison-table tr:hover {
-            background-color: rgba(0,0,0,0.1);
-        }
-    </style>
+    <link rel="alternate" type="application/rss+xml" title="AT&amp;T Long Lines &amp; Bell Labs updates" href="rss.xml">
+    <link rel="stylesheet" href="css/site.css">
+    <script>
+        (function () {
+            try {
+                var theme = localStorage.getItem("theme");
+                if (!theme) {
+                    var legacy = localStorage.getItem("darkMode");
+                    if (legacy === "enabled" || legacy === "true") theme = "dark";
+                    else if (legacy === "disabled" || legacy === "false") theme = "light";
+                }
+                if (theme === "dark" || (!theme && window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches)) {
+                    document.documentElement.classList.add("dark-mode");
+                }
+            } catch (e) {}
+        })();
+    </script>
+    <script src="js/site.js" defer></script>
+
 </head>
 <body>
-    <header>
-        <h1>AT&T Long Lines & Bell Labs</h1>
-        <p>Exploring Telephone Switching Systems</p>
+    <header class="site-header">
+        <h1><a href="index.html">AT&amp;T Long Lines &amp; Bell Labs</a></h1>
+        <p class="tagline">The intelligence of the network</p>
     </header>
-
-    <nav>
+    
+<nav class="site-nav" aria-label="Main">
+    <button type="button" class="nav-toggle" aria-controls="nav-menu" aria-expanded="false">Menu</button>
+    <div id="nav-menu" class="nav-menu">
         <a href="index.html">Home</a>
         <div class="dropdown">
-            <a href="#">Tech & Inventions</a>
+            <button type="button" class="drop-toggle" aria-expanded="false">Technology</button>
             <div class="dropdown-content">
-                <a href="technology.html">Tech Overview</a>
-                <a href="transistor.html">The Transistor</a>
+                <a href="technology.html">Tech overview</a>
+                <a href="transistor.html">Transistor</a>
                 <a href="optical-maser.html">Lasers</a>
-                <a href="ccd.html">Digital Imaging (CCDs)</a>
-                <a href="photovoltaic-cell.html">Solar Power</a>
+                <a href="ccd.html">CCD imaging</a>
+                <a href="photovoltaic-cell.html">Solar cell</a>
                 <a href="unix.html">UNIX</a>
+                <a href="plan9.html">Plan 9</a>
+                <a href="blit.html">Blit</a>
+                <a href="amps.html">AMPS</a>
+                <a href="ess.html">ESS</a>
+                <a href="telstar.html">Telstar</a>
             </div>
         </div>
         <div class="dropdown">
-            <a href="#">Long Lines Infrastructure</a>
+            <button type="button" class="drop-toggle" aria-expanded="false">Long Lines</button>
             <div class="dropdown-content">
-                <a href="microwave-relay-towers.html">Microwave Relay Towers</a>
-                <a href="coaxial-cable-systems.html">Coaxial Cable Systems</a>
-                <a href="switching-systems.html" class="active">Switching Systems</a>
-                <a href="repeater-stations.html">Repeater Stations</a>
+                <a href="history-att-longlines.html">History</a>
+                <a href="microwave-relay.html">Microwave relay</a>
+                <a href="microwave-relay-towers.html">Relay towers</a>
+                <a href="l-carrier.html">L-carrier</a>
+                <a href="coaxial-cable-systems.html">Coaxial cable</a>
+                <a href="switching-systems.html" class="active">Switching</a>
+                <a href="repeater-stations.html">Repeaters</a>
+                <a href="longlines-facilities.html">Facilities</a>
+                <a href="noc.html">Network Operations Center</a>
+                <a href="llmap-int.html">Network map</a>
             </div>
         </div>
+        <div class="dropdown">
+            <button type="button" class="drop-toggle" aria-expanded="false">Bell Labs</button>
+            <div class="dropdown-content">
+                <a href="bell-labs.html">Overview</a>
+                <a href="history-bell-labs.html">History</a>
+                <a href="bob-lucky.html">Bob Lucky</a>
+                <a href="unix-emulator.html">UNIX emulator</a>
+                <a href="plan9-emulator.html">Plan 9 emulator</a>
+            </div>
+        </div>
+        <a href="timeline.html">Timeline</a>
         <a href="gallery.html">Gallery</a>
-        <a href="#discord">Join the Community</a>
-    </nav>
+        <div class="dropdown">
+            <button type="button" class="drop-toggle" aria-expanded="false">More</button>
+            <div class="dropdown-content">
+                <a href="technical-archives.html">Technical archives</a>
+                <a href="research-archives.html">Research archives</a>
+                <a href="educational-resources.html">Educational resources</a>
+                <a href="preservation-efforts.html">Preservation</a>
+                <a href="museum-project.html">Museum project</a>
+                <a href="contribute.html">Contribute</a>
+                <a href="rss-helper.html">RSS</a>
+                <a href="interactive-timeline.html">Interactive timeline</a>
+            </div>
+        </div>
+        <a href="rss.xml" class="rss-button" title="RSS feed">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" width="16" height="16">
+                <circle cx="6.18" cy="17.82" r="2.18"/>
+                <path d="M4 4.44v2.83c7.03 0 12.73 5.7 12.73 12.73h2.83c0-8.59-6.97-15.56-15.56-15.56zm0 5.66v2.83c3.9 0 7.07 3.17 7.07 7.07h2.83c0-5.47-4.43-9.9-9.9-9.9z"/>
+            </svg>
+            <span class="sr-only">RSS</span>
+        </a>
+    </div>
+    <button type="button" id="theme-toggle" class="theme-toggle" aria-pressed="false">Dark mode</button>
+</nav>
 
     <main>
         <section id="overview" class="section">
@@ -150,7 +167,7 @@
             <p>AT&T's Long Lines division operated a hierarchical switching network designed to efficiently route calls across the country while maintaining high quality and reliability:</p>
             
             <div class="switch-diagram">
-                <img src="img/switching-hierarchy.jpg" alt="Diagram of AT&T Long Lines switching hierarchy" onerror="this.src='data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22600%22%20height%3D%22400%22%20viewBox%3D%220%200%20600%20400%22%3E%3Crect%20fill%3D%22%23f0f0f0%22%20width%3D%22600%22%20height%3D%22400%22%2F%3E%3Ctext%20fill%3D%22%23999999%22%20font-family%3D%22Arial%2CSans-serif%22%20font-size%3D%2220%22%20x%3D%22110%22%20y%3D%22200%22%3ESwitching%20Hierarchy%20Diagram%3C%2Ftext%3E%3C%2Fsvg%3E'">
+                
             </div>
             
             <p>The Long Lines network was organized in a five-level hierarchy:</p>
@@ -236,16 +253,10 @@
             <p>Though most of the physical switching systems have been decommissioned, their architectural and design principles live on in modern software-defined networks and Voice over IP systems. The No. 4 ESS itself remained in service for over 40 years, with the last systems only recently being retired—a testament to the extraordinary engineering that went into their design.</p>
         </section>
     </main>
-
-    <footer>
-        <p>&copy; <span id="year"></span> AT&T Long Lines & Bell Labs Community. <small>All rights reserved.</small></p>
+    <footer class="site-footer">
+        <p><small>This is an independent historical tribute. It is not affiliated with AT&amp;T Inc. or Nokia Bell Labs. We do not use advertising trackers.</small></p>
+        <p>&copy; <span id="year"></span> AT&amp;T Long Lines &amp; Bell Labs Community. <small>Site by juler#5461.</small></p>
     </footer>
     
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const currentYear = new Date().getFullYear();
-            document.querySelector('#year').textContent = currentYear;
-        });
-    </script>
 </body>
 </html>

@@ -1,121 +1,122 @@
 <!DOCTYPE html>
-<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
-<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang="en"> <![endif]-->
-<!--[if IE 8]>         <html class="no-js lt-ie9" lang="en"> <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="referrer" content="no-referrer">
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net; style-src 'self' 'unsafe-inline'; frame-src https://9p.io https://cat-v.org;">
-    <title>Plan 9 - Bell Labs Operating System</title>
+    <title>Plan 9 from Bell Labs</title>
+    <meta name="description" content="Plan 9 is the distributed operating system Bell Labs developed as a research successor to UNIX, and the origin of UTF-8.">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://belllaboratories.net/plan9">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="AT&amp;T Long Lines &amp; Bell Labs">
+    <meta property="og:title" content="Plan 9 from Bell Labs">
+    <meta property="og:description" content="Plan 9 is the distributed operating system Bell Labs developed as a research successor to UNIX, and the origin of UTF-8.">
+    <meta property="og:url" content="https://belllaboratories.net/plan9">
+    <meta property="og:image" content="https://belllaboratories.net/img/map1.jpg">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Plan 9 from Bell Labs">
+    <meta name="twitter:description" content="Plan 9 is the distributed operating system Bell Labs developed as a research successor to UNIX, and the origin of UTF-8.">
+    <meta name="twitter:image" content="https://belllaboratories.net/img/map1.jpg">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; connect-src 'self'; frame-src https://9p.io https://cat-v.org; base-uri 'self'; form-action 'self'">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
     <link rel="icon" href="img/favicon.ico" type="image/x-icon">
-    <link href="img/favicon.ico" rel="shortcut icon">
-    <link rel="stylesheet" href="recipes/css/styles.css">
-    <script src="recipes/js/compat.js"></script>
-    <script src="recipes/js/scripts.js" defer></script>
-    <style>
-        .terminal-instructions {
-            background-color: #f9f9f9;
-            padding: 15px;
-            border-left: 4px solid #0082ca;
-            margin: 20px 0;
-        }
-        
-        .command-table {
-            width: 100%;
-            border-collapse: collapse;
-            margin: 20px 0;
-        }
-        
-        .command-table th, .command-table td {
-            padding: 8px;
-            text-align: left;
-            border-bottom: 1px solid #ddd;
-        }
-        
-        .command-table th {
-            background-color: #f0f0f0;
-        }
-        
-        .alternative-access {
-            margin-top: 30px;
-            padding: 15px;
-            background-color: #e8f4fc;
-            border-radius: 5px;
-        }
-        
-        .screenshot-gallery {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 15px;
-            margin: 20px 0;
-        }
-        
-        .screenshot-gallery img {
-            width: 100%;
-            height: auto;
-            border: 1px solid #ddd;
-            border-radius: 4px;
-        }
-        
-        .dark-mode .terminal-instructions {
-            background-color: #252525;
-            border-left: 4px solid #6aabff;
-            color: #e0e0e0;
-        }
-        
-        .dark-mode .command-table th {
-            background-color: #333333;
-            color: #e0e0e0;
-        }
-        
-        .dark-mode .command-table td {
-            border-bottom: 1px solid #444444;
-        }
-        
-        .dark-mode .alternative-access {
-            background-color: #253545;
-            color: #e0e0e0;
-        }
-        
-        .dark-mode .screenshot-gallery img {
-            border: 1px solid #444444;
-        }
-        
-        .cta-button {
-            display: inline-block;
-            background-color: #0082ca;
-            color: white;
-            padding: 12px 24px;
-            text-decoration: none;
-            border-radius: 5px;
-            font-weight: bold;
-            margin-top: 20px;
-            margin-bottom: 30px;
-            text-align: center;
-        }
-        
-        .cta-button:hover {
-            background-color: #0056b3;
-            text-decoration: none;
-        }
-        
-        .dark-mode .cta-button {
-            background-color: #6aabff;
-            color: #333;
-        }
-        
-        .dark-mode .cta-button:hover {
-            background-color: #99c9ff;
-        }
-    </style>
+    <link rel="alternate" type="application/rss+xml" title="AT&amp;T Long Lines &amp; Bell Labs updates" href="rss.xml">
+    <link rel="stylesheet" href="css/site.css">
+    <script>
+        (function () {
+            try {
+                var theme = localStorage.getItem("theme");
+                if (!theme) {
+                    var legacy = localStorage.getItem("darkMode");
+                    if (legacy === "enabled" || legacy === "true") theme = "dark";
+                    else if (legacy === "disabled" || legacy === "false") theme = "light";
+                }
+                if (theme === "dark" || (!theme && window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches)) {
+                    document.documentElement.classList.add("dark-mode");
+                }
+            } catch (e) {}
+        })();
+    </script>
+    <script src="js/site.js" defer></script>
+
 </head>
 <body>
-    <header>
-        <h1>Plan 9 from Bell Labs</h1>
+    <header class="site-header">
+        <h1><a href="index.html">AT&amp;T Long Lines &amp; Bell Labs</a></h1>
+        <p class="tagline">A distributed operating system</p>
     </header>
+    
+<nav class="site-nav" aria-label="Main">
+    <button type="button" class="nav-toggle" aria-controls="nav-menu" aria-expanded="false">Menu</button>
+    <div id="nav-menu" class="nav-menu">
+        <a href="index.html">Home</a>
+        <div class="dropdown">
+            <button type="button" class="drop-toggle" aria-expanded="false">Technology</button>
+            <div class="dropdown-content">
+                <a href="technology.html">Tech overview</a>
+                <a href="transistor.html">Transistor</a>
+                <a href="optical-maser.html">Lasers</a>
+                <a href="ccd.html">CCD imaging</a>
+                <a href="photovoltaic-cell.html">Solar cell</a>
+                <a href="unix.html">UNIX</a>
+                <a href="plan9.html" class="active">Plan 9</a>
+                <a href="blit.html">Blit</a>
+                <a href="amps.html">AMPS</a>
+                <a href="ess.html">ESS</a>
+                <a href="telstar.html">Telstar</a>
+            </div>
+        </div>
+        <div class="dropdown">
+            <button type="button" class="drop-toggle" aria-expanded="false">Long Lines</button>
+            <div class="dropdown-content">
+                <a href="history-att-longlines.html">History</a>
+                <a href="microwave-relay.html">Microwave relay</a>
+                <a href="microwave-relay-towers.html">Relay towers</a>
+                <a href="l-carrier.html">L-carrier</a>
+                <a href="coaxial-cable-systems.html">Coaxial cable</a>
+                <a href="switching-systems.html">Switching</a>
+                <a href="repeater-stations.html">Repeaters</a>
+                <a href="longlines-facilities.html">Facilities</a>
+                <a href="noc.html">Network Operations Center</a>
+                <a href="llmap-int.html">Network map</a>
+            </div>
+        </div>
+        <div class="dropdown">
+            <button type="button" class="drop-toggle" aria-expanded="false">Bell Labs</button>
+            <div class="dropdown-content">
+                <a href="bell-labs.html">Overview</a>
+                <a href="history-bell-labs.html">History</a>
+                <a href="bob-lucky.html">Bob Lucky</a>
+                <a href="unix-emulator.html">UNIX emulator</a>
+                <a href="plan9-emulator.html">Plan 9 emulator</a>
+            </div>
+        </div>
+        <a href="timeline.html">Timeline</a>
+        <a href="gallery.html">Gallery</a>
+        <div class="dropdown">
+            <button type="button" class="drop-toggle" aria-expanded="false">More</button>
+            <div class="dropdown-content">
+                <a href="technical-archives.html">Technical archives</a>
+                <a href="research-archives.html">Research archives</a>
+                <a href="educational-resources.html">Educational resources</a>
+                <a href="preservation-efforts.html">Preservation</a>
+                <a href="museum-project.html">Museum project</a>
+                <a href="contribute.html">Contribute</a>
+                <a href="rss-helper.html">RSS</a>
+                <a href="interactive-timeline.html">Interactive timeline</a>
+            </div>
+        </div>
+        <a href="rss.xml" class="rss-button" title="RSS feed">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" width="16" height="16">
+                <circle cx="6.18" cy="17.82" r="2.18"/>
+                <path d="M4 4.44v2.83c7.03 0 12.73 5.7 12.73 12.73h2.83c0-8.59-6.97-15.56-15.56-15.56zm0 5.66v2.83c3.9 0 7.07 3.17 7.07 7.07h2.83c0-5.47-4.43-9.9-9.9-9.9z"/>
+            </svg>
+            <span class="sr-only">RSS</span>
+        </a>
+    </div>
+    <button type="button" id="theme-toggle" class="theme-toggle" aria-pressed="false">Dark mode</button>
+</nav>
+
     <main>
         <section class="section">
             <p>Plan 9 is a revolutionary distributed operating system developed at Bell Labs in the late 1980s and early 1990s by many of the same people who created UNIX, including Ken Thompson, Rob Pike, and Dave Presotto.</p>
@@ -199,10 +200,10 @@
             
             <h3>Plan 9 Screenshots</h3>
             <div class="screenshot-gallery">
-                <img src="img/plan9-1.png" alt="Plan 9 Rio window system showing the desktop environment">
-                <img src="img/plan9-2.png" alt="Plan 9 Acme text editor and development environment">
-                <img src="img/plan9-3.png" alt="Plan 9 terminal with system information">
-                <img src="img/plan9-4.png" alt="Plan 9 filesystem browser">
+                
+                
+                
+                
             </div>
             
             <div class="alternative-access">
@@ -227,29 +228,10 @@
             <p>The Plan 9 project demonstrates Bell Labs' continued innovation in operating systems well after the development of UNIX, showing how the research lab continued to push boundaries in computer science.</p>
         </section>
     </main>
-    <footer>
-        <p>&copy; <span id="year"></span> AT&T Long Lines & Bell Labs Community. <small>Site by juler#5461. All rights reserved.</small></p>
+    <footer class="site-footer">
+        <p><small>This is an independent historical tribute. It is not affiliated with AT&amp;T Inc. or Nokia Bell Labs. We do not use advertising trackers.</small></p>
+        <p>&copy; <span id="year"></span> AT&amp;T Long Lines &amp; Bell Labs Community. <small>Site by juler#5461.</small></p>
     </footer>
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            function createPlaceholderImages() {
-                const gallery = document.querySelector('.screenshot-gallery');
-                if (!gallery) return;
-                
-                const images = gallery.querySelectorAll('img');
-                images.forEach(img => {
-                    img.onerror = function() {
-                        this.src = 'data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22400%22%20height%3D%22300%22%20viewBox%3D%220%200%20400%20300%22%3E%3Crect%20fill%3D%22%23f0f0f0%22%20width%3D%22400%22%20height%3D%22300%22%2F%3E%3Ctext%20fill%3D%22%23999999%22%20font-family%3D%22Arial%2CSans-serif%22%20font-size%3D%2216%22%20x%3D%22125%22%20y%3D%22150%22%3EPlan%209%20Screenshot%3C%2Ftext%3E%3C%2Fsvg%3E';
-                        this.alt = 'Plan 9 Screenshot Placeholder';
-                    };
-                });
-            }
-            
-            createPlaceholderImages();
-            
-            const currentYear = new Date().getFullYear();
-            document.querySelector('#year').textContent = currentYear;
-        });
-    </script>
+    
 </body>
 </html>

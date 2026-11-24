@@ -3,229 +3,167 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AT&T Network Operations Center</title>
-    <link rel="stylesheet" href="recipes/css/theme.css">
+    <title>AT&amp;T Network Operations Center</title>
+    <meta name="description" content="The AT&amp;T Network Operations Center at Bedminster, New Jersey, watched the long-distance network from 1977 onward.">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://belllaboratories.net/noc">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="AT&amp;T Long Lines &amp; Bell Labs">
+    <meta property="og:title" content="AT&amp;T Network Operations Center">
+    <meta property="og:description" content="The AT&amp;T Network Operations Center at Bedminster, New Jersey, watched the long-distance network from 1977 onward.">
+    <meta property="og:url" content="https://belllaboratories.net/noc">
+    <meta property="og:image" content="https://belllaboratories.net/img/map1.jpg">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="AT&amp;T Network Operations Center">
+    <meta name="twitter:description" content="The AT&amp;T Network Operations Center at Bedminster, New Jersey, watched the long-distance network from 1977 onward.">
+    <meta name="twitter:image" content="https://belllaboratories.net/img/map1.jpg">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; connect-src 'self'; frame-src 'none'; base-uri 'self'; form-action 'self'">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
     <link rel="icon" href="img/favicon.ico" type="image/x-icon">
-    <style>
-        /* CSS Variables for Theme */
-        :root {
-            --bg-color: #f0f0f0; /* Updated to match sitewide theme */
-            --text-color: #222; /* Updated to match sitewide theme */
-            --header-bg-color: #004080; /* Updated to match sitewide theme */
-            --nav-bg-color: #0059b3; /* Updated to match sitewide theme */
-            --nav-hover-color: #003d80; /* Updated to match sitewide theme */
-            --main-bg-color: #ffffff; /* Updated to match sitewide theme */
-            --box-shadow-color: rgba(0, 0, 0, 0.15); /* Updated to match sitewide theme */
-        }
+    <link rel="alternate" type="application/rss+xml" title="AT&amp;T Long Lines &amp; Bell Labs updates" href="rss.xml">
+    <link rel="stylesheet" href="css/site.css">
+    <script>
+        (function () {
+            try {
+                var theme = localStorage.getItem("theme");
+                if (!theme) {
+                    var legacy = localStorage.getItem("darkMode");
+                    if (legacy === "enabled" || legacy === "true") theme = "dark";
+                    else if (legacy === "disabled" || legacy === "false") theme = "light";
+                }
+                if (theme === "dark" || (!theme && window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches)) {
+                    document.documentElement.classList.add("dark-mode");
+                }
+            } catch (e) {}
+        })();
+    </script>
+    <script src="js/site.js" defer></script>
 
-        /* General Styles */
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: var(--bg-color);
-            color: var(--text-color);
-            line-height: 1.7;
-            transition: background-color 0.3s ease, color 0.3s ease;
-        }
-
-        /* Header and Navigation */
-        header {
-            background-color: var(--header-bg-color);
-            color: white;
-            text-align: center;
-            padding: 2em 0;
-        }
-
-        nav {
-            background-color: var(--nav-bg-color);
-            color: white;
-            padding: 0.7em 0;
-            text-align: center;
-            margin-bottom: 20px; /* Add margin to the bottom of the nav */
-            z-index: 1000; /* Ensure nav is above other content */
-        }
-
-        nav a {
-            color: white;
-            text-decoration: none;
-            padding: 0.7em 1.5em;
-            display: inline-block;
-            transition: background-color 0.3s ease;
-        }
-
-        nav a:hover {
-            background-color: var(--nav-hover-color);
-        }
-
-        .dropdown {
-            position: relative;
-            display: inline-block;
-        }
-
-        .dropdown-content {
-            display: none;
-            position: absolute;
-            background-color: rgba(0, 122, 204, 0.9); /* Transparent version of nav color */
-            min-width: 160px;
-            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-            z-index: 1;
-            border-radius: 5px;
-            opacity: 0;
-            transform: translateY(-10px);
-            transition: opacity 0.3s ease, transform 0.3s ease;
-        }
-
-        .dropdown-content a {
-            color: white;
-            padding: 12px 16px;
-            text-decoration: none;
-            display: block;
-        }
-
-        .dropdown-content a:hover {
-            background-color: rgba(0, 86, 179, 0.7); /* Darker transparent hover */
-        }
-
-        .dropdown:hover .dropdown-content {
-            display: block;
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        /* Main Content Area */
-        main {
-            padding: 30px;
-            max-width: 900px;
-            margin: 20px auto;
-            background-color: var(--main-bg-color);
-            box-shadow: 0 0 20px var(--box-shadow-color);
-            border-radius: 8px;
-            transition: background-color 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        .section {
-            margin-bottom: 40px;
-        }
-
-        .section h2 {
-            color: #003366;
-            border-bottom: 3px solid #007acc;
-            padding-bottom: 0.7em;
-            margin-bottom: 0.8em;
-        }
-
-        /* Footer */
-        footer {
-            background-color: #003366;
-            color: white;
-            text-align: center;
-            padding: 2em 0;
-            position: relative;
-            bottom: 0;
-            width: 100%;
-        }
-
-        /* Responsive Video Container */
-        .responsive-video-container {
-            position: relative;
-            padding-bottom: 56.25%; /* 16:9 aspect ratio */
-            height: 0;
-            overflow: hidden;
-            max-width: 100%;
-            margin-bottom: 20px;
-        }
-        
-        .responsive-video-container iframe {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            border: none;
-        }
-        
-        .video-caption {
-            font-style: italic;
-            color: var(--text-color);
-            margin-top: 10px;
-            font-size: 0.9em;
-        }
-        
-        .video-container {
-            margin: 20px 0;
-            background-color: var(--section-bg-color);
-            padding: 15px;
-            border-radius: 5px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-        }
-    </style>
-    <script src="recipes/js/theme-toggle.js" defer></script>
 </head>
 <body>
-    <header>
-        <h1>AT&T Long Lines & Bell Labs</h1>
-        <p>Pioneering Innovations in Telecommunications</p>
-        <button id="dark-mode-toggle">Toggle Dark Mode</button>
+    <header class="site-header">
+        <h1><a href="index.html">AT&amp;T Long Lines &amp; Bell Labs</a></h1>
+        <p class="tagline">Watching the long-distance network</p>
     </header>
-    <nav>
+    
+<nav class="site-nav" aria-label="Main">
+    <button type="button" class="nav-toggle" aria-controls="nav-menu" aria-expanded="false">Menu</button>
+    <div id="nav-menu" class="nav-menu">
         <a href="index.html">Home</a>
         <div class="dropdown">
-            <a href="technology.html">Technology</a>
+            <button type="button" class="drop-toggle" aria-expanded="false">Technology</button>
             <div class="dropdown-content">
-                <a href="technology.html" rel="noreferrer">Tech Overview</a>
-                <a href="transistor.html" rel="noreferrer">The Transistor</a>
-                <a href="optical-maser.html" rel="noreferrer">Lasers</a>
-                <a href="ccd.html" rel="noreferrer">Digital Imaging (CCDs)</a>
-                <a href="photovoltaic-cell.html" rel="noreferrer">Solar Power</a>
-                <a href="unix.html" rel="noreferrer">UNIX</a>
-                <a href="blit.html" rel="noreferrer">Blit</a>
-                <a href="amps.html" rel="noreferrer">AMPS</a>
+                <a href="technology.html">Tech overview</a>
+                <a href="transistor.html">Transistor</a>
+                <a href="optical-maser.html">Lasers</a>
+                <a href="ccd.html">CCD imaging</a>
+                <a href="photovoltaic-cell.html">Solar cell</a>
+                <a href="unix.html">UNIX</a>
+                <a href="plan9.html">Plan 9</a>
+                <a href="blit.html">Blit</a>
+                <a href="amps.html">AMPS</a>
+                <a href="ess.html">ESS</a>
+                <a href="telstar.html">Telstar</a>
             </div>
         </div>
-        <a href="technical-archives.html" rel="noreferrer">Technical Archives</a>
-        <a href="preservation-efforts.html" rel="noreferrer">Preservation Efforts</a>
-        <a href="bell-labs.html" rel="noreferrer">Bell Labs</a>
-        <a href="gallery.html" rel="noreferrer">Gallery</a>
-        <a href="bob-lucky.html" rel="noreferrer">Bob Lucky</a>
-        <a href="noc.html" rel="noreferrer" class="active">Network Operations Center</a>
-        <a href="history-att-longlines.html" rel="noreferrer">Long Lines History</a>
-        <a href="history-bell-labs.html" rel="noreferrer">Bell Labs History</a>
-        <a href="contribute.html" rel="noreferrer">Get Involved</a>
-        <a href="#discord">Join the Community</a>
-    </nav>
+        <div class="dropdown">
+            <button type="button" class="drop-toggle" aria-expanded="false">Long Lines</button>
+            <div class="dropdown-content">
+                <a href="history-att-longlines.html">History</a>
+                <a href="microwave-relay.html">Microwave relay</a>
+                <a href="microwave-relay-towers.html">Relay towers</a>
+                <a href="l-carrier.html">L-carrier</a>
+                <a href="coaxial-cable-systems.html">Coaxial cable</a>
+                <a href="switching-systems.html">Switching</a>
+                <a href="repeater-stations.html">Repeaters</a>
+                <a href="longlines-facilities.html">Facilities</a>
+                <a href="noc.html" class="active">Network Operations Center</a>
+                <a href="llmap-int.html">Network map</a>
+            </div>
+        </div>
+        <div class="dropdown">
+            <button type="button" class="drop-toggle" aria-expanded="false">Bell Labs</button>
+            <div class="dropdown-content">
+                <a href="bell-labs.html">Overview</a>
+                <a href="history-bell-labs.html">History</a>
+                <a href="bob-lucky.html">Bob Lucky</a>
+                <a href="unix-emulator.html">UNIX emulator</a>
+                <a href="plan9-emulator.html">Plan 9 emulator</a>
+            </div>
+        </div>
+        <a href="timeline.html">Timeline</a>
+        <a href="gallery.html">Gallery</a>
+        <div class="dropdown">
+            <button type="button" class="drop-toggle" aria-expanded="false">More</button>
+            <div class="dropdown-content">
+                <a href="technical-archives.html">Technical archives</a>
+                <a href="research-archives.html">Research archives</a>
+                <a href="educational-resources.html">Educational resources</a>
+                <a href="preservation-efforts.html">Preservation</a>
+                <a href="museum-project.html">Museum project</a>
+                <a href="contribute.html">Contribute</a>
+                <a href="rss-helper.html">RSS</a>
+                <a href="interactive-timeline.html">Interactive timeline</a>
+            </div>
+        </div>
+        <a href="rss.xml" class="rss-button" title="RSS feed">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" width="16" height="16">
+                <circle cx="6.18" cy="17.82" r="2.18"/>
+                <path d="M4 4.44v2.83c7.03 0 12.73 5.7 12.73 12.73h2.83c0-8.59-6.97-15.56-15.56-15.56zm0 5.66v2.83c3.9 0 7.07 3.17 7.07 7.07h2.83c0-5.47-4.43-9.9-9.9-9.9z"/>
+            </svg>
+            <span class="sr-only">RSS</span>
+        </a>
+    </div>
+    <button type="button" id="theme-toggle" class="theme-toggle" aria-pressed="false">Dark mode</button>
+</nav>
+
     <main>
-        <section id="noc" class="section">
-            <h2>AT&T Network Operations Center</h2>
-            <p>The AT&T Network Operations Center (NOC) is a critical hub for managing and monitoring the vast AT&T network infrastructure.</p>
-            <div class="video-container">
-                <h3>A Tour of the AT&T Network Operations Center</h3>
-                <div class="responsive-video-container">
-                    <iframe 
-                        width="560" 
-                        height="315" 
-                        src="https://www.youtube-nocookie.com/embed/VIDEOID" 
-                        title="A Tour of the AT&T Network Operations Center" 
-                        frameborder="0" 
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                        allowfullscreen
-                        loading="lazy">
-                    </iframe>
-                </div>    <script>
-                <p class="video-caption">Tour of the historical AT&T Network Operations Center, showing the monitoring systems and infrastructure.</p>ment.addEventListener('DOMContentLoaded', () => {
-            </div>te().getFullYear();
-        </section>
+        <section class="section">
+    <h1>AT&amp;T Network Operations Center</h1>
+    <p class="page-lede">As the Long Lines network grew into a national web of radio, coaxial, and switching machines, AT&amp;T needed a place from which engineers could see the whole of it. The Network Operations Center (NOC) was that place: a continuously staffed room that watched trunk groups, radio channels, and switches, and that could intervene when traffic or failures threatened the network.</p>
+</section>
+
+<section class="section">
+    <h2>Bedminster</h2>
+    <p>The best-known AT&amp;T operations center is at Bedminster, New Jersey. It opened in 1977 as a purpose-built network management facility for the long-distance plant. Contemporary descriptions and photographs show a large wall display of the United States and overseas routes, with consoles for surveillance and control. From there, staff could observe switching machines such as the <a href="ess.html">No. 4 ESS</a>, the status of transmission systems, and the effect of storms, cable cuts, or overloads.</p>
+    <p>Regional network management centers handled a smaller geography; Bedminster was the national (and, for overseas services, international) overview. The methods—alarm collection, traffic measurements, and manual or automatic controls that restrict new calls to protect calls already up—grew out of Bell Labs traffic engineering and from earlier, smaller operating rooms in the Long Lines department.</p>
+</section>
+
+<section class="section">
+    <h2>What the NOC actually did</h2>
+    <ul>
+        <li><strong>Surveillance.</strong> Telemetry from switches and transmission systems was summarized so that a failure in a radio hop or a cable was visible as an event, not only as scattered customer complaints.</li>
+        <li><strong>Traffic control.</strong> During peak days (holidays, disasters) the network could be ordered to block overflow, skip certain routes, or protect essential services. Those controls were the operational side of the hierarchical switching plan described on <a href="switching-systems.html">Switching systems</a>.</li>
+        <li><strong>Coordination.</strong> Restoration after a cut—rerouting traffic onto intact radio or cable, dispatching field forces—was directed from the operations centers working with Long Lines plant staff.</li>
+    </ul>
+    <p>Common Channel Interoffice Signaling (and later SS7) made some of this faster, because signaling no longer shared the voice trunk. The NOC remained a human organization: displays and computers did not replace the people who decided when to apply a control.</p>
+</section>
+
+<section class="section">
+    <h2>After divestiture</h2>
+    <p>The 1984 breakup of the Bell System split local and long-distance operations. AT&amp;T kept a long-distance network and continued to run a network operations center. The building and the idea—one room that represents a continental network—became a template other carriers copied. The original Long Lines radio and L-carrier plant that those screens once depicted has largely been replaced by fiber.</p>
+</section>
+
+<section class="section">
+    <h2>Film and photographs</h2>
+    <p>Period documentaries and news features filmed the Bedminster display wall. This site does not host those films. If you want moving pictures, look for broadcast-archive copies or AT&amp;T historical reels rather than a file in this repository. Photographs of the center appear in AT&amp;T annual reports and in contemporary technical magazines.</p>
+</section>
+
+<section class="section related">
+    <h2>Related pages</h2>
+    <ul>
+        <li><a href="switching-systems.html">Switching systems</a></li>
+        <li><a href="ess.html">Electronic Switching System</a></li>
+        <li><a href="history-att-longlines.html">History of AT&amp;T Long Lines</a></li>
+        <li><a href="longlines-facilities.html">Long Lines facilities</a></li>
+    </ul>
+</section>
+
     </main>
-    <footer>cript>
-        <p><small>We frequently review our code to ensure we remain a privacy-first, tracker-free site.</small></p>
-        <p>&copy; <span id="year"></span> Bell Labs & AT&T Long Lines Historical Archive. All rights reserved.</p></html>
-
-
-
-
-
-
-
-
-
-</html></body>    </script>        document.getElementById('year').innerHTML = new Date().getFullYear();        // Update the year dynamically    <script>    </footer>
+    <footer class="site-footer">
+        <p><small>This is an independent historical tribute. It is not affiliated with AT&amp;T Inc. or Nokia Bell Labs. We do not use advertising trackers.</small></p>
+        <p>&copy; <span id="year"></span> AT&amp;T Long Lines &amp; Bell Labs Community. <small>Site by juler#5461.</small></p>
+    </footer>
+    
+</body>
+</html>

@@ -1,0 +1,22 @@
+{
+  "name": "belllabs",
+  "compatibility_date": "2025-03-09",
+  "pages_build_output_dir": ".",
+  "d1_databases": [
+    {
+      "binding": "GALLERY_DB",
+      "database_name": "belllabs-gallery",
+      "database_id": "529c69c5-9c53-4fa2-9cef-12f621f8590e"
+    }
+  ],
+  "kv_namespaces": [
+    {
+      "binding": "GALLERY_KV",
+      "id": "fd5625d6de494169b843abbe51e43bb9"
+    }
+  ],
+  "vars": {
+    "GALLERY_PUBLISH_PER_HOUR": "3",
+    "GALLERY_MAX_SIDE": "1920"
+  }
+}

@@ -3,114 +3,119 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Interactive Map Beta | Bell Labs and AT&T Long Lines History</title>
-    <link rel="stylesheet" href="css/main.css">
-    <link rel="stylesheet" href="/recipes/css/timeline-chronicle.css">
-    <style>
-        /* Archive Notice */
-        .archive-notice {
-            background-color: #ffeecc;
-            border: 2px solid #ff9900;
-            color: #663300;
-            padding: 15px;
-            margin: 20px 0;
-            border-radius: 5px;
-            font-weight: bold;
-            text-align: center;
-        }
-        
-        /* Beta Banner */
-        .beta-banner {
-            background-color: #007bff;
-            color: white;
-            text-align: center;
-            padding: 10px;
-            font-weight: bold;
-            margin-bottom: 20px;
-            border-radius: 5px;
-        }
-        
-        /* Map container */
-        .map-container {
-            width: 100%;
-            height: 80vh;
-            margin: 20px 0;
-            background-color: #f5f5f5;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-        
-        .map-placeholder {
-            text-align: center;
-            padding: 20px;
-        }
-        
-        /* Memory Scroller Attribution Banner */
-        .attribution-banner {
-            background-color: #000080;
-            color: #ffffff;
-            padding: 8px 0;
-            margin-top: 10px;
-            overflow: hidden;
-            white-space: nowrap;
-            border-radius: 4px;
-            font-family: "Courier New", monospace;
-            font-weight: bold;
-            text-align: center;
-        }
-        
-        .attribution-banner .scroller {
-            display: inline-block;
-            animation: scroll 30s linear infinite;
-        }
-        
-        .attribution-banner a {
-            color: #ffffff;
-            text-decoration: underline;
-        }
-        
-        .attribution-banner a:hover {
-            color: #ccccff;
-        }
-        
-        @keyframes scroll {
-            0% { transform: translateX(100%); }
-            100% { transform: translateX(-100%); }
-        }
-    </style>
+    <title>Interactive map (archived) - AT&amp;T Long Lines</title>
+    <meta name="description" content="Archived beta of an interactive Long Lines map. Current mapping is at long-lines.com.">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://belllaboratories.net/im-beta">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="AT&amp;T Long Lines &amp; Bell Labs">
+    <meta property="og:title" content="Interactive map (archived) - AT&amp;T Long Lines">
+    <meta property="og:description" content="Archived beta of an interactive Long Lines map. Current mapping is at long-lines.com.">
+    <meta property="og:url" content="https://belllaboratories.net/im-beta">
+    <meta property="og:image" content="https://belllaboratories.net/img/map1.jpg">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Interactive map (archived) - AT&amp;T Long Lines">
+    <meta name="twitter:description" content="Archived beta of an interactive Long Lines map. Current mapping is at long-lines.com.">
+    <meta name="twitter:image" content="https://belllaboratories.net/img/map1.jpg">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; connect-src 'self'; frame-src 'none'; base-uri 'self'; form-action 'self'">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="icon" href="img/favicon.ico" type="image/x-icon">
+    <link rel="alternate" type="application/rss+xml" title="AT&amp;T Long Lines &amp; Bell Labs updates" href="rss.xml">
+    <link rel="stylesheet" href="css/site.css">
+    <script>
+        (function () {
+            try {
+                var theme = localStorage.getItem("theme");
+                if (!theme) {
+                    var legacy = localStorage.getItem("darkMode");
+                    if (legacy === "enabled" || legacy === "true") theme = "dark";
+                    else if (legacy === "disabled" || legacy === "false") theme = "light";
+                }
+                if (theme === "dark" || (!theme && window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches)) {
+                    document.documentElement.classList.add("dark-mode");
+                }
+            } catch (e) {}
+        })();
+    </script>
+    <script src="js/site.js" defer></script>
+
 </head>
 <body>
-    <header>
-        <nav>
-            <a href="index.html">Home</a>
-            <div class="dropdown">
-                <a href="technology.html">Technology</a>
-                <div class="dropdown-content">
-                    <a href="technology.html">Tech Overview</a>
-                    <a href="transistor.html">The Transistor</a>
-                    <a href="optical-maser.html">Lasers</a>
-                    <a href="ccd.html">Digital Imaging (CCDs)</a>
-                    <a href="photovoltaic-cell.html">Solar Power</a>
-                    <a href="unix.html">UNIX</a>
-                    <a href="blit.html">Blit</a>
-                    <a href="amps.html">AMPS</a>
-                </div>
-            </div>
-            <a href="timeline.html">Timeline</a>
-            <a href="technical-archives.html">Technical Archives</a>
-            <a href="preservation-efforts.html">Preservation Efforts</a>
-            <a href="bell-labs.html">Bell Labs</a>
-            <a href="gallery.html">Gallery</a>
-            <a href="bob-lucky.html">Bob Lucky</a>
-            <a href="noc.html">Network Operations Center</a>
-            <a href="history-att-longlines.html">Long Lines History</a>
-            <a href="history-bell-labs.html">Bell Labs History</a>
-            <a href="contribute.html">Contribute</a>
-        </nav>
+    <header class="site-header">
+        <h1><a href="index.html">AT&amp;T Long Lines &amp; Bell Labs</a></h1>
+        <p class="tagline">Archived map experiment</p>
     </header>
+    
+<nav class="site-nav" aria-label="Main">
+    <button type="button" class="nav-toggle" aria-controls="nav-menu" aria-expanded="false">Menu</button>
+    <div id="nav-menu" class="nav-menu">
+        <a href="index.html">Home</a>
+        <div class="dropdown">
+            <button type="button" class="drop-toggle" aria-expanded="false">Technology</button>
+            <div class="dropdown-content">
+                <a href="technology.html">Tech overview</a>
+                <a href="transistor.html">Transistor</a>
+                <a href="optical-maser.html">Lasers</a>
+                <a href="ccd.html">CCD imaging</a>
+                <a href="photovoltaic-cell.html">Solar cell</a>
+                <a href="unix.html">UNIX</a>
+                <a href="plan9.html">Plan 9</a>
+                <a href="blit.html">Blit</a>
+                <a href="amps.html">AMPS</a>
+                <a href="ess.html">ESS</a>
+                <a href="telstar.html">Telstar</a>
+            </div>
+        </div>
+        <div class="dropdown">
+            <button type="button" class="drop-toggle" aria-expanded="false">Long Lines</button>
+            <div class="dropdown-content">
+                <a href="history-att-longlines.html">History</a>
+                <a href="microwave-relay.html">Microwave relay</a>
+                <a href="microwave-relay-towers.html">Relay towers</a>
+                <a href="l-carrier.html">L-carrier</a>
+                <a href="coaxial-cable-systems.html">Coaxial cable</a>
+                <a href="switching-systems.html">Switching</a>
+                <a href="repeater-stations.html">Repeaters</a>
+                <a href="longlines-facilities.html">Facilities</a>
+                <a href="noc.html">Network Operations Center</a>
+                <a href="llmap-int.html">Network map</a>
+            </div>
+        </div>
+        <div class="dropdown">
+            <button type="button" class="drop-toggle" aria-expanded="false">Bell Labs</button>
+            <div class="dropdown-content">
+                <a href="bell-labs.html">Overview</a>
+                <a href="history-bell-labs.html">History</a>
+                <a href="bob-lucky.html">Bob Lucky</a>
+                <a href="unix-emulator.html">UNIX emulator</a>
+                <a href="plan9-emulator.html">Plan 9 emulator</a>
+            </div>
+        </div>
+        <a href="timeline.html">Timeline</a>
+        <a href="gallery.html">Gallery</a>
+        <div class="dropdown">
+            <button type="button" class="drop-toggle" aria-expanded="false">More</button>
+            <div class="dropdown-content">
+                <a href="technical-archives.html">Technical archives</a>
+                <a href="research-archives.html">Research archives</a>
+                <a href="educational-resources.html">Educational resources</a>
+                <a href="preservation-efforts.html">Preservation</a>
+                <a href="museum-project.html">Museum project</a>
+                <a href="contribute.html">Contribute</a>
+                <a href="rss-helper.html">RSS</a>
+                <a href="interactive-timeline.html">Interactive timeline</a>
+            </div>
+        </div>
+        <a href="rss.xml" class="rss-button" title="RSS feed">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" width="16" height="16">
+                <circle cx="6.18" cy="17.82" r="2.18"/>
+                <path d="M4 4.44v2.83c7.03 0 12.73 5.7 12.73 12.73h2.83c0-8.59-6.97-15.56-15.56-15.56zm0 5.66v2.83c3.9 0 7.07 3.17 7.07 7.07h2.83c0-5.47-4.43-9.9-9.9-9.9z"/>
+            </svg>
+            <span class="sr-only">RSS</span>
+        </a>
+    </div>
+    <button type="button" id="theme-toggle" class="theme-toggle" aria-pressed="false">Dark mode</button>
+</nav>
 
     <main>
         <!-- Archive Notice -->
@@ -149,11 +154,10 @@
             </div>
         </section>
     </main>
-
-    <footer>
-        <p>&copy; 2023 Bell Labs & AT&T Long Lines Historical Archive. All rights reserved.</p>
+    <footer class="site-footer">
+        <p><small>This is an independent historical tribute. It is not affiliated with AT&amp;T Inc. or Nokia Bell Labs. We do not use advertising trackers.</small></p>
+        <p>&copy; <span id="year"></span> AT&amp;T Long Lines &amp; Bell Labs Community. <small>Site by juler#5461.</small></p>
     </footer>
-
-    <script src="js/main.js"></script>
+    
 </body>
 </html>

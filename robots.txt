@@ -1,0 +1,9 @@
+User-agent: *
+Allow: /
+Disallow: /admin.html
+Disallow: /admin
+Disallow: /timelinepagebackup.html
+Disallow: /lzk.html
+Disallow: /lzk
+
+Sitemap: https://belllaboratories.net/sitemap.xml

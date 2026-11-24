@@ -3,84 +3,142 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>404 - Page Not Found</title>
+    <title>Page not found - AT&amp;T Long Lines &amp; Bell Labs</title>
+    <meta name="description" content="That page is not on belllaboratories.net.">
+    <meta name="robots" content="noindex, nofollow">
+    <link rel="canonical" href="https://belllaboratories.net/404">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="AT&amp;T Long Lines &amp; Bell Labs">
+    <meta property="og:title" content="Page not found - AT&amp;T Long Lines &amp; Bell Labs">
+    <meta property="og:description" content="That page is not on belllaboratories.net.">
+    <meta property="og:url" content="https://belllaboratories.net/404">
+    <meta property="og:image" content="https://belllaboratories.net/img/map1.jpg">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Page not found - AT&amp;T Long Lines &amp; Bell Labs">
+    <meta name="twitter:description" content="That page is not on belllaboratories.net.">
+    <meta name="twitter:image" content="https://belllaboratories.net/img/map1.jpg">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; connect-src 'self'; frame-src 'none'; base-uri 'self'; form-action 'self'">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
     <link rel="icon" href="img/favicon.ico" type="image/x-icon">
-    <style>
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f9f9f9;
-            color: #333;
-            line-height: 1.7;
-            text-align: center;
-            /* Ensure the content is positioned correctly */
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            /* Background image properties */
-            background-image: url('img/gallery/20250304_145346.jpg');
-            background-size: cover;
-            background-blend-mode: lighten;
-            background-attachment: fixed; /* Optional: Keeps the background fixed during scrolling */
-        }
+    <link rel="alternate" type="application/rss+xml" title="AT&amp;T Long Lines &amp; Bell Labs updates" href="rss.xml">
+    <link rel="stylesheet" href="css/site.css">
+    <script>
+        (function () {
+            try {
+                var theme = localStorage.getItem("theme");
+                if (!theme) {
+                    var legacy = localStorage.getItem("darkMode");
+                    if (legacy === "enabled" || legacy === "true") theme = "dark";
+                    else if (legacy === "disabled" || legacy === "false") theme = "light";
+                }
+                if (theme === "dark" || (!theme && window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches)) {
+                    document.documentElement.classList.add("dark-mode");
+                }
+            } catch (e) {}
+        })();
+    </script>
+    <script src="js/site.js" defer></script>
 
-        header {
-            background-color: #003366;
-            color: white;
-            text-align: center;
-            padding: 2em 0;
-            margin-bottom: 20px;
-        }
-
-        main {
-            padding: 30px;
-            max-width: 900px;
-            margin: 20px auto;
-            background-color: white;
-            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
-            border-radius: 8px;
-        }
-
-        img {
-            max-width: 100%;
-            height: auto;
-            margin-bottom: 20px;
-        }
-
-        a {
-            color: #007acc;
-            text-decoration: none;
-        }
-
-        a:hover {
-            text-decoration: underline;
-        }
-    </style>
 </head>
-<body>
-    <header>
-        <h1>404 - Page Not Found</h1>
+<body class="page-404">
+    <header class="site-header">
+        <h1><a href="index.html">AT&amp;T Long Lines &amp; Bell Labs</a></h1>
+        <p class="tagline">Page not found</p>
     </header>
+    
+<nav class="site-nav" aria-label="Main">
+    <button type="button" class="nav-toggle" aria-controls="nav-menu" aria-expanded="false">Menu</button>
+    <div id="nav-menu" class="nav-menu">
+        <a href="index.html">Home</a>
+        <div class="dropdown">
+            <button type="button" class="drop-toggle" aria-expanded="false">Technology</button>
+            <div class="dropdown-content">
+                <a href="technology.html">Tech overview</a>
+                <a href="transistor.html">Transistor</a>
+                <a href="optical-maser.html">Lasers</a>
+                <a href="ccd.html">CCD imaging</a>
+                <a href="photovoltaic-cell.html">Solar cell</a>
+                <a href="unix.html">UNIX</a>
+                <a href="plan9.html">Plan 9</a>
+                <a href="blit.html">Blit</a>
+                <a href="amps.html">AMPS</a>
+                <a href="ess.html">ESS</a>
+                <a href="telstar.html">Telstar</a>
+            </div>
+        </div>
+        <div class="dropdown">
+            <button type="button" class="drop-toggle" aria-expanded="false">Long Lines</button>
+            <div class="dropdown-content">
+                <a href="history-att-longlines.html">History</a>
+                <a href="microwave-relay.html">Microwave relay</a>
+                <a href="microwave-relay-towers.html">Relay towers</a>
+                <a href="l-carrier.html">L-carrier</a>
+                <a href="coaxial-cable-systems.html">Coaxial cable</a>
+                <a href="switching-systems.html">Switching</a>
+                <a href="repeater-stations.html">Repeaters</a>
+                <a href="longlines-facilities.html">Facilities</a>
+                <a href="noc.html">Network Operations Center</a>
+                <a href="llmap-int.html">Network map</a>
+            </div>
+        </div>
+        <div class="dropdown">
+            <button type="button" class="drop-toggle" aria-expanded="false">Bell Labs</button>
+            <div class="dropdown-content">
+                <a href="bell-labs.html">Overview</a>
+                <a href="history-bell-labs.html">History</a>
+                <a href="bob-lucky.html">Bob Lucky</a>
+                <a href="unix-emulator.html">UNIX emulator</a>
+                <a href="plan9-emulator.html">Plan 9 emulator</a>
+            </div>
+        </div>
+        <a href="timeline.html">Timeline</a>
+        <a href="gallery.html">Gallery</a>
+        <div class="dropdown">
+            <button type="button" class="drop-toggle" aria-expanded="false">More</button>
+            <div class="dropdown-content">
+                <a href="technical-archives.html">Technical archives</a>
+                <a href="research-archives.html">Research archives</a>
+                <a href="educational-resources.html">Educational resources</a>
+                <a href="preservation-efforts.html">Preservation</a>
+                <a href="museum-project.html">Museum project</a>
+                <a href="contribute.html">Contribute</a>
+                <a href="rss-helper.html">RSS</a>
+                <a href="interactive-timeline.html">Interactive timeline</a>
+            </div>
+        </div>
+        <a href="rss.xml" class="rss-button" title="RSS feed">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" width="16" height="16">
+                <circle cx="6.18" cy="17.82" r="2.18"/>
+                <path d="M4 4.44v2.83c7.03 0 12.73 5.7 12.73 12.73h2.83c0-8.59-6.97-15.56-15.56-15.56zm0 5.66v2.83c3.9 0 7.07 3.17 7.07 7.07h2.83c0-5.47-4.43-9.9-9.9-9.9z"/>
+            </svg>
+            <span class="sr-only">RSS</span>
+        </a>
+    </div>
+    <button type="button" id="theme-toggle" class="theme-toggle" aria-pressed="false">Dark mode</button>
+</nav>
 
     <main>
-        <img src="img/bell-labs-logo.png" alt="Bell Labs Logo">
-        <p>We're sorry, but the page you requested could not be found. It may have been moved, renamed, or does not exist.</p>
-        <p>Perhaps you were looking for something groundbreaking? While this page isn't it, feel free to explore our <a href="index.html">homepage</a> for more innovations.</p>
-    
-    
-    </main>
+        <section class="section">
+    <h1>Page not found</h1>
+    <p>That address is not a page on this site. It may have been renamed, or the link may be wrong.</p>
+    <p><a class="cta-button" href="index.html">Return home</a></p>
+    <ul>
+        <li><a href="bell-labs.html">Bell Labs</a></li>
+        <li><a href="history-att-longlines.html">Long Lines history</a></li>
+        <li><a href="technology.html">Technology</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="l-carrier.html">L-carrier</a></li>
+        <li><a href="ess.html">Electronic Switching System</a></li>
+        <li><a href="microwave-relay.html">Microwave radio relay</a></li>
+        <li><a href="telstar.html">Telstar</a></li>
+    </ul>
+</section>
 
-    <footer>
-        <p>&copy; <span id="year"></span> AT&T Long Lines & Bell Labs Community. <small>Site by juler#5461. All rights reserved.</small></p>
+    </main>
+    <footer class="site-footer">
+        <p><small>This is an independent historical tribute. It is not affiliated with AT&amp;T Inc. or Nokia Bell Labs. We do not use advertising trackers.</small></p>
+        <p>&copy; <span id="year"></span> AT&amp;T Long Lines &amp; Bell Labs Community. <small>Site by juler#5461.</small></p>
     </footer>
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const currentYear = new Date().getFullYear();
-            document.querySelector('#year').textContent = currentYear;
-        });
-      </script>
+    
 </body>
 </html>

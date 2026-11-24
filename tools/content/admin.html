@@ -1,0 +1,23 @@
+<section class="section">
+    <h1>Gallery admin</h1>
+    <p>Pending community photographs sit in a private queue until you approve or reject them. Approved items receive a future <code>publish_at</code> so they appear on <a href="gallery.html">/gallery</a> a few per hour. Put this page behind Cloudflare Access if you can; the <code>L5_GALLERY_TOKEN</code> is still required.</p>
+    <p>The token is stored only in this browser tab (<code>sessionStorage</code>). It is never written into the page HTML. API reference: <a href="docs/gallery-api.md">docs/gallery-api.md</a>.</p>
+</section>
+<section class="section">
+    <form id="admin-token-form" class="admin-token-form">
+        <label for="admin-token">Bearer token</label>
+        <input id="admin-token" name="token" type="password" autocomplete="off" spellcheck="false">
+        <label for="admin-status">Queue</label>
+        <select id="admin-status">
+            <option value="pending" selected>Pending</option>
+            <option value="scheduled">Scheduled</option>
+            <option value="live">Live</option>
+            <option value="rejected">Rejected</option>
+        </select>
+        <button type="submit" class="cta-button">Open queue</button>
+        <button type="button" id="admin-clear" class="cta-button admin-reject">Clear token</button>
+    </form>
+    <p id="admin-counts" class="admin-muted"></p>
+    <p id="admin-message" class="admin-message" role="status"></p>
+    <div id="admin-list" class="admin-list"></div>
+</section>
